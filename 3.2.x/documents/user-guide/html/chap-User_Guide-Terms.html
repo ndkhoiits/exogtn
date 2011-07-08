@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 2. Glossary</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn User Guide"/><link rel="up" href="index.html" title="GateIn User Guide"/><link rel="prev" href="chap-User_Guide-Introduction.html" title="Chapter 1. Introduction"/><link rel="next" href="chap-User_Guide-Portlets.html" title="Chapter 3. Portlets"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Introduction.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Portlets.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-User_Guide-Terms"/>Chapter 2. Glossary</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-User_Guide-Terms.html#sect-User_Guide-Portal">2.1. Portal</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Terms.html#sect-User_Guide-Portlet">2.2. Portlet</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Terms.html#sect-User_Guide-Toolbar-Concept">2.3. Toolbar</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Terms.html#sect-User_Guide-Navigation">2.4. Navigation</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Terms.html#sect-User_Guide-Gadgets">2.5. Gadgets</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Terms.html#sect-User_Guide-Modes">2.6. Modes</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Terms.html#sect-User_Guide-Permissions">2.7. Permissions</a></span></dt></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Portal"/>2.1. Portal</h2></div></div></div><p>
+An enterprise portal is a Web application that provides means to aggregate and personalize information via application-specific portlets.
+		</p><p>
+			Users and administrators are able to integrate information, people and processes across organizational boundaries via a web-based user interface.
+		</p><p>
+			The framework enables aggregation of enterprise content and business applications with flexible management and personalization options.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Portlet"/>2.2. Portlet</h2></div></div></div><p>
+			A portlet is a small, self-contained web application. Portlets are managed and displayed within a Portal. Typically, a <span class="emphasis"><em>portal</em></span> page is displayed as a collection of non-overlapping <span class="emphasis"><em>portlet</em></span> windows, with each portlet window displaying a different portlet. Hence a portlet (or collection of portlets) resembles a web-based application hosted in a portal. 
+		</p><p>
+			Portlets can be configured to generated differing content and GateIn 3.0 has a number of default portlets that can be used in any portal built in the application.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Toolbar-Concept"/>2.3. Toolbar</h2></div></div></div><p>
+		The Toolbar spans the top of the portal application and provides links to user and administrative actions. 
+        </p><div class="mediaobject" align="center"><img src="images/Toolbar.png" align="middle"/></div><p>
+		This screenshot displays three Navigations referred to in <a href="chap-User_Guide-Terms.html#sect-User_Guide-Navigation" title="2.4. Navigation">Section 2.4, “Navigation”</a> as well as the main Menu button (on the far left of the toolbar) and the name of the current user (on the far right).
+	</p><p>
+		In this example the current user is the site administrator, hence the extra "Site Editor" menu.
+	</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Navigation"/>2.4. Navigation</h2></div></div></div><p>
+		Portal navigations are menus that contain hyperlinks to other parts of a Portal. They can help users to visualize the structure of a site. The default navigation menus in GateIn 3.0 are located in the Toolbar (<a href="chap-User_Guide-Terms.html#sect-User_Guide-Toolbar-Concept" title="2.3. Toolbar">Section 2.3, “Toolbar”</a>).
+	</p><p>
+		There are three navigation types.
+	</p><div class="variablelist"><dl><dt><span class="term">Site</span></dt><dd><p>
+				This navigation links to separate sites of the parent Portal. Each site has only one navigation and it is automatically generated when the site is created.
+			</p><p>
+				This functionality allows different sites to administer some Portal aspects (such as portlets) individually while maintaining other content standardized with the parent Portal.
+			</p></dd><dt><span class="term">Group</span></dt><dd><p>
+				The content of this navigation differs depending on the type of account logged in. 
+			</p><div class="itemizedlist"><ul><li><p>
+						If a user account in in effect, this navigation holds personal links set up by that user.
+					</p></li><li><p>
+						When using a management account, this navigation contains links to pages for registered users as well as administrative tasks and personal links.
+					</p></li><li><p>
+						In an administrator account the navigation adds further management abilities such as Internationalization and community management.
+					</p></li></ul></div></dd><dt><span class="term">Dashboard</span></dt><dd><p>
+				Each user has own navigation 'Dashboard' that contains links and portlets (or gadgets) that the user has selected. A user's navigation is created automatically when user is registered. This navigation only can be deleted when the user is deleted.
+			</p></dd></dl></div><p>
+		When logged in as an Administrator, a fourth navigation appears in the Toolbar:
+	</p><div class="variablelist"><dl><dt><span class="term">Site/Group Editor</span></dt><dd><p>
+				This navigation appears as either <span class="bold"><strong>Site Editor</strong></span> or <span class="bold"><strong>Group Editor</strong></span> depending on the administrator's location within the portal.
+			</p><p>
+				When in areas of the portal displaying content, the navigation shows as  <span class="bold"><strong>Site Editor</strong></span> and in areas of the portal pertaining to users, the navigation shows as  <span class="bold"><strong>Group Editor</strong></span>. 
+			</p><p>
+				This navigation contains links to add a new pages to the portal, to edit a page or to change the portal's layout. Administrators can use these links to manage the portal.
+			</p></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Gadgets"/>2.5. Gadgets</h2></div></div></div><p>
+		A gadget is a customizable mini web application that portal users may add to their web pages. 
+	</p><p>
+		For more information about the gadgets shipped by default with GateIn 3.0, please check out <a href="chap-User_Guide-Portlets.html#sect-User_Guide-Dashboard_Portlet-Using_the_Dashboard_Workspace" title="3.3.1. Using the Dashboard Workspace">Section 3.3.1, “Using the Dashboard Workspace”</a> 
+	</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Modes"/>2.6. Modes</h2></div></div></div><p>
+		By default GateIn 3.0 offers two access <span class="bold"><strong>modes</strong></span>:
+	</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Public</strong></span></span></dt><dd><p>
+				This mode is for guest users who are not registered with the Portal. It does not require a log in and restricts the visitor to the public pages in the portal. Visitors can register an account to gain access to the restricted pages. After being registered, they can use the Private mode but must still contact the Portal administrator to get more rights or a group manager to become a member and gain access a group.
+			</p></dd><dt><span class="term"><span class="bold"><strong>Private</strong></span></span></dt><dd><p>
+				This mode is for registered users only. Users set a username and password during registration which they can then use to sign in. This mode offers users more site privileges. Registered users can manage private resources (creating, editing or deleting private pages), "borrow" pages from other users by creating hyperlinks and change the language for individual needs.
+			</p></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Permissions"/>2.7. Permissions</h2></div></div></div><p>
+		Permission settings control what users can and cannot do within the portal and are set by portal administrators.
+	</p><p>
+		Permission <span class="bold"><strong>types</strong></span> dictate what a user can do within the portal. Two permission types are available as follows:
+	</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Access</strong></span></span></dt><dd><p>
+						This permission type allows users to utilize portal content, that is; sign in, rearrange portlets, etc. This permission can be set for multiple member groups.
+					</p></dd><dt><span class="term"><span class="bold"><strong>Edit</strong></span></span></dt><dd><p>
+					This permission type allows users to change portal content. This includes actions such as changing page information, deleting pages etc. The <span class="emphasis"><em>edit</em></span> permission is set for only one group at a time.
+				</p></dd></dl></div><p>
+		Permission <span class="bold"><strong> levels</strong></span> dictate <span class="emphasis"><em>where</em></span> in the portal the user's permission type applies. There are three permission levels:
+	</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Portal</strong></span></span></dt><dd><p>
+					The portal permission level includes all pages within the portal. Therefore, a user with the <span class="bold"><strong>access</strong></span> permission type can view (but not edit) all the pages within the portal. A user with <span class="bold"><strong>edit</strong></span> permission at the portal level, can change any page in the portal.
+				</p></dd><dt><span class="term"><span class="bold"><strong>Page</strong></span></span></dt><dd><p>
+					The page permission level restricts the user to particular pages. Users are only able to see and/or edit (depending on their permission <span class="bold"><strong>type</strong></span>) pages they have been given access to.
+				</p></dd><dt><span class="term"><span class="bold"><strong>Portlet</strong></span></span></dt><dd><p>
+					The portlet permission level allows users to create a page by dragging and dropping portlets into a page. Some portlets are only used for administrators while some are used for individuals thus administrators have to set the appropriate access permissions.
+				</p></dd></dl></div><p>
+		Permission <span class="bold"><strong>types</strong></span> and <span class="bold"><strong>levels</strong></span> can be used to effectively control who can do what within the portal. For more information on setting permissions refer to <a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Permissions" title="5.6. Manage Permissions">Section 5.6, “Manage Permissions”</a>
+	</p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Introduction.html"><strong>Prev</strong>Chapter 1. Introduction</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Portlets.html"><strong>Next</strong>Chapter 3. Portlets</a></li></ul></body></html>

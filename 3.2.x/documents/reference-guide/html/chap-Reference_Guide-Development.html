@@ -1,0 +1,1639 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 3. Portal Development</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn Reference Guide"/><link rel="up" href="index.html" title="GateIn Reference Guide"/><link rel="prev" href="chap-Reference_Guide-Configuration.html" title="Chapter 2. Configuration"/><link rel="next" href="chap-Reference_Guide-Portlet_development.html" title="Chapter 4. Portlet development"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Configuration.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Portlet_development.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Reference_Guide-Development"/>Chapter 3. Portal Development</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skinning_Portal">3.1. Skinning the portal</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skin_Configuration-Overview">3.1.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skin_Configuration-Types_of_Styles">3.1.2. Skin Components</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skin_Configuration-Skin_Switching">3.1.3. Skin Selection</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skin_Configuration-Skins_in_Page_Markups">3.1.4. Skins in Page Markups</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guid-Skin_Configuration-Skin_Service">3.1.5. The Skin Service</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skin_Configuration-Default_Skin">3.1.6. The Default Skin</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skin_Configuration-How_to_create_a_new_skin">3.1.7. Creating New Skins</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Skin_Configuration-Tips_and_Tricks">3.1.8. Tips and Tricks</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Lifecycle">3.2. Portal Lifecycle</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Lifecycle-Overview">3.2.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Lifecycle-Application_Server_start_and_stop">3.2.2. Application Server start and stop</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Lifecycle-The_Command_Servlet">3.2.3. The Command Servlet</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Default_Portal_Configuration">3.3. Default Portal Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Default_Portal_Configuration-Overview">3.3.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Default_Portal_Configuration-Configuration">3.3.2. Configuration</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Default_Portal_Configuration-Tips">3.3.3. Tips</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Default_Permission_Configuration">3.4. Portal Default Permission Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Default_Permission_Configuration-Overview">3.4.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Default_Permission_Configuration-Overwrite_Portal_Default_Permissions">3.4.2. Overwrite Portal Default Permissions</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration">3.5. Portal Navigation Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-Overview">3.5.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-Portal_Navigation">3.5.2. Portal Navigation</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-Group_Navigation">3.5.3. Group Navigation</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-User_Navigation">3.5.4. User Navigation</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-Tips">3.5.5. Tips</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Internationalization_Configuration">3.6. Internationalization Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Internationalization_Configuration-Overview">3.6.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Internationalization_Configuration-Locales_configuration">3.6.2. Locales configuration</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Internationalization_Configuration-ResourceBundleService">3.6.3. ResourceBundleService</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Internationalization_Configuration-Navigation_Resource_Bundles">3.6.4. Navigation Resource Bundles</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Internationalization_Configuration-_Portlets_">3.6.5.  Portlets </a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Database_Configuration-Translate-language-selection-form">3.6.6. Translating the language selection form</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-RTL_Right_To_Left_Framework">3.7. RTL (Right To Left) Framework</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-RTL_Right_To_Left_Framework-Groovy_templates">3.7.1. Groovy templates</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-RTL_Right_To_Left_Framework-Stylesheet">3.7.2. Stylesheet</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-RTL_Right_To_Left_Framework-Images">3.7.3. Images</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-RTL_Right_To_Left_Framework-Client_side_JavaScript">3.7.4. Client side JavaScript</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-XML_Resources_Bundles">3.8. XML Resources Bundles</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-XML_Resources_Bundles-Motivation">3.8.1. Motivation</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-XML_Resources_Bundles-XML_format">3.8.2. XML format</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-XML_Resources_Bundles-Portal_support">3.8.3. Portal support</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-JavaScript_Inter_Application_Communication">3.9. JavaScript Inter Application Communication</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-JavaScript_Inter_Application_Communication-Overview">3.9.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-JavaScript_Inter_Application_Communication-Library">3.9.2. Library</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-JavaScript_Inter_Application_Communication-Syntax">3.9.3. Syntax</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-JavaScript_Inter_Application_Communication-Example_of_what">3.9.4. Example of Javascript events usage</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Upload_Component">3.10. Upload Component</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Upload_Component-Upload_Service">3.10.1. Upload Service</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Deactivation_of_the_Ajax_Loading_Mask_Layer_">3.11. Deactivation of the Ajax Loading Mask Layer</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Deactivation_of_the_Ajax_Loading_Mask_Layer_-Purpose">3.11.1. Purpose</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Deactivation_of_the_Ajax_Loading_Mask_Layer_-Synchronous_issue">3.11.2. Synchronous issue</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Javascript_Configuration">3.12. JavaScript Configuration</a></span></dt></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Skinning_Portal"/>3.1. Skinning the portal</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Overview"/>3.1.1. Overview</h3></div></div></div><p>GateIn 3.1
+      provides robust skinning support for the entire portal User
+      Interface (UI). This includes support for skinning all of the
+      common portal elements and being able to provide custom
+      skins and window decoration for individual portlets. It is designed to 
+common graphic resource reuse and ease of development
+      .
+    </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Types_of_Styles"/>3.1.2. Skin Components</h3></div></div></div><p>
+      The complete skinning of a page can be decomposed into three main
+      parts:
+    </p><div class="variablelist"><dl><dt><span class="term">Portal Skin</span></dt><dd><p>
+            The portal skin contains the CSS styles for the portal and its various UI
+            components. This should include all the UI components, except for the window
+            decorators and portlet specific styles.
+          </p></dd><dt><span class="term">Window Styles</span></dt><dd><p>
+            The CSS styles are associated with the porlet window decorators. The window
+            decorators contain the control buttons and boarders surrounding each portlet.
+            Individual portlets can have their own window decorator selected, or be 
+            rendered without one.
+          </p></dd><dt><span class="term">Portlet Skins</span></dt><dd><p>
+            The portlet skins affects how portlets are rendered on the page via one of the following ways:
+          </p><div class="variablelist"><dl><dt><span class="term">Portlet Specification CSS Classes</span></dt><dd><p>The
+                  portlet specification defines a set of CSS classes that should
+                  be available to portlets. GateIn 3.1 provides
+                  these classes as part of the portal skin. This allows each portal skin to
+                  define its own look and feel for these default values.
+                </p></dd><dt><span class="term">Portlet Skins</span></dt><dd><p>GateIn 3.1
+                  provides a means for portlet CSS files to be loaded, basing on
+                  the current portal skin. This allows a portlet to provide different 
+                  CSS styles to better match the look and feel of the current portal. Portlet skins
+                  provide a much more customizable CSS experience than just using the portlet
+                  specification CSS classes.
+                </p></dd></dl></div></dd></dl></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+        The window decorators and the default portlet specification CSS classes should
+        be considered as separate types of skinning components, but they need to be included
+        as part of the overall portal skin. The portal skin must include these component´s 
+        CSS classes or they will not be displayed correctly.</p><p>
+        A portlet skin does not need to be included as part of the portal skin and can
+        be included within the portlets web application.
+    </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Skin_Switching"/>3.1.3. Skin Selection</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Skin_Switching-UI"/>3.1.3.1. Skin Selection Through the User Interface</h4></div></div></div><p>
+        There are a few means for you to select the display skin. The easiest way to change the skin is to select it through
+        the user interface. Admininistrators can change the default skin for the portal, and users logged in can select their desired display skins.
+	</p><p>
+        Please see the User Guide for information on how to change the skin using the user
+        interface.
+	</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Skin_Switching-config"/>3.1.3.2. Setting the Default Skin within the Configuration Files</h4></div></div></div><p>
+        The default skin can also be configured through the portal
+        configuration files if you do not want to use the admin user interface.
+        This will allow the portal to have the new default skin ready when GateIn 3.1
+        is initially started.
+      </p><p>
+        The default skin of the portal is called
+        <code class="literal">Default</code>. To change this value, add a
+        <code class="literal">skin</code> tag in the
+        <code class="literal">02portal.war/WEB-INF/conf/portal/portal/classic/portal.xml</code>
+        configuration file.
+      </p><p>
+        To change the skin to
+        <code class="literal">MySkin,</code>
+        you would make the following changes:
+      </p><pre class="programlisting">&lt;portal-config&gt;
+                &lt;portal-name&gt;classic&lt;/portal-name&gt;
+                &lt;locale&gt;en&lt;/locale&gt;
+                &lt;access-permissions&gt;Everyone&lt;/access-permissions&gt;
+                &lt;edit-permission&gt;*:/platform/administrators&lt;/edit-permission&gt;
+                &lt;skin&gt;MySkin&lt;/skin&gt;
+                ...
+      </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Skins_in_Page_Markups"/>3.1.4. Skins in Page Markups</h3></div></div></div><p>The GateIn 3.1
+      skin contains CSS styles for the portal's components but
+      also shares components that may be reused in portlets. When GateIn 3.1
+      generates a portal page markup, it inserts the stylesheet links in the page's
+      <code class="literal">head</code> tag.
+    </p><p>
+      There are two main types of CSS links that will appear in the
+      <code class="literal">head</code> tag: a link to the portal skin CSS file and a link 
+      to the portlet skin CSS files.
+    </p><div class="variablelist"><dl><dt><span class="term">Portal Skin</span></dt><dd><p>
+            The portal skin will appear as a single link to a CSS file. This
+            link contains contents from all the portal skin classes merged
+            into one file. This allows the portal skin to be transfered more
+            quickly as a single file instead of many multiple smaller files.
+            All pages of the portal have the same skin defined in the CSS file.
+          </p></dd><dt><span class="term">Portlet Skin</span></dt><dd><p>
+            Each portlet on a page may contribute its own style. The link to
+            the portlet skin will only appear on the page if that portlet is
+            loaded on the current page. A page may contain many portlet skin CSS
+            links or none.
+          </p></dd></dl></div><p>In the code fragment below, you can see two types of links:</p><pre class="programlisting">&lt;head&gt;
+...
+&lt;!-- The portal skin --&gt;
+&lt;link id="CoreSkin" rel="stylesheet" type="text/css" href="/eXoResources/skin/Stylesheet.css" /&gt;
+
+&lt;!-- The portlet skins --&gt;
+&lt;link id="web_FooterPortlet" rel="stylesheet" type="text/css" href= "/web/skin/portal/webui/component/UIFooterPortlet/DefaultStylesheet.css" /&gt;
+&lt;link id="web_NavigationPortlet" rel="stylesheet" type="text/css" href= "/web/skin/portal/webui/component/UINavigationPortlet/DefaultStylesheet.css" /&gt;
+&lt;link id="web_HomePagePortlet" rel="stylesheet" type="text/css" href= "/portal/templates/skin/webui/component/UIHomePagePortlet/DefaultStylesheet.css" /&gt;
+&lt;link id="web_BannerPortlet" rel="stylesheet" type="text/css" href= "/web/skin/portal/webui/component/UIBannerPortlet/DefaultStylesheet.css" /&gt;
+...
+&lt;/head&gt;
+</pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>Both window styles and portlet specification CSS classes are included
+      in the portal skin.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guid-Skin_Configuration-Skin_Service"/>3.1.5. The Skin Service</h3></div></div></div><p>
+    The skin service of GateIn 3.1 manages various types of
+    skins. This service is reponsible for discovering and deploying the skins into the
+    portal.
+    </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guid-Skin_Configuration-Skin_Service-Skin_configuration"/>3.1.5.1. Skin configuration</h4></div></div></div><p>GateIn 3.1 automatically discovers web archives that contain a
+      file descriptor for skins (<code class="filename">WEB-INF/gatein-resources.xml</code>). This file is
+      reponsible for specifying the portal, portlet and window decorators to be deployed into the
+      skin service.
+      </p><p>The full schema can be found in the lib directory:</p><code class="filename">exo.portal.component.portal.jar/gatein_resources_1_0.xsd</code><p>Here is an example where a skin (MySkin) with its CSS location is defined, and a few window decorator skins are specified: 
+      </p><pre class="programlisting">&lt;gatein-resources&gt;
+  &lt;portal-skin&gt;
+    &lt;skin-name&gt;MySkin&lt;/skin-name&gt;
+    &lt;css-path&gt;/skin/myskin.css&lt;/css-path&gt;
+    &lt;overwrite&gt;false&lt;/overwrite&gt;
+  &lt;/portal-skin&gt;
+&lt;/gatein-resources&gt;
+
+  &lt;!-- window style --&gt;
+  &lt;window-style&gt;
+    &lt;style-name&gt;MyThemeCategory&lt;/style-name&gt;
+    &lt;style-theme&gt;
+      &lt;theme-name&gt;MyThemeBlue&lt;/theme-name&gt;
+    &lt;/style-theme&gt;
+    &lt;style-theme&gt;
+      &lt;theme-name&gt;MyThemeRed&lt;/theme-name&gt;
+    &lt;/style-theme&gt;
+    ...
+      </pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-How_to_Configure_a_Portal_Skin-SkinConfigListener"/>3.1.5.2. Resource Request Filter</h4></div></div></div><p>Because of the Right-To-Left support, all CSS files need to be
+      retrieved through a Servlet filter and the web application needs to be
+      configured to activate this filter. This is already done for the 
+      01eXoResources.war web application which contains the default skin.</p><p>
+      Any new web applications containing skinning CSS files will
+      need to have the following added to their
+      <code class="literal">web.xml</code>
+     :
+    </p><pre class="programlisting">&lt;filter&gt;
+      &lt;filter-name&gt;ResourceRequestFilter&lt;/filter-name&gt;
+      &lt;filter-class&gt;org.exoplatform.portal.application.ResourceRequestFilter&lt;/filter-class&gt;
+      &lt;/filter&gt;
+
+      &lt;filter-mapping&gt;
+      &lt;filter-name&gt;ResourceRequestFilter&lt;/filter-name&gt;
+      &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;
+      &lt;/filter-mapping&gt;</pre></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>The <code class="literal">display-name</code> element also needs to
+      be specified in the <code class="literal">web.xml</code> for the skinning service to work properly
+      with the web application.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Default_Skin"/>3.1.6. The Default Skin</h3></div></div></div><p>
+    The default skin for GateIn 3.1 is located as part of the <code class="literal">01eXoResource.war</code>.
+    The main files associated with the skin are shown below:
+    </p><div class="programlistingco"><pre class="programlisting">WEB-INF/gatein<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>-resources.xml
+WEB-INF/web.xm<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>l
+skin/Styleshee<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>t.css</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>gatein-resources.xml: defines the skin setup to use.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>web.xml: contains the resource filter and has the display-name set.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>Stylesheet.css: contains the CSS class definitions for this skin.</p></td></tr></table></div></div><div class="variablelist"><dl><dt><span class="term">gatein-resources.xml</span></dt><dd><p>
+		    For the default portal skin, this file contains definitions for the portal skin, the window
+		    decorations that this skin provides and defines some Javascript resources which are not
+		    related to the skin. The default portal skin does not directly define portlet skins which should be
+		    provided by the portlets themeselves.
+          </p></dd><dt><span class="term">web.xml</span></dt><dd><p>
+	        For the default portal skin, the web.xml of eXoResources.war contains a lot
+	        of information which is mostly irrelevant to the portal skinning. The areas of interest
+	        in this file is the resourcerequestfilter and the fact that the display-name is set.
+          </p></dd><dt><span class="term">Stylesheet.css</span></dt><dd><p>
+          This file contains the main stylesheet of the portal skin. The file is the main entry point to the CSS class definitions
+          for the skin. The content of this file is shown below:
+          </p><div class="programlistingco"><pre class="programlisting">@import url(De<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>faultSkin/portal/webui/component/UIPortalApplicationSkin.css);
+@import url(De<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>faultSkin/webui/component/Stylesheet.css);
+@import url(Po<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>rtletThemes/Stylesheet.css);
+@import url(Po<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/4.png" alt="(4)"/></span>rtlet/Stylesheet.css);</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>Skin for the main portal page.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>Skins for various portal components.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>Window decoration skins.</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/4.png" alt="4" border="0"/></td><td valign="top" align="left"><p>The portlet specificiation CSS classes.</p></td></tr></table></div></div><p>
+		  Instead of defining all the CSS classes in this file, you can import other CSS stylesheet files,
+		  some of which may also import other CSS stylesheets. The CSS classes are split up between multiple files to make
+		  it easier for new skins to reuse parts of the default skin.
+		  </p><p>To reuse the CSS stylesheet from the default portal skin, you need to refer to the default skin from eXoResources.
+		  For example, to include the window decorators from the default skin within a new portal skin, you need to use this import: </p><pre class="programlisting">@import url(/eXoResources/skin/Portlet/Stylesheet.css);</pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>When the portal skin is added to the page, it merges all the CSS stylesheets into a single file.</p></div></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_a_new_skin"/>3.1.7. Creating New Skins</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_new_portal_skin"/>3.1.7.1. Creating a New Portal Skin</h4></div></div></div><p>
+        A new portal needs to be added to the portal through the skin service. The web application
+        which contains the skin will need to be properly configured for the skin service to discover them. This 
+        means that ResourceRequestFilter and gatein-resources.xml should be configured properly.
+      </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_a_new_skin-Portal-skin-configuration"/>3.1.7.1.1. Portal Skin Configuration</h5></div></div></div><p>
+        The gatein-resources.xml needs to specify the new portal skin. This includes specifying the name
+        of the new skin, where to locate its CSS stylesheet file and whether to overwrite an existing portal theme with
+        the same name.
+        </p><pre class="programlisting">&lt;gatein-resources&gt;
+  &lt;portal-skin&gt;
+    &lt;skin-name&gt;MySkin&lt;/skin-name&gt;
+    &lt;css-path&gt;/skin/myskin.css&lt;/css-path&gt;
+    &lt;overwrite&gt;false&lt;/overwrite&gt;
+  &lt;/portal-skin&gt;
+&lt;/gatein-resources&gt;
+      </pre><p>The default portal skin and window styles are defined in
+    <code class="filename">01eXoResources.war/WEB-INF/gatein-resources.xml</code>.
+    </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+      The CSS for the portal skin needs to contain the CSS for all the window decorators and the portlet specification
+      CSS classes.
+      </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_a_new_skin-Portal_skin_preview_icon"/>3.1.7.1.2. Portal Skin Preview Icon</h5></div></div></div><p>
+         When selecting a skin, it is possible to preview it. The current skin needs to
+         know about the skin icons for all the available skins; otherwise, it will not be able
+         to show the previews. When creating a new portal, it is recommended to include the preview
+         icons of the other skins and to update the other skins with your new portal skin preview.
+         </p><div class="mediaobject"><img src="images/PortalDevelopment/Skinning/portal-change-skin.png"/></div><p>
+         The portal skin preview icon is specified through the CSS of the portal skin. To display the preview for the current portal skin, you must specify a specific CSS class and set the icon as the background. 
+         </p><p>
+         For the portal named <span class="bold"><strong>MySkin</strong></span>, the CSS class must be defined as follows:
+         </p><pre class="programlisting">.UIChangeSkinForm .UIItemSelector .TemplateContainer .<span class="bold"><strong>MySkinImage</strong></span></pre><p>
+         In order for the default skin to know about the skin icon for a new portal skin, the preview screenshot
+         needs to be placed in:</p><code class="filename">01eXoResources.war:/skin/DefaultSkin/portal/webui/component/customization/UIChangeSkinForm/background</code><p>
+         The CSS stylesheet for the default portal needs to have the following updated with the preview icon CSS class. For a skin named 
+         <span class="bold"><strong>MySkin</strong></span>, you need to update the following:</p><code class="filename">01eXoResources.war:/skin/DefaultSkin/portal/webui/component/customization/UIChangeSkinForm/Stylesheet.css</code><pre class="programlisting">.UIChangeSkinForm .UIItemSelector .TemplateContainer .<span class="bold"><strong>MySkinImage</strong></span> {
+  margin: auto;
+  width: 329px; height:204px;
+  background: url('background/MySkin.jpg') no-repeat top;
+  cursor: pointer ;
+}</pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_new_themes"/>3.1.7.2. Creating a New Window Style</h4></div></div></div><p>Window styles are the CSS applied to the window decoration. When the
+    administrator selects a new application to add to a page, he can decide
+    which style of decoration would go around the window if any.</p><div class="mediaobject"><img src="images/PortalDevelopment/Skinning/windowStyles.png"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_a_new_skin-Window_style_configuration"/>3.1.7.2.1. Window Style Configuration</h5></div></div></div><p>
+	Window Styles are defined within the gatein-resources.xml file which is used by the skin service to 
+	deploy the window style into the portal. Window styles can belong in with a window style category, this
+	category and the window styles need to be specified in the resources file.
+	</p><p>The following gatein-resource.xml fragment adds MyThemeBlue and MyThemeRed to 
+        the MyTheme category.</p><pre class="programlisting">&lt;window-style&gt;
+  &lt;style-name&gt;MyTheme&lt;/style-name&gt;
+  &lt;style-theme&gt;
+    &lt;theme-name&gt;MyThemeBlue&lt;/theme-name&gt;
+  &lt;/style-theme&gt;
+  &lt;style-theme&gt;
+    &lt;theme-name&gt;MyThemeRed&lt;/theme-name&gt;
+  &lt;/style-theme&gt;
+&lt;/window-style&gt;</pre><p>The windows style configuration for the default skin is configured in:</p><code class="filename">01eXoResources.war/WEB-INF/gatein-resources.xml</code><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+    When a window style is defined in the gatein-resources.xml file, it will be available
+    to all portlets whether the current portal skin supports the window decorator or 
+    not. When a new window decorator is added, it is recommended that you add it
+    to all portal skins or that portal skins share a common stylesheet for window decorators.
+    </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_a_new_skin-Window_style_css"/>3.1.7.2.2. Window Style CSS</h5></div></div></div><p>
+	To display the window decorators for the skin service, it must have the CSS classes with specific
+	naming related to the window style name. The service will try and display the CSS based on this naming. 
+	The CSS class must be included as part of the current portal skin for displaying the window decorators.
+	</p><p>The location of the window decorator CSS classes for the default portal theme is located at:</p><code class="filename">01eXoResources.war/skin/PortletThemes/Stylesheet.css</code><p/><p>Create the CSS file:</p><pre class="programlisting">
+/*---- MyTheme ----*/
+.MyTheme .WindowBarCenter .WindowPortletInfo {
+  margin-right: 80px; /* orientation=lt */
+  margin-left: 80px; /* orientation=rt */
+}
+.MyTheme .WindowBarCenter .ControlIcon {
+  float: right;/* orientation=lt */
+  float: left;/* orientation=rt */
+  width: 24px; 
+  height: 17px;
+  cursor: pointer;
+  background-image: url('background/MyTheme.png');
+}
+.MyTheme .ArrowDownIcon {
+  background-position: center 20px;
+}
+.MyTheme .OverArrowDownIcon {
+  background-position: center 116px;
+}
+.MyTheme .MinimizedIcon {
+  background-position: center 44px;
+}
+.MyTheme .OverMinimizedIcon {
+  background-position: center 140px;
+}
+.MyTheme .MaximizedIcon {
+  background-position: center 68px;
+}
+.MyTheme .OverMaximizedIcon {
+  background-position: center 164px;
+}
+.MyTheme .RestoreIcon {
+  background-position: center 92px;
+}
+.MyTheme .OverRestoreIcon {
+  background-position: center 188px;
+}
+.MyTheme .NormalIcon {
+  background-position: center 92px;
+}
+.MyTheme .OverNormalIcon {
+  background-position: center 188px;
+}
+.UIPageDesktop .MyTheme .ResizeArea {
+  float: right;/* orientation=lt */
+  float: left;/* orientation=rt */
+  width: 18px; height: 18px;
+  cursor: nw-resize;
+  background: url('background/ResizeArea18x18.gif') no-repeat left top; /* orientation=lt */
+  background: url('background/ResizeArea18x18-rt.gif') no-repeat right top; /* orientation=rt */
+}
+.MyTheme .Information {
+  height: 18px; line-height: 18px;
+  vertical-align: middle; font-size: 10px;
+  padding-left: 5px;/* orientation=lt */
+  padding-right: 5px;/* orientation=rt */
+  margin-right: 18px;/* orientation=lt */
+  margin-left: 18px;/* orientation=rt */
+}
+.MyTheme .WindowBarCenter .WindowPortletIcon {
+  background-position: left top; /* orientation=lt */
+  background-position: right top; /* orientation=rt */
+  padding-left: 20px; /* orientation=lt */
+  padding-right: 20px; /* orientation=rt */
+  height: 16px;
+  line-height: 16px;
+}
+.MyTheme .WindowBarCenter .PortletName {
+  font-weight: bold;
+  color: #333333;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+.MyTheme .WindowBarLeft {
+  padding-left: 12px;
+  background-image: url('background/MyTheme.png');
+  background-repeat: no-repeat;
+  background-position: left -148px;
+}
+.MyTheme .WindowBarRight {
+  padding-right: 11px;
+  background-image: url('background/MyTheme.png');
+  background-repeat: no-repeat;
+  background-position: right -119px;
+}
+.MyTheme .WindowBarCenter {
+  background-image: url('background/MyTheme.png');
+  background-repeat: repeat-x;
+  background-position: left -90px;
+}
+.MyTheme .WindowBarCenter .FixHeight {
+  height: 21px;
+  padding-top: 8px;
+}
+.MyTheme .MiddleDecoratorLeft {
+  padding-left: 12px;
+  background: url('background/MyTheme.png') repeat-y left;
+}
+.MyTheme .MiddleDecoratorRight {
+  padding-right: 11px;
+  background: url('background/MyTheme.png') repeat-y right;
+}
+.MyTheme .MiddleDecoratorCenter {
+  background: #ffffff;
+}
+.MyTheme .BottomDecoratorLeft {
+  MyTheme: 12px;
+  background-image: url('background/MyTheme.png');
+  background-repeat: no-repeat;
+  background-position: left -60px;
+}
+.MyTheme .BottomDecoratorRight {
+  padding-right: 11px;
+  background-image: url('background/MyTheme.png');
+  background-repeat: no-repeat;
+  background-position: right -30px;
+}
+.MyTheme .BottomDecoratorCenter {
+  background-image: url('background/MyTheme.png');
+  background-repeat: repeat-x;
+  background-position: left top;
+}
+.MyTheme .BottomDecoratorCenter .FixHeight {
+  height: 30px;
+}
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Skin_Configuration-How_to_create_a_new_skin-Set_default_window_style"/>3.1.7.2.3. How to Set the Default Window Style</h5></div></div></div>
+To set the default window style to be used for a portal, you need to specify the CSS classes
+for a theme called <code class="literal">DefaultTheme</code>.
+<div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>You do not need to specify the DefaultTheme in gatein-resources.xml.</p></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Portlet_Styles"/>3.1.7.3. How to Create New Portlet skins</h4></div></div></div><p>Portlets often require additional styles that may not be defined by
+    the portal skin. GateIn 3.1 allows you to define additional
+    stylesheets for each portlet and will append the corresponding
+    <code class="literal">link</code> tags to the <code class="literal">head</code>.</p><p>The link ID will be of the form
+    <em class="parameter"><code>{portletAppName}{PortletName}</code></em>. For example:
+    <code class="literal">ContentPortlet</code> in <code class="literal">content.war</code> will
+    give
+    <em class="parameter"><code>id="content<code class="literal">ContentPortlet".</code></code></em></p><p>To define a new CSS file to include whenever a portlet is available on a portal page, the
+    following fragment needs to be added to gatein-resources.xml.</p><pre class="programlisting">&lt;portlet-skin&gt;
+  &lt;application-name&gt;portletAppName&lt;/application-name&gt;
+  &lt;portlet-name&gt;PortletName&lt;/portlet-name&gt;
+  &lt;skin-name&gt;Default&lt;/skin-name&gt;
+  &lt;css-path&gt;/skin/DefaultStylesheet.css&lt;/css-path&gt;
+&lt;/portlet-skin&gt;
+
+&lt;portlet-skin&gt;
+  &lt;application-name&gt;portletAppName&lt;/application-name&gt;
+  &lt;portlet-name&gt;PortletName&lt;/portlet-name&gt;
+  &lt;skin-name&gt;OtherSkin&lt;/skin-name&gt;
+  &lt;css-path&gt;/skin/OtherSkinStylesheet.css&lt;/css-path&gt;
+&lt;/portlet-skin&gt;</pre><p>This will load the DefaultStylesheet.css or OtherSkinStylesheet.css when the Default skin or OtherSkin is used respectively.</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>If the current portal skin is not defined as part of the supported
+    skins, the portlet CSS class will not be loaded. It is recommended that you update
+    portlet skins whenever a new portal skin is created.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Tips_and_Tricks-Change_portlet_icons"/>3.1.7.3.1. Change portlet icons</h5></div></div></div><p>Each portlet can be represented by a unique icon that you can see in the
+      portlet registry or page editor. This icon can be changed by adding an image to the
+      directory of the portlet webapplication:</p><div class="itemizedlist"><ul><li><p><code class="filename">skin/DefaultSkin/portletIcons/<em class="replaceable"><code>icon_name.png</code></em></code>.</p></li></ul></div><p>To use the icon correctly, it must be named after the
+          portlet.</p><p>For example, the icon for an account portlet named AccountPortlet
+      would be located at:</p><div class="itemizedlist"><ul><li><p><code class="filename">skin/DefaultSkin/portletIcons/AccountPortlet.png</code></p></li></ul></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+      You must use <code class="literal">skin/DefaultSkin/portletIcons/</code> for the directory to store the
+      portlet icon regardless of what skin is going to be used.
+      </p></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Portlet_Specification_CSS_Classes"/>3.1.7.4. How to create a new Portlet Specification CSS Classes</h4></div></div></div><p>The portlet specification defines a set of default CSS classes that should be available for portlets.
+    These classes are included as part of the portal skin. Please see the portlet specification for a list of the 
+    default classes that should be available.</p><p>For the default portal skin, the portlet specification CSS classes are defined in:</p><code class="filename">eXoResources.war/skin/Portlet/Stylesheet.css</code></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Skin_Configuration-Tips_and_Tricks"/>3.1.8. Tips and Tricks</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Tips_and_Tricks-Easier_css_debuggin"/>3.1.8.1. Easier CSS debugging</h4></div></div></div><p>By default, CSS files are cached and their imports are merged into
+      a single CSS file at the server side. This reduces the number of HTTP
+      requests from the browser to the server.</p><p>The optimization code is quite simple as all the CSS files are
+      parsed at the server startup time and all the @import and url(...)
+      references are rewritten to support a single flat file. The result is
+      stored in a cache directly used from the
+      <code class="literal">ResourceRequestFilter</code>.</p><p>Although the optimization is useful for production environments,
+      it may be easier to deactivate this optimization while debugging
+      stylesheets. To do so, set the java system property
+      <code class="literal">exo.product.developing</code> to
+      <code class="literal">true</code>.</p><p>For example, the property can be passed as a JVM parameter with the
+      <code class="literal">-D</code> option when running GateIn.</p><pre class="programlisting">sh $JBOSS_HOME/bin/run.sh -Dexo.product.developing=true</pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>Warning: This option may cause display bugs with certain
+          browsers, such as Internet Explorer.</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Tips_and_Tricks-Some_CSS_techniques"/>3.1.8.2. Some CSS techniques</h4></div></div></div><p>It is recommended that you have some experiences with CSS before
+      studying GateIn 3.1 CSS.</p><p>GateIn 3.1 relies heavily on CSS to create the layout and effects
+      for the UI. Some common techniques for customizing GateIn 3.1 CSS are
+      explained below.</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Some_CSS_techniques-Decorator_pattern"/>3.1.8.2.1. Decorator pattern</h5></div></div></div><p>The decorator is a pattern to create a contour or a curve around
+        an area. To achieve this effect, you need to create 9 cells.
+        The BODY is the central area for you to decorate. The other 8
+        cells are distributed around the BODY cell. You can use the width,
+        height and background image properties to achieve any desired decoration
+        effects.</p><div class="mediaobject"><img src="images/PortalDevelopment/Skinning/decoratorPattern.png"/></div><pre class="programlisting">
+&lt;div class="Parent"&gt;
+  &lt;div class="TopLeft"&gt;
+    &lt;div class="TopRight"&gt;
+      &lt;div class="TopCenter"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="CenterLeft"&gt;
+    &lt;div class="CenterRight"&gt;
+      &lt;div class="CenterCenter"&gt;BODY&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="BottomLeft"&gt;
+    &lt;div class="BottomRight"&gt;
+      &lt;div class="BottomCenter"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;div&gt;
+&lt;/div&gt;
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Some_CSS_techniques-Left_margin_left_pattern"/>3.1.8.2.2. Left margin left pattern</h5></div></div></div><p>Left margin left pattern is a technique to create 2 blocks side
+        by side. The left block has a fixed size and the right block
+        will take the rest of the available space. When the user resizes the
+        browser, the added or removed space will be taken from the right
+        block.</p><div class="mediaobject"><img src="images/PortalDevelopment/Skinning/leftMarginPattern.png"/></div><pre class="programlisting">
+&lt;div class="Parent"&gt;
+  &lt;div style="float: left; width: 100px"&gt;
+  &lt;/div&gt;
+  &lt;div style="margin-left: 105px;"&gt;
+  &lt;div&gt;
+  &lt;div style="clear: left"&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre></div></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Portal_Lifecycle"/>3.2. Portal Lifecycle</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Lifecycle-Overview"/>3.2.1. Overview</h3></div></div></div><p>
+			This chapter describes the portal lifecycle from the application server start to its stop and how requests are handled.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Lifecycle-Application_Server_start_and_stop"/>3.2.2. Application Server start and stop</h3></div></div></div><p>
+			A portal instance is simply a web application deployed as a WAR in an application server. Portlets are also part of an enhanced WAR called a portlet application.
+		</p><p>
+			GateIn 3.1 does not require any particular setup for your portlet in most common scenarios and the <code class="filename">web.xml</code> file can remain without any GateIn 3.1 specific configuration.
+		</p><p>
+			During deployment, GateIn 3.1 will automatically and transparently inject a servlet into the portlet application to be able to interact with it. This feature is dependent on the underlying servlet container but will work out of the box on the proposed bundles.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Lifecycle-The_Command_Servlet"/>3.2.3. The Command Servlet</h3></div></div></div><p>
+			The servlet is the main entry point for incoming requests, it also includes some init codes when the portal is launched. This servlet (<code class="literal">org.gatein.wci.command.CommandServlet</code>) is automatically added during deployment and mapped to <code class="literal">/tomcatgateinservlet</code>.
+		</p><p>
+			This is equivalent to adding the following to <code class="filename">web.xml</code>.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+				As the servlet is already configured, this example only aims at providing information.
+			</p></div><pre class="programlisting">
+&lt;servlet&gt;
+  &lt;servlet-name&gt;TomcatGateInServlet&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;org.gatein.wci.command.CommandServlet&lt;/servlet-class&gt;
+  &lt;load-on-startup&gt;0&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+  
+&lt;servlet-mapping&gt;
+  &lt;servlet-name&gt;TomcatGateInServlet&lt;/servlet-name&gt;
+  &lt;url-pattern&gt;/tomcatgateinservlet&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</pre><p>
+			It is possible to filter on the CommandServlet by filtering the URL pattern used by the Servlet mapping.
+		</p><p>
+			The example below would create a servlet filter that calculates the time of execution of a portlet request.
+		</p><p>
+			The filter class:
+		</p><pre class="programlisting">
+package org.example;
+
+import java.io.IOException;
+
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class MyFilter implements javax.servlet.Filter {
+
+  public void doFilter(ServletRequest request, ServletResponse response,
+      FilterChain chain) throws IOException, ServletException
+  {
+    long beforeTime = System.currentTimeMillis();
+    chain.doFilter(request, response);
+    long afterTime = System.currentTimeMillis();
+    System.out.println("Time to execute the portlet request (in ms): " + (afterTime - beforeTime));
+  }
+
+  public void init(FilterConfig config) throws ServletException
+  {
+  }
+
+  public void destroy()
+  {
+  }
+
+}
+</pre><p>
+			The Java EE web application configuration file (<code class="filename">web.xml</code>) of the portlet on which we want to know the time to serve a portlet request. As mentioned above, GateIn 3.1 does not require anything special to be included, only the URL pattern to set has to be known.
+		</p><pre class="programlisting">
+&lt;?xml version="1.0"?&gt;
+&lt;web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.5"&gt;
+        
+  &lt;filter&gt;
+    &lt;filter-name&gt;MyFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.example.MyFilter&lt;/filter-class&gt;        
+  &lt;/filter&gt;
+
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;MyFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/tomcatgateinservlet&lt;/url-pattern&gt;
+    &lt;dispatcher&gt;INCLUDE&lt;/dispatcher&gt;  
+  &lt;/filter-mapping&gt;    
+    
+&lt;/web-app&gt;
+</pre><p>
+			</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>INCLUDE dispatcher</h2><p>
+					It is important to set <code class="literal">INCLUDE</code> as a dispatcher as the portal always hits the CommandServlet through a request dispatcher. Without this, the filter will not be triggered, unless the direct access to a resource, such as an image.
+				</p></div><p>
+		</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Default_Portal_Configuration"/>3.3. Default Portal Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Default_Portal_Configuration-Overview"/>3.3.1. Overview</h3></div></div></div><p>
+			GateIn 3.1 default homepage URL is <code class="literal">http://{hostname}:{port}/portal/</code>.
+         There may be multiple independent portals deployed in parallel at any given time, each of which has its root
+         context (i.e.: <code class="literal">http://{hostname}:{port}/sample-portal/</code>).
+         Each portal is internally composed of one or more 'portals'. It is required to have at least
+         one such portal - the default one is called 'classic'. When accessing the default homepage URL of GateIn 3.1, you
+         are automatically redirected to the 'classic' portal.
+
+         The default portal performs another important task. When starting up GateIn 3.1 for the first time, its
+         JCR database will be empty (that's where portals keep their runtime-configurable settings).
+         It is the default portal used to detect this, and to trigger automatic data initialization.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Default_Portal_Configuration-Configuration"/>3.3.2. Configuration</h3></div></div></div><p>
+			The following example configuration can be found at: "<code class="filename">02portal.war:/WEB-INF/conf/portal/portal-configuration.xml</code>".
+		</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">component</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">key</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.exoplatform.portal.config.UserPortalConfigService</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">key</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.exoplatform.portal.config.UserPortalConfigService</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">component-plugins</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">component-plugin</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">new.portal.config.user.listener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">set-method</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">initListener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">set-method</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.exoplatform.portal.config.NewPortalConfigListener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">this&nbsp;listener&nbsp;init&nbsp;the&nbsp;portal&nbsp;configuration</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">init-params</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">value-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">default.portal</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">The&nbsp;default&nbsp;portal&nbsp;for&nbsp;checking&nbsp;db&nbsp;is&nbsp;empty&nbsp;or&nbsp;not</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">classic</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">value-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">init-params</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">component-plugin</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">component-plugins</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">component</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p>
+			In this example, the <span class="bold"><strong>classic</strong></span> portal has been set as the default.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+         Components, component-plugins, and init-params are explained in the Foundations chapter. For now, just note how the
+         <code class="literal">NewPortalConfigListener</code> component-plugin is used to add configuration to
+         <code class="literal">UserPortalConfigService</code>, which is designed in this way to allow other components
+         to add configuration to it.
+         </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Default_Portal_Configuration-Tips"/>3.3.3. Tips</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Default_Portal_Configuration-Tips-Delete_Portals_Definition"/>3.3.3.1. Delete Portals Definition by Configuration</h4></div></div></div><p>
+            In some cases, some portal definitions are defined but not used any more. If you want to delete them, you can add some configurations to
+            <span class="emphasis"><em>portal.war/WEB-INF/conf/portal/portal-configuration.xml</em></span>.
+        </p><p>
+            To delete a portal definition or a portal template definition, you need to define a component plug-in as the example below:
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">external-component-plugins</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">target-component</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.exoplatform.portal.config.UserPortalConfigService</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">target-component</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">component-plugin</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">new.portal.config.user.listener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">set-method</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">deleteListenerElements</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">set-method</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.exoplatform.portal.config.NewPortalConfigListener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">type</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">this&nbsp;listener&nbsp;delete&nbsp;some&nbsp;predefined&nbsp;portal&nbsp;and&nbsp;templates&nbsp;configuration</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">init-params</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">object-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">site.templates.location</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">description</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">object</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;org.exoplatform.portal.config.SiteConfigTemplates&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">field</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;portalTemplates&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">collection</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;java.util.HashSet&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">basic</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">classic</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">collection</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">field</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">object</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">object-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">object-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">portal.configuration</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">description</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">description</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">object</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;org.exoplatform.portal.config.NewPortalConfig&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">field</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;predefinedOwner&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">collection</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;java.util.HashSet&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;&lt;</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">classic</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;&lt;/</span><span class="xml_tag_name">value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">collection</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">field</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">field</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ownerType&quot;</span><span class="xml_tag_symbols">&gt;&lt;</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">portal</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">string</span><span class="xml_tag_symbols">&gt;&lt;/</span><span class="xml_tag_name">field</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">object</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">object-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">init-params</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">component-plugin</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">external-component-plugins</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+</pre></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Portal_Default_Permission_Configuration"/>3.4. Portal Default Permission Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Default_Permission_Configuration-Overview"/>3.4.1. Overview</h3></div></div></div><p>
+			The default permission configuration for the portal is defined through <code class="literal">org.exoplatform.portal.config.UserACL</code>
+         component configuration in the file <code class="filename">02portal.war:/WEB-INF/conf/portal/portal-configuration.xml</code>.
+		</p><p>
+			It defines 8 permissions types:
+		</p><div class="variablelist"><dl><dt><span class="term">super.user</span></dt><dd><p>
+						The super-user as <span class="emphasis"><em>root</em></span> has all the rights on the eXo Platform.
+					</p></dd><dt><span class="term">portal.administrator.groups</span></dt><dd><p>
+						Any member of those groups are considered administrators. The default value is <code class="literal">/platform/administrators</code>.
+					</p></dd><dt><span class="term">portal.administrator.mstype</span></dt><dd><p>
+						Any user with that membership type would be considered administrator or the associated group with the <code class="literal">manager</code> by default.
+					</p></dd><dt><span class="term">portal.creator.groups</span></dt><dd><p>
+						This list defines all groups that will be able to manage the different portals. Members of this group
+                  also have the permission to create new portals. The format is <code class="literal">membership:/group/subgroup</code>.
+					</p></dd><dt><span class="term">navigation.creator.membership.type</span></dt><dd><p>
+						Defines the membership type of group managers. The group managers have the permission to create and edit group pages and they can modify the group navigation.
+					</p></dd><dt><span class="term">guests.group</span></dt><dd><p>
+						Any anonymous user automatically becomes a member of this group when they enter the public pages.
+					</p></dd><dt><span class="term">mandatory.groups</span></dt><dd><p>
+						Groups that cannot be deleted.
+					</p></dd><dt><span class="term">mandatory.mstypes</span></dt><dd><p>
+						Membership types that cannot be deleted.
+					</p></dd></dl></div><pre class="programlisting">&lt;component&gt;
+  &lt;key&gt;org.exoplatform.portal.config.UserACL&lt;/key&gt;
+  &lt;type&gt;org.exoplatform.portal.config.UserACL&lt;/type&gt;   
+  &lt;init-params&gt;      
+    &lt;value-param&gt;
+      &lt;name&gt;super.user&lt;/name&gt;
+      &lt;description&gt;administrator&lt;/description&gt;
+      &lt;value&gt;root&lt;/value&gt;     
+    &lt;/value-param&gt;
+      
+    &lt;value-param&gt;
+      &lt;name&gt;portal.creator.groups&lt;/name&gt;
+      &lt;description&gt;groups with membership type have permission to manage portal&lt;/description&gt;
+      &lt;value&gt;*:/platform/administrators,*:/organization/management/executive-board&lt;/value&gt;     
+    &lt;/value-param&gt;
+      
+    &lt;value-param&gt;
+      &lt;name&gt;navigation.creator.membership.type&lt;/name&gt;
+      &lt;description&gt;specific membership type have full permission with group navigation&lt;/description&gt;
+      &lt;value&gt;manager&lt;/value&gt;     
+    &lt;/value-param&gt;
+    &lt;value-param&gt;
+      &lt;name&gt;guests.group&lt;/name&gt;
+      &lt;description&gt;guests group&lt;/description&gt;
+      &lt;value&gt;/platform/guests&lt;/value&gt;     
+    &lt;/value-param&gt;     
+    &lt;value-param&gt;
+      &lt;name&gt;access.control.workspace&lt;/name&gt;
+      &lt;description&gt;groups with memberships that have the right to access the User Control Workspace&lt;/description&gt;
+      &lt;value&gt;*:/platform/administrators,*:/organization/management/executive-board&lt;/value&gt;     
+    &lt;/value-param&gt;           
+  &lt;/init-params&gt;   
+&lt;/component&gt;
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Default_Permission_Configuration-Overwrite_Portal_Default_Permissions"/>3.4.2. Overwrite Portal Default Permissions</h3></div></div></div><p>When creating the custom portals and portal extensions, it is possible to override the default configuration by
+      using <code class="literal">org.exoplatform.portal.config.PortalACLPlugin</code>, configuring it as an external-plugin of
+      <code class="literal">org.exoplatform.portal.config.UserACL</code> service:</p><pre class="programlisting">&lt;external-component-plugins&gt;
+    &lt;target-component&gt;org.exoplatform.portal.config.UserACL&lt;/target-component&gt;
+    &lt;component-plugin&gt;
+      &lt;name&gt;addPortalACLPlugin&lt;/name&gt;
+      &lt;set-method&gt;addPortalACLPlugin&lt;/set-method&gt;
+      &lt;type&gt;org.exoplatform.portal.config.PortalACLPlugin&lt;/type&gt;
+      &lt;description&gt;setting some permission for portal&lt;/description&gt;
+      &lt;init-params&gt;     
+        &lt;values-param&gt;
+          &lt;name&gt;access.control.workspace.roles&lt;/name&gt;
+          &lt;value&gt;*:/platform/administrators&lt;/value&gt;
+          &lt;value&gt;*:/organization/management/executive-board&lt;/value&gt;       
+        &lt;/values-param&gt;
+        &lt;values-param&gt;
+          &lt;name&gt;portal.creation.roles&lt;/name&gt;
+          &lt;value&gt;*:/platform/administrators&lt;/value&gt;
+          &lt;value&gt;*:/organization/management/executive-board&lt;/value&gt;      
+        &lt;/values-param&gt;
+      &lt;/init-params&gt;
+    &lt;/component-plugin&gt;
+  &lt;/external-component-plugins&gt;
+</pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Portal_Navigation_Configuration"/>3.5. Portal Navigation Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Navigation_Configuration-Overview"/>3.5.1. Overview</h3></div></div></div><p>
+			There are three navigation types available to portal users:
+		</p><div class="itemizedlist"><ul><li><p>
+					<a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-Portal_Navigation" title="3.5.2. Portal Navigation">Section 3.5.2, “Portal Navigation”</a>
+				</p></li><li><p>
+					<a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-Group_Navigation" title="3.5.3. Group Navigation">Section 3.5.3, “Group Navigation”</a>
+				</p></li><li><p>
+					<a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-User_Navigation" title="3.5.4. User Navigation">Section 3.5.4, “User Navigation”</a>
+				</p></li></ul></div><p>
+			These navigations are configured using the standard XML syntax in the file; "<code class="filename">02portal.war:/WEB-INF/conf/portal/portal-configuration.xml</code>".
+		</p><pre class="programlisting">&lt;component&gt;
+  &lt;key&gt;org.exoplatform.portal.config.UserPortalConfigService&lt;/key&gt;
+  &lt;type&gt;org.exoplatform.portal.config.UserPortalConfigService&lt;/type&gt;
+  &lt;component-plugins&gt;           
+   &lt;component-plugin&gt;
+     &lt;name&gt;new.portal.config.user.listener&lt;/name&gt;
+     &lt;set-method&gt;initListener&lt;/set-method&gt;
+     &lt;type&gt;org.exoplatform.portal.config.NewPortalConfigListener&lt;/type&gt;
+     &lt;description&gt;this listener init the portal configuration&lt;/description&gt;
+     &lt;init-params&gt;
+       &lt;value-param&gt;
+         &lt;name&gt;default.portal&lt;/name&gt;
+         &lt;description&gt;The default portal for checking db is empty or not&lt;/description&gt;
+         &lt;value&gt;classic&lt;/value&gt;
+       &lt;/value-param&gt; 
+       &lt;object-param&gt;
+         &lt;name&gt;portal.configuration&lt;/name&gt;
+         &lt;description&gt;description&lt;/description&gt;
+         &lt;object type="org.exoplatform.portal.config.NewPortalConfig"&gt;
+           &lt;field  name="predefinedOwner"&gt;
+             &lt;collection type="java.util.HashSet"&gt;                
+               &lt;value&gt;&lt;string&gt;classic&lt;/string&gt;&lt;/value&gt;
+               &lt;value&gt;&lt;string&gt;webos&lt;/string&gt;&lt;/value&gt;
+             &lt;/collection&gt;
+           &lt;/field&gt;
+           &lt;field  name="ownerType"&gt;&lt;string&gt;portal&lt;/string&gt;&lt;/field&gt;
+           &lt;field  name="templateLocation"&gt;&lt;string&gt;war:/conf/portal&lt;/string&gt;&lt;/field&gt; 
+         &lt;/object&gt;
+       &lt;/object-param&gt; 
+       &lt;object-param&gt;
+         &lt;name&gt;group.configuration&lt;/name&gt;
+         &lt;description&gt;description&lt;/description&gt;
+         &lt;object type="org.exoplatform.portal.config.NewPortalConfig"&gt;
+           &lt;field  name="predefinedOwner"&gt;
+             &lt;collection type="java.util.HashSet"&gt;            
+              &lt;value&gt;&lt;string&gt;platform/administrators&lt;/string&gt;&lt;/value&gt;    
+              &lt;value&gt;&lt;string&gt;platform/users&lt;/string&gt;&lt;/value&gt;
+              &lt;value&gt;&lt;string&gt;platform/guests&lt;/string&gt;&lt;/value&gt;
+              &lt;value&gt;&lt;string&gt;organization/management/executive-board&lt;/string&gt;&lt;/value&gt;               
+             &lt;/collection&gt;
+           &lt;/field&gt;
+           &lt;field  name="ownerType"&gt;&lt;string&gt;group&lt;/string&gt;&lt;/field&gt;
+           &lt;field  name="templateLocation"&gt;&lt;string&gt;war:/conf/portal&lt;/string&gt;&lt;/field&gt; 
+         &lt;/object&gt;
+       &lt;/object-param&gt;       
+       &lt;object-param&gt;
+         &lt;name&gt;user.configuration&lt;/name&gt;
+         &lt;description&gt;description&lt;/description&gt;
+         &lt;object type="org.exoplatform.portal.config.NewPortalConfig"&gt;
+           &lt;field  name="predefinedOwner"&gt;
+             &lt;collection type="java.util.HashSet"&gt;                
+               &lt;value&gt;&lt;string&gt;root&lt;/string&gt;&lt;/value&gt;
+               &lt;value&gt;&lt;string&gt;john&lt;/string&gt;&lt;/value&gt;
+               &lt;value&gt;&lt;string&gt;mary&lt;/string&gt;&lt;/value&gt;
+               &lt;value&gt;&lt;string&gt;demo&lt;/string&gt;&lt;/value&gt;
+             &lt;/collection&gt;
+           &lt;/field&gt;
+           &lt;field  name="ownerType"&gt;&lt;string&gt;user&lt;/string&gt;&lt;/field&gt;
+           &lt;field  name="templateLocation"&gt;&lt;string&gt;war:/conf/portal&lt;/string&gt;&lt;/field&gt; 
+         &lt;/object&gt;
+       &lt;/object-param&gt;
+     &lt;/init-params&gt;
+   &lt;/component-plugin&gt;
+&lt;/component-plugins&gt;
+</pre><p>
+			This XML configuration defines where in the portal's war to look for configuration, and which portals, groups, and user specific views
+         to include in portal/group/user navigation. Those files will be used to create an initial navigation, the first time the portal is launched.
+         That information will then be stored in the JCR content repository, and can then be modified, and managed from the portal UI.
+      </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Navigation_Configuration-Portal_Navigation"/>3.5.2. Portal Navigation</h3></div></div></div><p>
+			The portal navigation incorporates the pages that can be accessed even when the user is not logged in
+         (assuming the applicable permissions allow the public access). For example, several portal navigations are used
+         when a company owns multiple trademarks, and sets up a website for each of them.
+		</p><p>
+			The <span class="bold"><strong>classic</strong></span> portal is configured by four XML files in the <code class="filename">02portal.war:/WEB-INF/conf/portal/portal/classic</code> directory:
+		</p><div class="variablelist"><dl><dt><span class="term">portal.xml</span></dt><dd><p>
+						This file describes the layout and portlets that will be shown on all pages. The layout usually contains the banner, footer, menu and breadcrumbs portlets.
+                  GateIn 3.1 is extremely configurable as every view element (even the banner and footer) is a portlet.
+					</p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;portal-config&gt;
+  &lt;portal-name&gt;classic&lt;/portal-name&gt;
+  &lt;locale&gt;en&lt;/locale&gt;
+  &lt;factory-id&gt;office&lt;/factory-id&gt;
+  &lt;access-permissions&gt;Everyone&lt;/access-permissions&gt;
+  &lt;edit-permission&gt;*:/platform/administrators&lt;/edit-permission&gt;
+  &lt;creator&gt;root&lt;/creator&gt;    
+    
+  &lt;portal-layout&gt;   
+  &lt;application&gt;
+     &lt;instance-id&gt;portal#classic:/web/BannerPortlet/banner&lt;/instance-id&gt;
+     &lt;show-info-bar&gt;false&lt;/show-info-bar&gt;
+   &lt;/application&gt;
+   &lt;application&gt;
+    &lt;instance-id&gt;portal#classic:/web/NavigationPortlet/toolbar&lt;/instance-id&gt;
+     &lt;show-info-bar&gt;false&lt;/show-info-bar&gt;
+   &lt;/application&gt;
+  
+   &lt;application&gt;
+     &lt;instance-id&gt;portal#classic:/web/BreadcumbsPortlet/breadcumbs&lt;/instance-id&gt;
+     &lt;show-info-bar&gt;false&lt;/show-info-bar&gt;
+   &lt;/application&gt;
+   
+ 
+   &lt;page-body&gt; &lt;/page-body&gt;
+   
+   &lt;application&gt;
+     &lt;instance-id&gt;portal#classic:/web/FooterPortlet/footer&lt;/instance-id&gt;
+     &lt;show-info-bar&gt;false&lt;/show-info-bar&gt;
+   &lt;/application&gt;
+  &lt;/portal-layout&gt;
+  
+&lt;/portal-config&gt;
+</pre><p>
+						It is also possible to apply a nested container that can also contain portlets. Row, column or tab containers are then responsible for the layout of their child portlets.
+					</p><p>
+						Each application references a portlet using the id <code class="literal">portal#{portalName}:/{portletWarName}/{portletName}/{uniqueId}</code>
+					</p><p>
+						Use the <code class="literal">page-body</code> tag to define where GateIn 3.1 should render the current page.
+					</p><p>
+						The defined <span class="bold"><strong>classic</strong></span> portal is accessible to "Everyone" (at <code class="literal">/portal/public/classic</code>) but only members of the group <code class="literal">/platform/administrators</code> can edit it.
+					</p></dd><dt><span class="term">navigation.xml</span></dt><dd><p>
+						This file defines all the navigation nodes of the portal. The syntax is simple using the nested node tags. Each node references a page defined in the pages.xml file (explained next).
+					</p><p>
+						When the <code class="literal">#{...}</code> syntax is used, the enclosed property name serves as a key that is automatically passed to the internationalization mechanism, 
+                  so the literal property name is replaced by a localized value taken from the associated properties file matching the current locale.
+					</p><pre class="programlisting">
+ 
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;node-navigation
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_0 http://www.gatein.org/xml/ns/gatein_objects_1_0"
+    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_0"&gt;
+  &lt;priority&gt;1&lt;/priority&gt;
+  &lt;page-nodes&gt;
+     &lt;node&gt;
+     	&lt;uri&gt;home&lt;/uri&gt;
+      	&lt;name&gt;home&lt;/name&gt;
+      	&lt;label&gt;#{portal.classic.home}&lt;/label&gt;
+      	&lt;page-reference&gt;portal::classic::homepage&lt;/page-reference&gt;	    
+     &lt;/node&gt;   
+     &lt;node&gt;
+      	&lt;uri&gt;sitemap&lt;/uri&gt;
+      	&lt;name&gt;sitemap&lt;/name&gt;
+      	&lt;label&gt;#{portal.classic.sitemap}&lt;/label&gt;
+      	&lt;visibility&gt;DISPLAYED&lt;/visibility&gt;
+      	&lt;page-reference&gt;portal::classic::sitemap&lt;/page-reference&gt;
+    &lt;/node&gt;	  
+  &lt;/page-nodes&gt;
+&lt;/node-navigation&gt;
+
+ 
+</pre><p>
+						This navigation tree can have multiple views inside portlets (such as the breadcrumbs portlet) that render the current view node, the site map or the menu portlets.
+					</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="warning"><h2>Warning</h2><p>
+							For top nodes, the <span class="bold"><strong>uri</strong></span> and the <span class="bold"><strong>name</strong></span> of your navigation nodes must have the <span class="emphasis"><em>same</em></span> value.
+                     For other nodes, the <span class="bold"><strong>uri</strong></span> is a relative path. For example, <span class="emphasis"><em><code class="uri">contentmanagement/fileexplorer</code></em></span> where '<code class="literal">contentmanagement</code> ' is the name of the parent node and '<code class="literal">fileexplorer</code>' is the name of the node ( <span class="emphasis"><em>&lt;name&gt;fileexplorer&lt;/name&gt; </em></span> ).
+						</p></div></dd><dt><span class="term">pages.xml</span></dt><dd><p>
+						This configuration file structure is very similar to <code class="filename">portal.xml</code> and it can also contain container tags.
+                  Each application can decide whether to render the portlet border, the window state, the icons or portlet's mode.
+					</p><pre class="programlisting">
+  
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;page-set
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_objects_1_0 http://www.gatein.org/xml/ns/gatein_objects_1_0"
+    xmlns="http://www.gatein.org/xml/ns/gatein_objects_1_0"&gt;
+
+  &lt;page&gt;
+    &lt;name&gt;homepage&lt;/name&gt;
+    &lt;title&gt;Home Page&lt;/title&gt;
+	  &lt;access-permissions&gt;Everyone&lt;/access-permissions&gt;
+	  &lt;edit-permission&gt;*:/platform/administrators&lt;/edit-permission&gt;
+    &lt;portlet-application&gt;
+      &lt;portlet&gt;
+        &lt;application-ref&gt;web&lt;/application-ref&gt;
+        &lt;portlet-ref&gt;HomePagePortlet&lt;/portlet-ref&gt;
+        &lt;preferences&gt;
+          &lt;preference&gt;
+            &lt;name&gt;template&lt;/name&gt;
+            &lt;value&gt;system:/templates/groovy/webui/component/UIHomePagePortlet.gtmpl&lt;/value&gt;
+            &lt;read-only&gt;false&lt;/read-only&gt;
+          &lt;/preference&gt;
+        &lt;/preferences&gt;
+      &lt;/portlet&gt;
+      &lt;title&gt;Home Page portlet&lt;/title&gt;
+      &lt;access-permissions&gt;Everyone&lt;/access-permissions&gt;
+      &lt;show-info-bar&gt;false&lt;/show-info-bar&gt;
+      &lt;show-application-state&gt;false&lt;/show-application-state&gt;
+      &lt;show-application-mode&gt;false&lt;/show-application-mode&gt;
+    &lt;/portlet-application&gt;
+  &lt;/page&gt;    
+  &lt;page&gt;
+    &lt;name&gt;sitemap&lt;/name&gt;
+    &lt;title&gt;Site Map&lt;/title&gt;
+	  &lt;access-permissions&gt;Everyone&lt;/access-permissions&gt;
+	  &lt;edit-permission&gt;*:/platform/administrators&lt;/edit-permission&gt;
+    &lt;portlet-application&gt;
+      &lt;portlet&gt;
+        &lt;application-ref&gt;web&lt;/application-ref&gt;
+        &lt;portlet-ref&gt;SiteMapPortlet&lt;/portlet-ref&gt;
+      &lt;/portlet&gt;
+      &lt;title&gt;SiteMap&lt;/title&gt;
+      &lt;access-permissions&gt;Everyone&lt;/access-permissions&gt;
+      &lt;show-info-bar&gt;false&lt;/show-info-bar&gt;      
+    &lt;/portlet-application&gt;
+  &lt;/page&gt;
+&lt;/page-set&gt;
+
+</pre></dd><dt><span class="term">portlet-preferences.xml</span></dt><dd><p>
+						Porlet instances can be associated with <code class="literal">portlet-preferences</code> that override the ones defined in <code class="filename">src/main/webapp/WEB-INF/portlet.xml</code> of the portlet application <code class="literal">war</code>.
+					</p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;portlet-preferences-set&gt;
+  &lt;portlet-preferences&gt;
+    &lt;owner-type&gt;portal&lt;/owner-type&gt;
+    &lt;owner-id&gt;classic&lt;/owner-id&gt;
+    &lt;window-id&gt;portal#classic:/web/BannerPortlet/banner&lt;/window-id&gt;
+    &lt;preference&gt;
+      &lt;name&gt;template&lt;/name&gt;
+      &lt;value&gt;par:/groovy/groovy/webui/component/UIBannerPortlet.gtmpl&lt;/value&gt;
+      &lt;read-only&gt;false&lt;/read-only&gt;
+    &lt;/preference&gt;
+  &lt;/portlet-preferences&gt;
+  &lt;portlet-preferences&gt;
+    &lt;owner-type&gt;portal&lt;/owner-type&gt;
+    &lt;owner-id&gt;classic&lt;/owner-id&gt;
+    &lt;window-id&gt;portal#classic:/web/NavigationPortlet/toolbar&lt;/window-id&gt;
+    &lt;preference&gt;
+      &lt;name&gt;useAJAX&lt;/name&gt;
+      &lt;value&gt;true&lt;/value&gt;
+      &lt;read-only&gt;false&lt;/read-only&gt;
+    &lt;/preference&gt;
+  &lt;/portlet-preferences&gt;
+  &lt;portlet-preferences&gt;
+    &lt;owner-type&gt;portal&lt;/owner-type&gt;
+    &lt;owner-id&gt;classic&lt;/owner-id&gt;
+    &lt;window-id&gt;portal#classic:/web/FooterPortlet/footer&lt;/window-id&gt;
+    &lt;preference&gt;
+      &lt;name&gt;template&lt;/name&gt;
+      &lt;value&gt;par:/groovy/groovy/webui/component/UIFooterPortlet.gtmpl&lt;/value&gt;
+      &lt;read-only&gt;false&lt;/read-only&gt;
+    &lt;/preference&gt;
+  &lt;/portlet-preferences&gt;
+  
+  
+  &lt;portlet-preferences&gt;
+    &lt;owner-type&gt;portal&lt;/owner-type&gt;
+    &lt;owner-id&gt;classic&lt;/owner-id&gt;
+    &lt;window-id&gt;portal#classic:/web/GroovyPortlet/groovyportlet&lt;/window-id&gt;
+    &lt;preference&gt;
+      &lt;name&gt;template&lt;/name&gt;
+      &lt;value&gt;par:/groovy/groovy/webui/component/UIGroovyPortlet.gtmpl&lt;/value&gt;
+      &lt;read-only&gt;false&lt;/read-only&gt;
+    &lt;/preference&gt;
+  &lt;/portlet-preferences&gt;
+&lt;/portlet-preferences-set&gt;
+</pre></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Navigation_Configuration-Group_Navigation"/>3.5.3. Group Navigation</h3></div></div></div><p>
+			Group navigations are dynamically added to the user navigation at login. This allows users to see the menu of all pages assigned to any groups they belong to.
+		</p><p>
+			The group navigation menu is configured by three XML files (<code class="filename">navigation.xml</code>, <code class="filename">pages.xml</code> and <code class="filename">portlet-preferences.xml</code>). The syntax used in these files is the same as those covered in <a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Portal_Navigation_Configuration-Portal_Navigation" title="3.5.2. Portal Navigation">Section 3.5.2, “Portal Navigation”</a>.
+		</p><p>
+			They are located in the <code class="filename">portal.war/WEB-INF/conf/portal/group<em class="replaceable"><code>/group-name-path/</code></em></code> directory (For example, <code class="filename">portal.war/WEB-INF/conf/portal/group/platform/administrators/</code>).
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Navigation_Configuration-User_Navigation"/>3.5.4. User Navigation</h3></div></div></div><p>
+			User navigation is the set of nodes and pages that are owned by the user. They are part of the user's dashboard.
+		</p><p>
+			Three files configure the user navigation (<code class="filename">navigation.xml</code>, <code class="filename">pages.xml</code> and <code class="filename">portlet-preferences.xml</code>). They are located in the directory "<code class="filename">portal.war/WEB-INF/conf/portal/users/{userName}</code>".
+		</p><p>
+			This directory also contains a <code class="filename">gadgets.xml</code> file (formerly called <code class="filename">widgets.xml</code>). This file defines the gadgets located in the user's workspace.
+		</p><p>
+			The user's workspace is located on the left of the page and access is restricted to some privileged users, see <a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration" title="6.1. Predefined User Configuration">Section 6.1, “Predefined User Configuration”</a>
+		</p><pre class="programlisting">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;widgets&gt;
+  &lt;owner-type&gt;user&lt;/owner-type&gt;
+  &lt;owner-id&gt;root&lt;/owner-id&gt;
+ 
+  &lt;container id="Information"&gt;
+    &lt;name&gt;Information&lt;/name&gt;
+    &lt;description&gt;Information's Description&lt;/description&gt;
+    &lt;application&gt;
+      &lt;instance-id&gt;user#root:/GateInWidgetWeb/WelcomeWidget/WelcomeWidget1&lt;/instance-id&gt;
+      &lt;application-type&gt;GateInWidget&lt;/application-type&gt;
+    &lt;/application&gt;
+      
+    &lt;application&gt;
+      &lt;instance-id&gt;user#root:/GateInWidgetWeb/StickerWidget/StickerWidget&lt;/instance-id&gt;
+      &lt;application-type&gt;GateInWidget&lt;/application-type&gt; 
+    &lt;/application&gt;
+    
+    &lt;application&gt;
+      &lt;instance-id&gt;user#root:/GateInWidgetWeb/InfoWidget/InfoWidget1&lt;/instance-id&gt;
+      &lt;application-type&gt;GateInWidget&lt;/application-type&gt;
+    &lt;/application&gt;
+  &lt;/container&gt;
+  
+  &lt;container id="Calendar"&gt;
+    &lt;name&gt;Calendar&lt;/name&gt;
+    &lt;description&gt;Calendar's Description&lt;/description&gt;
+    &lt;application&gt;
+      &lt;instance-id&gt;user#root:/GateInWidgetWeb/CalendarWidget/CalendarWidget&lt;/instance-id&gt;
+      &lt;application-type&gt;GateInWidget&lt;/application-type&gt; 
+    &lt;/application&gt;
+  &lt;/container&gt; 
+ 
+&lt;/widgets&gt;
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portal_Navigation_Configuration-Tips"/>3.5.5. Tips</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Tips-Direct_External_Links"/>3.5.5.1. Direct External Links</h4></div></div></div><p>
+				If you wish to add a link to a URL outside the portal you first have to define a "page" that will only serve as a navigation placeholder for external redirect - it will not be used for any portlets.
+            Then add the URL to the navigation.
+			</p><div class="itemizedlist"><ul><li><p>pages.xml</p></li></ul></div><pre class="programlisting">&lt;page&gt;
+  &lt;owner-type&gt;portal&lt;/owner-type&gt;
+  &lt;owner-id&gt;website&lt;/owner-id&gt;
+  &lt;name&gt;documentation&lt;/name&gt;
+  &lt;title&gt;Documentation&lt;/title&gt;
+  &lt;access-permissions&gt;Everyone&lt;/access-permissions&gt;
+  &lt;edit-permission&gt;*:/platform/administrators&lt;/edit-permission&gt;
+&lt;/page&gt;
+</pre><div class="itemizedlist"><ul><li><p>navigation.xml</p></li></ul></div><pre class="programlisting">&lt;node&gt;
+  &lt;uri&gt;http://wiki.exoplatform.com/xwiki/bin/view/Main/WebHome&lt;/uri&gt;
+  &lt;name&gt;documentation&lt;/name&gt;
+  &lt;label&gt;#{portal.classic.documentation}&lt;/label&gt;
+  &lt;page-reference&gt;portal::website::documentation&lt;/page-reference&gt;
+&lt;/node&gt;
+</pre><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="warning"><h2>Direct external links were not a design goal</h2><p>
+					Currently, you cannot modify the URL using the portal interface, you must change it in the configuration files or modify the underlying database table.
+				</p></div></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Internationalization_Configuration"/>3.6. Internationalization Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Internationalization_Configuration-Overview"/>3.6.1. Overview</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Assumed Knowledge</h2><p>
+				GateIn 3.1 is fully configurable for internationalization; however, users should have a general knowledge of Internationalization in Java products before attempting these configurations.
+			</p><p>
+				Sun Java hosts a comprehensive guide to internationalize Java products at <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://java.sun.com/docs/books/tutorial/i18n/TOC.html">http://java.sun.com/docs/books/tutorial/i18n/TOC.html</a>.
+			</p></div><p>
+			All GateIn 3.1 applications contain property files for various languages. They are packaged with the portlets applications in a <code class="filename">WEB-INF/classes/locale/</code> directory.
+		</p><p>
+			These files are located in the <code class="literal">classes</code> folder of the WEB-INF directory to be loaded by the ClassLoader.
+		</p><p>
+			All resource files are in a subfolder named <code class="literal">locale</code>.
+		</p><p>
+			For example, the translations for the <span class="emphasis"><em>NavigationPortlet</em></span> are located in <code class="literal">web.war/WEB-INF/classes/locale/portlet/portal.</code>
+		</p><pre class="programlisting">NavigationPortlet_de.properties
+NavigationPortlet_en.properties
+NavigationPortlet_es.properties
+NavigationPortlet_fr.properties
+NavigationPortlet_nl.properties
+NavigationPortlet_ru.properties
+NavigationPortlet_uk.properties
+NavigationPortlet_ar.xml
+</pre><p>
+			Those files contain typical <code class="literal">key=value</code> Java EE properties. For example, the French one:
+		</p><pre class="programlisting">javax.portlet.title=Portlet Navigation
+</pre><p>
+			There are also properties files in the portal itself. They form the <span class="bold"><strong>portal resource bundle</strong></span>.
+		</p><p>
+			From a portlet, you can then access translations from the portlet itself or shared at the portal level, both are aggregated when you need them.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Translation in XML format</h2><p>
+				It is also possible to use a proprietary XML format to define translations. This is a more convenient way to translate a document for some languages, such as Japanese, Arabic or Russian. Property files have to be ASCII encoded, while the XML file can define its encoding. As a result, it is easier for you to read or edit a translation in XML instead of having to decode and encode the property file.
+			</p><p>
+				For more information, refer to <a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-XML_Resources_Bundles" title="3.8. XML Resources Bundles">Section 3.8, “XML Resources Bundles”</a>.
+			</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Internationalization_Configuration-Locales_configuration"/>3.6.2. Locales configuration</h3></div></div></div><p>
+			Various languages are available in the portal package. The configuration below will define which languages shown in the "Change Language" section and made available to users.
+		</p><p>
+			The <code class="filename">02portal.war:/WEB-INF/conf/common/common-configuration.xml</code> file of your installation contains the following section:
+		</p><pre class="programlisting">&lt;component&gt;
+  &lt;key&gt;org.exoplatform.services.resources.LocaleConfigService&lt;/key&gt;
+  &lt;type&gt;org.exoplatform.services.resources.impl.LocaleConfigServiceImpl&lt;/type&gt;
+  &lt;init-params&gt;
+    &lt;value-param&gt;
+      &lt;name&gt;locale.config.file&lt;/name&gt;
+      &lt;value&gt;war:/conf/common/locales-config.xml&lt;/value&gt;
+    &lt;/value-param&gt;
+  &lt;/init-params&gt;
+&lt;/component&gt;
+</pre><p>
+			This configuration points to the locale configuration file.
+		</p><p>
+			The locale configuration file (<code class="filename">02portal.war:/WEB-INF/conf/common/locales-config.xml</code>) contains the following code:
+		</p><div class="programlistingco"><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;locales-config&gt;
+  &lt;locale-config&gt;
+    &lt;locale&gt;en<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>&lt;/locale&gt;
+    &lt;output-en<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>coding&gt;UTF-8&lt;/output-encoding&gt;
+    &lt;input-enc<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>oding&gt;UTF-8&lt;/input-encoding&gt;
+    &lt;descripti<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/4.png" alt="(4)"/></span>on&gt;Default configuration for english locale&lt;/description&gt;
+  &lt;/locale-config&gt;
+ 
+  &lt;locale-config&gt;
+    &lt;locale&gt;fr&lt;/locale&gt;
+    &lt;output-encoding&gt;UTF-8&lt;/output-encoding&gt;
+    &lt;input-encoding&gt;UTF-8&lt;/input-encoding&gt;
+    &lt;description&gt;Default configuration for the french locale&lt;/description&gt;
+  &lt;/locale-config&gt;
+ 
+  &lt;locale-config&gt;
+    &lt;locale&gt;ar&lt;/locale&gt;
+    &lt;output-encoding&gt;UTF-8&lt;/output-encoding&gt;
+    &lt;input-encoding&gt;UTF-8&lt;/input-encoding&gt;
+    &lt;description&gt;Default configuration for the arabic locale&lt;/description&gt;
+    &lt;orientati<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/5.png" alt="(5)"/></span>on&gt;rt&lt;/orientation&gt;
+  &lt;/locale-config&gt;
+&lt;/locales-config&gt;
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>locale</em></span> The locale has to be defined, such as <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://ftp.ics.uci.edu-pub-ietf-http-related-iso639.txt">http://ftp.ics.uci.edu-pub-ietf-http-related-iso639.txt</a>. In this example, "<span class="emphasis"><em>ar</em></span>" is Arabic.
+					</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>output-encoding</em></span> deals with the character encoding. It is recommended that <span class="bold"><strong>UTF-8</strong></span> be used.
+					</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>input-encoding</em></span> In the Java implementation, the encoding parameters will be used for the request response stream. The input-encoding parameter will be used for requesting setCharacterEncoding(..).
+					</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/4.png" alt="4" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>description</em></span> Description for the language
+					</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/5.png" alt="5" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>orientation</em></span> The default orientation of text and images is Left-To-Right. GateIn 3.1 supports <span class="bold"><strong>Right-To-Left</strong></span> orientation. Modifying the text orientation is explained in <a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-RTL_Right_To_Left_Framework" title="3.7. RTL (Right To Left) Framework">Section 3.7, “RTL (Right To Left) Framework”</a>.
+					</p></td></tr></table></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Internationalization_Configuration-ResourceBundleService"/>3.6.3. ResourceBundleService</h3></div></div></div><p>
+			The resource bundle service is configured in: <code class="filename">02portal.war:/WEB-INF/conf/common/common-configuration.xml</code>:
+		</p><div class="programlistingco"><pre class="programlisting">&lt;component&gt;
+  &lt;key&gt;org.exoplatform.services.resources.ResourceBundleService&lt;/key&gt;
+  &lt;type&gt;org.exoplatform.services.resources.impl.SimpleResourceBundleService&lt;/type&gt;
+  &lt;init-params&gt;
+    &lt;values-param&gt;
+      &lt;name&gt;cl<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>asspath.resources&lt;/name&gt;
+      &lt;description&gt;The resources  that start with the following package name should be load from file system&lt;/description&gt;
+      &lt;value&gt;locale.portlet&lt;/value&gt;      
+    &lt;/values-param&gt;      
+    &lt;values-param&gt;
+      &lt;name&gt;in<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>it.resources&lt;/name&gt;
+      &lt;description&gt;Initiate the following resources during the first launch&lt;/description&gt;
+      &lt;value&gt;locale.portal.expression&lt;/value&gt;
+      &lt;value&gt;locale.portal.services&lt;/value&gt;
+      &lt;value&gt;locale.portal.webui&lt;/value&gt;
+      &lt;value&gt;locale.portal.custom&lt;/value&gt;
+      &lt;value&gt;locale.navigation.portal.classic&lt;/value&gt;
+      &lt;value&gt;locale.navigation.group.platform.administrators&lt;/value&gt;
+      &lt;value&gt;locale.navigation.group.platform.users&lt;/value&gt;
+      &lt;value&gt;locale.navigation.group.platform.guests&lt;/value&gt;
+      &lt;value&gt;locale.navigation.group.organization.management.executive-board&lt;/value&gt;               
+    &lt;/values-param&gt;      
+    &lt;values-param&gt;
+      &lt;name&gt;po<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>rtal.resource.names&lt;/name&gt;
+      &lt;description&gt;The properties files of  the portal ,  those file will be merged 
+        into one ResoruceBundle properties &lt;/description&gt;
+      &lt;value&gt;locale.portal.expression&lt;/value&gt;
+      &lt;value&gt;locale.portal.services&lt;/value&gt;
+      &lt;value&gt;locale.portal.webui&lt;/value&gt;
+      &lt;value&gt;locale.portal.custom&lt;/value&gt;        
+    &lt;/values-param&gt;      
+  &lt;/init-params&gt;
+&lt;/component&gt;
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>classpath.resources</em></span> are discussed in the later section.
+					</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>init.resources</em></span> initiates resources related to portal, group, user resource bundle.
+					</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+						<span class="emphasis"><em>portal.resource.names</em></span> defines all resources that belong to the <span class="emphasis"><em>Portal Resource Bundle</em></span>.
+					</p><p>
+						These resources are merged into a single resource bundle which is accessible from anywhere in GateIn 3.1. All these keys are located in the same bundle, which is separated from the navigation resource bundles.
+					</p></td></tr></table></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Internationalization_Configuration-Navigation_Resource_Bundles"/>3.6.4. Navigation Resource Bundles</h3></div></div></div><p>
+			There is a resource bundle for each navigation. A navigation can exist for user, groups, and portal.
+		</p><p>
+			The previous example shows bundle definitions for the navigation of the classic portal and of four different groups. Each of these resource bundles occupies a different sphere, they are independent of each other and they are not included in the <em class="parameter"><code>portal.resource.names</code></em> parameter.
+		</p><p>
+			The properties for a group must be in the <code class="filename">WEB-INF/classes/locale/navigation/group/</code> folder. <code class="literal">/WEB-INF/classes/locale/navigation/group/organization/management/executive-board_en.properties</code>, for example.
+		</p><p>
+			The folder and file names must correspond to the group hierarchy. The group name "<em class="parameter"><code>executive-board</code></em>" is followed by the iso 639 code.
+		</p><p>
+			For each language defined in <em class="parameter"><code>LocalesConfig</code></em> must have a resource file defined. If the name of a group is changed the name of the folder and/or files of the correspondent navigation resource bundles must also be changed.
+		</p><p>
+			Content of <code class="filename">executive-board_en.properties</code>: 
+</p><pre class="programlisting">organization.title=Organization
+organization.newstaff=New Staff
+organization.management=Management
+</pre><p>
+		</p><p>
+			This resource bundle is only accessible for the navigation of the <em class="parameter"><code>organization.management.executive-board</code></em> group.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Internationalization_Configuration-_Portlets_"/>3.6.5.  Portlets </h3></div></div></div><p>
+			Portlets are independent applications and deliver their own resource files.
+		</p><p>
+			All shipped portlet resources are located in the <span class="bold"><strong>locale/portlet</strong></span> subfolder. The ResourceBundleService parameter <span class="bold"><strong>classpath.resources</strong></span> defines this subfolder. 
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><a id="proc-Reference_Guide-_Portlets_-Example"/><p class="title"><b>Procedure 3.1. Example</b></p><p>
+					To add a Spanish translation to the <em class="parameter"><code>GadgetPortlet</code></em>.
+				</p><ol class="1"><li><p>
+					Create the file <code class="literal">GadgetPortlet_es.properties</code> in: <code class="filename">WEB-INF/classes/locale/portlet/gadget/GadgetPortlet</code>.
+				</p></li><li><p>
+					In <code class="filename">portlet.xml</code>, add <em class="parameter"><code>Spanish</code></em> as a <span class="bold"><strong>supported-locale</strong></span> ('es' is the 2 letters code for Spanish), the <span class="bold"><strong>resource-bundle</strong></span> is already declared and is the same for all languages:
+				</p><pre class="programlisting">&lt;supported-locale&gt;en&lt;/supported-locale&gt;
+&lt;supported-locale&gt;es&lt;/supported-locale&gt;
+&lt;resource-bundle&gt;locale.portlet.gadget.GadgetPortlet&lt;/resource-bundle&gt;
+</pre></li></ol></div><p>
+			See the portlet specification for more details about the portlet internationalization.
+		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-_Portlets_-Standard_portlet_resource_keys"/>3.6.5.1. Standard portlet resource keys</h4></div></div></div><p>
+				The portlet specifications define three standard keys: Title, Short Title and Keywords. Keywords are formatted as a comma-separated list of tags.
+			</p><pre class="programlisting"> javax.portlet.title=Breadcrumbs Portlet
+ javax.portlet.short-title=Breadcrumbs
+ javax.portlet.keywords=Breadcrumbs, Breadcrumb
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-_Portlets_-Debugging_resource_bundle_usage"/>3.6.5.2. Debugging resource bundle usage</h4></div></div></div><p>
+				When translating an application, it can sometimes be difficult to find the right key for a given property.
+			</p><p>
+				Execute the portal in the <span class="bold"><strong>debug mode</strong></span> and select the special language from the available languages,; <span class="bold"><strong>Magic locale</strong></span>.
+			</p><p>
+				This feature translates a key to the same key value.
+			</p><p>
+				For example, the translated value for the key "<em class="parameter"><code>organization.title</code></em>" is simply the value "<em class="parameter"><code>organization.title</code></em>". Selecting that language allows use of the portal and its applications with all the keys visible. This makes it easier to find out the correct key for a given label in the portal page.
+			</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Database_Configuration-Translate-language-selection-form"/>3.6.6. Translating the language selection form</h3></div></div></div><div class="mediaobject" align="center"><img src="images/PortalDevelopment/InternationalizationConfiguration/LanguageChoice.png" align="middle"/></div><p>When choosing a language as on the screenshot above, the user is presented with a list of languages on the left side in the current chosen language
+        and on the right side, the same language translated into its own language. 
+        Those texts are obtained from the JDK API <code class="literal">java.util.Locale.getDisplayedLanguage()</code> and <code class="literal">java.util.Locale.getDisplayedCountry()</code> (if needed) and all languages may not be translated and can also depend on the JVM currently used.
+        It is still possible to override those values by editing the <code class="literal">locale.portal.webui</code> resource bundle, to do so edit the file <code class="filename">gatein.ear/02portal.war/WEB-INF/classes/locale/portal/webui_xx_yy.properties</code> where <code class="literal">xx_yy</code>
+        represents the country code of the language in which you want to translate a particular language.
+        In that file, add or modify a key such as <code class="literal">Locale.xx_yy</code> with the value being the translated string.
+        </p><div class="example"><a id="d0e1452"/><p class="title"><b>Example 3.1. Changing the displayed text for Traditional Chinese in French</b></p><div class="example-contents"><p>First edit <code class="filename">gatein.ear/02portal.war/WEB-INF/classes/locale/portal/webui_fr.properties</code> where <code class="literal">ne</code> is the country code for French, and add
+           the following key into it:
+           </p><pre class="programlisting">
+              Locale.zh_TW=Chinois traditionnel
+           </pre><p>
+           After a restart the language will be updated in the user interface when a user is trying to change the current language.
+           </p></div></div><br class="example-break"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-RTL_Right_To_Left_Framework"/>3.7. RTL (Right To Left) Framework</h2></div></div></div><p>
+		The text orientation depends on the current locale setting. The orientation is a Java 5 enum that provides a set of functionalities:
+	</p><pre class="programlisting">
+   LT, // Western Europe
+   RT, // Middle East (Arabic, Hebrew)
+   TL, // Japanese, Chinese, Korean
+   TR; // Mongolian
+   public boolean isLT() { ... }
+   public boolean isRT() { ... }
+   public boolean isTL() { ... }
+   public boolean isTR() { ... }
+</pre><p>
+		The object defining the Orientation for the current request is the <code class="literal">UIPortalApplication</code>. However, it should be accessed at runtime using the <code class="literal">RequestContext</code> that delegates to the <code class="literal">UIPortalApplication</code>.
+	</p><p>
+		In case of <code class="literal">PortalRequestContext</code>, it directly delegates as the <code class="literal">PortalRequestContext</code> has a reference to the current <code class="literal">UIPortalApplication</code>.
+	</p><p>
+		In case of a different context, such as the <code class="literal">PortletRequestContext</code>, it delegates to the parent context given the fact that the root <code class="literal">RequestContext</code> is always a <code class="literal">PortalRequestContext</code>.
+	</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-RTL_Right_To_Left_Framework-Groovy_templates"/>3.7.1. Groovy templates</h3></div></div></div><p>
+			Orientation is defined by implicit variables in the Groovy binding context:
+		</p><div class="variablelist"><dl><dt><span class="term">Orientation</span></dt><dd><p>
+						The current orientation as an Orientation
+					</p></dd><dt><span class="term">isLT</span></dt><dd><p>
+						The value of orientation.isLT()
+					</p></dd><dt><span class="term">isRT</span></dt><dd><p>
+						The value of orientation.isRT()
+					</p></dd><dt><span class="term">dir</span></dt><dd><p>
+						The string 'ltr' if the orientation is LT or the string 'rtl' if the orientation is RT.
+					</p></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-RTL_Right_To_Left_Framework-Stylesheet"/>3.7.2. Stylesheet</h3></div></div></div><p>
+			The skin service handles stylesheet rewriting to accommodate the orientation. It works by appending -lt or -rt to the stylesheet name.
+		</p><p>
+			For instance: <code class="filename">/web/skin/portal/webui/component/UIFooterPortlet/DefaultStylesheet-rt.css</code> will return the same stylesheet as <code class="filename">/web/skin/portal/webui/component/UIFooterPortlet/DefaultStylesheet.css</code> but processed for the RT orientation. The <em class="parameter"><code>-lt</code></em> suffix is optional.
+		</p><p>
+			Stylesheet authors can annotate their stylesheet to create content that depends on the orientation.
+		</p><div class="example"><a id="d0e1554"/><p class="title"><b>Example 3.2. </b></p><div class="example-contents"><p>
+				In the example, we need to use the orientation to modify the float attribute that will make the horizontal tabs either float on left or on right:</p><pre class="programlisting">
+float: left; /* orientation=lt */
+float: right; /* orientation=rt */
+font-weight: bold;
+text-align: center;
+white-space: nowrap;
+</pre><p>The LT produced output will be:</p><pre class="programlisting">
+float: left; /* orientation=lt */
+font-weight: bold;
+text-align: center;
+white-space: nowrap;
+</pre><p>The RT produced output will be:</p><pre class="programlisting"> 
+float: right; /* orientation=rt */
+font-weight: bold;
+text-align: center;
+white-space: nowrap;
+</pre></div></div><br class="example-break"/><div class="example"><a id="d0e1567"/><p class="title"><b>Example 3.3. </b></p><div class="example-contents"><p>
+				In this example, you need to modify the padding according to the orientation:</p><pre class="programlisting">
+color: white;
+line-height: 24px;
+padding: 0px 5px 0px 0px; /* orientation=lt */
+padding: 0px 0px 0px 5px; /* &gt;orientation=rt */
+</pre><p>The LT produced output will be:</p><pre class="programlisting"> 
+color: white;
+line-height: 24px;
+padding: 0px 5px 0px 0px; /* orientation=lt */
+</pre><p>The RT produced output will be:</p><pre class="programlisting"> 
+color: white;
+line-height: 24px;
+padding: 0px 0px 0px 5px; /* orientation=rt */
+</pre></div></div><br class="example-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-RTL_Right_To_Left_Framework-Images"/>3.7.3. Images</h3></div></div></div><p>
+			Sometimes, it is necessary to create the RT version of an image that will be used from a template or from a stylesheet. However, symmetric images can be automatically generated avoiding the necessity to create a mirrored version of an image and furthermore avoiding maintenance cost.
+		</p><p>
+			The web resource filter uses the same naming pattern as the skin service. When an image ends with the -rt suffix, the portal will attempt to locate the original image and create a mirror of it.
+		</p><p>
+			For instance: requesting the image <code class="filename">/GateInResources/skin/DefaultSkin/webui/component/UITabSystem/UITabs/background/NormalTabStyle-rt.gif</code> returns a mirror of the image <code class="filename">/GateInResources/skin/DefaultSkin/webui/component/UITabSystem/UITabs/background/NormalTabStyle.gif</code>.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+				It is important to consider whether the image to be mirrored is symmetrical as this will impact its final appearance.
+			</p></div><p>
+			Here is an example combining stylesheet and images:
+		</p><pre class="programlisting">
+line-height: 24px; 
+background: url('background/NavigationTab.gif') no-repeat right top; /* orientation=lt */
+background: url('background/NavigationTab-rt.gif') no-repeat left top; /* orientation=rt */
+padding-right: 2px; /* orientation=lt */
+padding-left: 2px; /* orientation=rt */
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-RTL_Right_To_Left_Framework-Client_side_JavaScript"/>3.7.4. Client side JavaScript</h3></div></div></div><p>
+			The <code class="literal">eXo.core.I18n</code> object provides the following parameters for orientation:
+		</p><div class="variablelist"><dl><dt><span class="term">getOrientation()</span></dt><dd><p>
+						Return either the string lt or rt
+					</p></dd><dt><span class="term">getDir()</span></dt><dd><p>
+						Return either the string ltr or rtl
+					</p></dd><dt><span class="term">isLT()</span></dt><dd><p>
+						Return true for LT
+					</p></dd><dt><span class="term">isRT()</span></dt><dd><p>
+						Return true of RT
+					</p></dd></dl></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-XML_Resources_Bundles"/>3.8. XML Resources Bundles</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-XML_Resources_Bundles-Motivation"/>3.8.1. Motivation</h3></div></div></div><p>
+			Resource bundles are usually stored in property files. However, as property files are plain files, issues with the encoding of the file may arise. The XML resource bundle format has been developed to provide an alternative to property files.
+		</p><div class="itemizedlist"><ul><li><p>
+					The XML format declares the encoding of the file. This avoids use of the native2ascii program which can interfere with encoding.
+				</p></li><li><p>
+					Property files generally use the ISO 8859-1 character encoding which does not cover the full unicode charset. As a result, languages, such as Arabic, would not be natively supported.
+				</p></li><li><p>
+					Tooling for XML files is better supported than the tooling for Java property files; thus, the XML editor copes well with the file encoding.
+				</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-XML_Resources_Bundles-XML_format"/>3.8.2. XML format</h3></div></div></div><p>
+			The XML format is very simple and has been developed based on the <span class="emphasis"><em>DRY</em></span> (Don't Repeat Yourself) principle. The resource bundle keys are hierarchically defined and we can leverage the hierarchic nature of the XML for that purpose. Here is an example of turning a property file into an XML resource bundle file:
+		</p><pre class="programlisting">UIAccountForm.tab.label.AccountInputSet = ...
+UIAccountForm.tab.label.UIUserProfileInputSet = ...
+UIAccountForm.label.Profile = ...
+UIAccountForm.label.HomeInfo= ...
+UIAccountForm.label.BusinessInfo= ...
+UIAccountForm.label.password= ...
+UIAccountForm.label.Confirmpassword= ...
+UIAccountForm.label.email= ...
+UIAccountForm.action.Reset= ...
+</pre><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;bundle&gt;
+  &lt;UIAccountForm&gt;
+    &lt;tab&gt;
+      &lt;label&gt;
+        &lt;AccountInputSet&gt;...&lt;/AccountInputSet&gt;
+        &lt;UIUserProfileInputSet&gt;...&lt;/UIUserProfileInputSet&gt;
+      &lt;/label&gt;
+    &lt;/tab&gt;
+    &lt;label&gt;
+      &lt;Profile&gt;...&lt;/Profile&gt;
+      &lt;HomeInfo&gt;...&lt;/HomeInfo&gt;
+      &lt;BusinessInfo&gt;...&lt;/BusinessInfo&gt;
+      &lt;password&gt;...&lt;/password&gt;
+      &lt;Confirmpassword&gt;...&lt;/Confirmpassword&gt;
+      &lt;email&gt;...&lt;/email&gt;
+    &lt;/label&gt;
+    &lt;action&gt;
+      &lt;Reset&gt;...&lt;/Reset&gt;
+    &lt;/action&gt;
+  &lt;/UIAccountForm&gt;
+&lt;/bundle&gt;
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-XML_Resources_Bundles-Portal_support"/>3.8.3. Portal support</h3></div></div></div><p>
+			To be loaded by the portal at runtime (actually the resource bundle service), the name of the file must be the same as a property file and it must use the <span class="bold"><strong>.xml</strong></span> suffix.
+		</p><p>
+			For example, for the Account Portlet to be displayed in Arabic, the resource bundle would be <span class="bold"><strong> AccountPortlet_ar.xml</strong></span> rather than <span class="bold"><strong>AccountPortlet_ar.properties</strong></span>.
+		</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-JavaScript_Inter_Application_Communication"/>3.9. JavaScript Inter Application Communication</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-JavaScript_Inter_Application_Communication-Overview"/>3.9.1. Overview</h3></div></div></div><p>
+			JavaScript Inter Application Communication is designed to allow applications within a page to exchange data. This library is made for broadcasting messages on topic.
+		</p><p>
+			It is based on 3 functions:
+		</p><div class="itemizedlist"><ul><li><p>
+					Subscribe.
+				</p></li><li><p>
+					Publish.
+				</p></li><li><p>
+					Unsubscribe.
+				</p></li></ul></div><p>
+			A subscription to a topic will receive any subtopic messages. For example, the application subscribed to "<code class="literal">/eXo/application</code>" will receive messages sent on the "<code class="literal">/eXo/application/map</code>" topic. A message sent on "<code class="literal">/eXo</code>" would not be received.
+		</p><div class="variablelist"><a id="vari-Reference_Guide-Overview-Subscription_Topics"/><p class="title"><b>Subscription Topics</b></p><dl><dt><span class="term">/eXo</span></dt><dd><p>
+						This topic contains all the events generated by eXo Platform.
+					</p></dd><dt><span class="term">/eXo/portal/notification</span></dt><dd><p>
+						A message sent on this topic will prompt a pop-up notification at the top right of the screen.
+					</p></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-JavaScript_Inter_Application_Communication-Library"/>3.9.2. Library</h3></div></div></div><p>
+			The Inter Application Communication library is found in <code class="filename">01eXoResources.war:/javascript/eXo/core/Topic.js</code>
+		</p><pre class="programlisting">/**
+ * publish is used to publish an event to the other subscribers to the given channels
+ * @param {Object} senderId is a string that identify the sender
+ * @param {String} topic is the topic that the message will be published
+ * @param {Object} message is the message that's going to be delivered to the subscribers to the topic
+ */
+Topic.prototype.publish = function(/*Object*/ senderId, /*String*/ topicName, /*Object*/ message ) { ... }
+
+/**
+ * isSubscribed is used to check if a function receive the events from a topic
+ * @param {String} topic The topic.
+ * @param {Function} func is the name of the function of obj to call when a message is received on the topic
+ */
+Topic.prototype.isSubscribed = function(/*String*/ topic, /*Function*/ func) { ... }
+
+/**
+ * subscribe is used to subscribe a callback to a topic
+ * @param {String} topic is the topic that will be listened
+ * @param {Function} func is the name of the function of obj to call when a message is received on the topic
+ * 
+ * func is a function that take a Object in parameter. the event received have this format:
+ * {senderId:senderId, message:message, topic: topic}
+ *
+ */
+Topic.prototype.subscribe = function(/*String*/ topic, /*Function*/ func) { ... }
+
+/**
+ * unsubscribe is used to unsubscribe a callback to a topic
+ * @param {String} topic is the topic
+ * @param {Object} id is the id of the listener we want to unsubscribe
+ */
+Topic.prototype.unsubscribe = function(/*String*/ topic, /*Object*/ id) { ... }
+
+Topic.prototype.initCometdBridge = function() { ... }
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-JavaScript_Inter_Application_Communication-Syntax"/>3.9.3. Syntax</h3></div></div></div><p>
+			The three messaging functions require particular objects and definitions in their syntax:
+		</p><div class="variablelist"><dl><dt><span class="term">Subscribe</span></dt><dd><p>
+						The <code class="literal">subscribe</code> function is used to subscribe a callback to a topic. It uses the following parameters:
+					</p><div class="variablelist"><dl><dt><span class="term">topic</span></dt><dd><p>
+									The topic that will be listened for.
+								</p></dd><dt><span class="term">func</span></dt><dd><p>
+									The name of the object function to call when a message is received on the topic. It has to be a function that takes an Object parameter. The event received will have this format: 
+</p><pre class="programlisting">{
+  senderId:senderId,
+  message:message,
+  topic: topic
+}
+</pre><p>
+								</p></dd></dl></div></dd><dt><span class="term">Publish</span></dt><dd><p>
+						The <code class="literal">publish</code> function is used to publish an event to the other subscribered applications through the given channels. Its parameters are:
+					</p><div class="variablelist"><dl><dt><span class="term">senderId</span></dt><dd><p>
+									This is a string that identifies the sender.
+								</p></dd><dt><span class="term">topicName</span></dt><dd><p>
+									The topic that the message will be published.
+								</p></dd><dt><span class="term">message</span></dt><dd><p>
+									This is the message body to be delivered to the subscribers to the topic.
+								</p></dd></dl></div></dd><dt><span class="term">Unsubscribe</span></dt><dd><p>
+						The <code class="literal">unsubscribe</code> function is used to unsubscribe a callback to a topic. The required parameters are:
+					</p><div class="variablelist"><dl><dt><span class="term">topic</span></dt><dd><p>
+									The topic from which will be unsubscribed.
+								</p></dd><dt><span class="term">id</span></dt><dd><p>
+									This is the context object.
+								</p></dd></dl></div></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-JavaScript_Inter_Application_Communication-Example_of_what"/>3.9.4. Example of Javascript events usage</h3></div></div></div><pre class="programlisting">&lt;%@ taglib uri="http://java.sun.com/portlet" prefix="portlet" %&gt;
+&lt;portlet:defineObjects/&gt;
+&lt;div&gt;
+  &lt;p&gt;
+    Received messages:
+    &lt;div id="received_&lt;portlet:namespace/&gt;"&gt;
+         
+    &lt;/div&gt;
+  &lt;/p&gt;
+   
+  &lt;p&gt;
+    Send message:
+    &lt;input type="text" id="msg_&lt;portlet:namespace/&gt;"/&gt; &lt;a href="#" onclick="send_&lt;portlet:namespace/&gt;();"&gt;send&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script type="text/javascript"&gt;
+   
+  Function.prototype.bind = function(object) {
+    var method = this;
+      return function() {
+      method.apply(object, arguments);
+    }
+  }
+   
+  function send_&lt;portlet:namespace/&gt;() {
+    var msg = document.getElementById("msg_&lt;portlet:namespace/&gt;").value;
+    eXo.core.Topic.publish("&lt;portlet:namespace/&gt;", "/demo", msg);
+  }
+   
+  function Listener_&lt;portlet:namespace/&gt;(){
+      
+  }
+   
+  Listener_&lt;portlet:namespace/&gt;.prototype.receiveMsg = function(event) {
+    document.getElementById("received_&lt;portlet:namespace/&gt;").innerHTML = 
+      document.getElementById("received_&lt;portlet:namespace/&gt;").innerHTML + "&lt;br /&gt;* " + 
+      event.senderId + ": " + event.message;
+  }
+   
+  function init_&lt;portlet:namespace/&gt;() {
+    var listener_&lt;portlet:namespace/&gt; = new Listener_&lt;portlet:namespace/&gt;();
+    eXo.core.Topic.subscribe("/demo", listener_&lt;portlet:namespace/&gt;.receiveMsg.bind(listener_&lt;portlet:namespace/&gt;));
+  }
+   
+  init_&lt;portlet:namespace/&gt;();
+&lt;/script&gt;
+</pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Upload_Component"/>3.10. Upload Component</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Upload_Component-Upload_Service"/>3.10.1. Upload Service</h3></div></div></div><p>
+			The service is defined by the class: <code class="literal">org.exoplatform.upload.UploadService</code>;
+		</p><p>
+			This can be configured with the following xml code:
+		</p><pre class="programlisting">&lt;component&gt;
+   &lt;type&gt;org.exoplatform.upload.UploadService&lt;/type&gt;
+     &lt;init-params&gt;
+       &lt;value-param&gt;
+        &lt;name&gt;upload.limit.size&lt;/name&gt;
+        &lt;description&gt;Maximum size of the file to upload in MB&lt;/description&gt;
+        &lt;value&gt;10&lt;/value&gt;
+      &lt;/value-param&gt;
+    &lt;/init-params&gt;  
+  &lt;/component&gt;
+</pre><p>
+			This code allows for a default upload size limit for the service to be configured. The value unit is in MegaBytes.
+		</p><p>
+			This limit will be used by default by all applications if no application-specific limit is set. Setting a different limit for applications is discussed in a later section.
+		</p><p>
+			If the value is set to <em class="parameter"><code>0</code></em>, the upload size is unlimited.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><a id="proc-Reference_Guide-Upload_Service-How_to_use_the_upload_component"/><p class="title"><b>Procedure 3.2. How to use the upload component</b></p><ol class="1"><li><p>
+					Create an object type <code class="literal">org.exoplatform.webui.form.UIFormUploadInput</code>.
+				</p><p>
+					Two constructors are available for this:
+				</p><pre class="programlisting">public UIFormUploadInput(String name, String bindingExpression)
+</pre><p>
+					or:
+				</p><pre class="programlisting">public UIFormUploadInput(String name, String bindingExpression, int limit)
+</pre><p>
+					This is an example using the second form:
+				</p><pre class="programlisting">PortletRequestContext pcontext = (PortletRequestContext)WebuiRequestContext.getCurrentInstance();
+PortletPreferences portletPref = pcontext.getRequest().getPreferences();
+int limitMB = Integer.parseInt(portletPref.getValue("uploadFileSizeLimitMB", "").trim());
+UIFormUploadInput uiInput = new UIFormUploadInput("upload", "upload", limitMB);
+</pre></li><li><p>
+					To obtain the limit from the <code class="literal">xml</code> configuration, this piece of code can be added to the either <code class="filename">portlet.xml</code> or <code class="filename">portlet-preferences.xml</code>:
+				</p><pre class="programlisting">&lt;preference&gt;
+  &lt;name&gt;uploadFileSizeLimitMB&lt;/name&gt;
+  &lt;value&gt;30&lt;/value&gt;
+  &lt;read-only&gt;false&lt;/read-only&gt;
+&lt;/preference&gt;
+</pre><p>
+					Again, the <em class="parameter"><code>0</code></em> value means an unlimited upload size, and the value unit is set in MegaBytes.
+				</p></li><li><p>
+					Use the <code class="literal">getUploadDataAsStream()</code> method to get the uploaded data:
+				</p><pre class="programlisting">UIFormUploadInput input = (UIFormUploadInput)uiForm.getUIInput("upload");
+InputStream inputStream = input.getUploadDataAsStream();
+...
+jcrData.setValue(inputStream);
+</pre></li><li><p>
+					The upload service stores a temporary file on the file system during the upload process. When the upload is finished, the service must be cleaned to:
+				</p><div class="orderedlist"><ol><li><p>
+							Delete the temporary file.
+						</p></li><li><p>
+							Delete the classes used for the upload.
+						</p></li></ol></div><p>
+					Use the<code class="literal">removeUpload()</code> method defined in the upload service to purge the file:
+				</p><pre class="programlisting">UploadService uploadService = uiForm.getApplicationComponent(UploadService.class) ;
+UIFormUploadInput uiChild = uiForm.getChild(UIFormUploadInput.class) ;
+uploadService.removeUpload(uiChild.getUploadId()) ;
+</pre><div class="note"><h2>Saving the uploaded file</h2><p>
+						Ensure the file is saved <span class="bold"><strong>before</strong></span> the service is cleaned.
+					</p></div></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Deactivation_of_the_Ajax_Loading_Mask_Layer_"/>3.11. Deactivation of the Ajax Loading Mask Layer</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Deactivation_of_the_Ajax_Loading_Mask_Layer_-Purpose"/>3.11.1. Purpose</h3></div></div></div><p>
+			The loading mask layer is deployed after an ajax-call. It aims at blocking the GUI to prevent further user actions until the the ajax-request has been completed.
+		</p><p>
+			However, the mask layer may need to be deactivated in instances where the portal requires user instructions before the previous instructions have been carried out.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><a id="proc-Reference_Guide-Purpose-How_to_deactivate_the_ajax_loading_mask"/><p class="title"><b>Procedure 3.3. How to deactivate the ajax-loading mask</b></p><ol class="1"><li><p>
+					Generate a script to make an asynchronous ajax-call. Use the <code class="literal">uicomponent.doAsync()</code> method rather than the <code class="literal">uicomponent.event()</code> method.
+				</p><p>
+					For example:
+				</p><pre class="programlisting">&lt;a href="&lt;%=uicomponent.doAsync(action, beanId, params)%&gt;" alt=""&gt;Asynchronous&lt;/a&gt;
+</pre></li><li><p>
+					The <code class="literal">doAsync()</code> method automatically adds the following new parameter to the parameters list; <code class="literal">asyncparam = new Parameter(AJAX ASYNC,"true"); (AJAX ASYNC == "ajax async")</code>
+				</p><p>
+					This request is asynchronous and the ajax-loading mask will not deployed.
+				</p><div class="note"><h2>Note</h2><p>
+						An asynchronous request can still be made using the <code class="literal">uicomponent.event()</code>. When using this method, the asyncparam must be added manually.
+					</p></div></li></ol></div><p>
+			The GUI will be blocked to ensure that the user can only request one action at one time and while the request seems to be synchronous, all ajax requests are always asynchronous. For further information, refer to <a href="chap-Reference_Guide-Development.html#sect-Reference_Guide-Deactivation_of_the_Ajax_Loading_Mask_Layer_-Synchronous_issue" title="3.11.2. Synchronous issue">Section 3.11.2, “Synchronous issue”</a>.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Deactivation_of_the_Ajax_Loading_Mask_Layer_-Synchronous_issue"/>3.11.2. Synchronous issue</h3></div></div></div><p>
+			Most web browsers support ajax requests in two modes: <span class="emphasis"><em>Synchronous</em></span> and <span class="emphasis"><em>Asynchronous</em></span>. This mode is specified with a boolean <code class="literal">bAsync</code> parameter.
+		</p><pre class="programlisting">var bAsync = false; // Synchronous
+request.open(instance.method, instance.url, bAsync);
+</pre><p>
+			However, to work with browsers that do not support the <span class="emphasis"><em>Synchronous</em></span> requests, <code class="literal">bAsync</code> is always set to true (Ajax request will always be asynchronous).
+		</p><pre class="programlisting">// Asynchronous request
+request.open(instance.method, instance.url, true);
+</pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Javascript_Configuration"/>3.12. JavaScript Configuration</h2></div></div></div><p>
+  Managing JavaScript in an application like GateIn 3.1 is a critical part of the configuration work.
+      Configuring the scripts correctly will result in the faster response time from the portal.
+ </p><p>
+  Every portlet can have its own JavaScript code but in many cases, it is more convenient to reuse some existing
+      shared libraries. For that reason, GateIn 3.1 has a mechanism to easily register the libraries that will be loaded
+      when every page is rendered.
+ </p><p>
+  To do so, every WAR deployed in GateIn 3.1 can register the <code class="filename">.js</code> files with the <span class="bold"><strong>gatein-resources.xml</strong></span> configuration file.</p><p>
+  The example code snippet below is found in the <span class="bold"><strong>gatein-resources.xml</strong></span> in the <span class="bold"><strong>eXoResources.war </strong></span>file.</p><pre class="programlisting">&lt;javascript&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo.js&lt;/js-path&gt;
+    &lt;js-priority&gt;0&lt;/js-priority&gt;
+  &lt;/param&gt;
+&lt;/javascript&gt;
+
+&lt;!-- CORE Javascripts --&gt;
+&lt;javascript&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.Utils&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/Util.js&lt;/js-path&gt;
+    &lt;js-priority&gt;1&lt;/js-priority&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.DOMUtil&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/DOMUtil.js&lt;/js-path&gt;
+    &lt;js-priority&gt;1&lt;/js-priority&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.Browser&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/Browser.js&lt;/js-path&gt;
+    &lt;js-priority&gt;2&lt;/js-priority&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.MouseEventManager&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/MouseEventManager.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.UIMaskLayer&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/UIMaskLayer.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.Skin&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/Skin.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.DragDrop&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/DragDrop.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.DragDrop2&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/DragDrop2.js&lt;/js-path&gt;
+  &lt;/param&gt;
+&lt;/javascript&gt;
+</pre><p>
+  Note that registered JavaScript files will be merged into a single <code class="literal">merged.js</code> file when the server loads. This reduces the number of HTTP calls as shown in the homepage source code:
+ </p><pre class="programlisting">&lt;script type="text/javascript" src="/portal/javascript/merged.js"&gt;&lt;/script&gt;
+</pre><p>
+  Although this optimization is useful for a production environment, it may be easier to deactivate this optimization while debugging JavaScript problems.
+ </p><p>
+  To do this, set the Java system property <code class="literal">exo.product.developing</code> to <code class="literal">true</code>.
+ GateIn provides two startup scripts that define this property in gatein-dev.sh (for Linux, Mac) and gatein-dev.bat (for Windows).</p><p>
+  To generate the <code class="literal">merged.js</code> file, set this property to <code class="literal">false</code>.
+ If the property is not set, the default value is false. </p><p>
+  The property can be passed as a JVM parameter with the <code class="literal">-D</code> option in your <code class="literal">GateIn.sh</code> or <code class="literal">GateIn.bat</code> startup script.
+ </p><p>
+  Every JavaScript file is associated with a module name which acts as a namespace.
+
+      </p><p>
+      Inside the associated JavaScript files, the eXo JavaScript objects are exposed as global variables named after the module.</p><p> For example:</p><pre class="programlisting">
+eXo.core.DragDrop = new DragDrop();
+   </pre><p>
+  It is also possible to use the <code class="literal">eXo.require()</code>method to lazy load and evaluate some JavaScript codes.
+      This is quite useful for the portlet or gadget applications that will use this JavaScript only once. Otherwise,
+      if the library is reusable in several places, it is better to define it in the <span class="bold"><strong>gatein-resources.xml</strong></span> file.
+ </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Configuration.html"><strong>Prev</strong>Chapter 2. Configuration</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Portlet_development.html"><strong>Next</strong>Chapter 4. Portlet development</a></li></ul></body></html>

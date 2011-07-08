@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 5. Gadget development</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn Reference Guide"/><link rel="up" href="index.html" title="GateIn Reference Guide"/><link rel="prev" href="chap-Reference_Guide-Portlet_development.html" title="Chapter 4. Portlet development"/><link rel="next" href="chap-Reference_Guide-Authentication_And_Identity.html" title="Chapter 6. Authentication and Identity"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Portlet_development.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Authentication_And_Identity.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Reference_Guide-Gadget_development"/>Chapter 5. Gadget development</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets">5.1. Gadgets</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets-Existing_Gadgets">5.1.1. Existing Gadgets</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets-Create_a_new_Gadget">5.1.2. Create a new Gadget</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets-Remote_Gadget">5.1.3. Remote Gadget</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets-Gadget_Importing">5.1.4. Gadget Importing</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets-Gadget_Web_Editing">5.1.5. Gadget Web Editing</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets-Gadget_IDE_Editing">5.1.6. Gadget IDE Editing</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Gadgets-Dashboard_Viewing">5.1.7. Dashboard Viewing</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Setup_a_Gadget_Server">5.2. Set up a Gadget Server</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Setup_a_Gadget_Server-Virtual_servers_for_gadget_rendering">5.2.1. Virtual servers for gadget rendering</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Gadget_development.html#sect-Reference_Guide-Setup_a_Gadget_Server-Configuration">5.2.2. Configuration</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Gadgets"/>5.1. Gadgets</h2></div></div></div><p>
+		A gadget is a mini web application, embedded in a web page and running on an application server platform. These small applications help users perform various tasks.
+	</p><p>
+		GateIn 3.1 supports gadgets, such as Todo, Calendar, Calculator, Weather Forecasts and RSS Reader.
+	</p><div class="variablelist"><a id="vari-Reference_Guide-Gadgets-Default_Gadgets"/><p class="title"><b>Default Gadgets:</b></p><dl><dt><span class="term">Calendar</span></dt><dd><p>
+					The calendar gadget allows you to switch easily between daily, monthly and yearly views. Also, this gadget is customizable to match your portal's theme.
+				</p><div class="mediaobject"><img src="images/GadgetDevelopment/Calendar.png"/></div></dd><dt><span class="term">ToDo</span></dt><dd><p>
+					This application helps you organize your day and work group. It is designed to keep track of your tasks in a convenient and transparent way. Tasks can be highlighted with different colors.
+				</p><div class="mediaobject"><img src="images/GadgetDevelopment/Todo.png"/></div></dd><dt><span class="term">Calculator</span></dt><dd><p>
+					This mini-application lets you perform the most basic arithmetic operations and can be themed to match the rest of your portal.
+				</p><div class="mediaobject"><img src="images/GadgetDevelopment/Calculator.png"/></div></dd><dt><span class="term">RSS Reader</span></dt><dd><p>
+					An RSS reader, or aggregator collects content from various, user-specified feed sources and displays them in one location. This content can include, but is not limited to, news headlines, blog posts or email. The RSS Reader gadget displays this content in a single window on your Portal page.
+				</p></dd><dt><span class="term">More Gadgets</span></dt><dd><p>
+					Further gadgets can be obtained from the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.google.com/ig/directory?synd=open">Google Gadget</a> site. GateIn 3.1 is compatible with most of the gadgets available here.
+				</p></dd></dl></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Important</h2><p>
+			The following sections require more textual information.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Gadgets-Existing_Gadgets"/>5.1.1. Existing Gadgets</h3></div></div></div><div class="mediaobject"><img src="images/GadgetDevelopment/Liste.png"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Gadgets-Create_a_new_Gadget"/>5.1.2. Create a new Gadget</h3></div></div></div><div class="mediaobject"><img src="images/GadgetDevelopment/New.png"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Gadgets-Remote_Gadget"/>5.1.3. Remote Gadget</h3></div></div></div><p>
+			This is the reference to a remote gadget (stock one).
+		</p><div class="mediaobject"><img src="images/GadgetDevelopment/Import.png"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Gadgets-Gadget_Importing"/>5.1.4. Gadget Importing</h3></div></div></div><p>
+			After referencing the gadget successfully, import it into the local repository.
+		</p><div class="mediaobject"><img src="images/GadgetDevelopment/Imported.png"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Gadgets-Gadget_Web_Editing"/>5.1.5. Gadget Web Editing</h3></div></div></div><p>
+			Modify it from the Web where the Gadget was imported:
+		</p><div class="mediaobject"><img src="images/GadgetDevelopment/EditImportedOnline.png"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Gadgets-Gadget_IDE_Editing"/>5.1.6. Gadget IDE Editing</h3></div></div></div><p>
+			Edit it from your IDE thanks to the WebDAV protocol:
+		</p><div class="mediaobject"><img src="images/GadgetDevelopment/EditImportedWebDAV.png"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Gadgets-Dashboard_Viewing"/>5.1.7. Dashboard Viewing</h3></div></div></div><p>
+			View it from the Dashboard when you drag and drop the Gadget from listing to the dashboard.
+		</p><div class="mediaobject"><img src="images/GadgetDevelopment/Dashboard.png"/></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Setup_a_Gadget_Server"/>5.2. Set up a Gadget Server</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Setup_a_Gadget_Server-Virtual_servers_for_gadget_rendering"/>5.2.1. Virtual servers for gadget rendering</h3></div></div></div><p>
+			GateIn 3.1 recommends using two virtual hosts for security. If the gadget is running on a different domain other than the container (the website that 'contains' the app), it is unable to interfere with the portal by modifying the code or cookies.
+		</p><p>
+			An example would hosting the portal from <span class="bold"><strong>http://www.sample.com</strong></span> and the gadgets from <span class="bold"><strong>http://www.samplemodules.com</strong></span>.
+		</p><p>
+			To do this, configure a parameter called <span class="emphasis"><em>gadgets.hostName</em></span>. The value is the <span class="emphasis"><em>path/to/gadgetServer</em></span> in <code class="literal">GadgetRegisteryService</code>:
+		</p><pre class="programlisting">&lt;component&gt;
+  &lt;key&gt;org.exoplatform.application.gadget.GadgetRegistryService&lt;/key&gt;
+  &lt;type&gt;org.exoplatform.application.gadget.jcr.GadgetRegistryServiceImpl&lt;/type&gt;
+  &lt;init-params&gt;
+    &lt;value-param&gt;
+      &lt;name&gt;gadgets.hostName&lt;/name&gt;
+      &lt;description&gt;Gadget server url&lt;/description&gt;
+      &lt;value&gt;http://localhost:8080/GateInGadgetServer/gadgets/&lt;/value&gt;
+    &lt;/value-param&gt;
+  &lt;/init-params&gt;
+&lt;/component&gt;
+</pre><p>
+			It is also possible to have multiple rendering servers. This helps to balance the rendering load across multiple servers.
+		</p><p>
+			When deploying on the same server, ensure the gadget initiates before anything that calls it (for example; the webapp <code class="literal">GateInGadgets</code> which uses <code class="literal">org.exoplatform.application.gadget.GadgetRegister</code>).
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Setup_a_Gadget_Server-Configuration"/>5.2.2. Configuration</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Configuration-Security_key"/>5.2.2.1. Security key</h4></div></div></div><p>
+				A file called <span class="bold"><strong>key.txt</strong></span> has to be generated for every installation of GateIn 3.1 to be secure. This file contains a secret key used to encrypt the security token used for the user authentication.
+			</p><p>
+				In the Linux systems, this file can be generated with:
+			</p><pre class="programlisting"><code class="command">dd if=/dev/random bs=32 count=1 | openssl base64 &gt; /tmp/key.txt</code>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Configuration-Gadget_proxy_and_concat_configuration"/>5.2.2.2. Gadget proxy and concat configuration</h4></div></div></div><p>
+				These servers have to be on the same domain as the gadget server. You can configure the container in <code class="filename">eXoGadgetServer:/WEB-INF/classes/containers/default/container.js</code>.
+			</p><pre class="programlisting">"gadgets.content-rewrite" : {
+  "include-urls": ".*",
+  "exclude-urls": "",
+  "include-tags": ["link", "script", "embed", "img", "style"],
+  "expires": "86400",
+  "proxy-url": "http://localhost:8080/eXoGadgetServer/gadgets/proxy?url=",
+  "concat-url": "http://localhost:8080/eXoGadgetServer/gadgets/concat?"
+},
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Configuration-Proxy"/>5.2.2.3. Proxy</h4></div></div></div><p>
+				To allow external gadgets when the server is behind a proxy, add the following code to the beginning of the JVM:
+			</p><pre class="programlisting">-Dhttp.proxyHost=proxyhostURL -Dhttp.proxyPort=proxyPortNumber -Dhttp.proxyUser=someUserName -Dhttp.proxyPassword=somePassword
+</pre></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Portlet_development.html"><strong>Prev</strong>Chapter 4. Portlet development</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Authentication_And_Identity.html"><strong>Next</strong>Chapter 6. Authentication and Identity</a></li></ul></body></html>

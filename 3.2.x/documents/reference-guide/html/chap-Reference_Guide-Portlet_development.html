@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 4. Portlet development</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn Reference Guide"/><link rel="up" href="index.html" title="GateIn Reference Guide"/><link rel="prev" href="chap-Reference_Guide-Development.html" title="Chapter 3. Portal Development"/><link rel="next" href="chap-Reference_Guide-Gadget_development.html" title="Chapter 5. Gadget development"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Development.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Gadget_development.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Reference_Guide-Portlet_development"/>Chapter 4. Portlet development</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Reference_Guide-Portlet_development.html#sect-Reference_Guide-Portlet_Primer">4.1. Portlet Primer</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Portlet_development.html#sect-Reference_Guide-Portlet_Primer-JSR_168_and_JSR_286_overview">4.1.1. JSR-168 and JSR-286 overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Portlet_development.html#sect-Reference_Guide-Portlet_Primer-Tutorials">4.1.2. Tutorials</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Portlet_development.html#sect-Reference_Guide-Global_Portlet">4.2. Global porlet.xml file</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Portlet_development.html#sect-Reference_Guide-Global_Portlet-Global_usecase">4.2.1. Global portlet.xml usecase</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Portlet_development.html#sect-Reference_Guide-Global_Portlet-Global_metadata">4.2.2. Global metadata</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Portlet_Primer"/>4.1. Portlet Primer</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portlet_Primer-JSR_168_and_JSR_286_overview"/>4.1.1. JSR-168 and JSR-286 overview</h3></div></div></div><p>
+			The Java Community Process (<code class="literal">JCP</code>) uses Java Specification Requests (<code class="literal">JSR</code>s) to define proposed specifications and technologies designed for the Java platform.
+		</p><p>
+			The Portlet Specifications aim at defining portlets that can be used by any <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jcp.org/en/jsr/detail?id=168">JSR-168 (Portlet 1.0)</a> or <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jcp.org/en/jsr/detail?id=286">JSR-286 (Portlet 2.0)</a> portlet container.
+		</p><p>
+			Most Java EE (Enterprise Edition) portals include at least one compliant portlet container, and GateIn 3.1 is no exception. In fact, GateIn 3.1 includes a container that supports both versions.
+		</p><p>
+			This chapter gives a brief overview of the Portlet Specifications, but portlet developers are strongly encouraged to read the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jcp.org/en/jsr/detail?id=286">JSR-286 Portlet Specification</a> .
+		</p><p>
+			GateIn 3.1 is fully JSR-286 compliant. Any JSR-168 or JSR-286 portlet operates as it is mandated by the respective specifications inside the portal.
+		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-JSR_168_and_JSR_286_overview-Portal_Pages"/>4.1.1.1. Portal Pages</h4></div></div></div><p>
+				A portal can be considered as a series of web pages with different <span class="emphasis"><em>areas</em></span> within them. Those areas contain different <span class="emphasis"><em>windows</em></span> and each <span class="emphasis"><em>window</em></span> contains portlet:
+			</p><p>
+				The diagram below visually represents this nesting:
+			</p><p>
+				</p><div class="mediaobject"><img src="images/PortletDevelopment/Standard/SpecPortalDef.png"/></div><p>
+			</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-JSR_168_and_JSR_286_overview-Rendering_Modes"/>4.1.1.2. Rendering Modes</h4></div></div></div><p>
+				A portlet can have different view modes. Three modes are defined by the JSR-286 specification:
+			</p><div class="variablelist"><dl><dt><span class="term">View</span></dt><dd><p>
+							Generate the markup reflecting the current state of the portlet.
+						</p></dd><dt><span class="term">Edit</span></dt><dd><p>
+							Allow you to customize the behavior of the portlet.
+						</p></dd><dt><span class="term">Help</span></dt><dd><p>
+							Provide information to the user as to how to use the portlet.
+						</p></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-JSR_168_and_JSR_286_overview-Window_States"/>4.1.1.3. Window States</h4></div></div></div><p>
+				Window states are an indicator of how much page space a portlet consumes on any given page. The three states defined by the JSR-168 specification are:
+			</p><div class="variablelist"><dl><dt><span class="term">Normal</span></dt><dd><p>
+							A portlet shares this page with other portlets.
+						</p></dd><dt><span class="term">Minimized</span></dt><dd><p>
+							A portlet may show very little information, or none at all.
+						</p></dd><dt><span class="term">Maximized</span></dt><dd><p>
+							A portlet may be the only portlet displayed on this page.
+						</p></dd></dl></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Portlet_Primer-Tutorials"/>4.1.2. Tutorials</h3></div></div></div><p>
+			The tutorials contained in this chapter are targeted towards portlet developers. It is also recommended that developers read and understand the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jcp.org/en/jsr/detail?id=286"> JSR-286 Portlet Specification </a> .
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Maven</h2><p>
+				This example is using Maven to compile and build the web archive. Maven versions can be downloaded from <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://maven.apache.org/download.html">maven.apache.org</a>
+			</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Tutorials-Deploying_your_first_Portlet"/>4.1.2.1. Deploying your first Portlet</h4></div></div></div><p>
+				This section describes how to deploy a portlet in GateIn 3.1. A sample portlet called <code class="filename">SimplestHelloWorld</code> is located in the <code class="literal">examples</code> directory at the root of your GateIn 3.1 binary package. This sample is used in the following examples.
+			</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Deploying_your_first_Portlet-Compiling"/>4.1.2.1.1. Compiling</h5></div></div></div><p>
+					To compile and package the application:
+				</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Navigate to the <code class="filename">SimplestHelloWorld</code> directory and execute:
+						</p><pre class="programlisting">mvn package
+</pre></li><li><p>
+							If the compile is successfully packaged, the result will be available in: <code class="filename">SimplestHelloWorld/target/SimplestHelloWorld-0.0.1.war </code>.
+						</p></li><li><p>
+							Copy the package file into <code class="literal">JBOSS_HOME/server/default/deploy</code>.
+						</p></li><li><p>
+							Start the JBoss Application Server (if it is not already running).
+						</p></li><li><p>
+							Create a new portal page and add the portlet to it.
+						</p><div class="mediaobject"><img src="images/PortletDevelopment/Standard/first_portlet/deployed.png"/></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Deploying_your_first_Portlet-Package_Structure"/>4.1.2.1.2. Package Structure</h5></div></div></div><p>
+					Like other Java EE applications, GateIn 3.1 portlets are packaged in the .war files. A typical portlet .war file can include servlets, resource bundles, images, HTML, JavaServer Pages (JSP), and other static or dynamic files.
+				</p><p>
+					The following is an example of the directory structure of the <code class="filename">SimplestHelloWorld</code> portlet:
+				</p><div class="programlistingco"><pre class="programlisting">|-- SimplestHelloWorld-0.0.1.war
+|   `-- WEB-INF
+|       |-- classes
+|       |   `-- org
+|       |       `-- gatein
+|       |           `-- portal
+|       |               `-- examples
+|       |                   `-- portlets
+|       |     <span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>                  `-- SimplestHelloWorldPortlet.class
+|       |-- po<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>rtlet.xml
+|       `-- we<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>b.xml
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+								The compiled Java class implementing <span class="emphasis"><em>javax.portlet.Portlet</em></span> (through <span class="emphasis"><em>javax.portlet.GenericPortlet </em></span> )
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+								This is the mandatory descriptor files for portlets. It is used during deployment.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+								This is the mandatory descriptor for web applications.
+							</p></td></tr></table></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Deploying_your_first_Portlet-Portlet_Class"/>4.1.2.1.3. Portlet Class</h5></div></div></div><p>
+					Below is the <code class="filename">SimplestHelloWorldPortlet/src/main/java/org/gatein/portal/examples/portlets/SimplestHelloWorldPortlet.java </code> Java source:
+				</p><div class="programlistingco"><pre class="programlisting">package org.gatein.portal.examples.portlets;
+ 
+import java.io.IOException;
+import java.io.PrintWriter;
+ 
+import javax.portlet.GenericPortlet;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+ 
+public class S<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>implestHelloWorldPortlet extends GenericPortlet
+{
+   public void doView(RenderRequest request, 
+              <span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>         RenderResponse response) throws IOException
+   {
+      PrintWri<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>ter writer = response.getWriter();
+      writer.w<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/4.png" alt="(4)"/></span>rite("Hello World !");
+      writer.c<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/5.png" alt="(5)"/></span>lose();
+   }
+}
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+								All portlets must implement the <code class="literal">javax.portlet.Portlet</code> interface. The portlet API provides a convenient implementation of this interface.
+							</p><p>
+								The <code class="literal">javax.portlet.Portlet</code> interface uses the <code class="literal">javax.portlet.GenericPortlet</code> class which implements the <code class="literal">Portlet render</code> method to dispatch to abstract mode-specific methods. This makes it easier to support the standard portlet modes.
+							</p><p>
+								<code class="literal">Portlet render</code> also provides a default implementation for the <code class="literal">processAction</code>, <code class="literal">init</code> and <code class="literal">destroy</code> methods. It is recommended to extend <code class="literal">GenericPortlet</code> for most cases.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+								If only the <code class="literal">view</code> mode is required, only the <code class="literal">doView</code> method needs to be implemented. The <code class="literal">GenericPortlet</code><code class="literal">render</code> implementation calls our implementation when the <code class="literal">view</code> mode is requested.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+								Use the <span class="emphasis"><em>RenderResponse</em></span> to obtain a writer to be used to produce content.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/4.png" alt="4" border="0"/></td><td valign="top" align="left"><p>
+								Write the markup to display.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/5.png" alt="5" border="0"/></td><td valign="top" align="left"><p>
+								Close the writer.
+							</p></td></tr></table></div></div><p>
+					</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Markup Fragments</h2><p>
+							Portlets are responsible for generating markup fragments, as they are included on a page and are surrounded by other portlets. This means that a portlet outputing HTML must not output any markup that cannot be found in a <code class="literal">&lt;body&gt;</code> element.
+						</p></div><p>
+				</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Deploying_your_first_Portlet-Application_Descriptors"/>4.1.2.1.4. Application Descriptors</h5></div></div></div><p>
+					GateIn 3.1 requires certain descriptors to be included in a portlet WAR file. These descriptors are defined by the Jave EE (<code class="filename">web.xml</code>) and Portlet Specification (<code class="filename">portlet.xml</code>).
+				</p><p>
+					Below is an example of the <code class="filename">SimplestHelloWorldPortlet/WEB-INF/portlet.xml</code> file. This file must adhere to its definition in the JSR-286 Portlet Specification. More than one portlet application may be defined in this file:
+				</p><div class="programlistingco"><pre class="programlisting">
+&lt;portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd 
+                                         http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+   version="2.0"&gt;
+   &lt;portlet&gt;
+      &lt;portlet<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>-name&gt;SimplestHelloWorldPortlet&lt;/portlet-name&gt;
+      &lt;portlet<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>-class&gt;
+         org.gatein.portal.examples.portlets.SimplestHelloWorldPortlet
+      &lt;/portlet-class&gt;
+      &lt;support<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>s&gt;
+        &lt;mime-type&gt;text/html&lt;/mime-type&gt;
+      &lt;/supports&gt;
+      &lt;portlet<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/4.png" alt="(4)"/></span>-info&gt;
+          &lt;title&gt;Simplest Hello World Portlet&lt;/title&gt;
+      &lt;/portlet-info&gt;
+   &lt;/portlet&gt;
+&lt;/portlet-app&gt;
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+								Define the portlet name. It does not have to be the class name.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+								The Fully Qualified Name (<code class="literal">FQN</code>) of your portlet class must be declared here.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+								The <code class="literal">&lt;supports&gt; </code> element declares all of the markup types that a portlet supports in the <code class="literal">render</code> method. This is accomplished via the <code class="literal">&lt;mime-type&gt; </code> element, which is required for every portlet.
+							</p><p>
+								The declared MIME types must match the capability of the portlet. It allows administrators to pair which modes and window states are supported for each markup type.
+							</p><p>
+								This does not have to be declared as all portlets must support the <code class="literal">view</code> portlet mode.
+							</p><p>
+								Use the <code class="literal">&lt;mime-type&gt; </code> element to define which markup type the portlet supports. In the example above, this is <code class="literal">text/html</code>. This section tells the portal to only output HTML.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/4.png" alt="4" border="0"/></td><td valign="top" align="left"><p>
+								When rendered, the portlet's title is displayed as the header in the portlet window, unless it is overridden programmatically. In the example above, the title would be <code class="literal">Simplest Hello World Portlet</code> .
+							</p></td></tr></table></div></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Tutorials-JavaServer_Pages_Portlet_Example"/>4.1.2.2. JavaServer Pages Portlet Example</h4></div></div></div><p>
+				This section discusses:
+			</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>
+						Add more features to the previous example.
+					</p></li><li><p>
+						Use a JSP page to render the markup.
+					</p></li><li><p>
+						Use the portlet tag library to generate links to the portlet in different ways.
+					</p></li><li><p>
+						Use the other standard portlet modes.
+					</p></li></ol></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						The example used in this section can be found in the <code class="literal">JSPHelloUser</code> directory.
+					</p></li><li><p>
+						Execute <code class="command">mvn package</code> in this directory.
+					</p></li><li><p>
+						Copy <code class="filename">JSPHelloUser/target/JSPHelloUser-0.0.1.war </code> to the <code class="literal">deploy</code> directory of JBoss Application Server.
+					</p></li><li><p>
+						Select the new <code class="literal">JSPHelloUser</code> tab in your portal.
+					</p></li></ol></div><div class="mediaobject" align="center"><img src="images/PortletDevelopment/Standard/jsp_portlet/output.png" align="middle"/></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+					The <code class="literal">EDIT</code> button only appears with logged-in users, which is not the case in the screenshot.
+				</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-JavaServer_Pages_Portlet_Example-Package_Structure"/>4.1.2.2.1. Package Structure</h5></div></div></div><p>
+					The package structure in this tutorial does not much differ from the previous example, with the exception of adding some JSP files detailed later.
+				</p><p>
+					The JSPHelloUser portlet contains the mandatory portlet application descriptors. The following is an example of the directory structure of the JSPHelloUser portlet:
+				</p><pre class="programlisting">JSPHelloUser-0.0.1.war
+    |-- META-INF
+    |   |-- MANIFEST.MF
+    |-- WEB-INF
+    |   |-- classes
+    |   |   `-- org
+    |   |       `-- gatein
+    |   |           `-- portal
+    |   |               `-- examples
+    |   |                   `-- portlets
+    |   |                       `-- JSPHelloUserPortlet.class
+    |   |-- portlet.xml
+    |   `-- web.xml
+    `-- jsp
+        |-- edit.jsp
+        |-- hello.jsp
+        |-- help.jsp
+        `-- welcome.jsp
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-JavaServer_Pages_Portlet_Example-Portlet_Class"/>4.1.2.2.2. Portlet Class</h5></div></div></div><p>
+					The code below is from the <code class="filename"> JSPHelloUser/src/main/java/org/gatein/portal/examples/portlets/JSPHelloUserPortlet.java </code> Java source. It is split in different pieces.
+				</p><div class="programlistingco"><pre class="programlisting">package org.gatein.portal.examples.portlets;
+ 
+import java.io.IOException;
+ 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.GenericPortlet;
+import javax.portlet.PortletException;
+import javax.portlet.PortletRequestDispatcher;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+import javax.portlet.UnavailableException;
+ 
+public class JSPHelloUserPortlet extends GenericPortlet
+{
+    
+   public void doView(RenderRequest request, RenderResponse response)
+       throws <span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>PortletException, IOException
+   {
+      String sYourName = (String) request.getParameter("yourname");
+      if (sYou<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>rName != null)
+      {
+         request.setAttribute("yourname", sYourName);
+         PortletRequestDispatcher prd = 
+            ge<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>tPortletContext().getRequestDispatcher("/jsp/hello.jsp");
+         prd.i<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/4.png" alt="(4)"/></span>nclude(request, response);
+      }
+      else
+      {
+         PortletRequestDispatcher prd = getPortletContext().getRequestDispatcher("/jsp/welcome.jsp");
+         prd.include(request, response);
+      }
+   }
+...
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+								Override the <span class="emphasis"><em>doView</em></span> method (as in the first tutorial).
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+								This entry attempts to obtain the value of the render parameter named <code class="literal">yourname</code>. If defined, it should redirect to the <code class="filename">hello.jsp</code> JSP page or to the <code class="filename">welcome.jsp</code> JSP page.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+								Get a request dispatcher on a file located within the web archive.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/4.png" alt="4" border="0"/></td><td valign="top" align="left"><p>
+								Perform the inclusion of the markup obtained from the JSP.
+							</p></td></tr></table></div></div><p>
+					Like the <code class="literal">VIEW</code> portlet mode, the specification defines two other modes; <code class="literal">EDIT</code> and <code class="literal">HELP</code>.
+				</p><p>
+					These modes need to be defined in the <code class="filename">portlet.xml</code> descriptor. This enables the corresponding buttons on the portlet's window.
+				</p><p>
+					The generic portlet that is inherited dispatches different views to the methods: <code class="literal">doView</code> , <code class="literal">doHelp</code> and <code class="literal">doEdit</code>.
+				</p><pre class="programlisting">...
+   protected void doHelp(RenderRequest rRequest, RenderResponse rResponse) throws PortletException, IOException,
+         UnavailableException
+   {
+      rResponse.setContentType("text/html");
+      PortletRequestDispatcher prd = getPortletContext().getRequestDispatcher("/jsp/help.jsp");
+      prd.include(rRequest, rResponse);
+   }
+
+   protected void doEdit(RenderRequest rRequest, RenderResponse rResponse) throws PortletException, IOException,
+         UnavailableException
+   {
+      rResponse.setContentType("text/html");
+      PortletRequestDispatcher prd = getPortletContext().getRequestDispatcher("/jsp/edit.jsp");
+      prd.include(rRequest, rResponse);
+   }
+...
+</pre><p>
+					Portlet calls happen in one or two phases: when the portlet is rendered and when the portlet is actioned <span class="emphasis"><em>and then</em></span> rendered.
+				</p><p>
+					An action phase is a phase where containing some state changes. The render phase will have access to render parameters that will be passed each time the portlet is refreshed (with the exception of caching capabilities).
+				</p><p>
+					The code to be executed during an action has to be implemented in the <span class="emphasis"><em>processAction</em></span> method of the portlet.
+				</p><div class="programlistingco"><pre class="programlisting">...
+         publi<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>c void processAction(ActionRequest aRequest, ActionResponse aResponse) throws PortletException, IOException,
+         UnavailableException
+   {
+      String s<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>Yourname = (String) aRequest.getParameter("yourname");
+      aRespons<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>e.setRenderParameter("yourname", sYourname);
+   }
+...
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+								<code class="literal">processAction</code> is the method from <code class="literal">GernericPorlet</code> to override for the <span class="emphasis"><em>action</em></span> phase.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+								Here the parameter is retrieved through an <span class="emphasis"><em>action URL</em></span> .
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+								The value of <code class="literal">yourname</code> is kept to make it available in the rendering phase. The previous line simply copies action parameters to a render parameter for this example.
+							</p></td></tr></table></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-JavaServer_Pages_Portlet_Example-JSP_files_and_the_Portlet_Tag_Library"/>4.1.2.2.3. JSP files and the Portlet Tag Library</h5></div></div></div><p>
+					The <code class="filename">help.jsp</code> and <code class="filename">edit.jsp</code> files are very simple. Note that CSS styles are used as defined in the portlet specification. This ensures that the portlet will render successfully within the theme and across portal vendors.
+				</p><pre class="programlisting">&lt;div class="portlet-section-header"&gt;Help mode&lt;/div&gt;
+&lt;div class="portlet-section-body"&gt;This is the help mode where you can find useful information.&lt;/div&gt;
+</pre><pre class="programlisting">&lt;div class="portlet-section-header"&gt;Edit mode&lt;/div&gt;
+&lt;div class="portlet-section-body"&gt;This is the edit mode where you can change your portlet preferences.&lt;/div&gt;
+</pre><p>
+					The landing page contains the links and form to call the portlet:
+				</p><div class="programlistingco"><pre class="programlisting">&lt;%@ taglib uri<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>="http://java.sun.com/portlet" prefix="portlet" %&gt;
+ 
+&lt;div class="portlet-section-header"&gt;Welcome !&lt;/div&gt;
+ 
+&lt;br/&gt;
+ 
+&lt;div class="portlet-font"&gt;Welcome on the JSP Hello User portlet,
+my name is GateIn Portal. What's yours ?&lt;/div&gt;
+ 
+&lt;br/&gt;
+ 
+&lt;div class="portlet-font"&gt;Method 1: We simply pass the parameter to the render phase:&lt;br/&gt;
+&lt;a href="&lt;port<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>let:renderURL&gt;&lt;portlet:param name="yourname" value="John Doe"/&gt;
+                &lt;/portlet:renderURL&gt;"&gt;John Doe&lt;/a&gt;&lt;/div&gt;
+ 
+&lt;br/&gt;
+ 
+&lt;div class="portlet-font"&gt;Method 2: We pass the parameter to the render phase, using valid XML:
+Please check the source code to see the difference with Method 1.
+&lt;portlet:rende<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>rURL var="myRenderURL"&gt;
+    &lt;portlet:param name="yourname" value='John Doe'/&gt;
+&lt;/portlet:renderURL&gt;
+&lt;br/&gt;
+&lt;a href="&lt;%= m<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/4.png" alt="(4)"/></span>yRenderURL %&gt;"&gt;John Doe&lt;/a&gt;&lt;/div&gt;
+ 
+&lt;br/&gt;
+ 
+&lt;div class="portlet-font"&gt;Method 3: We use a form:&lt;br/&gt;
+ 
+&lt;portlet:actio<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/5.png" alt="(5)"/></span>nURL var="myActionURL"/&gt;
+&lt;form action="<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/6.png" alt="(6)"/></span>&lt;%= myActionURL %&gt;" method="POST"&gt;
+         &lt;span class="portlet-form-field-label"&gt;Name:&lt;/span&gt;
+         &lt;input class="portlet-form-input-field" type="text" name="yourname"/&gt;
+         &lt;input class="portlet-form-button" type="Submit"/&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+								The portlet taglib which needs to be declared.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+								The first method shown here is the simplest one. <code class="literal">portlet:renderURL</code> will create a URL that calls the render phase of the current portlet and append the result at the place of the markup (within a tag). A parameter is also added directly to the URL.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+								In this method, the <code class="literal">var</code> attribute is used. This avoids having one XML tag within another. Instead of printing the url, the <code class="literal">portlet:renderURL</code> tag will store the result in the referenced variable ( <code class="literal">myRenderURL</code>).
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/4.png" alt="4" border="0"/></td><td valign="top" align="left"><p>
+								The variable <code class="literal">myRenderURL</code> is used like any other JSP variable.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/5.png" alt="5" border="0"/></td><td valign="top" align="left"><p>
+								The third method mixes the form submission and action request. Again, a temporary variable is used to put the created URL into.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/6.png" alt="6" border="0"/></td><td valign="top" align="left"><p>
+								The action URL is used in the HTML form.
+							</p></td></tr></table></div></div><p>
+					In the third method, the action phase is triggered first, then the render phase is triggered, which outputs some content back to the web browser based on the available render parameters. 
+					</p><div class="mediaobject"><img src="images/PortletDevelopment/Standard/jsp_portlet/process.png"/></div><p>
+				</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-JavaServer_Pages_Portlet_Example-JSF_example_using_the_JBoss_Portlet_Bridge"/>4.1.2.2.4. JSF example using the JBoss Portlet Bridge </h5></div></div></div><p>
+					To write a portlet using JSF, it is required to have a 'bridge'. This software allows developers to write a portlet application as if it was a JSF application. The bridge then negotiates the interactions between the two layers.
+				</p><p>
+					An example of the JBoss Portlet Bridge is available in <code class="filename">examples/JSFHelloUser</code>. The configuration is slightly different from a JSP application. This example can be used as a base to configure instead of creating a new application.
+				</p><p>
+					As in any JSF application, the file <code class="literal">faces-config.xml</code> is required. It must contain the following information:
+				</p><pre class="programlisting">&lt;faces-config&gt;
+...
+    &lt;application&gt;
+      &lt;view-handler&gt;org.jboss.portletbridge.application.PortletViewHandler&lt;/view-handler&gt;
+      &lt;state-manager&gt;org.jboss.portletbridge.application.PortletStateManager&lt;/state-manager&gt;
+   &lt;/application&gt;
+...
+&lt;/faces-config&gt;
+</pre><p>
+					The portlet bridge libraries must be available and are usually bundled with the <code class="literal">WEB-INF/lib</code> directory of the web archive.
+				</p><p>
+					The other differences as compared to a regular portlet application can be found in the portlet descriptor. All details about it can be found in the JSR-301 specification that the JBoss Portlet Bridge implements.
+				</p><div class="programlistingco"><pre class="programlisting">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd 
+                                         http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+   version="2.0"&gt;
+   &lt;portlet&gt;
+      &lt;portlet-name&gt;JSFHelloUserPortlet&lt;/portlet-name&gt;
+      &lt;portlet<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/1.png" alt="(1)"/></span>-class&gt;javax.portlet.faces.GenericFacesPortlet&lt;/portlet-class&gt;
+      &lt;supports&gt;
+         &lt;mime-type&gt;text/html&lt;/mime-type&gt;
+         &lt;portlet-mode&gt;view&lt;/portlet-mode&gt;
+         &lt;portlet-mode&gt;edit&lt;/portlet-mode&gt;
+         &lt;portlet-mode&gt;help&lt;/portlet-mode&gt;
+      &lt;/supports&gt;
+      &lt;portlet-info&gt;
+         &lt;title&gt;JSF Hello User Portlet&lt;/title&gt;
+      &lt;/portlet-info&gt;
+      
+      &lt;init-param&gt;
+         &lt;name<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/2.png" alt="(2)"/></span>&gt;javax.portlet.faces.defaultViewId.view&lt;/name&gt;
+         &lt;value&gt;/jsf/welcome.jsp&lt;/value&gt;
+      &lt;/init-param&gt;
+ 
+      &lt;init-param&gt;
+         &lt;name<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/3.png" alt="(3)"/></span>&gt;javax.portlet.faces.defaultViewId.edit&lt;/name&gt;
+         &lt;value&gt;/jsf/edit.jsp&lt;/value&gt;
+      &lt;/init-param&gt;
+ 
+      &lt;init-param&gt;
+         &lt;name<span xmlns="" class="co"><img src="images/gatein/docbook/callouts/4.png" alt="(4)"/></span>&gt;javax.portlet.faces.defaultViewId.help&lt;/name&gt;
+         &lt;value&gt;/jsf/help.jsp&lt;/value&gt;
+      &lt;/init-param&gt;
+ 
+   &lt;/portlet&gt;
+&lt;/portlet-app&gt;
+</pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
+								All JSF portlets define <code class="literal">javax.portlet.faces.GenericFacesPortlet </code> as the portlet class. This class is part of the JBoss Portlet Bridge.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
+								This is a mandatory parameter to define what's the default page to display.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
+								This parameter defines which page to display on the 'edit' mode.
+							</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/4.png" alt="4" border="0"/></td><td valign="top" align="left"><p>
+								This parameter defines which page to display on the 'help' mode.
+							</p></td></tr></table></div></div></div></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Global_Portlet"/>4.2. Global porlet.xml file</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Global_Portlet-Global_usecase"/>4.2.1. Global portlet.xml usecase</h3></div></div></div><p>The Portlet Specification introduces PortletFilter as a standard approach to extend the behaviors of portlet
+          objects. For example, a filter can transform the content of portlet requests and portlet responses.
+          According to the Portlet Specification, normally there are three steps in setting up a portlet filter:
+      </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>Implement a PortletFilter object</p></li><li><p>Define the filter in portlet application deployment descriptor</p></li><li><p>Define the filter mapping in portlet definitions</p></li></ol></div><p>Two first steps are quite simple and easy to be done, however, at the step 3, developers/administrators
+          need to replicate the filter mapping in many portlet definitions, that makes work error and tedious in
+          several use cases.
+          The global portlet feature is designed to compensate such limitation.
+      </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Global_Portlet-Global_metadata"/>4.2.2. Global metadata</h3></div></div></div><p>The Global metadata is declared in the
+            <span class="italic">portlet.xml</span> file conforming with Portlet 2.0 's XSD.
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">portlet-app</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">version</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;1.0&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">xmlns</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">xmlns:xsi</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">xsi:schemaLocation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd&nbsp;http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">portlet-app</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Global_Portlet-Location"/>4.2.2.1. Location</h4></div></div></div><p>The path to the global <span class="italic">portlet.xml</span> is value of <span class="italic">gatein.portlet.config</span> in the <span class="italic">configuration.properties</span> file and varied by hosting
+            application servers.
+        </p><p><span class="bold"><strong>For Tomcat</strong></span>: <span class="italic">TOMCAT_HOME/gatein/conf/portlet.xml</span></p><p><span class="bold"><strong>For JBoss</strong></span>: <span class="italic">JBOSS_HOME/server/default/conf/gatein/portlet.xml</span></p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Global_Portlet-Global_metadata_elements"/>4.2.2.2. Global metadata elements</h4></div></div></div><p>The global <span class="italic">portlet.xml</span> file conforms to the schema of the portlet deployment descriptor defined in the Portlet
+            Specification with some restrictions. In this file, the following elements are supported:
+        </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>Portlet Filter</p></li><li><p>Portlet Mode</p></li><li><p>Window State</p></li></ol></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Global_metadata_elements-Global_Portlet-Portlet_filter"/>4.2.2.2.1. Portlet filter</h5></div></div></div><p>Portlet filter mappings declared in the global<span class="italic"> portlet.xml</span> file are applied across portlet applications. With
+                the XML configuration below, the filter ApplicationMonitoringFilter involves in request handling on any
+                deployed portlet.
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.exoplatform.portal.application.ApplicationMonitoringFilter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.exoplatform.portal.application.ApplicationMonitoringFilter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">ACTION_PHASE</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">RENDER_PHASE</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">EVENT_PHASE</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">RESOURCE_PHASE</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">lifecycle</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p>
+              <span class="bold"><strong>Application Monitoring Filter</strong></span>
+              supports four lifecycle phases as the order below:
+              <span class="italic">ACTION_PHASE/ EVENT_PHASE/ RENDER_PHASE/ RESOURCE_PHASE</span>
+              and
+              records statistic information on deployed portlets.
+              The filter alternates actual monitoring mechanism in WebUI Framework.
+          </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-Global_metadata_elements-Global_Portlet-Portlet_mode"/>4.2.2.2.2. Portlet Mode and Window State</h5></div></div></div><p>The global <span class="italic">portlet.xml</span> file is considered as an alternative place to declare custom Portlet Modes and Window States.
+            </p></div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Development.html"><strong>Prev</strong>Chapter 3. Portal Development</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Gadget_development.html"><strong>Next</strong>Chapter 5. Gadget development</a></li></ul></body></html>

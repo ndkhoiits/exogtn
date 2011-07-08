@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 7. Web Services for Remote Portlets (WSRP)</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn Reference Guide"/><link rel="up" href="index.html" title="GateIn Reference Guide"/><link rel="prev" href="chap-Reference_Guide-Authentication_And_Identity.html" title="Chapter 6. Authentication and Identity"/><link rel="next" href="chap-Reference_Guide-Advanced.html" title="Chapter 8. Advanced Development"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Authentication_And_Identity.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Advanced.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp"/>Chapter 7. Web Services for Remote Portlets (WSRP)</h2></div></div></div><div class="toc"><dl><dt><span class="sect1"><a href="wsrp.html#wsrp-Introduction">7.1. Introduction</a></span></dt><dt><span class="sect1"><a href="wsrp.html#wsrp_support">7.2. Level of support in GateIn 3.1</a></span></dt><dt><span class="sect1"><a href="wsrp.html#wsrp-Deploy_GateIn_wsrp_services">7.3. Deploying GateIn's WSRP services</a></span></dt><dd><dl><dt><span class="sect2"><a href="wsrp.html#wsrp-ports">7.3.1. If you consider the WSRP use when running GateIn on a non-default port or hostname</a></span></dt><dt><span class="sect2"><a href="wsrp.html#wsrp-Deploy_GateIn_wsrp_services-Considerations_to_use_wsrp_with_SSL">7.3.2. Considerations to use WSRP with SSL</a></span></dt></dl></dd><dt><span class="sect1"><a href="wsrp.html#wsrp-Make_portlet_remotable">7.4. Making a portlet remotable</a></span></dt><dt><span class="sect1"><a href="wsrp.html#wsrp-Consume_GateIn_wsrp_portlets_from_remote_consumer">7.5. Consuming GateIn's WSRP portlets from a remote Consumer</a></span></dt><dt><span class="sect1"><a href="wsrp.html#wsrp-consumer_configuration">7.6. Consuming remote WSRP portlets in GateIn</a></span></dt><dd><dl><dt><span class="sect2"><a href="wsrp.html#wsrp-consumer_configuration-Overview">7.6.1. Overview</a></span></dt><dt><span class="sect2"><a href="wsrp.html#wsrp-consumer_configuration-Configure_remote_producer_walkthrough">7.6.2. Configuring a remote producer walk-through</a></span></dt><dt><span class="sect2"><a href="wsrp.html#wsrp-consumer_configuration-Configure_access_to_remote_producers_via_XML">7.6.3. Configuring access to remote producers via XML</a></span></dt><dt><span class="sect2"><a href="wsrp.html#wsrp-consumer_configuration-Example">7.6.4. Examples</a></span></dt></dl></dd><dt><span class="sect1"><a href="wsrp.html#wsrp-Consumers_maintenance">7.7. Consumers maintenance</a></span></dt><dd><dl><dt><span class="sect2"><a href="wsrp.html#wsrp-Consumers_maintenance-Modify_currently_held_registration">7.7.1. Modifying a currently held registration</a></span></dt><dt><span class="sect2"><a href="wsrp.html#wsrp-Consumers_maintenance-Consumer_operations">7.7.2. Consumer operations</a></span></dt><dt><span class="sect2"><a href="wsrp.html#wsrp-Consumers_maintenance-Import_export_portlets">7.7.3. Importing and exporting portlets</a></span></dt><dt><span class="sect2"><a href="wsrp.html#wsrp-Consumers_maintenance-Erase_local_registration_data">7.7.4. Erasing local registration data</a></span></dt></dl></dd><dt><span class="sect1"><a href="wsrp.html#producer_config">7.8. Configuring GateIn's WSRP Producer</a></span></dt><dd><dl><dt><span class="sect2"><a href="wsrp.html#producer_config-Overview">7.8.1. Overview</a></span></dt><dt><span class="sect2"><a href="wsrp.html#producer_config-Default_configuration">7.8.2. Default configuration</a></span></dt><dt><span class="sect2"><a href="wsrp.html#registration-configuration">7.8.3. Registration configuration</a></span></dt><dt><span class="sect2"><a href="wsrp.html#strict-mode">7.8.4. WSRP validation mode</a></span></dt></dl></dd></dl></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp-Introduction"/>7.1. Introduction</h2></div></div></div><p>The Web Services for Remote Portlets specification defines a web service interface for accessing and
+         interacting with presentation-oriented web services. It has been produced through the efforts of
+         the Web Services for Remote Portlets (WSRP) OASIS Technical Committee. It is based on the requirements
+         gathered and on the concrete proposals made to the committee.
+      </p><p>Scenarios motivating the WSRP functionality include:
+         </p><div class="itemizedlist"><ul><li><p>Content hosts, such as portal servers, providing Portlets as presentation-oriented web services
+                  that can be used by aggregation engines.
+               </p></li><li><p>Aggregating frameworks, including portal servers, consuming presentation-oriented web services
+                  offered by content providers and integrating them into the framework.
+               </p></li></ul></div><p>
+      </p><p>More information on WSRP can be found on the
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=wsrp">official website for WSRP</a>.
+         It is suggested that you read the
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.oasis-open.org/committees/download.php/10539/wsrp-primer-1.0.html">primer</a>
+         for a good, and albeit technical overview of WSRP.
+      </p></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp_support"/>7.2. Level of support in GateIn 3.1</h2></div></div></div><p>The WSRP Technical Committee defined
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.oasis-open.org/committees/download.php/3073">WSRP Use Profiles</a>
+         to help with the WSRP interoperability. You can refer to terms defined in that document in
+         this section.
+      </p><p>GateIn provides a Simple level of support for our WSRP Producer except that out-of-band registration
+         is not currently handled. eXo Platform supports the in-band registration and persistent local state (which are
+         defined at the Complex level).
+      </p><p>On the Consumer side, GateIn provides a Medium level of support for WSRP, except that eXo Platform only handles the
+         HTML markup (as GateIn itself does not handle other markup types). eXo Platform supports the explicit portlet
+         cloning and provides the full support the PortletManagement interface.
+      </p><p>As far as caching goes, eXo Platform has Level 1 Producer and Consumer. eXo Platform supports the Cookie handling properly on the
+         Consumer and our Producer that requires initialization of cookies. eXo Platform does not support custom window states or modes. However, eXo Platform supports CSS on both the Producer (though it's more a function of the portlets than inherent Producer
+         capability) and Consumer.
+      </p><p>While eXo Platform provides a complete implementation of WSRP 1.0, you need to go through the
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.oasis-open.org/committees/download.php/6018">Conformance statements</a>
+         and perform more interoperability testing (an area that needs to be better supported by the WSRP Technical
+         Committee and Community at large).
+      </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>As of version 3.1 of GateIn, WSRP is only activated and supported
+            when GateIn is deployed on the JBoss Application Server.
+         </p></div></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp-Deploy_GateIn_wsrp_services"/>7.3. Deploying GateIn's WSRP services</h2></div></div></div><p>
+         GateIn provides a complete support of WSRP 1.0 standard interfaces and offers services to both consumers and
+         producers. The WSRP support is provided by the following files, assuming
+         <code class="code">$GATEIN_HOME</code>
+         is
+         where GateIn has been installed,
+         <code class="code">$WSRP_VERSION</code>
+         (at the time of the writing, it was 1.1.0-GA)
+         is the version of the WSRP component and
+         <code class="code">$PORTAL_VERSION</code>
+         (at the time of the writing, it was 3.0.1-GA)
+         is the current GateIn version:
+         </p><div class="itemizedlist"><ul><li><p>
+                  <code class="filename">$GATEIN_HOME/wsrp-admin-gui.war</code>, which contains the WSRP Configuration portlet
+                  with which you can configure consumers to access remote servers and how the WSRP producer is
+                  configured.
+               </p></li><li><p><code class="filename">$GATEIN_HOME/wsrp-producer.war</code>, which contains the WSRP producer web
+                  application.
+               </p></li><li><p><code class="filename">$GATEIN_HOME/lib/wsrp-common-$WSRP_VERSION.jar</code>, which contains common classes
+                  needed by the different WSRP libraries.
+               </p></li><li><p>
+                  <code class="filename">$GATEIN_HOME/lib/wsrp-consumer-$WSRP_VERSION.jar</code>, which contains the WSRP
+                  consumer.
+               </p></li><li><p>
+                  <code class="filename">$GATEIN_HOME/lib/wsrp-integration-api-$WSRP_VERSION.jar</code>, which contains the
+                  API classes needed to integrate the WSRP component into portals.
+               </p></li><li><p>
+                  <code class="filename">$GATEIN_HOME/lib/wsrp-producer-lib-$WSRP_VERSION.jar</code>, which contains the classes
+                  needed by the WSRP producer.
+               </p></li><li><p>
+                  <code class="filename">$GATEIN_HOME/lib/wsrp-wsrp1-ws-$WSRP_VERSION.jar</code>, which contains the generated
+                  JAX-WS classes for WSRP v.1.
+               </p></li><li><p>
+                  <code class="filename">$GATEIN_HOME/lib/wsrp-wsrp2-ws-$WSRP_VERSION.jar</code>, which contains the generated
+                  JAX-WS classes for WSRP version 2.
+               </p></li><li><p>
+                  <code class="filename">$GATEIN_HOME/lib/gatein.portal.component.wsrp-$PORTAL_VERSION.jar</code>, which
+                  contains the code to integrate the WSRP service into GateIn.
+               </p></li></ul></div><p>
+         If you are not going to use WSRP in GateIn, you can remove
+         <code class="filename">$GATEIN_HOME/lib/gatein.portal.component.wsrp-$PORTAL_VERSION.jar</code>
+         from your GateIn distribution to easily deactivate the
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://community.jboss.org/wiki/WSRPserviceremovalprocedure"> WSRP support</a>. Of course, if you want to trim your
+         installation, you can also remove all the files mentioned above.
+      </p><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-ports"/>7.3.1. If you consider the WSRP use when running GateIn on a non-default port or hostname</h3></div></div></div><p>
+            JBoss WS (the web service stack that GateIn uses), you need to pay attention to details of updating the
+            port and host name used in WSDL. See the
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://community.jboss.org/wiki/JBossWS-UserGuide#Configuration">JBoss WS user guide on that
+               subject
+            </a>
+            for more details.
+         </p><p>
+            Of course, if you have modified the host name and port on which your server runs, you will
+            need to update the configuration for the consumer used to consume GateIn's 'self' producer. Please refer to
+            the
+            <a href="">???</a>
+            to learn how to do so.
+         </p></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-Deploy_GateIn_wsrp_services-Considerations_to_use_wsrp_with_SSL"/>7.3.2. Considerations to use WSRP with SSL</h3></div></div></div><p>It is possible to use WSRP over SSL for secure exchange of data. Please refer to the
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://community.jboss.org/wiki/ConfiguringWSRPforuseoverSSL">instructions</a>
+            on how to do from
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://community.jboss.org/wiki/GateIn">GateIn's wiki</a>.
+         </p></div></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp-Make_portlet_remotable"/>7.4. Making a portlet remotable</h2></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+            Only JSR-286 (Portlet 2.0) portlets can be made remotable as the mechanism to expose a portlet to WSRP
+            relies on the JSR-286-only functionality.
+         </p></div><p>GateIn does
+         <span class="bold"><strong>NOT</strong></span> expose local portlets for consumption
+         by remote WSRP consumers by default. To make a portlet remotely available, it must be made "remotable" by marking
+         it as such in the associated
+         <code class="filename">portlet.xml</code>. This is accomplished by using a specific
+         <code class="code">org.gatein.pc.remotable container-runtime-option</code>. Setting its value to
+         <code class="code">true</code>
+         makes the portlet available for the remote consumption, while setting its value to
+         <code class="code">false</code>
+         will not publish it remotely. As specifying the remotable status for a portlet is optional, you do not need to
+         do anything if you do not need your portlet to be available remotely.
+      </p><p>In the following example, the "BasicPortlet" portlet is specified as being remotable.
+      </p><div class="example"><a id="d0e4659"/><p class="title"><b>Example 7.1. </b></p><div class="example-contents"><pre class="programlisting">
+&lt;?xml version="1.0" standalone="yes"?&gt;
+&lt;portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             version="2.0"&gt;
+&lt;portlet-app&gt;
+   &lt;portlet&gt;
+      &lt;portlet-name&gt;BasicPortlet&lt;/portlet-name&gt;
+
+      ...
+
+      &lt;container-runtime-option&gt;
+         &lt;name&gt;org.gatein.pc.remotable&lt;/name&gt;
+         &lt;value&gt;true&lt;/value&gt;
+      &lt;/container-runtime-option&gt;
+   &lt;/portlet&gt;
+&lt;/portlet-app&gt;</pre></div></div><br class="example-break"/><p>
+         It is also possible to specify that all the portlets declared within a given portlet application to be
+         remotable by default. This is done by specifying the
+         <code class="code">
+            container-runtime-option
+         </code>
+         at the
+         <code class="code">portlet-app</code>
+         element level. Individual portlets can override that value to not be remotely exposed. Let's look at an
+         example:
+      </p><div class="example"><a id="d0e4670"/><p class="title"><b>Example 7.2. </b></p><div class="example-contents"><pre class="programlisting">
+&lt;?xml version="1.0" standalone="yes"?&gt;
+&lt;portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             version="2.0"&gt;
+&lt;portlet-app&gt;
+
+   &lt;portlet&gt;
+      &lt;portlet-name&gt;RemotelyExposedPortlet&lt;/portlet-name&gt;
+      ...
+   &lt;/portlet&gt;
+   &lt;portlet&gt;
+      &lt;portlet-name&gt;NotRemotelyExposedPortlet&lt;/portlet-name&gt;
+      ...
+      &lt;container-runtime-option&gt;
+         &lt;name&gt;org.gatein.pc.remotable&lt;/name&gt;
+         &lt;value&gt;false&lt;/value&gt;
+      &lt;/container-runtime-option&gt;
+   &lt;/portlet&gt;
+
+   &lt;container-runtime-option&gt;
+      &lt;name&gt;org.gatein.pc.remotable&lt;/name&gt;
+      &lt;value&gt;true&lt;/value&gt;
+   &lt;/container-runtime-option&gt;
+&lt;/portlet-app&gt;
+            </pre></div></div><br class="example-break"/><p>
+         In the example above, two portlets are defined. The
+         <code class="code">org.gatein.pc.remotable container-runtime-option</code>
+         is set to
+         <code class="code">true</code>
+         at the
+         <code class="code">portlet-app</code>
+         level, meaning that all portlets defined in this particular portlet application are exposed remotely by GateIn's
+         WSRP
+         producer.
+         Note, however, that it is possible to override the default behavior: specifying a value for the
+         <code class="code">org.gatein.pc.remotable container-runtime-option</code>
+         at the
+         <code class="code">portlet</code>
+         level will take precedence over the default. In the example above, the
+         <code class="varname">RemotelyExposedPortlet</code>
+         inherits the remotable status defined at the
+         <code class="code">portlet-app</code>
+         level since it does not specify a value for the<code class="code">org.gatein.pc.remotable container-runtime-option</code>.
+         The<code class="varname">NotRemotelyExposedPortlet</code>, however, overrides the default behavior and is not remotely
+         exposed. Note that in the absence of a top-level
+         <code class="code">org.gatein.pc.remotable container-runtime-option</code>
+         value set to<code class="code">true</code>, portlets are NOT remotely exposed.
+      </p></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp-Consume_GateIn_wsrp_portlets_from_remote_consumer"/>7.5. Consuming GateIn's WSRP portlets from a remote Consumer</h2></div></div></div><p>WSRP Consumers vary a lot as far as how they are configured. Most of them require you to specify
+         the URL for the Producer's WSDL definition. Please refer to your Consumer's documentation for specific
+         instructions. For instructions on how to do so in GateIn, please
+         refer to
+         <a href="">???</a>.
+      </p><p>
+         GateIn's Producer is automatically set up when you deploy a portal instance with the WSRP service.
+         You can access the WSDL file at
+         <code class="filename">http://{hostname}:{port}/wsrp-producer/v2/MarkupService?wsdl</code>. If you wish to use only the
+         WSRP 1 compliant version of the producer, please use the WSDL file found at
+         <code class="filename">http://{hostname}:{port}/wsrp-producer/v1/MarkupService?wsdl</code>.
+         The default hostname is
+         <code class="literal">localhost</code>
+         and the default port is 8080.
+      </p></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp-consumer_configuration"/>7.6. Consuming remote WSRP portlets in GateIn</h2></div></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-consumer_configuration-Overview"/>7.6.1. Overview</h3></div></div></div><p>
+            To consume the WSRP portlets exposed by a remote producer, GateIn's WSRP consumer needs to
+            know how to access that remote producer. One can configure access to a remote producer using the WSRP Producer
+            descriptors. Alternatively, a portlet is provided to configure the remote producers.
+         </p><p>
+            Once a remote producer has been configured, the portlets that it exposes are then available in the
+            Application Registry to be added to categories and then to pages.
+         </p><p>
+            As a way to test the WSRP producer service and to check that the portlets that you want to expose remotely
+            are correctly published via WSRP, a default consumer named
+            <code class="literal">self</code>, that consumes the portlets exposed by GateIn's producer,
+            has been configured.
+         </p></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-consumer_configuration-Configure_remote_producer_walkthrough"/>7.6.2. Configuring a remote producer walk-through</h3></div></div></div><p>
+            Let's work through the steps of defining access to a remote producer so that its portlets can be
+            consumed within GateIn. You need to configure access to the Oracle's public WSRP producer. First,
+            examine how to do so using the configuration portlet and then show how the same result can be
+            accomplished with a producer descriptor, though it is far easier to do so via the configuration portlet.
+         </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+               Some WSRP producers do not support the chunked encoding that is activated by default by JBoss WS. If your
+               producer does not support the chunked encoding, your consumer will not be able to properly connect to the
+               producer. This will manifest itself with the following error:
+               <code class="code">Caused by: org.jboss.ws.WSException: Invalid HTTP server response [503] - Service Unavailable</code>.
+               Please see the GateIn's
+               <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://community.jboss.org/wiki/Workaroundwhenchunkedencodingisnotsupported">wiki page</a>
+               for more details.
+            </p></div><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="consumer_gui"/>7.6.2.1. Using the configuration portlet</h4></div></div></div><p>
+               GateIn provides a portlet to configure access (among other functions) to remote WSRP Producers
+               graphically. However, it is not installed by default, so the first thing you need to do is to install
+               the WSRP configuration portlet using the Application Registry.
+            </p><p>
+               Use the usual procedure to log in as a Portal administrator and go to the Application Registry.
+               With the default installment, you can just go to
+               <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8080/portal/login?initialURI=%2Fportal%2Fprivate%2Fclassic%2FwsrpConfiguration&amp;username=root&amp;password=gtn">
+                  http://localhost:8080/portal/login?initialURI=%2Fportal%2Fprivate%2Fclassic%2FwsrpConfigurationp&amp;username=root&amp;password=gtn
+               </a>
+            </p><p>
+               You should see a screen similar to:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/config_init.png" align="middle"/></div><p>
+               This screen presents all the configured Consumers associated with their status and possible actions on
+               them. A Consumer can be active or inactive. Activating a Consumer means that it is ready to act as a
+               portlet provider. Also, note that a Consumer can be marked as required refreshing, meaning that the
+               information held about it might not be up to date and refreshing it from the remote Producer might be a
+               good idea. This can happen for several reasons: the service description for that remote Producer has not
+               been fetched yet, the cached version has expired or modifications have been made to the configuration
+               that could potentially invalidate it; thus, it is required to validate the information again.
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+                  The WSRP configuration did not use to be installed by default in previous versions of GateIn.
+                  We include here the legacy instructions on how to install this portlet in case you ever need to
+                  re-install it.
+               </p><p>
+                  Use the usual procedure to log in as a Portal administrator and go to the Application
+                  Registry. With the default install, you can just go to
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8080/portal/login?initialURI=%2Fportal%2Fprivate%2Fclassic%2Fadministration%2Fregistry&amp;username=root&amp;password=gtn">
+                     http://localhost:8080/portal/login?initialURI=%2Fportal%2Fprivate%2Fclassic%2Fadministration%2Fregistry&amp;username=root&amp;password=gtn
+                  </a>
+                  Add the WSRP Configuration portlet to the Administration category. If you use the Import Applications
+                  functionality, the WSRP Configuration portlet will be automatically added to the Administration
+                  category.
+               </p><p>
+                  Now that the portlet is added to a category, it can be added to a page and used. We recommend adding
+                  it to the same page as the Application Registry as operations relating to WSRP and adding portlets to
+                  categories are somewhat related as we will see. Go ahead and add the WSRP Configuration portlet to the
+                  page using the standard procedure.
+               </p></div><p>
+               Next, you need create a new Consumer called <code class="literal">oracle</code>. Type
+               "<code class="literal">oracle</code>" in
+               the "Create a consumer named:" field, then click "Create consumer":
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/config_create.png" align="middle"/></div><p>
+               You should now see a form allowing you to enter/modify the information about the Consumer.
+               Set the cache expiration value to 300 seconds, leave the default timeout value for web services (WS)
+               operations and enter the WSDL URL for the producer in the text field
+               and press the "Refresh &amp; Save" button:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/config_wsdl.png" align="middle"/></div><p>
+               This will retrieve the service description associated with the Producer which WSRP interface is described
+               by the WSDL file found at the URL you just entered. In this case, querying the service description will
+               allow us to learn that the Producer requires registration but did not request any registration property:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/config_refresh.png" align="middle"/></div><p>
+               The Consumer for the
+               <code class="literal">oracle</code>
+               Producer should now be available as a portlet provider and be ready to be used.
+            </p><p>
+               Now, assuming that the producer required a value for an
+               <code class="literal">email</code>
+               registration property, GateIn's WSRP consumer would have informed you that you were missing some
+               information:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/config_missing.png" align="middle"/></div><p>
+               </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>At this point, there is no automated way to learn about which possible values (if any) are
+                     expected by the remote Producer. Sometimes, the possible values will be indicated in the
+                     registration
+                     property description but this is not always the case. Please refer to the specific Producer's
+                     documentation.
+                  </p></div><p>
+               If you entered "<code class="literal">example@example.com</code>" as the value for the registration property and
+               press "Save &amp;
+               Refresh" once more, you would have seen something similar to:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/config_end.png" align="middle"/></div><p>
+            </p></div><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="wsrp-consumer_configuration-Configure_remote_producer_walkthrough-Use_XML"/>7.6.2.2. Using XML</h4></div></div></div><p>While it is recommended that you use the WSRP Configuration portlet to configure Consumers, eXo Platform provides an
+               alternative way to configure consumers by editing the .xml file located at
+               <code class="filename">$GATEIN_HOME/lib/wsrp-consumer-$WSRP_VERSION.jar/conf/wsrp-consumers-config.xml</code>.
+            </p><pre class="programlisting">
+&lt;?xml version='1.0' encoding='UTF-8' ?&gt;
+&lt;deployments xmlns="http://www.gatein.org/xml/ns/gatein_wsrp_consumer_1_0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_wsrp_consumer_1_0 http://www.jboss.org/portal/xsd/gatein_wsrp_consumer_1_0.xsd"&gt;
+   &lt;deployment&gt;
+      &lt;wsrp-producer id="self" expiration-cache="300" ws-timeout="30000"&gt;
+         &lt;endpoint-wsdl-url&gt;http://localhost:8080/wsrp-producer/v2/MarkupService?wsdl&lt;/endpoint-wsdl-url&gt;
+         &lt;registration-data&gt;
+            &lt;property&gt;
+               &lt;name&gt;email&lt;/name&gt;
+               &lt;lang&gt;en&lt;/lang&gt;
+               &lt;value&gt;example@example.com&lt;/value&gt;
+            &lt;/property&gt;
+         &lt;/registration-data&gt;
+      &lt;/wsrp-producer&gt;
+   &lt;/deployment&gt;
+   &lt;deployment&gt;
+      &lt;wsrp-producer id="oracle" expiration-cache="300"&gt;
+         &lt;endpoint-wsdl-url&gt;http://portalstandards.oracle.com/portletapp/portlets?WSDL&lt;/endpoint-wsdl-url&gt;
+         &lt;registration-data/&gt;
+      &lt;/wsrp-producer&gt;
+   &lt;/deployment&gt;
+&lt;/deployments&gt;</pre><p>
+               The file as shown above specifies access to two producers:
+               <code class="literal">self</code>, which consumes GateIn's own WSRP producer albeit in a version that
+               assumes that the producer requires a value for an
+               <code class="literal">email</code>
+               registration property, and
+               <code class="literal">oracle</code>, which consumes Oracle's public producer, both in configurations as shown in
+               the walk-through above.
+            </p><p>We will look at the details of the meaning of elements later on.</p></div><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="wsrp-consumer_configuration-Configure_remote_producer_walkthrough-Add_remote_portlets_to_categories"/>7.6.2.3. Adding remote portlets to categories</h4></div></div></div><p>
+               If we go back to the Application Registry and examine the available portlets by clicking the
+               Portlet link, you will now be able to see the remote portlets after clicking the REMOTE tab in the left
+               column:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/remote_portlets.png" align="middle"/></div><p>
+            </p><p>
+               These portlets are available to be used. For example, the regular portlets can be used in
+               categories and added to pages. If you use the Import Applications functionality, they will also be
+               automatically imported into categories based on the keywords they define.
+            </p><p>
+               More specifically, if you want to add the WSRP portlet to a category, you can access these portlets by
+               selecting
+               <code class="literal">wsrp</code>
+               in the Application Type drop-down menu:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/remote_portlets_category.png" align="middle"/></div><p>
+            </p></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-consumer_configuration-Configure_access_to_remote_producers_via_XML"/>7.6.3. Configuring access to remote producers via XML</h3></div></div></div><p>While it is recommended that you use the WSRP Configuration portlet to configure Consumers, eXo Platform provides an
+            alternative way to configure consumers by editing the XML file located at
+            <code class="filename">$GATEIN_HOME/lib/wsrp-consumer-$WSRP_VERSION.jar/conf/wsrp-consumers-config.xml</code>.
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>An XML Schema defining which elements are available to configure Consumers via XML can be found
+                  in
+                  <code class="filename">
+                     $GATEIN_HOME/lib/wsrp-integration-api-$WSRP_VERSION.jar/xsd/gatein_wsrp_consumer_1_0.xsd
+                  </code>
+               </p></div><p>
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>It is important to note how the XML consumers configuration file is processed. It is the first
+                  time the WSRP service starts and the associated information is then put under control of JCR (Java
+                  Content Repository). The subsequent launches of the WSRP service will use the JCR-stored information for
+                  all producers that are already known to GateIn. More specifically, the
+                  <code class="filename">wsrp-consumers-config.xml</code>
+                  file is scanned for producer identifiers.
+                  Any identifier that is already known will be by-passed and the JCR information associated with this
+                  remote producer will be used. The information defined at the XML level is only processed for producer
+                  definition for which no information is already present in JCR. Therefore, if you wish to delete a
+                  producer configuration, you need to delete the associated information in the database (this can be
+                  accomplished using the configuration portlet as shown in
+                  <a href="wsrp.html#consumer_gui" title="7.6.2.1. Using the configuration portlet">Section 7.6.2.1, “Using the configuration portlet”</a>)
+                  <span class="emphasis"><em>AND</em></span>
+                  remove the associated information in
+                  <code class="filename">wsrp-consumers-config.xml</code>
+                  (if such information exists) as the producer will be re-created the next time the WSRP is launched if
+                  that information is not removed.
+               </p></div><p>
+         </p><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="wsrp-consumer_configuration-Configure_access_to_remote_producers_via_XML-Required_configuration_information"/>7.6.3.1. Required configuration information</h4></div></div></div><p>Now, look at which information needs to be provided to configure access to a remote producer.
+            </p><p>First, you need to provide an identifier for the producer we are configuring so that you can refer to it
+               afterwards. This is accomplished via the mandatory
+               <code class="literal">id</code>
+               attribute of the
+               <code class="literal">&lt;wsrp-producer&gt;</code>
+               element.
+            </p><p>GateIn also needs to learn about the remote producer's end-points to be able to connect to the
+               remote web services and perform WSRP invocations. This is accomplished by specifying the URL for the
+               WSDL description for the remote WSRP service, using the
+               <code class="literal">&lt;endpoint-wsdl-url&gt;</code>
+               element.
+            </p><p>Both the
+               <code class="literal">id</code>
+               attribute and
+               <code class="literal">&lt;endpoint-wsdl-url&gt;</code>
+               elements are required for a functional remote producer configuration.
+            </p></div><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="wsrp-consumer_configuration-Configure_access_to_remote_producers_via_XML-Optional_configuration"/>7.6.3.2. Optional configuration</h4></div></div></div><p>It is also possible to provide addtional configuration. In some cases, the additional configuration might be important to
+               establish a proper connection to the remote producer.
+            </p><p>One such optional configuration concerns caching. To prevent useless roundtrips between the local
+               consumer and the remote producer, it is possible to cache some of the information sent by the producer
+               (such as the list of offered portlets) for a given duration. The rate at which the information is
+               refreshed is
+               defined by the
+               <code class="literal">expiration-cache</code>
+               attribute of the
+               <code class="literal">&lt;wsrp-producer&gt;</code>
+               element which specifies the refreshing period in seconds. For example, providing a value of 120 for
+               expiration-cache means that the producer information will not be refreshed for 2 minutes after it has
+               been somehow accessed. If no value is provided, GateIn will always access the remote producer
+               regardless of whether the remote information has changed or not. Since, in most instances, the
+               information provided by the producer does not change often. It is recommended that you use this caching
+               facility to minimize the bandwidth usage.
+            </p><p>It is also possible to define a timeout after which the WS operations are considered as failed. This is
+               helpful to avoid blocking the WSRP service, waiting forever on the service that does not answer. Use the
+               <code class="literal">ws-timeout</code>
+               attribute of the
+               <code class="literal">&lt;wsrp-producer&gt;</code>
+               element to specify how many milliseconds the WSRP service will wait for a response from the remote
+               producer before timing out and giving up.
+            </p><p>Additionally, some producers require consumers to register with them before authorizing them to access
+               their offered portlets. If you know that information beforehand, you can provide the required
+               registration information in the producer configuration so that the consumer can register with the remote
+               producer when required.
+               </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>At this time, though, only simple String properties are supported and it is not possible to
+                     configure the complex registration data. This should, however, be sufficient for most cases.
+                  </p></div><p>
+            </p><p>Registration configuration is done via the
+               <code class="literal">&lt;registration-data&gt;</code>
+               element. Since GateIn can generate the mandatory information for you, if the remote producer does
+               not require any registration properties, you only need to provide an empty
+               <code class="literal">&lt;registration-data&gt;</code>
+               element. Values for the registration properties
+               required by the remote producer can be provided via the
+               <code class="literal">&lt;property&gt;</code>
+               elements. See the example below for more details. Additionally, you can override the default consumer
+               name automatically provided by GateIn via the
+               <code class="literal">&lt;consumer-name&gt;</code>
+               element. If you select to provide a consumer name, please remember that this should uniquely identify
+               your consumer.
+            </p></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-consumer_configuration-Example"/>7.6.4. Examples</h3></div></div></div><p>
+            Here is the configuration of the
+            <code class="literal">selfv1</code> and <code class="literal">selfv2</code>
+            consumers as found in
+            <code class="filename">$GATEIN_HOME/lib/wsrp-consumer-$WSRP_VERSION.jar/conf/wsrp-consumers-config.xml</code>
+            with a cache expiring every 500 seconds and with a 50 second timeout for web service operations.
+         </p><div class="example"><a id="d0e4978"/><p class="title"><b>Example 7.3. </b></p><div class="example-contents"><pre class="programlisting">
+&lt;?xml version='1.0' encoding='UTF-8' ?&gt;
+&lt;deployments xmlns="http://www.gatein.org/xml/ns/gatein_wsrp_consumer_1_0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_wsrp_consumer_1_0 http://www.jboss.org/portal/xsd/gatein_wsrp_consumer_1_0.xsd"&gt;
+   &lt;deployment&gt;
+      &lt;wsrp-producer id="selfv1" expiration-cache="500" ws-timeout="50000"&gt;
+         &lt;endpoint-wsdl-url&gt;http://localhost:8080/wsrp-producer/MarkupService?wsdl&lt;/endpoint-wsdl-url&gt;
+         &lt;registration-data/&gt;
+      &lt;/wsrp-producer&gt;
+   &lt;/deployment&gt;
+   &lt;deployment&gt;
+      &lt;wsrp-producer id="selfv2" expiration-cache="500" ws-timeout="50000"&gt;
+         &lt;endpoint-wsdl-url&gt;http://localhost:8080/wsrp-producer/v2/MarkupService?wsdl&lt;/endpoint-wsdl-url&gt;
+         &lt;registration-data/&gt;
+      &lt;/wsrp-producer&gt;
+   &lt;/deployment&gt;
+&lt;/deployments&gt;
+               </pre></div></div><br class="example-break"/><p>Here is an example of a WSRP descriptor with registration data and cache expiring every minute:
+         </p><div class="example"><a id="d0e4983"/><p class="title"><b>Example 7.4. </b></p><div class="example-contents"><pre class="programlisting">
+&lt;?xml version='1.0' encoding='UTF-8' ?&gt;
+&lt;deployments xmlns="http://www.gatein.org/xml/ns/gatein_wsrp_consumer_1_0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.gatein.org/xml/ns/gatein_wsrp_consumer_1_0 http://www.jboss.org/portal/xsd/gatein_wsrp_consumer_1_0.xsd"&gt;
+&lt;deployments&gt;
+   &lt;deployment&gt;
+      &lt;wsrp-producer id="AnotherProducer" expiration-cache="60"&gt;
+         &lt;endpoint-wsdl-url&gt;http://example.com/producer/producer?WSDL&lt;/endpoint-wsdl-url&gt;
+         &lt;registration-data&gt;
+            &lt;property&gt;
+               &lt;name&gt;property name&lt;/name&gt;
+               &lt;lang&gt;en&lt;/lang&gt;
+               &lt;value&gt;property value&lt;/value&gt;
+            &lt;/property&gt;
+         &lt;/registration-data&gt;
+      &lt;/wsrp-producer&gt;
+   &lt;/deployment&gt;
+&lt;/deployments&gt;</pre></div></div><br class="example-break"/></div></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="wsrp-Consumers_maintenance"/>7.7. Consumers maintenance</h2></div></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-Consumers_maintenance-Modify_currently_held_registration"/>7.7.1. Modifying a currently held registration</h3></div></div></div><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="wsrp-Consumers_maintenance-Modify_currently_held_registration-Registration_modification_for_service_upgrade"/>7.7.1.1. Registration modification for service upgrade</h4></div></div></div><p>
+               Producers often offer several levels of service depending on consumers' subscription levels (for
+               example). This is implemented at the WSRP level with the registration concept: producers can assert which
+               level of service to provide to consumers based on the values of given registration properties.
+            </p><p>
+               There might also be cases where you just want to update the registration information because it has
+               changed. For example, the producer required you to provide a valid email and the previously email
+               address is not valid anymore and needs to be updated.
+            </p><p>
+               It is therefore sometimes necessary to modify the registration that concretizes the service agreement
+               between a consumer and a producer. Let's take the example of the producer requiring an email you
+               configured in
+               <a href="wsrp.html#consumer_gui" title="7.6.2.1. Using the configuration portlet">Section 7.6.2.1, “Using the configuration portlet”</a>.
+               If you recall, the producer was requiring registration and required a value to be provided for the
+               <code class="literal">email</code>
+               property.
+            </p><p>
+               Suppose that you want to update the email address that you provided to the remote producer. To do so, you
+               need to tell the producer that our registration data have been modified. Let's see how to do this.
+               In case that you want to configure access to the producer as previously described, please go to the configuration screen for
+               the
+               <code class="literal">self</code>
+               producer and modify the value of
+               <code class="literal">email</code>
+               to
+               <code class="literal">foo@example.com</code>
+               instead of<code class="literal">example@example.com</code>:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/modify_reg_start.png" align="middle"/></div><p>
+               Now, click "Update properties" to save the change. A "Modify registration" button should now appear to
+               let you send the new data to the remote producer:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/modify_reg_modify.png" align="middle"/></div><p>
+               Click this new button and, if everything went well and your updated registration has been accepted by
+               the remote producer, you should see something similar to:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/modify_reg_end.png" align="middle"/></div><p>
+            </p></div><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="reg_mod_error"/>7.7.1.2. Registration modification on producer error</h4></div></div></div><p>
+               It can also happen that a producer administrator decided to change its requirement for registered
+               consumers. In this case, invoking operations on the producer will be failed with an
+               <code class="exceptionname">OperationFailedFault</code>. GateIn will attempt to help you in this
+               situation. Let's walk through an example using the
+               <code class="literal">self</code>
+               producer. Let's assume that
+               registration is requiring a valid value for an
+               <code class="literal">email</code>
+               registration property (as we have seen so far). If you go to the configuration screen for this producer,
+               you should see:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/config_self.png" align="middle"/></div><p>
+
+               Now suppose that the administrator of the producer also requires a value to be provided for a
+               <code class="literal">name</code>
+               registration property. We will actually see how to perform this operation
+               in GateIn when we examine how to configure GateIn's producer in
+               <a href="wsrp.html#producer_config" title="7.8. Configuring GateIn's WSRP Producer">Section 7.8, “Configuring GateIn's WSRP Producer”</a>.
+               Operations with this producer will now be failed. If you suspect that a registration modification is required,
+               you should go to the configuration screen for this remote producer and refresh the information held by
+               the consumer by pressing "Refresh &amp; Save":
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/modify_reg_self.png" align="middle"/></div><p>
+
+               As you can see, the configuration screen now shows the currently held registration information and
+               the expected information from the producer. Enter a value for the
+               <code class="literal">name</code>
+               property
+               and then click "Modify registration". If all went on well and the producer accepted your new registration
+               data, you should see something similar to:
+               </p><div class="mediaobject" align="center"><img src="images/WSRP/modify_reg_self_end.png" align="middle"/></div><p>
+
+               </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>As of WSRP 1, it is rather difficult to ascertain what caused an
+                     <code class="exceptionname">OperationFailedFault</code>
+                     as it is the generic exception returned by
+                     producers if something did not quite happen as expected during a method invocation. This means that
+                     <code class="exceptionname">OperationFailedFault</code>
+                     can be caused by several different reasons, one
+                     of them being a request to modify the registration data. Please take a look at the log files to see
+                     if you can gather more information as to what happened. WSRP 2 introduces an exception that is
+                     specific to a request to modify registrations, thus reducing the ambiguity that currently exists.
+                  </p></div><p>
+            </p></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-Consumers_maintenance-Consumer_operations"/>7.7.2. Consumer operations</h3></div></div></div><p>
+            Several operations are available from the consumer list view of the WSRP configuration portlet:
+            </p><div class="mediaobject" align="center"><img src="images/WSRP/consumer_operations.png" align="middle"/></div><p>
+         </p><p>
+            The available operations are:
+            </p><div class="itemizedlist"><ul><li><p>Configure: displays the consumer details and allows user to edit them.</p></li><li><p>Refresh: forces the consumer to retrieve the service description from the remote producer to
+                     refresh
+                     the local information (offered portlets, registration information).
+                  </p></li><li><p>Activate/Deactivate: activates/deactivates a consumer, governing whether it will be available to
+                     provide portlets and receive portlet invocations.
+                  </p></li><li><p>Register/Deregister: registers/deregisters a consumer based on whether the registration is required
+                     and/or acquired
+                  </p></li><li><p>Delete: destroys the consumer, after deregistering it if it was registered.</p></li><li><p>Export: exports some or all of the consumer's portlets to be able to later import them in a
+                     different context
+                  </p></li><li><p>Import: imports some or all of previously exported portlets</p></li></ul></div><p>
+         </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>Import/Export functionalities are only available to WSRP 2 consumers. Import functionality is only
+               available if portlets had previously been exported.
+            </p></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-Consumers_maintenance-Import_export_portlets"/>7.7.3. Importing and exporting portlets</h3></div></div></div><p>Import and export are new functionalities added in WSRP 2. Exporting a portlet allows a consumer to get
+            an opaque representation of the portlet which can then be use by the corresponding import operation to
+            reconstitute it. It is mostly used in migration scenarios during batch operations. Since GateIn
+            does not currently support automated migration of portal data, the functionality that we provide as part of
+            WSRP 2 is necessarily less complete than it could be with full portal support.
+         </p><p>The import/export implementation in GateIn 3.1 allows users to export portlets from a given consumer.
+            These portlets can then be used to replace existing content on pages. This is accomplished by assiging
+            previously exported portlets to replace the content displayed by windows on the portal's pages. Let us walk
+            through an example to make things clearer.
+         </p><p>Clicking the "Export" action for a given consumer will display the list of portlets currently made
+            available by this specific consumer. An example of such a list is shown below:
+         </p><div class="mediaobject" align="center"><img src="images/WSRP/export_portlet_list.png" align="middle"/></div><p>Once portlets have been selected, they can be exported by clicking the "Export" button thus making
+            them available for later import:
+         </p><div class="mediaobject" align="center"><img src="images/WSRP/export_done.png" align="middle"/></div><p>You can re-import the portlets directly by pressing the "Use for import" button or, on the Consumers list
+            page, using the "Import" action for a given consumer. Let's assume that you used that second option and that
+            you currently have several available sets of previously exported portlets to import from. After clicking the
+            action link, you should see a screen similar to the one below:</p><div class="mediaobject" align="center"><img src="images/WSRP/export_list.png" align="middle"/></div><p>As you can see this screen presents the list of available exports with available operations for each.
+            </p><div class="itemizedlist"><ul><li><p>View: displays the export details as previously seen when the export was first performed</p></li><li><p>Delete: deletes the selected export, asking you for confirmation first</p></li><li><p>Use for import: selects the export to import portlets from</p></li></ul></div><p>
+         </p><p>Once you have selected an export to import from, you will see a screen similar to the one below:</p><div class="mediaobject" align="center"><img src="images/WSRP/import_start.png" align="middle"/></div><p>The screen displays the list of available exported portlets for the previously selected export. You can
+            select which portlet you want to import by checking the checkbox next to its name. Next, you need to select
+            the content of which window the imported portlet will replace. This process is done in three steps. Let's
+            assume in this example that you have the following page called
+            <code class="literal">page1</code>
+            and containing two windows called
+            <code class="literal">NetUnity WSRP 2 Interop - Cache Markup (remote)</code>
+            and
+            <code class="literal">/samples-remotecontroller-portlet.RemoteControl (remote)</code>
+            as shown below:</p><div class="mediaobject" align="center"><img src="images/WSRP/import_original_page.png" align="middle"/></div><p>In this example, we want to replace the content of the
+            <code class="literal">/samples-remotecontroller-portlet.RemoteControl (remote)</code>
+            by the content of the
+            <code class="literal">/ajaxPortlet.JSFAJAXPortlet</code>
+            portlet that we previously exported. To do so, we will check the checkbox next to the
+            <code class="literal">/ajaxPortlet.JSFAJAXPortlet</code>
+            portlet name to indicate that we want to import its data and then select the
+            <code class="literal">page1</code>
+            in the list of available pages. The screen will then refresh to display the list of available windows on
+            that page, similar to the one seen below:
+         </p><div class="mediaobject" align="center"><img src="images/WSRP/import_selected_page.png" align="middle"/></div><p>Note that, at this point, we still need to select the window which content we want to replace before
+            being able to complete the import operation. Let's select the
+            <code class="literal">/samples-remotecontroller-portlet.RemoteControl (remote)</code>
+            window, at which point the "Import" button will become enabled, indicating that we now have all the
+            necessary data to perform the import. If all goes well, pressing that button should result in a screen
+            similar to the one below:
+         </p><div class="mediaobject" align="center"><img src="images/WSRP/import_success.png" align="middle"/></div><p>If you now take a look at the
+            <code class="literal">page1</code>
+            page, you should now see that the content
+            <code class="literal">/samples-remotecontroller-portlet.RemoteControl (remote)</code>
+            window has been replaced by the content of the
+            <code class="literal">/ajaxPortlet.JSFAJAXPortlet</code>
+            imported portlet and the window renamed appropriately:
+         </p><div class="mediaobject" align="center"><img src="images/WSRP/import_modified_page.png" align="middle"/></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="wsrp-Consumers_maintenance-Erase_local_registration_data"/>7.7.4. Erasing local registration data</h3></div></div></div><p>
+            There are rare cases where it might be required to erase the local information without being able to
+            deregister first. This is the case when a consumer is registered with a producer that has been modified by
+            its administrator to not require the registration anymore. If that ever was to happen (most likely, it will not),
+            you can erase the local registration information from the consumer so that it can resume interacting with
+            the remote producer. To do so, click the "Erase local registration" button next to the registration context
+            information on the consumer configuration screen:
+         </p><div class="mediaobject" align="center"><img src="images/WSRP/erase_registration.png" align="middle"/></div><p>
+            <span class="emphasis"><em>Warning:</em></span>
+            This operation is dangerous as it can result in inability to interact with the remote producer if invoked
+            when not required. A warning screen will be displayed to give you a chance to change your mind:
+         </p><div class="mediaobject" align="center"><img src="images/WSRP/erase_registration_warning.png" align="middle"/></div></div></div><div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="producer_config"/>7.8. Configuring GateIn's WSRP Producer</h2></div></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="producer_config-Overview"/>7.8.1. Overview</h3></div></div></div><p>
+            You can configure the behavior of Portal's WSRP Producer by using the WSRP administration interface, which
+            is the preferred way, or by editing the
+            <code class="filename">$GATEIN_HOME/wsrp-producer.war/WEB-INF/conf/producer/config.xml</code>
+            file. Several aspects can be modified with respects to whether the registration is required for consumers to
+            access the Producer's services. An XML Schema for the configuration format is available at
+            <code class="filename">
+               $GATEIN_HOME/lib/wsrp-integration-api-$WSRP_VERSION.jar/xsd/gatein_wsrp_producer_1_0.xsd
+            </code>.
+         </p></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="producer_config-Default_configuration"/>7.8.2. Default configuration</h3></div></div></div><p>
+            The default producer configuration requires consumers to register with it before providing access to its
+            services but does not require any specific registration properties (apart from what is mandated by the
+            WSRP standard). It does, however, require consumers to be registered before sending them a full service
+            description. This means that our WSRP producer will not provide the list of offered portlets and other
+            capabilities to unregistered consumers. The producer also uses the default
+            <code class="classname">RegistrationPolicy</code>
+            paired with the default
+            <code class="classname">RegistrationPropertyValidator</code>. You need to look into property
+            validators in greater detail later in<a href="wsrp.html#registration-configuration" title="7.8.3. Registration configuration">Section 7.8.3, “Registration configuration”</a>. This allows you to customize how Portal's WSRP Producer decides whether a given registration property
+            is valid or not.
+         </p><p>
+            GateIn provides a web interface to configure the producer's behavior. You can access it
+            by clicking the "Producer Configuration" tab of the "WSRP" page of the "admin" portal. Here's what you
+            should see with the default configuration:
+            </p><div class="mediaobject" align="center"><img src="images/WSRP/producer_default.png" align="middle"/></div><p>
+            As expected, you can specify whether or not the producer will send the full service description to
+            unregistered consumers, and, if it requires registration, which
+            <code class="classname">RegistrationPolicy</code>
+            to use (and, if needed, which
+            <code class="classname">RegistrationPropertyValidator</code>), along with required
+            registration property description for which consumers must provide acceptable values to
+            register successfully.
+         </p></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="registration-configuration"/>7.8.3. Registration configuration</h3></div></div></div><p>
+            To require consumers to register with the Portal's producer before interacting with it, you need to
+            configure the Portal's behavior with respect to registration. Registration is optional, as registration
+            properties. The producer can require registration without passing any registration
+            properties in case of the default configuration. Let's configure our producer starting with a blank
+            state:
+            </p><div class="mediaobject" align="center"><img src="images/WSRP/producer_blank.png" align="middle"/></div><p>
+            eXo Platform will allow unregistered consumers to see the list of offered portlets, so the first checkbox
+            ("Access to full service description requires consumers to be registered") is unchecked. You will, however,
+            specify that consumers will need to be registered to be able to interact with our producer. Check the second
+            checkbox ("Requires registration. Modifying this information will trigger invalidation of consumer
+            registrations."). The screen should now refresh and display:
+            </p><div class="mediaobject" align="center"><img src="images/WSRP/producer_registration.png" align="middle"/></div><p>
+            You can specify the fully-qualified name for your
+            <code class="classname">RegistrationPolicy</code>
+            and
+            <code class="classname">RegistrationPropertyValidator</code>
+            there. We will keep the default value. See
+            <a href="wsrp.html#custom_registration" title="7.8.3.1. Customization of Registration handling behavior">Section 7.8.3.1, “Customization of Registration handling behavior”</a>
+            for more details. Let's add, however, a registration property called
+            <code class="literal">email</code>. Click "Add property" and enter the appropriate information in the fields,
+            providing a description for the registration property that can be used by consumers to figure out its
+            purpose:
+            </p><div class="mediaobject" align="center"><img src="images/WSRP/producer_email.png" align="middle"/></div><p>
+            Press "Save" to record your modifications.
+
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>At this time, only String (xsd:string) properties are supported. If your application requires more
+                  complex properties, please let us know.
+               </p></div><p>
+
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>If consumers are already registered with the producer, modifying the configuration of required
+                  registration
+                  information will trigger the invalidation of held registrations, requiring consumers to modify their
+                  registration before being able to access the producer again. We saw the consumer side of that process
+                  in
+                  <a href="wsrp.html#reg_mod_error" title="7.7.1.2. Registration modification on producer error">Section 7.7.1.2, “Registration modification on producer error”</a>.
+               </p></div><p>
+         </p><div class="sect3" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="custom_registration"/>7.8.3.1. Customization of Registration handling behavior</h4></div></div></div><p>
+               Registration handling behavior can be customized by users to suit their Producer needs. This is
+               accomplished by providing an implementation of the
+               <code class="classname">RegistrationPolicy</code>
+               interface. This interface defines methods that are called by Portal's Registration service so that
+               decisions can be made appropriately. A default registration policy that provides basic
+               behavior is provided and should be enough for most user needs.
+            </p><p>
+               While the default registration policy provides the default behavior for most registration-related aspects,
+               there is still one aspect that requires configuration: whether a given value for a registration property
+               is acceptable by the WSRP Producer. This is accomplished by plugging a
+               <code class="classname">RegistrationPropertyValidator</code>
+               in the default registration policy. This allows you to define their own validation mechanism.
+            </p><p>
+               Please refer to the
+               <span class="trademark">Javadoc</span>™
+               for
+               <code class="classname">org.jboss.portal.registration.RegistrationPolicy</code>
+               and
+               <code class="classname">org.jboss.portal.Registration.policies.RegistrationPropertyValidator</code>
+               for more
+               details on what is expected of each method.
+            </p><p>Defining a registration policy is required for the producer to be correctly configured. This is
+               accomplished by specifying the qualified class name of the registration policy. Since we anticipate that
+               most users will use the default registration policy, it is possible to provide the class
+               name of your custom property validator instead of customizing the default registration policy behavior.
+               Note that property validators are only used by the default policy.
+
+               </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>Since the policy or the validator are defined via their class name and dynamically loaded, it is
+                     important that you make sure that the identified class is available to the application server. One
+                     way
+                     to accomplish that is to deploy your policy implementation as the JAR file in your AS instance deploy
+                     directory. Note also that, since both policies and validators are dynamically instantiated, they
+                     must
+                     provide a default, no-argument constructor.
+                  </p></div><p>
+            </p></div></div><div class="sect2" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="strict-mode"/>7.8.4. WSRP validation mode</h3></div></div></div><p>The lack of conformance kit and the wording of the WSRP specification leaves room for differing
+            interpretations, resulting in interoperability issues. It is therefore possible to encounter issues when
+            using consumers from different vendors. We have experienced such issues and have introduced a way to relax
+            the validation that our WSRP producer performs on the data provided by consumers to help with
+            interoperability by accepting data that would normally be invalid. Note that we only relax our validation
+            algorithm on aspects of the specification that are deemed harmless, such as invalid language codes.
+         </p><p>
+            By default, the WSRP producer is configured in the strict mode. If you experience issues with a given consumer,
+            you might want to try to relax the validation mode. This is accomplished by unchecking the "Use strict WSRP
+            compliance." checkbox on the Producer configuration screen.
+         </p></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Authentication_And_Identity.html"><strong>Prev</strong>Chapter 6. Authentication and Identity</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Advanced.html"><strong>Next</strong>Chapter 8. Advanced Development</a></li></ul></body></html>

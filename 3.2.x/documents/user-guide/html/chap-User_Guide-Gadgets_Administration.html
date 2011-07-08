@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 7. Portlets and Gadgets Administration</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn User Guide"/><link rel="up" href="index.html" title="GateIn User Guide"/><link rel="prev" href="chap-User_Guide-Language_administration.html" title="Chapter 6. Language administration"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Language_administration.html"><strong>Prev</strong></a></li><li class="next"/></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-User_Guide-Gadgets_Administration"/>Chapter 7. Portlets and Gadgets Administration</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Import_Portlets_and_Gadgets">7.1. Import Portlets and Gadgets</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets">7.2. Manage Portlets and Gadgets</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Dashboard_Portlet-Display_Gadgets">7.2.1. Display Gadgets</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Add_a_new_Category">7.2.2. Add a new Category</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Edit_a_Category">7.2.3. Edit a Category</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Delete_a_Category">7.2.4. Delete a Category</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Add_PortletsGadgets_to_the_specific_Category">7.2.5. Add Portlets/Gadgets to a Category</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Set_Access_Permission_on_Portlets">7.2.6. Set Access Permission on Portlets</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-View_detail_information_of_the_specific_Portlets">7.2.7. View/Edit portlet/gadget information</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Add_a_Gadget">7.2.8. Add a Gadget</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Add_a_new_Gadget_to_the_Dashboard_Portlet">7.2.9. Add a new Gadget to the Dashboard Portlet</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Gadgets_Administration.html#sect-User_Guide-Manage_Portlets_and_Gadgets-Manage_Gadgets">7.2.10. Manage Gadgets</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Import_Portlets_and_Gadgets"/>7.1. Import Portlets and Gadgets</h2></div></div></div><p>
+		This feature imports portlets/gadgets found in web applications on your server
+	</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+				The Application Registry looks in all webapps of your application server for a file located at WEB-INF/portlet.xml and registers the portlets found there. When the user clicks on "Auto Import" the portlets of all webapps are imported. If there is a portlet.xml file in a webapp a new category is created whose name is the webapp war name (or the webapp folder name). All the portlets that are configured in the portlet.xml file are added to the new category.
+			</p></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+				In the <span class="bold"><strong>Group</strong></span> menu, select <span class="bold"><strong>Administration</strong></span> then <span class="bold"><strong>Application Registry</strong></span>:
+			</p><div class="mediaobject" align="center"><img src="images/Org1.png" align="middle"/></div></li><li><p>
+				Click <span class="bold"><strong>Import Applications</strong></span> on the right hand side. A confirmation message should appear as such:
+			</p><div class="mediaobject" align="center"><img src="images/local.png" align="middle"/></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets"/>7.2. Manage Portlets and Gadgets</h2></div></div></div><p>
+			Portlets and gadgets are organized in different categories. Each category contains one or several portlets or gadgets. You can also mix portlets and gadgets into one category. By default all gadgets are placed in the <span class="emphasis"><em>Gadgets</em></span> category.
+		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Dashboard_Portlet-Display_Gadgets"/>7.2.1. Display Gadgets</h3></div></div></div><p>
+			You can change the number of columns available in the Dashboard Portlet.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Click on <span class="bold"><strong>Site Editor</strong></span> : <span class="bold"><strong>Edit Page</strong></span>
+				</p></li><li><p>
+					Click on <span class="bold"><strong>Edit Portlet</strong></span> button (which is displayed a pencil icon when you mouse-over the portlet in edit mode). It will show a dialog to change the number of columns to display gadgets.
+				</p><div class="mediaobject" align="center"><img src="images/Column.png" align="middle"/></div></li><li><p>
+					Change the number of columns and click the <span class="bold"><strong>Save</strong></span> button to accept the changes.
+				</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Add_a_new_Category"/>7.2.2. Add a new Category</h3></div></div></div><p>
+			You easily add a new category by following these guides:
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					In the <span class="bold"><strong>Group</strong></span> menu, select <span class="bold"><strong>Administration</strong></span> -&gt; <span class="bold"><strong>Application Registry</strong></span>.
+				</p></li><li><p>
+					Click the <span class="bold"><strong>Add Category</strong></span> button on the action bar: 
+				</p><div class="mediaobject" align="center"><img src="images/AddCategory1.png" align="middle"/></div><p>
+					The <span class="bold"><strong>Category Setting</strong></span> tab: includes common information about a category.
+				</p><div class="variablelist"><dl><dt><span class="term">Category name</span></dt><dd><p>
+								The name of the category. This field is required and its length must be between 3 and 30 characters. Only alpha, digit, dash and underscore characters are allowed. 
+							</p></dd><dt><span class="term">Display name</span></dt><dd><p>
+								The display name of the category and its length must be between 3 and 30 characters.
+							</p></dd><dt><span class="term">Description</span></dt><dd><p>
+								A brief description of the category. Any length from 0 to 255 characters is allowed.
+							</p></dd></dl></div><p>
+					The <span class="bold"><strong>Permission Setting</strong></span> tab provides access to the Permission manager.
+				</p><p>The permission criteria are used whenever a user creates or modifies a page. In that case the user can only see and use portlets in those categories on which he or she has access to (as defined by groups and memberships).
+				</p><div class="mediaobject" align="center"><img src="images/Permission2.png" align="middle"/></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Edit_a_Category"/>7.2.3. Edit a Category</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Click the Edit icon located next to the title bar.
+				</p></li><li><p>
+					Update the category information.
+				</p></li><li><p>
+					Click the <span class="bold"><strong>Save</strong></span> button to apply changes.
+				</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Delete_a_Category"/>7.2.4. Delete a Category</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Click the Trash can icon located next to the title bar.
+				</p></li><li><p>
+					Accept the deletion by clicking  <span class="bold"><strong>OK</strong></span>
+				</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Add_PortletsGadgets_to_the_specific_Category"/>7.2.5. Add Portlets/Gadgets to a Category</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Click the "Plus" icon located next to the category name to which you want to add portlets/gadgets.  
+				</p><div class="mediaobject" align="center"><img src="images/AddPortlet2.png" align="middle"/></div><div class="variablelist"><dl><dt><span class="term">Display name</span></dt><dd><p>
+									The display name of a portlet/gadget.
+								</p></dd><dt><span class="term">Application Type</span></dt><dd><p>
+								Either Portlet or Gadget.
+							</p></dd></dl></div></li><li><p>
+					Enter the display name and select a type
+				</p></li><li><p>
+					Select a portlet/gadget by checking the radio button.
+				</p></li><li><p>
+					Click the <span class="bold"><strong>Save</strong></span> button to add the selected portlet/gadget to the category.
+				</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Set_Access_Permission_on_Portlets"/>7.2.6. Set Access Permission on Portlets</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					In the <span class="bold"><strong>Group</strong></span> menu, select <span class="bold"><strong>Administration</strong></span> and then <span class="bold"><strong>Application Registry</strong></span>.
+				</p><div class="mediaobject" align="center"><img src="images/PortletPermission.png" align="middle"/></div></li><li><p>
+					Select a category in the Category pane that includes the portlet you want to set permissions on. All portlets of that category will be listed underneath.
+				</p></li><li><p>
+					To set permission for a portlet: 
+				</p><div class="itemizedlist"><ul><li><p>
+							Click the <span class="bold"><strong>Add Permission</strong></span> button to add access permissions to more groups.
+						</p><div class="mediaobject" align="center"><img src="images/AddPermission.png" align="middle"/></div></li><li><p>
+							Or check <span class="bold"><strong>Make it public</strong></span> to allow everyone to access.
+						</p></li></ul></div><p>
+					Whenever the user creates or modifies a page, he or she can only see and use gadgets/portlets that fulfill two conditions: the portlet is in a <span class="bold"><strong>category</strong></span> which the user has access permission too and the user has access permission on the <span class="bold"><strong>portlet</strong></span>
+				</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-View_detail_information_of_the_specific_Portlets"/>7.2.7. View/Edit portlet/gadget information</h3></div></div></div><p>
+					In the <span class="bold"><strong>Group</strong></span> menu, select <span class="bold"><strong>Administration</strong></span> then <span class="bold"><strong>Application Registry</strong></span>. 
+				</p><div class="mediaobject" align="center"><img src="images/Org1.png" align="middle"/></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Left pane</strong></span></span></dt><dd><p>
+									All portlets and gadgets grouped by categories
+								</p></dd><dt><span class="term"><span class="bold"><strong>Right pane</strong></span></span></dt><dd><p>
+									shows detail information about a portlet: Name, Display name, Description and Portlet preferences.
+								</p></dd></dl></div><p>
+					To see the details of any portlet select it from the list on the left.
+				</p><p>
+					To edit a portlet, click the edit button to the right of the portlet's name:
+				</p><div class="mediaobject" align="center"><img src="images/EditApplication.png" align="middle"/></div><div class="mediaobject" align="center"><img src="images/EditApplicationInformation.png" align="middle"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Add_a_Gadget"/>7.2.8. Add a Gadget</h3></div></div></div><p>
+			In the <span class="bold"><strong>Group</strong></span> menu, select <span class="bold"><strong>Administration</strong></span> then <span class="bold"><strong>Application Registry</strong></span>. Click on the <span class="bold"><strong>Gadget</strong></span> icon.
+		</p><div class="mediaobject" align="center"><img src="images/Gadgetnew.png" align="middle"/></div><p>
+			You may add a remote gadget using its URL or create a brand-new one:
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><a id="d0e4144"/><p class="title"><b>Procedure 7.1. Add a remote Gadget</b></p><ol class="1"><li><p>
+							Click on <span class="bold"><strong>Add a remote gadget</strong></span>:
+						</p><div class="mediaobject" align="center"><img src="images/AddGadgetnew.png" align="middle"/></div></li><li><p>
+							Enter the url of the remote gadget in the <span class="bold"><strong>URL</strong></span> field.
+						</p><div class="mediaobject" align="center"><img src="images/AddGadgetnewUrl.png" align="middle"/></div></li><li><p>
+							Click <span class="bold"><strong>Add</strong></span>. The new remote gadget will be appear in gadget list on left pane of the Dashboard portlet.
+						</p></li></ol></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><a id="d0e4173"/><p class="title"><b>Procedure 7.2. Create a new Gadget</b></p><ol class="1"><li><p>
+								Click on <span class="bold"><strong>Create a new gadget</strong></span>:
+							</p><div class="mediaobject" align="center"><img src="images/CreateGadget1.png" align="middle"/></div></li><li><p>
+								Populate the <code class="literal">Source</code> field with the xml code of the new gadget.
+							</p></li></ol></div><p>
+				You can edit or refresh a gadget using the icons in the top right of the <span class="bold"><strong>Gadget Details</strong></span> pane. 
+			</p><p>
+				You can delete a local gadget using the trashcan icon to the right of the appropriate gadget in the gadget list.
+			</p><div class="mediaobject" align="center"><img src="images/ActionGadget.png" align="middle"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Add_a_new_Gadget_to_the_Dashboard_Portlet"/>7.2.9. Add a new Gadget to the Dashboard Portlet</h3></div></div></div><p>
+				See <a href="chap-User_Guide-Portlets.html#sect-User_Guide-Dashboard_Portlet-Add_Gadgets" title="3.3.2. Add Gadgets">Section 3.3.2, “Add Gadgets”</a> for instructions on how to add new gadgets to the dashboard.
+			</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portlets_and_Gadgets-Manage_Gadgets"/>7.2.10. Manage Gadgets</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-Manage_Gadgets-Edit_a_Gadget"/>7.2.10.1. Edit a Gadget</h4></div></div></div><p>
+					Click the <span class="bold"><strong>Edit Gadget</strong></span> icon located in the header of the <span class="bold"><strong>Gadget Details</strong></span> page to display the following window: 
+				</p><div class="mediaobject" align="center"><img src="images/Source.png" align="middle"/></div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Language_administration.html"><strong>Prev</strong>Chapter 6. Language administration</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li></ul></body></html>

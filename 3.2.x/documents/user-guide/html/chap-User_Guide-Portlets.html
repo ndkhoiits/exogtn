@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 3. Portlets</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn User Guide"/><link rel="up" href="index.html" title="GateIn User Guide"/><link rel="prev" href="chap-User_Guide-Terms.html" title="Chapter 2. Glossary"/><link rel="next" href="chap-User_Guide-Account.html" title="Chapter 4. Accounts"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Terms.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Account.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-User_Guide-Portlets"/>Chapter 3. Portlets</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-User_Guide-Portlets.html#sect-User_Guide-Functional_Portlets">3.1. Functional Portlets</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portlets.html#sect-User_Guide-Interface_Portlets">3.2. Interface Portlets</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portlets.html#sect-User_Guide-Dashboard_Portlet">3.3. Dashboard Portlet</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Portlets.html#sect-User_Guide-Dashboard_Portlet-Using_the_Dashboard_Workspace">3.3.1. Using the Dashboard Workspace</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portlets.html#sect-User_Guide-Dashboard_Portlet-Add_Gadgets">3.3.2. Add Gadgets</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Functional_Portlets"/>3.1. Functional Portlets</h2></div></div></div><p>
+		Portlets are pluggable user interface components that are managed and displayed within a portal. Functional Portlets support all functions of a Portal. They are built into the portal and are accessed via toolbar links as required when actioning portal tasks. 
+	</p><p>
+		GateIn 3.0 provides the following portlets by default:
+	</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Account Portlet</strong></span></span></dt><dd><p>
+				The Account Portlet allows users to register a new account and choose a preferred language for displaying the Portal interface.
+			</p><div class="mediaobject" align="center"><img src="images/Account.png" align="middle" width=""/></div></dd><dt><span class="term"><span class="bold"><strong>Organization Portlet</strong></span></span></dt><dd><p>
+				The Organization Portlet is used to manage user information, groups of users and groups memberships.
+			</p><div class="mediaobject" align="center"><img src="images/OrganizationPortlet1.png" align="middle" width=""/></div></dd><dt><span class="term"><span class="bold"><strong>Application Registry Portlet</strong></span></span></dt><dd><p>
+				The Application Registry  Portlet is used to manage different application categories. You can add, edit, set permissions and delete a category and its applications.
+			</p><div class="mediaobject" align="center"><img src="images/ApplicationRegistry.png" align="middle" width=""/></div></dd><dt><span class="term"><span class="bold"><strong>Star Toolbar Portlet</strong></span></span></dt><dd><p>
+				The Star Toolbar Portlet is used to change the default language, the skin of the portal or to sign out.
+			</p><div class="mediaobject" align="center"><img src="images/StarPortlet.png" align="middle"/></div></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Interface_Portlets"/>3.2. Interface Portlets</h2></div></div></div><p>
+		The Interface Portlets are the front-end components of the Portal. They provide ways for users to interact with the portal. GateIn 3.0 provides the following Interface Portlets:
+	</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Banner Portlet</strong></span></span></dt><dd><div class="mediaobject" align="center"><img src="images/BannerPortlet.png" align="middle"/></div><p>
+				This Portlet contains the organization's slogan, logo, and icons.
+			</p></dd><dt><span class="term"><span class="bold"><strong>HomePage Portlet</strong></span></span></dt><dd><p>
+				This Portlet is the home page for a portal. The home page is the first page displayed when you visit the site.
+			</p><div class="mediaobject" align="center"><img src="images/Frontpage.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Navigation Portlet</strong></span></span></dt><dd><p>
+				This Portlet provides a navigation bar. A navigation bar is a menu that helps users to visualize the structure of a site and provide links to quickly move from page to page.
+			</p><div class="mediaobject" align="center"><img src="images/NavigationPortlet.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Sitemap Portlet</strong></span></span></dt><dd><p>
+				This Portlet displays a site map page of a web site. It lists pages on a website, typically organized in hierarchical fashion.
+			</p><div class="mediaobject" align="center"><img src="images/SiteMap.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Breadcumbs Portlet</strong></span></span></dt><dd><p>
+				This Portlet displays the 'path' the user has taken from the home page to arrive at the currrent page.
+			</p><div class="mediaobject" align="center"><img src="images/Breadcrumbs.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Dashboard Portlet</strong></span></span></dt><dd><p>
+				This portlet is used for hosting mini-applications known as gadgets. The dashboard uses a variety of graphical effects for displaying, opening, and using gadgets.
+			</p><div class="mediaobject" align="center"><img src="images/Dashboard.png" align="middle"/></div><p>
+				Refer to <a href="chap-User_Guide-Portlets.html#sect-User_Guide-Dashboard_Portlet" title="3.3. Dashboard Portlet">Section 3.3, “Dashboard Portlet”</a> or <a href="chap-User_Guide-Gadgets_Administration.html" title="Chapter 7. Portlets and Gadgets Administration">Chapter 7, <i xmlns:xlink="http://www.w3.org/1999/xlink">Portlets and Gadgets Administration</i></a> for more information.
+			</p></dd><dt><span class="term"><span class="bold"><strong>Iframe Portlet</strong></span></span></dt><dd><p>
+				This Portlet is used to create inline frames (IFrame) elements for a site. An Iframe is a HTML element which can embed another document into a parent HTML document. By using IFrames, embedded data is displayed inside a sub-window of browser.
+			</p></dd><dt><span class="term"><span class="bold"><strong>Gadget Wrapper Portlet</strong></span></span></dt><dd><p>
+				This Portlet allows users to view a gadget in canvas mode. 
+			</p><div class="mediaobject" align="center"><img src="images/GadgetWrapper.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Footer Portlet</strong></span></span></dt><dd><p>
+				This Portlet provides the footer for a site. This footer provides information or links about the site's author/institutional sponsor, the date of the last revision made to the site, copyright information, comments form and navigational links.
+			</p><div class="mediaobject" align="center"><img src="images/Footer.png" align="middle"/></div></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Dashboard_Portlet"/>3.3. Dashboard Portlet</h2></div></div></div><p>
+		The Dashboard portlet is used for hosting mini applications known as gadgets. The Dashboard uses a variety of graphical effects for displaying, opening and using gadgets.
+	</p><p>
+		Gadgets within the Dashboard portlet can be moved and rearranged. New gadgets can be created and unnecessary ones deleted. More than one instance of the same gadget can be opened at the same time and each instance of the same gadget can have different settings. The gadgets instances are completely independent.
+	</p><div class="mediaobject" align="center"><img src="images/Dashboard1.png" align="middle"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Dashboard_Portlet-Using_the_Dashboard_Workspace"/>3.3.1. Using the Dashboard Workspace</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Click on <span class="bold"><strong>Dashboard</strong></span> in the toolbar to access the Dashboard portlet.
+				</p></li><li><p>
+				 	Click on <span class="bold"><strong>Add Gadgets</strong></span> to open the Dashboard Workspace.
+				</p></li></ol></div><p>
+			The active Dashboard can be individually named by clicking on the default name ("<span class="emphasis"><em>Click and Type Page Name</em></span>")...
+		</p><div class="mediaobject" align="center"><img src="images/Dashname.png" align="middle"/></div><p>
+			...and entering a new name:
+		</p><div class="mediaobject" align="center"><img src="images/Dashname1.png" align="middle"/></div><p>
+			The Dashboard Workspace lists all available gadgets. Four gadgets are provided by default with GateIn 3.0, however you can add many more.
+		</p><div class="mediaobject" align="center"><img src="images/Dash2.png" align="middle"/></div><div class="variablelist"><a id="vari-User_Guide-Using_the_Dashboard_Workspace-Default_Gadgets"/><p class="title"><b>Default Gadgets:</b></p><dl><dt><span class="term"><span class="bold"><strong>Calendar</strong></span></span></dt><dd><p>
+						The calendar gadget allows users to switch easily between daily, monthly and yearly view and, is customizable to match your portal's theme.
+					</p><div class="mediaobject" align="center"><img src="images/Calendar.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>ToDo</strong></span></span></dt><dd><p>
+						This application helps you organize your day and work group. It is designed to keep track of your tasks in a convenient and transparent way. Tasks can be highlighted with different colors.
+					</p><div class="mediaobject" align="center"><img src="images/Todo.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Calculator</strong></span></span></dt><dd><p>
+						This mini-application lets you perform most basic arithmetic operations and can be themed to match the rest of your portal.
+					</p><div class="mediaobject" align="center"><img src="images/Calculator.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>RSS Reader</strong></span></span></dt><dd><p>
+						An RSS reader, or aggregator, collates content from various, user-specified feed sources and displays them in one location. This content can include, but isn't limited to, news headlines, blog posts or email. The RSS Reader gadget displays this content in a single window on your Portal page.
+					</p><div class="mediaobject" align="center"><img src="images/RSSReader.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>More Gadgets</strong></span></span></dt><dd><p>
+						Many more gadgets can be found at <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.google.com/ig/directory?synd=open">Google Gadgets</a>. GateIn 3.0 is compatible with most of the gadgets available there.
+					</p><div class="mediaobject" align="center"><img src="images/GoogleGadgets.png" align="middle"/></div></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Dashboard_Portlet-Add_Gadgets"/>3.3.2. Add Gadgets</h3></div></div></div><p>
+			To add more gadgets from external sources:
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Obtain the URL (.xml or .rss) of the gadget you wish to add from the gadget source.
+				</p><p>
+					The gadgets available at <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.google.com/ig/directory?synd=open">Google Gadget</a> provide a link to <span class="bold"><strong>View source</strong></span>. Clicking on this link will open a page showing the gadget's XML source. Use the URL of this page in the Dashboard Workspace. The URL should end with <code class="literal">.xml</code>
+				</p><p>
+					For example:
+				</p><div class="mediaobject" align="center"><img src="images/XMLURL.png" align="middle"/></div><div class="note"><h2>URL Types</h2><p>
+						Remote gadgets can be only created using an .xml link or RSS URL. However, if you use a link that generates an RSS feed (for example: <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://feeds.feedburner.com/gatein">http://feeds.feedburner.com/gatein</a>), a new RSS reader gadget will be created automatically even if the URL does not end with <code class="literal">.rss</code>.
+					</p></div></li><li><p>
+					Return to your portal and click <span class="bold"><strong>Dashboard</strong></span> in the toolbar.
+				</p></li><li><p>
+					Click on <span class="bold"><strong>Add Gadgets</strong></span> in the Dashboard to open the Dashboard Workspace.
+				</p><div class="mediaobject" align="center"><img src="images/Dashboard1.png" align="middle"/></div></li><li><p>
+					The Dashboard Workspace dialog appears: 
+					</p><div class="mediaobject" align="center"><img src="images/EnterLink.png" align="middle"/></div><p>
+				</p></li><li><p>
+					Paste the URL obtained in step 1 into the text box above the gadget list.
+				</p><div class="mediaobject" align="center"><img src="images/CodePaste.png" align="middle"/></div></li><li><p>
+					Click on the <span class="bold"><strong>plus</strong></span> icon to add the new gadget to the page.
+				</p><div class="mediaobject" align="center"><img src="images/NewGadget.png" align="middle"/></div></li></ol></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Terms.html"><strong>Prev</strong>Chapter 2. Glossary</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Account.html"><strong>Next</strong>Chapter 4. Accounts</a></li></ul></body></html>
