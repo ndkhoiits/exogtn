@@ -642,7 +642,7 @@ if (userId != null)
   &lt;/login-module&gt;
 &lt;/authentication&gt;
 </pre></li><li><p>
-							In Tomcat, edit <code class="filename">GATEIN_HOME/conf/jaas.conf</code> and uncomment on this section:
+							In Tomcat, edit <code class="filename">GATEIN_HOME/conf/jaas.conf</code>, uncomment on this section and comment other parts:
 							</p><pre class="programlisting">org.gatein.sso.agent.login.SSOLoginModule required;
 org.exoplatform.services.security.j2ee.TomcatLoginModule required
 portalContainerName=portal
@@ -793,7 +793,7 @@ realmName=gatein-domain;
   &lt;/login-module&gt;
 &lt;/authentication&gt;
 </pre></li><li><p>
-								In Tomcat, edit <code class="filename">GATEIN_HOME/conf/jaas.conf</code> and uncomment on this section:
+								In Tomcat, edit <code class="filename">GATEIN_HOME/conf/jaas.conf</code>, uncomment on this section and comment other parts:
 							</p><pre class="programlisting">org.gatein.sso.agent.login.SSOLoginModule required;
 org.exoplatform.services.security.j2ee.TomcatLoginModule requiredtm	
 portalContainerName=portal
@@ -971,7 +971,7 @@ realmName=gatein-domain;
   &lt;/login-module&gt;
 &lt;/authentication&gt;
 </pre></li><li><p>
-								If you are running GateIn 3.1 in Tomcat, edit $GATEIN_HOME/conf/jaas.conf and uncomment on this section
+								If you are running GateIn 3.1 in Tomcat, edit $GATEIN_HOME/conf/jaas.conf, uncomment on this section and comment other parts:
 							</p><pre class="programlisting">org.gatein.sso.agent.login.SSOLoginModule required;
 org.exoplatform.services.security.j2ee.TomcatLoginModule required
 portalContainerName=portal
