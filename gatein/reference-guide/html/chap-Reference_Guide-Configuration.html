@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 2. Configuration</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><link rel="home" href="index.html" title="GateIn Reference Guide"/><link rel="up" href="index.html" title="GateIn Reference Guide"/><link rel="prev" href="chap-Reference_Guide-Introduction.html" title="Chapter 1. Introduction"/><link rel="next" href="chap-Reference_Guide-Development.html" title="Chapter 3. Portal Development"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Introduction.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Development.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Reference_Guide-Configuration"/>Chapter 2. Configuration</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-Database_Configuration">2.1. Database Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-Database_Configuration-Overview">2.1.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-Database_Configuration-JCR_database_configuration">2.1.2. Configuring the database for JCR</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#d0e167">2.1.3. Configuring the database for the default identity store</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-EMail_Service_Configuration">2.2. E-Mail Service Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-EMail_Service_Configuration-Overview">2.2.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-EMail_Service_Configuration-Parameters">2.2.2. Configuring the outgoing e-mail account</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-HTTPS_Configuration">2.3. HTTPS Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-HTTPS_Configuration-Overview">2.3.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-HTTPS_Configuration-Generate_Key">2.3.2. Generate your key</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-HTTPS_Configuration-Use_In_Jboss">2.3.3. Setup Jboss configuration to use your key</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Configuration.html#sect-Reference_Guide-HTTPS_Configuration-Use_In_Tomcat">2.3.4. Setup Tomcat configuration to use your key</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Database_Configuration"/>2.1. Database Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Database_Configuration-Overview"/>2.1.1. Overview</h3></div></div></div><p>GateIn 3.2 has two different database dependencies. One is the
+    identity service configuration, which depends on Hibernate. The other is Java content repository (JCR) service, which
+    depends on JDBC API, and can integrate with any existing datasource implementation.</p><p>When you change the database configuration for the first time,
+    GateIn will automatically generate the proper schema (assuming that the
+    database user has the appropriate permissions).</p><p>GateIn 3.2 assumes the default encoding for your database is
+    <code class="literal">latin1</code>. You may need to change this parameter for
+    your database in order for GateIn 3.2 to work properly.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Database_Configuration-JCR_database_configuration"/>2.1.2. Configuring the database for JCR</h3></div></div></div><p>To configure the database used by JCR you will need to edit the
+    file:</p><pre class="programlisting">$JBOSS_HOME/server/default/conf/gatein/configuration.properties</pre><p>For Tomcat, the file is located at </p><pre class="programlisting">$TOMCAT_HOME/gatein/conf/configuration.properties</pre><p>And edit the values of driver, url, username and password with the
+    values for your JDBC connection (please, refer to your database JDBC driver
+    documentation).</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">gatein.jcr.datasource.driver=org.hsqldb.jdbcDriver</span><br />
+<span class="xml_plain">gatein.jcr.datasource.url=jdbc:hsqldb:file:${gatein.db.data.dir}/data/jdbcjcr_${name}</span><br />
+<span class="xml_plain">gatein.jcr.datasource.username=sa</span><br />
+<span class="xml_plain">gatein.jcr.datasource.password=</span><br />
+</pre><p>By default, the name of the database is "jdbcjcr_${name}" - ${name}
+    should be a part of the database name, as it is dynamically replaced by the
+    name of the portal container extension (for instance,
+    gatein-sample-portal.ear defines "sample-portal" as container name and the
+    default portal defines "portal" as container name).</p><p>In the case of HSQL the databases are created automatically. For any
+    other database you will need to create a database named jdbcjcr_portal
+    (and "jdbcjcr_sample-portal" if you have gatein-sample-portal.ear in
+    $JBOSS_HOME/server/default/deploy - note that some databases don't accept '-'
+    in the database name, so you may have to remove
+    $JBOSS_HOME/server/default/deploy/gatein-sample-portal.ear)</p><p>Make sure the user has rights to create tables on jdbcjcr_portal, and
+    to update them as they will be automatically created during the first startup .</p><p>Also add your database's JDBC driver into the classpath - you can put it in
+    $JBOSS_HOME/server/default/lib (or $TOMCAT_HOME/lib, if you are running on
+    Tomcat)</p><p>MySQL example:</p><p>Let's configure our JCR to store data in MySQL. Let's pretend we
+    have a user named "gateinuser" with a password "gateinpassword". We would
+    create a database "mygateindb_portal" (remember that _portal is required),
+    and assign our user the rights to create tables.</p><p>Then we need to add MySQL's JDBC driver to the classpath, and
+    finally edit gatein.ear/02portal.war/WEB-INF/conf/jcr/jcr-configuration
+    to contain the following:</p><pre class="programlisting">gatein.jcr.datasource.driver=com.mysql.jdbc.Driver
+gatein.jcr.datasource.url=jdbc:mysql://localhost:3306/mygateindb${container.name.suffix}
+gatein.jcr.datasource.username=gateinuser
+gatein.jcr.datasource.password=gateinpassword
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e167"/>2.1.3. Configuring the database for the default identity store</h3></div></div></div><p>By default, users are stored in a database. To change the database in which to
+    store users, you will need to edit the file:</p><pre class="programlisting">$JBOSS_HOME/server/default/conf/gatein/configuration.properties</pre><p>For
+    Tomcat, the file is located at </p><pre class="programlisting">$TOMCAT_HOME/gatein/conf/configuration.properties</pre><p>You will find the same kind of configuration as in
+    jcr-configuration.xml:</p><pre class="programlisting">gatein.idm.datasource.driver=org.hsqldb.jdbcDriver
+gatein.idm.datasource.url=jdbc:hsqldb:file:${gatein.db.data.dir}/data/jdbcidm_${name}
+gatein.idm.datasource.username=sa
+gatein.idm.datasource.password</pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-EMail_Service_Configuration"/>2.2. E-Mail Service Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-EMail_Service_Configuration-Overview"/>2.2.1. Overview</h3></div></div></div><p>GateIn 3.2 includes an e-mail sending service that needs to be configured
+    before it can function properly. This service, for instance, is used to send e-mails to users who forgot
+    their password or username.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-EMail_Service_Configuration-Parameters"/>2.2.2. Configuring the outgoing e-mail account</h3></div></div></div><p>The e-mail service can use any SMTP account configured in
+    $JBOSS_HOME/server/default/conf/gatein/configuration.properties
+    (or $TOMCAT_HOME/gatein/conf/configuration.properties if you are using Tomcat).</p><p>The relevant section looks like:</p><pre class="programlisting"># EMail
+gatein.email.smtp.username=
+gatein.email.smtp.password=
+gatein.email.smtp.host=smtp.gmail.com
+gatein.email.smtp.port=465
+gatein.email.smtp.starttls.enable=true
+gatein.email.smtp.auth=true
+gatein.email.smtp.socketFactory.port=465
+gatein.email.smtp.socketFactory.class=javax.net.ssl.SSLSocketFactory</pre><p>It is preconfigured for GMail, so that any GMail account can easily be used (simply use the full GMail address
+    as username, and fill-in the password.</p><p>In corporate environments you will want to use your corporate SMTP gateway. When using it over SSL,
+       like in default configuration, you may need to configure a certificate truststore, containing your SMTP server's
+       public certificate. Depending on the key sizes, you may then also need to install Java Cryptography Extension (JCE) 
+       Unlimited Strength Jurisdiction Policy Files for your Java Runtime Environment.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-HTTPS_Configuration"/>2.3. HTTPS Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-HTTPS_Configuration-Overview"/>2.3.1. Overview</h3></div></div></div><p>GateIn 3.2 default run on HTTP mode. However, for security purpose, you can config GateIn to run on HTTPS mode. This section show you how to config GateIn with HTTPS mode.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-HTTPS_Configuration-Generate_Key"/>2.3.2. Generate your key</h3></div></div></div><p>If you haven't your own X.509 certificate, you can make a simple certificate using keytool command:
+    </p><pre class="programlisting">keytool -genkey -alias serverkeys -keyalg RSA -keystore server.keystore -storepass 123456 -keypass 123456 -dname "CN=localhost, 		OU=MYOU, O=MYORG, L=MYCITY, ST=MYSTATE, C=MY"</pre><p>Now, your key is stored in server.keystore</p><p>You need to import your key into the Sun JDK keystore (This is required to help running gadget features)
+    </p><pre class="programlisting">keytool -importkeystore -srckeystore server.keystore -destkeystore $JAVA_HOME/jre/lib/security/cacerts</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-HTTPS_Configuration-Use_In_Jboss"/>2.3.3. Setup Jboss configuration to use your key</h3></div></div></div><p>Edit server.xml from jboss/server/&lt;NAME&gt;/deploy/jbossweb.sar folder.
+    	Comment lines:
+	</p><pre class="programlisting">&lt;Connector protocol="HTTP/1.1" port="8080" address="${jboss.bind.address}" 
+		       connectionTimeout="20000" redirectPort="8443" /&gt;</pre><p>
+	Uncomment lines and change keystoreFile and keystorePass to values of your key:
+	</p><pre class="programlisting">&lt;Connector protocol="HTTP/1.1" SSLEnabled="true" 
+		   port="8443" address="${jboss.bind.address}"
+		   scheme="https" secure="true" clientAuth="false" 
+		   keystoreFile="$JAVA_HOME/jre/lib/security/cacerts"
+		   keystorePass="123456" sslProtocol = "TLS" /&gt;</pre><p>
+     </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-HTTPS_Configuration-Use_In_Tomcat"/>2.3.4. Setup Tomcat configuration to use your key</h3></div></div></div><p>Edit server.xml from tomcat/conf folder. Comment lines:
+	</p><pre class="programlisting">&lt;Connector port="8080" protocol="HTTP/1.1" 
+		maxThreads="150" connectionTimeout="20000" 
+		redirectPort="8443" URIEncoding="UTF-8"
+		emptySessionPath="true"/&gt;</pre><p>
+	Uncomment lines and add keystoreFile and keystorePass values:
+    	</p><pre class="programlisting">&lt;Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+		maxThreads="150" scheme="https" secure="true"
+		clientAuth="false" sslProtocol="TLS" 
+		keystoreFile="$JAVA_HOME/jre/lib/security/cacerts"
+		keystorePass="123456" /&gt;</pre><p>
+   </p><p>Restart GateIn. If your configuration is correct, you can access to GateIn via address: <code class="literal">https://&lt;ServerAddress&gt;:8443/portal</code></p></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Introduction.html"><strong>Prev</strong>Chapter 1. Introduction</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-Reference_Guide-Development.html"><strong>Next</strong>Chapter 3. Portal Development</a></li></ul></body></html>

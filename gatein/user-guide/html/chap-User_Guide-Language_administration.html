@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 6. Language administration</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><link rel="home" href="index.html" title="GateIn User Guide"/><link rel="up" href="index.html" title="GateIn User Guide"/><link rel="prev" href="chap-User_Guide-Portal_Administration.html" title="Chapter 5. Portal Administration"/><link rel="next" href="chap-User_Guide-Gadgets_Administration.html" title="Chapter 7. Portlets and Gadgets Administration"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Portal_Administration.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Gadgets_Administration.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-User_Guide-Language_administration"/>Chapter 6. Language administration</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Change_Interface_Language">6.1. Change Interface Language</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Change_Interface_Language_User">6.1.1. Language for the user</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Change_Interface_Language-Set_language_for_a_user">6.1.2. Set language for a user</a></span></dt></dl></dd><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-RTL_Support_Right_To_Left">6.2. Right To Left Support</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Multi_Language_Navigation_Nodes">6.3. Multi-Language Navigation Nodes</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Multi_Language_Navigation_Nodes-Key_Format">6.3.1. Key Format</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Multi_Language_Navigation_Nodes-Creating_Keys">6.3.2. Creating Keys</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Multi_Language_Navigation_Nodes-Creating_Keys_using_the_Create_Page_Wizard">6.3.3. Creating Keys using Create Page Wizard</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#sect-User_Guide-Multi_Language_Navigation_Nodes-CreatingEditing_Keys_using_the_Edit_Page_and_Navigation">6.3.4. Creating/Editing Keys using Navigation Management</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Language_administration.html#d0e3784">6.3.5. Providing translation</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Change_Interface_Language"/>6.1. Change Interface Language</h2></div></div></div><p>
+		GateIn 3.2 allows users to pick the language of the user interface.
+	</p><p>
+		The priority of the interface language setting follows this hierarchy:
+	</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>
+				User's language
+			</p></li><li><p>
+				Browser's language
+			</p></li><li><p>
+				Portal's language
+			</p></li></ol></div><p>
+		 Note that users should pay attention to this order in order to change the language type appropriately.
+	</p><p>
+		You may switch the interface language in various places as follows:
+	</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Change_Interface_Language_User"/>6.1.1. Language for the user</h3></div></div></div><p>
+			You may set the interface language for your account alone and not for the entire Portal as follows:
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Open up the Start menu and click on <span class="bold"><strong>Change Language</strong></span> :
+					</p><div class="mediaobject" align="center"><img src="images/StarPortlet.png" align="middle"/></div></li><li><p>
+						The <span class="bold"><strong>Interface Language Setting</strong></span> window lists all available languages installed in the Portal:
+					</p><div class="mediaobject" align="center"><img src="images/InterfaceLanguage.png" align="middle"/></div></li><li><p>
+						Click on the desired language. The associated native word is highlighted.
+					</p></li><li><p>
+						Click <span class="bold"><strong>Apply</strong></span> to save your change. The site should refresh and display its attributes in the language you've just chosen.
+					</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Change_Interface_Language-Set_language_for_a_user"/>6.1.2. Set language for a user</h3></div></div></div><p>
+				There are two modes to set the interface language for a specific user.
+			</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Public Mode</strong></span></span></dt><dd><p>
+						When accessing the portal in <span class="bold"><strong>Public Mode</strong></span>, the interface language is dictated by the language setting of your web browser.
+					</p><p>
+						If you have set the language of your browser to one that GateIn 3.2 does not support, the displaying language will be the language set at the Portal level (see above).
+					</p></dd><dt><span class="term"><span class="bold"><strong>Private Mode</strong></span></span></dt><dd><p>
+						The interface language in <span class="bold"><strong>Private Mode</strong></span> is set when registering each user. See step four of the process to register a new account <a class="xref" href="chap-User_Guide-Account.html#sect-User_Guide-Register_New_Accounts" title="4.1. Register New Accounts">Section 4.1, “Register New Accounts”</a>.
+					</p></dd></dl></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-RTL_Support_Right_To_Left"/>6.2. Right To Left Support</h2></div></div></div><p>
+		GateIn 3.2 supports Right to Left (RTL) languages.
+	</p><div class="mediaobject" align="center"><img src="images/HomePage2.png" align="middle"/></div><h5 xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="formalpara">The Account Portlet</h5><p class="formalpara">
+		</p><div class="mediaobject" align="center"><img src="images/NewAccount3.png" align="middle"/></div><p class="formalpara">
+		</p><h5 xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="formalpara">The Application Registry Portlet</h5><p class="formalpara">
+		</p><div class="mediaobject" align="center"><img src="images/ApplicationRegistry2.png" align="middle"/></div><p class="formalpara">
+		</p><h5 xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="formalpara">The Organization Portlet:</h5><p class="formalpara">
+		</p><div class="mediaobject" align="center"><img src="images/Organization5.png" align="middle"/></div><p class="formalpara">
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Multi_Language_Navigation_Nodes"/>6.3. Multi-Language Navigation Nodes</h2></div></div></div><p>
+			GateIn 3.2 supports a multi-language environment for your portal allowing you to internationalize any menu entry on the navigation.
+		</p><p>
+			As the navigation bar is composed of nodes, you have to modify the display names of the nodes to enable this. Instead of entering the display name of the node in a defined language (English, for example) you have to use a language-neutral 'resource key'.
+		</p><p>
+			This resource key is then used to define the label that is shown for that node on the navigation bar, the menu and the breadcrumb.
+		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Multi_Language_Navigation_Nodes-Key_Format"/>6.3.1. Key Format</h3></div></div></div><p>
+			The resource key format is: <span class="bold"><strong>#{key}</strong></span>
+		</p><p>
+			The resource key can contain any text that you consider appropriate to satisfy your business needs. It should, however, be human-readable and must not contain spaces.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Multi_Language_Navigation_Nodes-Creating_Keys"/>6.3.2. Creating Keys</h3></div></div></div><p>
+			There are two  ways to create a key for a node: 
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>
+					<a class="xref" href="chap-User_Guide-Language_administration.html#sect-User_Guide-Multi_Language_Navigation_Nodes-Creating_Keys_using_the_Create_Page_Wizard" title="6.3.3. Creating Keys using Create Page Wizard">Section 6.3.3, “Creating Keys using Create Page Wizard”</a>
+				</p></li><li><p>
+			 		<a class="xref" href="chap-User_Guide-Language_administration.html#sect-User_Guide-Multi_Language_Navigation_Nodes-CreatingEditing_Keys_using_the_Edit_Page_and_Navigation" title="6.3.4. Creating/Editing Keys using Navigation Management">Section 6.3.4, “Creating/Editing Keys using Navigation Management”</a>
+			 	</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Multi_Language_Navigation_Nodes-Creating_Keys_using_the_Create_Page_Wizard"/>6.3.3. Creating Keys using <span class="bold"><strong>Create Page Wizard</strong></span></h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Open the <span class="bold"><strong>Site Editor</strong></span> menu and pick <span class="bold"><strong>Add New Page</strong></span>.
+				</p></li><li><p>
+					Enter a name for this new page
+				</p></li><li><p>
+					Enter a resource key in the <span class="bold"><strong>Display Name</strong></span> field. 
+				</p><div class="mediaobject" align="center"><img src="images/PageWizard.png" align="middle"/></div></li><li><p>
+					Click <span class="bold"><strong>Next</strong></span>. On the next screen you may define a page layout out of existing templates.
+				</p></li><li><p>
+					Click <span class="bold"><strong>Next</strong></span> to finalize the page creation with portlets for instance. 
+      			       </p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Multi_Language_Navigation_Nodes-CreatingEditing_Keys_using_the_Edit_Page_and_Navigation"/>6.3.4. Creating/Editing Keys using <span class="bold"><strong>Navigation Management</strong></span></h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Click on <span class="bold"><strong>Site</strong></span> in the Toolbar then <span class="bold"><strong>Edit Navigation</strong></span>
+					</p><div class="mediaobject" align="center"><img src="images/NavigationManagement.png" align="middle"/></div></li><li><p>
+						Click on <span class="bold"><strong>Add Node</strong></span>
+					</p></li><li><p>
+						The Create/Edit node dialog appears. Enter a resource key in the <span class="bold"><strong>Label</strong></span> field
+					</p><div class="mediaobject" align="center"><img src="images/CreateEditNode.png" align="middle"/></div></li></ol></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Reusing Keys</h2><p>
+					You can reuse the same resource key in several nodes.
+				</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e3784"/>6.3.5. Providing translation</h3></div></div></div><p>
+			To provide a translation for the resource key used as page name, resource bundles must be provided within the web archive.
+		</p><p>
+			 Property files (or XML resource bundles) must be located in: 
+		<span class="bold"><strong>WEB-INF/classes/locale/navigation/portal/[portalName]_[2letterCode].properties</strong></span>
+		</p></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Portal_Administration.html"><strong>Prev</strong>Chapter 5. Portal Administration</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Gadgets_Administration.html"><strong>Next</strong>Chapter 7. Portlets and Gadgets Administration</a></li></ul></body></html>

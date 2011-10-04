@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 5. Portal Administration</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.74.0"/><link rel="home" href="index.html" title="GateIn User Guide"/><link rel="up" href="index.html" title="GateIn User Guide"/><link rel="prev" href="chap-User_Guide-Account.html" title="Chapter 4. Accounts"/><link rel="next" href="chap-User_Guide-Language_administration.html" title="Chapter 6. Language administration"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Account.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Language_administration.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-User_Guide-Portal_Administration"/>Chapter 5. Portal Administration</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Toolbar">5.1. Toolbar</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#d0e1223">5.1.1. User Actions in the Toolbar</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#d0e1277">5.1.2. Administration Actions in the Toolbar</a></span></dt></dl></dd><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Portals">5.2. Manage Portals</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Create_a_New_Portal">5.2.1. Create a New Portal</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Portals-Edit_a_Portal">5.2.2. Edit a Portal</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#proc-User_Guide-Manage_Portals-Edit_Layout">5.2.3. Edit Layout</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#proc-User_Guide-Manage_Portals-Edit_Navigation">5.2.4. Edit Navigation</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#proc-User_Guide-Manage_Portals-Edit_Properties">5.2.5. Edit Properties</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Portals-Delete_a_Portal">5.2.6. Delete a Portal</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Change_Portal_Skins">5.2.7. Change Portal Skins</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Switching_between_Portals">5.2.8. Switching between Portals</a></span></dt></dl></dd><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes">5.3. Manage Navigation Nodes</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes-Add_a_new_node">5.3.1. Add a new node</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes-Edit_a_node">5.3.2. Edit a node</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes-Copy_a_node">5.3.3. Copy a node</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes-Clone_nodes">5.3.4. Clone nodes</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes-Cut_a_node">5.3.5. Cut a node</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes-Delete_a_node">5.3.6. Delete a node</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Change_Node_Order">5.3.7. Change Node Order</a></span></dt></dl></dd><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Pages">5.4. Manage Pages</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Pages-Adding_a_new_Page">5.4.1. Adding a new Page</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Pages-Edit_a_Page">5.4.2. Edit a Page</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Pages-View_a_Page">5.4.3. View a Page</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Pages-Delete_a_Page">5.4.4. Delete a Page</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Drag_and_Drop_the_Page_Body">5.4.5. Drag and Drop the Page Body</a></span></dt></dl></dd><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-User_management">5.5. Manage Users and Groups</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-User_Management-Manage_users">5.5.1. Manage users</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-User_Management-Manage_groups">5.5.2. Manage groups</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-User_Management-Manage_memberships">5.5.3. Manage memberships</a></span></dt></dl></dd><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Permissions">5.6. Manage Permissions</a></span></dt><dd><dl><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Permission-Set_Portal_Permission">5.6.1. Set Portal Permissions</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Permission-Set_Page_Permission">5.6.2. Set Page Permission</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Permission-Set_the_Access_Permission_on_a_Category">5.6.3. Set Access Permission on a Category</a></span></dt><dt><span class="section"><a href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Permission-Set_the_Access_Permission_on_a_Portlet">5.6.4. Set Access Permission on a Portlet</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Toolbar"/>5.1. Toolbar</h2></div></div></div><p>
+		The Toolbar offers a convenient way for users and administrators to execute tasks within the portal quickly and easily.
+	</p><div class="mediaobject" align="center"><img src="images/Toolbar.png" align="middle"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e1223"/>5.1.1. User Actions in the Toolbar</h3></div></div></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>User Menu</strong></span></span></dt><dd><p>
+							You can use the main menu (located under the product icon) to change the language or skin used in the portal or to sign out.
+						</p><div class="mediaobject" align="center"><img src="images/StarPortlet.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Site</strong></span></span></dt><dd><p>
+								The Site navigation function shows the different sites available in this Portal and allows users to directly edit the navigation tree.
+							</p><div class="mediaobject" align="center"><img src="images/SitePortlet.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Group</strong></span></span></dt><dd><p>
+								Using the Group navigation function users can easily see and access pages in the Portal.
+							</p><div class="mediaobject" align="center"><img src="images/GroupPortlet.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Dashboard</strong></span></span></dt><dd><p>
+								You can use the Dashboard to create your own pages of gadgets.
+							</p><div class="mediaobject" align="center"><img src="images/DashboardPortlet.png" align="middle"/></div><p>
+								The name shown in the image above is the default and can easily be overtyped when the Dashboard is open.
+							</p></dd></dl></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e1277"/>5.1.2. Administration Actions in the Toolbar</h3></div></div></div><div class="variablelist"><dl><dt><span class="term"> <span class="bold"><strong>Editor</strong></span></span></dt><dd><p>
+							Portal Administrators have access to another navigation that allows them to; add a new page to the current portal, edit a particular page's properties or to change a page's layout.
+						</p><p>
+							This navigation appears next to the Dashboard navigation in the Toolbar and is contextually-named. It will appear as either <span class="bold"><strong>Site Editor</strong></span>, <span class="bold"><strong>Dashboard Editor</strong></span> or <span class="bold"><strong>Group Editor</strong></span> depending on the user's location within the portal.
+						</p><div class="mediaobject" align="center"><img src="images/EditorPortlet.png" align="middle"/></div></dd></dl></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Manage_Portals"/>5.2. Manage Portals</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Create_a_New_Portal"/>5.2.1. Create a New Portal</h3></div></div></div><p>
+		Creating a new portal requires access credentials that only an administrator may set up.
+	</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+				Click on <span class="bold"><strong>Site</strong></span> in the toolbar then click the <span class="bold"><strong>Add New Portal</strong></span> button.
+			</p><div class="mediaobject" align="center"><img src="images/AddPortal.png" align="middle"/></div></li><li><p>
+				 This opens the <span class="bold"><strong>Create New Portal</strong></span> window which contains the <span class="bold"><strong>Portal Templates</strong></span> tab. By default, the template used in new portals is 'Classic'.
+				</p><div class="mediaobject" align="center"><img src="images/PortalTemplate.png" align="middle"/></div><p>
+			</p><p>
+				 Select the <span class="bold"><strong>Portal Setting</strong></span> tab.
+			</p><div class="mediaobject" align="center"><img src="images/PortalSetting2.5.png" align="middle"/></div></li><li><p>
+				Enter a string for the <span class="bold"><strong>Portal Name</strong></span> field. This field is required and must be unique. Only alphabetical, numerical and underscore characters are allowed for this field and the name must have at least 3 characters.
+			</p></li><li><p>
+				Select the default display language for the portal.
+			</p></li><li><p>
+				Select a skin for a portal.
+			</p></li><li><p>
+				Click on the <span class="bold"><strong>Properties</strong></span> tab to fill in the <span class="bold"><strong>Keep session alive</strong></span> property. There are 3 options: 
+				</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Never</strong></span></span></dt><dd><p>
+									The session will never timeout, even if an application requests it.
+								</p></dd><dt><span class="term"><span class="bold"><strong>On-demand</strong></span></span></dt><dd><p>
+									The session will timeout if an application requests it
+								</p></dd><dt><span class="term"><span class="bold"><strong>Always</strong></span></span></dt><dd><p>
+									The session will time out after a set period.
+								</p></dd></dl></div><p>
+			</p></li><li><p>
+				Click on the <span class="bold"><strong>Permission Setting</strong></span> tab and set the permissions for the Portal.
+			</p><p>
+				The access permissions list for the portal is empty by default. You have to select at least one or tick on the <span class="bold"><strong>Make it public</strong></span> check box to assign access permission to everyone.
+			</p></li><li><p>
+				Click <span class="bold"><strong>Save</strong></span>
+			</p></li></ol></div><p>
+		You also can edit or delete a portal. See <a class="xref" href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Portals-Edit_a_Portal" title="5.2.2. Edit a Portal">Section 5.2.2, “Edit a Portal”</a> or <a class="xref" href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Portals-Delete_a_Portal" title="5.2.6. Delete a Portal">Section 5.2.6, “Delete a Portal”</a> for more details.
+	</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portals-Edit_a_Portal"/>5.2.2. Edit a Portal</h3></div></div></div><p>
+			An administrator can chagne many aspects of a portal:
+		</p><p>
+			Click <span class="bold"><strong>Site</strong></span> on the Toolbar. A list of active portals will appear:
+		</p><div class="mediaobject" align="center"><img src="images/ActivePortals.png" align="middle"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="proc-User_Guide-Manage_Portals-Edit_Layout"/>5.2.3. Edit Layout</h3></div></div></div><p>
+				To edit the layout of a portal, click the <span class="emphasis"><em>Edit Layout</em></span> key beside the active portal you wish to edit:
+			</p><div class="mediaobject" align="center"><img src="images/EditLayout.png" align="middle"/></div><p>
+			New applications, containers or gadgets can be dragged from the <span class="bold"><strong>Edit Inline Composer</strong></span> window (inset on the right of the screen) onto the main portal body.
+		</p><div class="mediaobject" align="center"><img src="images/EditLayout2.png" align="middle"/></div><p>
+			Elements already in place in the portal body can be rearranged or removed as required. Use the relevent button in the overlay that appears when you mouse-over each element:
+		</p><div class="mediaobject" align="center"><img src="images/EditLayout3.png" align="middle"/></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="proc-User_Guide-Manage_Portals-Edit_Navigation"/>5.2.4. Edit Navigation</h3></div></div></div><p>
+				The portal navigation can be edited by clicking <span class="bold"><strong>Site</strong></span> in the <span class="bold"><strong>Toolbar</strong></span> and selecting the <span class="emphasis"><em>Edit Navigation</em></span> link next to the portal you wish to edit:
+			</p><div class="mediaobject" align="center"><img src="images/EditNavigation1.png" align="middle"/></div><p>
+				The <span class="emphasis"><em>Navigation Management</em></span> window appears:
+			</p><div class="mediaobject" align="center"><img src="images/NavigationManagement.png" align="middle"/></div><p>
+				More information about actions possible in this window can be found in <a class="xref" href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes" title="5.3. Manage Navigation Nodes">Section 5.3, “Manage Navigation Nodes”</a>
+			</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="proc-User_Guide-Manage_Portals-Edit_Properties"/>5.2.5. Edit Properties</h3></div></div></div><p>
+			Portal properties such as language, description, label, skin and permissions can be set by clicking on <span class="bold"><strong>Site</strong></span> in the <span class="bold"><strong>Toolbar</strong></span> and selecting the <span class="emphasis"><em>Edit Portal Properties</em></span> link for the portal you wish to edit:
+		</p><div class="mediaobject" align="center"><img src="images/PortalProperties.png" align="middle"/></div><p>
+			The various tabs available in the edit properties window give access to the properties that can be edited for the chosen portal:
+		</p><div class="mediaobject" align="center"><img src="images/EditPortal2.6New.png" align="middle"/></div><p>
+			Click on <span class="bold"><strong>Save</strong></span> or <span class="bold"><strong>Cancel</strong></span> to either set or discard any changes you have made in the portal.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Portals-Delete_a_Portal"/>5.2.6. Delete a Portal</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					To delete a portal click on the Delete icon beside the portal you no longer require.
+				</p><p>
+					The confirmation message will appear:
+				</p><div class="mediaobject" align="center"><img src="images/SureDelete.png" align="middle"/></div></li><li><p>
+					Click <span class="bold"><strong>OK</strong></span>
+				</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Change_Portal_Skins"/>5.2.7. Change Portal Skins</h3></div></div></div><p>
+				Skins are graphic styles used to provide an attractive user interface. Each skin has its own characteristics with different backgrounds, icons, and other visual elements.
+			</p><p>
+				Skins can be changed temporarily (and are reset at log-out) or permanently.
+			</p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Change the skin temporarily</strong></span></span></dt><dd><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+											Mouse over the Start menu and click on <span class="bold"><strong>Change Skin</strong></span>.
+										</p><div class="mediaobject" align="center"><img src="images/StarPortlet.png" align="middle"/></div></li><li><p>
+											Select a new skin from the Skin list. By clicking on the skin name a picture will appear in the preview pane.
+										</p><div class="mediaobject"><img src="images/SkinSet1.png"/></div></li><li><p>
+											Click <span class="bold"><strong>Apply</strong></span> to apply to the portal. 
+										</p></li></ol></div></dd><dt><span class="term"><span class="bold"><strong>Change the skin permanently</strong></span></span></dt><dd><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+											Click on <span class="bold"><strong>Site</strong></span>, then <span class="bold"><strong>Edit Portal's Properties</strong></span>.
+										</p></li><li><p>
+											In the <span class="bold"><strong>Portal Setting</strong></span> tab, select another skin <span class="bold"><strong>Skin</strong></span> list
+										</p><div class="mediaobject"><img src="images/Skin1.png"/></div></li><li><p>
+											Click <span class="bold"><strong>Save</strong></span> to finish your change.
+										</p></li></ol></div></dd></dl></div><p>
+					More information about adding skins to a portal can be found in the Reference Guide for this product.
+				</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Switching_between_Portals"/>5.2.8. Switching between Portals</h3></div></div></div><p>
+			Mouse over <span class="bold"><strong>Site</strong></span> on the Toolbar for a list all portals in which you have at least access rights:
+		</p><div class="mediaobject" align="center"><img src="images/SitePortlet.png" align="middle"/></div><p>
+			Users switch between Portals by clicking on the desired portal. Please wait a few seconds for the change to take effect.
+		</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Manage_Navigation_Nodes"/>5.3. Manage Navigation Nodes</h2></div></div></div><p>
+            If you are the portal administrator (or the administrator has granted you the appropriate permission privileges) you can execute all actions related to portal nodes. These actions include adding new nodes or editing, copying, moving, deleting or cloning existing nodes.
+        </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Navigation_Nodes-Add_a_new_node"/>5.3.1. Add a new node</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Click on <span class="bold"><strong>Site</strong></span> then click on <span class="bold"><strong>Edit Navigation</strong></span> of the portal you want to modify.
+                        </p><div class="mediaobject" align="center"><img src="images/EditNavigation.png" align="middle"/></div></li><li><p>
+                            Select a node from list (to create a new node like sub-node of the selected node) or click the <span class="bold"><strong>Up</strong></span> icon to create a new node at the root level of the portal.
+                        </p></li><li><p>
+                            Right-click on the selected navigation or node and select <span class="bold"><strong>Add new Node</strong></span> option. The <span class="bold"><strong>Add new node</strong></span> form appears:
+                        </p><div class="mediaobject" align="center"><img src="images/AddNode4.png" align="middle"/></div><p>
+                            The <span class="bold"><strong>Page Node Setting</strong></span> tab includes:
+                        </p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Uri</strong></span></span></dt><dd><p>
+                                        An identification of the node. The Uri is automatically created after adding a new node
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Node name</strong></span></span></dt><dd><p>
+                                        The name of the node. This field is required and must be unique. Only alpha, digit and underscore characters are allowed for this field and it must have at least 3 characters.
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Label</strong></span></span></dt><dd><p>
+                                        The display name of the node on the screen. This field is not required and may be changed. This field must have a length between 3 and 120 characters.
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Visible</strong></span></span></dt><dd><p>
+                                        This check box allows administrators to hide (and show) the page and its node at the navigation bar, the page navigation and the site map
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Publication date &amp; time</strong></span></span></dt><dd><p>
+                                        This option allows publishing this node for a period of time. <span class="emphasis"><em>Start Publication Date</em></span> and <span class="emphasis"><em>End Publication Date</em></span> only appear when this option is selected.
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Start Publication Date</strong></span></span></dt><dd><p>
+                                        The start date and time to publish the node.
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>End Publication Date</strong></span></span></dt><dd><p>
+                                        The end date and time to publish the node.
+                                    </p></dd></dl></div><p>
+                        In the <span class="bold"><strong>Page Selector</strong></span> tab, you can select a page or not for this node.
+                    </p><div class="mediaobject" align="center"><img src="images/PageSelector.png" align="middle"/></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Page Id</strong></span></span></dt><dd><p>
+                                    The identification string of the page.
+                                </p></dd><dt><span class="term"><span class="bold"><strong>Name</strong></span></span></dt><dd><p>
+                                    The selected page's name.
+                                </p></dd><dt><span class="term"><span class="bold"><strong>Title</strong></span></span></dt><dd><p>
+                                    The selected page's title.
+                                </p></dd></dl></div><p>
+                    You do not have to enter values in these fields. They are automatically populated after selecting an existing page by clicking the <span class="bold"><strong>Search and Select Page</strong></span> button.
+                </p><p>
+                    The <span class="bold"><strong>Select a page</strong></span> form appears:
+                </p><div class="mediaobject" align="center"><img src="images/SelectPage1.png" align="middle"/></div><p>
+                            This window lists of all existing pages, each displayed with basic information. You can follow this guide to select a page for creating a node:
+                        </p><p>
+                            Select a page from list or search a specific page :
+                        </p><div class="procedure"><a id="proc-User_Guide-Manage_Navigation_Nodes-Search_for_a_page"/><ol class="1"><li><p>
+                                        Enter a search term related to the page which you want to search for:
+                                    </p><div class="mediaobject" align="center"><img src="images/NewSearch1.png" align="middle"/></div></li><li><p>
+                                        Choose the field you wish to search in:
+                                    </p><div class="mediaobject" align="center"><img src="images/NewSearch2.png" align="middle"/></div></li><li><p>
+                                        Click the 'find' icon to perform the search. All pages matching with search term will be listed.
+                                    </p></li><li><p>
+                                        Click the OK icon on the row of the page you wish to select.
+                                    </p></li><li><p>
+                                        After selecting a page, the details of this page will be displayed in the <span class="bold"><strong>Page Selector</strong></span> form.
+                                    </p></li></ol></div><p>
+                                After configuring the page node settings, the page selector and the node's icon, click the <span class="bold"><strong>Save</strong></span> button to accept or the <span class="bold"><strong>Cancel</strong></span> button to quit without creating a new node.
+                            </p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Navigation_Nodes-Edit_a_node"/>5.3.2. Edit a node</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Click on <span class="bold"><strong>Site</strong></span> then click on <span class="bold"><strong>Edit Navigation</strong></span> of the portal you want to modify.
+                        </p></li><li><p>
+                            Right-click on the selected node and select <span class="bold"><strong>Edit this Node</strong></span> option.
+                        </p><div class="mediaobject" align="center"><img src="images/EditNode1.png" align="middle"/></div><p>
+                            This will display a form to edit this node:
+                        </p><div class="mediaobject" align="center"><img src="images/PageNodeSetting.png" align="middle"/></div></li><li><p>
+                            In the <span class="bold"><strong>Page Node Setting</strong></span> tab you can change the value of these fields: 
+                        </p><div class="itemizedlist"><ul><li><p>Label</p></li><li><p>Visible</p></li><li><p>Publication Date &amp; time</p></li></ul></div></li><li><p>
+                            After you finish making the desired changes, click the <span class="bold"><strong>Save</strong></span> button to accept changes or <span class="bold"><strong>Cancel</strong></span> button to exit without change.
+                        </p></li><li><p>
+                            In the <span class="bold"><strong>Page Selector</strong></span> tab you can also search and select another page for this node by clicking the <span class="bold"><strong>Search and Select Page</strong></span> button.
+                        </p><p>
+You can see more details on how to select a page for a node in <a class="xref" href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Navigation_Nodes-Add_a_new_node" title="5.3.1. Add a new node">Section 5.3.1, “Add a new node”</a>. 
+                        </p><p>
+                            After you finish edit any another page required for this node, click the <span class="bold"><strong>Save</strong></span> button to accept changing or <span class="bold"><strong>Cancel</strong></span> button to leave without saving any changes.
+                        </p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Navigation_Nodes-Copy_a_node"/>5.3.3. Copy a node</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Click on <span class="bold"><strong>Site</strong></span> then click on <span class="bold"><strong>Edit Navigation</strong></span> of the portal you want to modify.
+                        </p></li><li><p>
+                            Right-click on the selected node and select <span class="bold"><strong>Copy node</strong></span> option.
+                        </p><div class="mediaobject" align="center"><img src="images/CopyNode3.png" align="middle"/></div></li><li><p>
+                            Select the position that you want to paste this node and select <span class="bold"><strong>Paste Node</strong></span> option. Click the mark icon to <span class="bold"><strong>Save</strong></span>.
+                        </p><div class="mediaobject" align="center"><img src="images/PasteNode3.png" align="middle"/></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Navigation_Nodes-Clone_nodes"/>5.3.4. Clone nodes</h3></div></div></div><p>
+                    The <span class="bold"><strong>Clone node</strong></span> function allows you to copy a node.
+                </p><p>
+                    The differences between <span class="bold"><strong>clone node</strong></span> and <span class="bold"><strong>copy node</strong></span> is that the clone node has its own page and which has the same content as the selected node.
+                </p><p>
+                    Therefore there will be a new page that has the same name as the cloned node's page shown in the page list when you access <span class="bold"><strong>Manage Pages</strong></span>.
+                </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Click on <span class="bold"><strong>Site</strong></span> then click on <span class="bold"><strong>Edit Navigation</strong></span> of the portal you want to modify.
+                        </p></li><li><p>
+                            Right-click on selected node and select <span class="bold"><strong>Clone node</strong></span> option.
+                        </p><div class="mediaobject" align="center"><img src="images/CloneNode2.png" align="middle"/></div></li><li><p>
+                            Select the position that you want to paste this node and select <span class="bold"><strong>Paste Node</strong></span> option. Click the mark icon to <span class="bold"><strong>Save</strong></span>.
+                        </p><div class="mediaobject" align="center"><img src="images/PasteNode3.png" align="middle"/></div><p>
+                            The new pages will appear in the page lists:
+                        </p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Navigation_Nodes-Cut_a_node"/>5.3.5. Cut a node</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Click on <span class="bold"><strong>Site</strong></span> then click on <span class="bold"><strong>Edit Navigation</strong></span> of the portal you want to modify.
+                        </p></li><li><p>
+                            Right-click on the selected node and select <span class="bold"><strong>Cut node</strong></span> option.
+                        </p><div class="mediaobject" align="center"><img src="images/CutNode4.png" align="middle"/></div></li><li><p>
+                            Select the position that you want to paste this node and select <span class="bold"><strong>Paste Node</strong></span> option. mark icon to <span class="bold"><strong>Save</strong></span>.
+                        </p><div class="mediaobject" align="center"><img src="images/PasteNode3.png" align="middle"/></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Navigation_Nodes-Delete_a_node"/>5.3.6. Delete a node</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Click on <span class="bold"><strong>Site</strong></span> then click on <span class="bold"><strong>Edit Navigation</strong></span> of the portal you want to modify.
+                        </p></li><li><p>
+                            Right-click on the selected node and select <span class="bold"><strong>Delete node</strong></span> option.
+                        </p><div class="mediaobject" align="center"><img src="images/DeleteNode2.png" align="middle"/></div><p>
+                            It will display an alert message confirming the removal of the node. Click the <span class="bold"><strong>OK</strong></span> button to accept the deletion or <span class="bold"><strong>Cancel</strong></span> button to quit without deleting the node.
+                        </p><div class="mediaobject" align="center"><img src="images/http.png" align="middle"/></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Change_Node_Order"/>5.3.7. Change Node Order</h3></div></div></div><p>
+                You can easily change the position of nodes in the navigation bar following these steps:
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                        Click on <span class="bold"><strong>Site</strong></span> then click on <span class="bold"><strong>Edit Navigation</strong></span> of the portal you want to modify.
+                    </p></li><li><p>
+                        Select the node that you want to move. Right click on the selected node and then click on <span class="bold"><strong>Move up</strong></span> or <span class="bold"><strong>Move down</strong></span>
+                    </p><div class="mediaobject"><img src="images/MoveUpDown.png"/></div></li><li><p>
+                        The selected node will be moved up or down within the list.
+                    </p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Manage_Pages"/>5.4. Manage Pages</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Pages-Adding_a_new_Page"/>5.4.1. Adding a new Page</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-Page_Creation_Wizard"/>5.4.1.1. Adding a new Page using Page Creation Wizard</h4></div></div></div><p>
+                A page creation wizard is available to administrators in order to create and publish portal pages quickly and easily.
+            </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                        Mouse over <span class="bold"><strong>Site Editor</strong></span> then select  <span class="bold"><strong>Add New Page</strong></span>. 
+                    </p><div class="mediaobject" align="center"><img src="images/Wizard1.png" align="middle"/></div></li><li><p>
+                        The wizard window is divided into two sections: the left pane contains the existing page/node hierarchy and the right pane displays the <span class="bold"><strong>Page Editor</strong></span>.
+                    </p></li><li><p>
+                        In the left pane, you can navigate up and down the node/page structure:
+                    </p><div class="mediaobject"><img src="images/Pagewizard1.png"/></div></li><li><p>
+                    In the right pane are the required paramters for a new page:
+                </p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Current Selected Page Node</strong></span></span></dt><dd><p>
+                                The path of the selected node to add a new sub page
+                            </p></dd><dt><span class="term"><span class="bold"><strong>Node Name</strong></span></span></dt><dd><p>
+                                The node name of the added page. It is required field. This field must start with a character and must have a length between 3 and 30 characters.
+                            </p></dd><dt><span class="term"><span class="bold"><strong>Display Name</strong></span></span></dt><dd><p>
+                                The display name of the node which contains the added page and must have a length between 3 and 30 characters.
+                            </p></dd><dt><span class="term"><span class="bold"><strong>Visible</strong></span></span></dt><dd><p>
+                                This checkbox toggles the global visibility of this page. 
+                            </p><p>
+                                If checked the page or the page node appears on on the navigation bar, the page navigation and the site map. If "visible" is checked the visibility depends on the "publication date &amp; time" attribute.
+                            </p><p>
+                                If unchecked, the page is not shown in the site map or navigation bar.
+                            </p><div class="important"><h2>Non-visible Pages and Security</h2><p>
+                                        The <span class="guilabel"><strong>Visible</strong></span> checkbox should <span class="bold"><strong>not</strong></span> be used as a security measure, as <span class="bold"><strong>non-visible pages will still be accessible using a direct URL</strong></span>, such as <a class="ulink" href="http://localhost:8080/portal/private/classic/pagename">http://localhost:8080/portal/private/classic/pagename</a>.
+                                    </p></div></dd><dt><span class="term"><span class="bold"><strong>Publication date &amp;time</strong></span></span></dt><dd><p>
+                                This option allows publishing the page for a period of time. If this option is checked the visibility of the page depends on the publication period start and end date.
+                            </p></dd><dt><span class="term"><span class="bold"><strong>Start Publication Date</strong></span></span></dt><dd><p>
+                                The start date and time to publish the page
+                            </p></dd><dt><span class="term"><span class="bold"><strong>End Publication Date</strong></span></span></dt><dd><p>
+                                The end date and time to publish the page.
+                            </p></dd></dl></div><div class="note"><h2>Setting Time and Date</h2><p>
+                            You can set date and time by clicking the <span class="bold"><strong>Start Publication Date</strong></span> field and <span class="bold"><strong>End Publication Date</strong></span> field and select a date in the calendar pop up
+                        </p></div></li><li><p>
+                        Click <span class="bold"><strong>Next</strong></span> or number '2' of the wizard steps to go to step 2.
+                    </p><div class="mediaobject"><img src="images/PageWizard2.png"/></div></li><li><p>
+                        Select <span class="bold"><strong>Empty Layout</strong></span> or click the icon to see more templates to select.
+                    </p></li><li><p>
+                        Click the <span class="bold"><strong>Next</strong></span> button or number '3' of the wizard step to go to step 3. You can drag portlets from the popup panel into the main pane to create the content of this page.
+                    </p><div class="mediaobject"><img src="images/PageWizard3.png"/></div><div class="variablelist"><dl><dt><span class="term">Applications</span></dt><dd><p>
+                                        Allows listing all existing portlets
+                                    </p></dd><dt><span class="term">Containers</span></dt><dd><p>
+                                        Allows listing all existing containers
+                                    </p></dd><dt><span class="term">Switch View mode</span></dt><dd><p>
+                                        Allows viewing a page in preview mode
+                                    </p></dd></dl></div></li><li><p>
+                        Click the <span class="bold"><strong>Show Container</strong></span> icon if you want to see the existing containers and re-select the layout of the page. You can click on the <span class="bold"><strong>Switch</strong></span> icon to view the content of this page.
+                    </p></li><li><p>
+                Click <span class="bold"><strong>Save</strong></span> to accept creating a new page, <span class="bold"><strong>Back</strong></span> button to return the previous step or <span class="bold"><strong>Abort</strong></span> button to quit without creating a new page.
+                    </p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-Manage_Pages-Add_a_new_Page_in_the_Page_List"/>5.4.1.2. Adding a new Page using Page Management</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Mouse over <span class="bold"><strong>Group</strong></span> in the Toolbar, highlight <span class="bold"><strong>Administration</strong></span> then select <span class="bold"><strong>Page Management</strong></span>.
+                        </p><div class="mediaobject" align="center"><img src="images/ManagePage.png" align="middle"/></div></li><li><p>
+                            Click on <span class="bold"><strong>Add New Page</strong></span>.
+                        </p></li><li><div class="mediaobject" align="center"><img src="images/PageSetting.png" align="middle"/></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Page Id</strong></span></span></dt><dd><p>
+                                        A string that identifies the page. It is automatically generated when you finish creating the page.
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Owner type</strong></span></span></dt><dd><p>
+                                        If the page <span class="bold"><strong>Owner type</strong></span> is <span class="emphasis"><em>portal</em></span> the page is created for a portal. Therefore only users who have <span class="emphasis"><em>edit</em></span> permissions on the portal level can create this page type. 
+                                    </p><p>
+                                        The name of the current portal is automatically selected for <span class="bold"><strong>Owner id</strong></span> ensuring the edit permissions are assigned to users who can edit the current portal.
+                                    </p><p>
+                                        If the page <span class="bold"><strong>Owner type</strong></span> is <span class="emphasis"><em>group</em></span> the page  is created for a group. Therefore only users who have <span class="emphasis"><em>manager</em></span> permissions for that group can create this page type.
+                                    </p><div class="mediaobject" align="center"><img src="images/PageSetting1.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Owner Id</strong></span></span></dt><dd><p>
+                                        The name of the page owner. When the owner type is set to <span class="emphasis"><em>group</em></span>, a list of groups will allow you to select one user as the 'owner'.    
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Page Name</strong></span></span></dt><dd><p>
+                                        The name of the page. This is a required field and must be unique. Only alphabetical, numerical and underscore characters are allowed to be used for this field and the name must be at least 3 and no more than 30 characters in length.
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Page title</strong></span></span></dt><dd><p>
+                                        The title of the the page. This is an optional field. If you choose to add a title to the page it must be at least 3 and no more than 30 characters in length.
+                                    </p></dd><dt><span class="term"><span class="bold"><strong>Show Max Window</strong></span></span></dt><dd><p>
+                                        The option allows users to choose whether the page is shown at maximum size or not.
+                                    </p></dd></dl></div></li><li><p>
+                            Enter values for fields in the <span class="bold"><strong>Permission Setting</strong></span> tab
+                        </p><div class="mediaobject" align="center"><img src="images/PermissionSetting1.png" align="middle"/></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Access Permission</strong></span></span></dt><dd><p>
+                                    The content of this tab is identical to the <span class="bold"><strong>Owner type</strong></span> field in the <span class="bold"><strong>Page Setting</strong></span> tab. Therefore, all users having access rights for the type selected in the <span class="bold"><strong>Owner type</strong></span> field will appear in this tab. But users can also change the value of this tab.
+                                </p><p>
+                                Check the check box if you want to share access with everyone or click the <span class="bold"><strong>Add Permission</strong></span> button to assign permission on group level, then select a group and membership or click the trash can icon to remove a group from the list.
+                                </p><div class="mediaobject" align="center"><img src="images/EditPermission1.png" align="middle"/></div></dd><dt><span class="term">Edit Permission</span></dt><dd><p>
+                                    The content of this tab depends on the value of the <span class="bold"><strong>Owner type</strong></span> field in the <span class="bold"><strong>Page Setting</strong></span> tab.
+                                </p><p>
+                                If the <span class="bold"><strong>Owner type</strong></span> is "group", edit permission is assigned to users who are "manager" of the group that is selected in <span class="bold"><strong>Owner id</strong></span>. You can only change this value when editing the page.
+                                </p><div class="mediaobject" align="center"><img src="images/EditPermission2.png" align="middle"/></div></dd></dl></div></li><li><p>
+                            Click <span class="bold"><strong>Save</strong></span>.
+                        </p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Pages-Edit_a_Page"/>5.4.2. Edit a Page</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                            Mouse over <span class="bold"><strong>Group</strong></span> in the Toolbar. Highlight <span class="bold"><strong>Administration</strong></span> and then click on <span class="bold"><strong>Page Management</strong></span>.
+                        </p></li><li><p>
+                            Click the edit icon on the row of page you want to edit in the existing page list.
+                        </p><p>
+                            Click the edit icon to show a form to edit page properties.
+                        </p></li><li><p>
+                            The properties presented in the <span class="bold"><strong>Page Properties</strong></span> window are the same as those outlined in <a class="xref" href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-Manage_Pages-Add_a_new_Page_in_the_Page_List" title="5.4.1.2. Adding a new Page using Page Management">Section 5.4.1.2, “Adding a new Page using Page Management”</a>.
+                        </p><div class="variablelist"><dl><dt><span class="term">Permission Setting</span></dt><dd><p>
+                                        This form is supported for pages with <span class="emphasis"><em>group</em></span> or <span class="emphasis"><em>portal</em></span> ownership types. Because a user page is private, no user, other than the creator, can access or edit it.
+                                    </p><p>
+                                        Permission on each page is set in two levels: <span class="bold"><strong>Access right</strong></span> and <span class="bold"><strong>Edit right</strong></span>.
+                                    </p></dd><dt><span class="term">Access right</span></dt><dd><p>
+                                        The page <span class="bold"><strong>Access right</strong></span> can be set to specific user groups or set to everyone (this includes unregistered users).
+                                    </p><p>
+                                        Current access permissions on page are listed and you can remove permissions (by clicking the delete icon) or add further permission (by click the <span class="bold"><strong>Add Permission</strong></span> button).
+                                    </p><p>
+                                        Populating the <span class="bold"><strong>Make it public</strong></span> check box will allow all users (registered or unregistered) to access the page.
+                                    </p></dd><dt><span class="term">Edit right</span></dt><dd><p>
+                                        The <span class="bold"><strong>Edit right</strong></span> allows users to change information on a page. <span class="bold"><strong>Edit right</strong></span> only is set for a group of users.
+                                    </p><p>
+                                        <span class="bold"><strong>Edit right</strong></span> can be set for  one specific membership type within a particular group (<span class="bold"><strong>*</strong></span> allows every membership type in a group). If you want to re-assign this right to another group, click <span class="bold"><strong>Select Permission</strong></span> to choose another one.
+                                    </p></dd></dl></div></li><li><div class="variablelist"><dl><dt><span class="term">Editing page container layout</span></dt><dd><p>
+                                        Click the Show Container icon to show current container layout of selected page on your right and all the container layouts list on the left pane.
+                                    </p><p>
+                                        If you want to change the current layout, select a layout type from the list on the left pane, then drag the template you want into the right pane. The new container will be displayed on the right pane.
+                                    </p><p>
+                                        You can change the position of the current container by dragging it to another place on the right pane or remove it completely by clicking the delete icon in the right corner.
+                                    </p></dd></dl></div></li><li><div class="variablelist"><dl><dt><span class="term">Editing page portlet layout</span></dt><dd><p>
+                                        Click the Show Portlet icon to show current portlet layout of page.
+                                    </p><p>
+                                        If you want to change the current layout, select a layout type from the list on the left pane, then drag it into the right pane. The new portlet will be added and displayed in the right pane. You can change the position of the current portlet by dragging it to the place you want on the right pane, or remove it completely by clicking the delete icon.
+                                    </p></dd></dl></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Pages-View_a_Page"/>5.4.3. View a Page</h3></div></div></div><p>
+            View any page in the existing pages list by clicking on the <span class="bold"><strong>View</strong></span> icon corresponding to the page you want to view.
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Pages-Delete_a_Page"/>5.4.4. Delete a Page</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                        Go to <span class="bold"><strong>Group</strong></span> in the Toolbar. Highlight <span class="bold"><strong>Administration</strong></span> and then click on <span class="bold"><strong>Page Management</strong></span>. You will be presented with a list of all existing pages.
+                    </p></li><li><p>
+                        Click the trash can icon in the row of the page you want to delete. It will display the confirmation message.
+                    </p><div class="mediaobject" align="center"><img src="images/http.png" align="middle"/></div></li><li><p>
+                        Click the <span class="bold"><strong>OK</strong></span> button to complete the deletion or <span class="bold"><strong>Cancel</strong></span> button to quit without deleting the page.
+                    </p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Drag_and_Drop_the_Page_Body"/>5.4.5. Drag and Drop the Page Body</h3></div></div></div><p>
+            To assist administrators to modify or personalize their portal GateIn 3.2 allows you to easily drag and drop page content within the page.
+        </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+                        Go to <span class="bold"><strong>Site Editor</strong></span> in the toolbar and click on <span class="bold"><strong>Edit Layout</strong></span> It will display :
+                    </p><div class="mediaobject"><img src="images/DragPage1.png"/></div></li><li><p>
+                        Click on the <span class="bold"><strong>Portal Page</strong></span>, drag and drop within the portal page.
+                    </p><div class="mediaobject"><img src="images/DragPage3.png"/></div></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-User_management"/>5.5. Manage Users and Groups</h2></div></div></div><p>
+		Several tools are offered to assist Administrators manage users, groups and memberships easily and effectively.
+	</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-User_Management-Manage_users"/>5.5.1. Manage users</h3></div></div></div><p>
+						Mouse over <span class="bold"><strong>Group</strong></span> on the Toolbar. Highlight <span class="bold"><strong>Organization</strong></span> and select <span class="emphasis"><em>Users and Groups Management</em></span>
+					</p><div class="mediaobject" align="center"><img src="images/UserManage.png" align="middle"/></div><p>
+						Administrators can see all existing registered users and search, edit or even delete them. Each user's groups and memberships (roles) in these groups are also available. You can not add users to a group but you can remove them from the group.
+					</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Add_a_user"/>5.5.1.1. Add a user</h4></div></div></div><p>
+				To add a new user to the portal user lists follow these steps:
+			</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Mouse-over <span class="bold"><strong>Group</strong></span> in the <span class="bold"><strong>Toolbar</strong></span>.
+					</p></li><li><p>
+						Highlight <span class="bold"><strong>Organization</strong></span> and then click on <span class="bold"><strong>New Staff</strong></span>.
+					</p><p>
+						The <span class="bold"><strong>New Staff</strong></span> window will open:
+					</p><div class="mediaobject" align="center"><img src="images/NewStaff.png" align="middle"/></div><p>
+						This window has two tabs; <span class="bold"><strong>Account Settings</strong></span> and <span class="bold"><strong>User Profile</strong></span>.
+					</p></li><li><p>
+						To create a new user all of the fields in the <span class="bold"><strong>Account Settings</strong></span> tab must be completed. 
+					</p><p>
+						Further information about the user (such as nickname and birthday) can be added in the <span class="bold"><strong>User Profile</strong></span> tab. This information is not required for the creation of the account.
+					</p></li><li><p>
+						Click either <span class="bold"><strong>Save</strong></span> or <span class="bold"><strong>Reset</strong></span> to create or discard the new account.
+					</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Search_a_user"/>5.5.1.2. Search for users</h4></div></div></div><p>
+				The Administrator can search for specific users by username, first name, last name or email address.
+			</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Select the information type  (name, email, etc) to search against
+						</p><div class="mediaobject" align="center"><img src="images/SearchUser.png" align="middle"/></div></li><li><p>
+							Type in a partial/full string which identifies the user record being searched. Note that wild cards are not supported at this release.
+						</p></li><li><p>
+							Click the magnifying glass icon to begin the search.
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Edit_a_user"/>5.5.1.3. Edit a user</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Locate the user you wish to edit.
+					</p></li><li><p>
+						Click the edit icon (next to the trash icon).
+					</p><div class="mediaobject" align="center"><img src="images/Demo1.png" align="middle"/></div></li><li><p>
+						Select the <span class="bold"><strong>Account Info</strong></span> tab to edit the main user information set including first name, last name or email address.
+					</p><div class="variablelist"><dl><dt><span class="term">User Name</span></dt><dd><p>
+								The <span class="bold"><strong>User Name</strong></span> field cannot be changed. Other fields <span class="bold"><strong>First Name</strong></span> , <span class="bold"><strong>Last Name</strong></span> , <span class="bold"><strong>Email Address</strong></span> can be changed.
+							</p></dd><dt><span class="term">Change Password</span></dt><dd><p>
+								The <span class="bold"><strong>Change Password</strong></span> option allows an administrator to set a new password for a user. When the <span class="bold"><strong>Change Password</strong></span> option is unchecked, <span class="bold"><strong>New Password</strong></span> and <span class="bold"><strong>Confirm Password</strong></span> are hidden. Passwords must contain at least 6 characters and can contain letters, numbers and punctuation marks.
+							</p></dd></dl></div></li><li><p>
+						Select the <span class="bold"><strong>User Profile</strong></span> tab to edit additional information about the user's profile such as the birthdate or the job title as well as some home and business metadata. You may also switch the default display language for that user.
+					</p></li><li><p>
+						Select the <span class="bold"><strong>User Membership</strong></span> tab to see a user's group membership information.
+					</p><div class="mediaobject" align="center"><img src="images/Demo3.png" align="middle"/></div><div class="variablelist"><dl><dt><span class="term">User Membership</span></dt><dd><p>
+								The <span class="bold"><strong>User Membership</strong></span> tab displays which group(s) the selected user belongs to. In the above figure, the user "demo" is a member of two groups: "guests" and "users". The parent group of both is "platform".
+							</p><p>
+								To remove the user from a group, click the trash can icon.
+							</p></dd></dl></div></li><li><p>
+						Click the <span class="bold"><strong>Save</strong></span>.
+					</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Delete_a_user"/>5.5.1.4. Delete a user</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Locate the user you wish to delete
+					</p><p>
+						Click the trash icon in the Action column
+					</p></li><li><p>
+						Click <span class="bold"><strong>OK</strong></span> to confirm.
+					</p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-User_Management-Manage_groups"/>5.5.2. Manage groups</h3></div></div></div><p>
+				     Mouse over <span class="bold"><strong>Group</strong></span> on the Toolbar. Highlight <span class="bold"><strong>Organization</strong></span> and select <span class="emphasis"><em>Users and Groups Management</em></span>
+				</p><p>Select the tab <span class="emphasis"><em>Group Management</em></span></p><p>
+					By default, all existing groups will be displayed on the left pane. This tab is used to add new, edit or delete a group. The right pane shows information about the selected group including information about the members in the specific group along with a small form to add a new user to a group.
+				</p><div class="mediaobject" align="center"><img src="images/GroupManage.png" align="middle"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Add_a_new_group"/>5.5.2.1. Add a New Group</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							First choose where in the existing group structure you want the new group to be created. You may navigate up the tree by clicking on the green vertical little arrow at the top of the tree. The current path is displayed in the path bar.
+						</p><div class="mediaobject" align="center"><img src="images/Admin1.png" align="middle"/></div></li><li><p>
+							Click <span class="bold"><strong>Add New Group</strong></span>. 
+						</p><div class="mediaobject" align="center"><img src="images/AddGroup.png" align="middle"/></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>Group Name</strong></span></span></dt><dd><p>
+										The name of the new group. This field is required and any length from 3 to 30 characters is allowed. Once saved this name cannot be edited.
+									</p></dd><dt><span class="term"><span class="bold"><strong>Label</strong></span></span></dt><dd><p>
+										The display name of the group. Any length from 3 to 30 characters is allowed.
+									</p></dd><dt><span class="term"><span class="bold"><strong>Description</strong></span></span></dt><dd><p>
+										A description of the group. Any length from 3 to 30 characters is allowed.
+									</p></dd></dl></div></li><li><p>
+							Fill in the required fields. Only letters, numbers and underscore characters are allowed for the <span class="bold"><strong>Group Name</strong></span> field. The name must be unique within the portal.
+						</p></li><li><p>
+							 Click <span class="bold"><strong>Save</strong></span>
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Edit-a-group"/>5.5.2.2. Edit a group</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Find the group in the existing tree and click on the label
+						</p></li><li><p>
+							Click the edit icon to display the <span class="bold"><strong>Edit Current Group</strong></span> window.
+						</p></li><li><p>
+							Make the desired changes in the appropriate fields. You can not change the Group Name, however you may change to the <span class="bold"><strong>Label</strong></span> field. You are also able to edit the <span class="bold"><strong>Description</strong></span> field. 
+						</p></li><li><p>
+							Click <span class="bold"><strong>Save</strong></span>
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Add_a_new_user_to_a_group"/>5.5.2.3. Add a new user to a group</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Find the group in the existing tree and click on its label. Existing group memberships are listed on the left hand side along with the <span class="bold"><strong>Add Member</strong></span> window.
+						</p><div class="mediaobject" align="center"><img src="images/AddMember1.png" align="middle"/></div></li><li><p>
+							Click on the magnify glass to open up the User selector. 
+						</p><p>
+							Refer to <a class="xref" href="chap-User_Guide-Portal_Administration.html#sect-User_Guide-User_Management-Search_a_user" title="5.5.1.2. Search for users">Section 5.5.1.2, “Search for users”</a> for instructions on how to locate a user.
+						</p><p>
+							Check the box next to the user name then click <span class="bold"><strong>Add</strong></span> 
+							</p></li><li><p>
+							Select the membership appropriate for this user. If the desired membership does not appear you may try to click on the refresh icon to get the latest list.
+						</p></li><li><p>
+							Click <span class="bold"><strong>Save</strong></span>
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Edit_the_user_membership_in_a_group"/>5.5.2.4. Edit the user membership in a group</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Click the edit icon in the Action column
+						</p><div class="mediaobject" align="center"><img src="images/EditMember1.png" align="middle"/></div></li><li><p>
+							Select another membership.
+						</p></li><li><p>
+							Click <span class="bold"><strong>Save</strong></span>.
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Delete_a_group"/>5.5.2.5. Delete a group</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Find the group in the tree
+						</p></li><li><p>
+							Click the trash icon.
+						</p><div class="mediaobject" align="center"><img src="images/DeleteGroup.png" align="middle"/></div></li><li><p>
+							Click <span class="bold"><strong>OK</strong></span>.
+						</p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-User_Management-Manage_memberships"/>5.5.3. Manage memberships</h3></div></div></div><p>
+					The role of a user in a specific group is managed using memberships.
+				</p><p>
+					By default three membership types are available: <span class="emphasis"><em>Manager</em></span>, <span class="emphasis"><em>Member</em></span> and <span class="emphasis"><em>Validator</em></span>. By definition, Manager has got the highest rights in a group. 
+				</p><p>
+				     Mouse over <span class="bold"><strong>Group</strong></span> on the Toolbar. Highlight <span class="bold"><strong>Organization</strong></span> and select <span class="emphasis"><em>Users and Groups Management</em></span>.  Select the <span class="bold"><strong>Membership Management</strong></span> tab.
+				</p><div class="mediaobject" align="center"><img src="images/MembershipManage1.png" align="middle"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Add_a_new_membership_type"/>5.5.3.1. Add a new membership type</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							In the <span class="bold"><strong>Add/Edit Membership</strong></span> form, enter the values for the membership name field (required) and the description field (optional). Only letters, digits, dots, dashes and underscores are allowed for the membership name.
+						</p></li><li><p>
+							Click the <span class="bold"><strong>Save</strong></span>
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Edit_a_membership_type"/>5.5.3.2. Edit a membership type</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Click the edit icon in the Action column.
+						</p></li><li><p>
+							Make the desired changes to the description.
+						</p></li><li><p>
+							Click <span class="bold"><strong>Save</strong></span>
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-User_Management-Delete_a_membership_type"/>5.5.3.3. Delete a membership type</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Click the trash icon in the Action column.
+						</p></li><li><p>
+							Click <span class="bold"><strong>OK</strong></span>
+						</p></li></ol></div></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-User_Guide-Manage_Permissions"/>5.6. Manage Permissions</h2></div></div></div><p>
+		Permissions play an important part in accessing and performing actions in the Portal. Depending on these permissions assigned by an administrator, users gain access to various components and actions such as edit portals, pages or portlets.
+	</p><p>
+		Details about permission types and levels can be found in <a class="xref" href="chap-User_Guide-Terms.html#sect-User_Guide-Permissions" title="2.7. Permissions">Section 2.7, “Permissions”</a>
+	</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Permission-Set_Portal_Permission"/>5.6.1. Set Portal Permissions</h3></div></div></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>New portals</strong></span></span></dt><dd><p>
+							Click on <span class="bold"><strong>Site</strong></span> in the Toolbar then click on <span class="bold"><strong>Add New Portal</strong></span>. Last select the <span class="bold"><strong>Permission Setting</strong></span> tab. 
+						</p><div class="mediaobject" align="center"><img src="images/AddPortal.png" align="middle"/></div></dd><dt><span class="term"><span class="bold"><strong>Existing portals</strong></span></span></dt><dd><p>
+							On the Toolbar click <span class="bold"><strong>Site</strong></span> then <span class="bold"><strong>Edit Portal's Properties</strong></span>. Last select the <span class="bold"><strong>Permission Setting</strong></span> tab. 
+						</p><div class="mediaobject" align="center"><img src="images/EditActivePortals.png" align="middle"/></div></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-Manage_Permission-Set_the_Access_Permission_on_a_Portal"/>5.6.1.1. Set Access permissions</h4></div></div></div><div class="mediaobject" align="center"><img src="images/PortalPermission.png" align="middle"/></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Public access</h2><p>
+					If you do not want your Portal to be publicly accessible, make sure the <span class="bold"><strong>Make it public</strong></span> check box is clear.
+				</p></div><p>
+				If <span class="bold"><strong>Make it public</strong></span> is clear, you need to add permissions by member group.
+			</p><div class="mediaobject" align="center"><img src="images/PermissionSetting2.png" align="middle"/></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Click <span class="bold"><strong>Add Permission</strong></span> 
+						</p></li><li><p>
+							Make the appropriate selections from the <span class="emphasis"><em>group</em></span> and <span class="emphasis"><em>membership</em></span> options presented in the <span class="bold"><strong>Permission Selector</strong></span> dialogue box.
+						</p></li><li><p>
+							After selecting a membership type, the selected permission is displayed in the access permission list. You can only select one group with one membership type at a time. If you want to add more, click <span class="bold"><strong>Add Permission</strong></span> and select again. Repeat the process for as many permission settings as you require. 
+&gt;
+						</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-Manage_Permission-Set_the_Edit_Permission_on_a_Portal"/>5.6.1.2. Set Edit Permissions</h4></div></div></div><p>
+				Only users members of the Editor group can edit that portal. Access rights can be given to several groups but edit rights can only be given to a group with a membership type. To assign an edit permission to a user, you must add him/her to the editor group of the respective portal.
+			</p><div class="mediaobject" align="center"><img src="images/PermissionSetting1.png" align="middle"/></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+							Click <span class="bold"><strong>Edit Permission Setting</strong></span>
+						</p></li><li><p>
+							Click <span class="bold"><strong>Select Permission</strong></span> to choose a group.
+						</p></li><li><p>
+							Select a group and a membership type from the left and right panes, respectively, of the <span class="bold"><strong>Permission Selector</strong></span> window (select * if you want to assign all available membership types to the selected group).
+						</p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Permission-Set_Page_Permission"/>5.6.2. Set Page Permission</h3></div></div></div><div class="variablelist"><dl><dt><span class="term"><span class="bold"><strong>User</strong></span></span></dt><dd><p>
+							If the owner type of a page is "user", you don't have to set permissions, no one except the creator has got access and edit permissions.
+						</p></dd><dt><span class="term"><span class="bold"><strong>Group</strong></span></span></dt><dd><p>
+							If the Owner type of a page is "group", initial permissions on page are:
+						</p><div class="itemizedlist"><ul><li><p>
+									Access permission: everyone in that group.
+								</p></li><li><p>
+									Edit permission: the manager of that group.
+								</p></li></ul></div></dd><dt><span class="term"><span class="bold"><strong>Portal</strong></span></span></dt><dd><p>
+							If the Owner type of a page is portal, initial permissions are:
+						</p><div class="itemizedlist"><ul><li><p>
+									Access permission: users who can access that portal.
+								</p></li><li><p>
+									Edit permission: users who can edit that portal.
+								</p></li></ul></div></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-Manage_Permission-Set_the_Access_Permission_on_a_Page"/>5.6.2.1. Set Access Permission on a Page</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Open up the page you wish to configure. Select <span class="bold"><strong>Site Editor</strong></span> on the Toolbar and select <span class="bold"><strong>Edit Page</strong></span>.
+					</p></li><li><p>
+						Click <span class="bold"><strong>View Page Properties</strong></span> in the <span class="bold"><strong>Page Editor</strong></span> applet.
+					</p></li><li><p>
+						Click the <span class="bold"><strong>Permission Setting</strong></span> tab.
+					</p></li></ol></div><p>
+				To be able to access a page users have to be in one of the groups that have access permission to that page. There may be several groups that have access rights to a page. A list of the permissions for that page will be shown (provided the <span class="bold"><strong>Make it public</strong></span> check-box has not been used).
+			</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Click <span class="bold"><strong>Add Permission</strong></span>
+					</p></li><li><p>
+						Select a group in the left pane then select a membership type. 
+					</p></li><li><p>
+						After selecting a membership type, the selected permission is displayed in the access right list. 
+                                               Note that you may associate group and membership only one at a time. To add more access permissions, click the <span class="bold"><strong>Add Permission</strong></span> button and apply the same process again.
+					</p></li></ol></div><p>
+				If you want to allow any visitors to access the page tick the <span class="bold"><strong>Make it public</strong></span> check-box. Any permission set for that page will be relaxed and the permissions list will disappear. 
+			</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-User_Guide-Manage_Permission-Set_the_Edit_Permission_on_a_Page"/>5.6.2.2. Set Edit Permission on a Page</h4></div></div></div><p>
+			Only users who are in the page's editor group can edit it. The access right can be set for several groups but the <span class="emphasis"><em>edit</em></span> right only can be set for one group. To give a user the edit permission, you must add them to the editors group of that page.
+		</p><p>
+			The Permission Setting tab is available in two different ways:
+		</p><p>
+			Via Edit Page:
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Mouse over <span class="bold"><strong>Site Editor</strong></span> on the Toolbar and select <span class="bold"><strong>Edit Page</strong></span>. 
+				</p></li><li><p>
+					Click on <span class="bold"><strong>View Page Properties</strong></span> in the <span class="bold"><strong>Page Editor</strong></span> applet. 
+				</p></li><li><p>
+					Click the <span class="bold"><strong>Permission Setting</strong></span> tab then the <span class="bold"><strong>Edit Permission Setting</strong></span> sub tab.
+				</p></li></ol></div><p>
+			Via Page Management:
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Mouse over <span class="bold"><strong>Group</strong></span> on the Toolbar, highlight <span class="bold"><strong>Administration</strong></span> and click on <span class="bold"><strong>Page Management</strong></span>. 
+				</p></li><li><p>
+					Locate the page you want to edit using the <span class="bold"><strong>Page Id</strong></span> column then click the edit  icon (next to the trash icon). You will be taken to the <span class="bold"><strong>Page Editor</strong></span> applet.
+				</p></li><li><p>
+					Click on the <span class="bold"><strong>Permission Setting</strong></span> tab then the <span class="bold"><strong>Edit Permission Setting</strong></span> sub tab.
+				</p></li></ol></div><p>
+			You will see the <span class="bold"><strong>Current Permission</strong></span> listed.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+					Click the <span class="bold"><strong>Select Permission</strong></span> button to set new or change another group.
+				</p></li><li><p>
+					Select a group with a membership type (select * if you want all membership types in a selected group)
+				</p></li><li><p>
+					After selecting a specific membership from the right, the selected information is displayed.
+				</p></li><li><p>
+					Click the <span class="bold"><strong>Save</strong></span>
+				</p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Permission-Set_the_Access_Permission_on_a_Category"/>5.6.3. Set Access Permission on a Category</h3></div></div></div><p>
+			Setting access permission on a category allows to be able to list those categories when editing a page in order to add portlets or widgets.
+		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Mouse over <span class="bold"><strong>Group</strong></span> on the Toolbar, highlight <span class="bold"><strong>Administration</strong></span> then click on <span class="bold"><strong>Application Registry</strong></span>.
+						</p><div class="mediaobject" align="center"><img src="images/EditCategoryPermissions.png" align="middle"/></div><p>
+					</p></li><li><p>
+						In the list of categories available in the left pane, click the edit icon, then choose the <span class="bold"><strong>Permission Setting</strong></span> tab.
+					</p></li><li><p>
+						To set permissions for a category: 
+					</p><div class="procedure"><ol class="1"><li><p>
+									Click the <span class="bold"><strong>Add Permission</strong></span> button to add access permissions to more groups .
+								</p></li><li><p>
+									Or select the <span class="bold"><strong>Make it public</strong></span> check box to allow everyone to access.
+								</p></li></ol></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-User_Guide-Manage_Permission-Set_the_Access_Permission_on_a_Portlet"/>5.6.4. Set Access Permission on a Portlet</h3></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Select <span class="bold"><strong>Group</strong></span> on the Toolbar. Highlight the <span class="bold"><strong>Administration</strong></span> entry and click on <span class="bold"><strong>Application Registry</strong></span>.
+						</p><div class="mediaobject" align="center"><img src="images/Application1.png" align="middle"/></div><p>
+					</p></li><li><p>
+						Select a category on the left pane that includes the portlet you want to set rights for. Then all portlets of the selected category are listed immediately and detail information of each portlet is displayed on the right pane.
+					</p></li><li><p>
+						To set permissions for a portlet: 
+					</p><div class="procedure"><ol class="1"><li><p>
+									Click the <span class="bold"><strong>Add Permission</strong></span> button to add access permissions to more groups .
+								</p></li><li><p>
+									Or select the <span class="bold"><strong>Make it public</strong></span> check box to allow everyone to access.
+								</p></li></ol></div></li></ol></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-User_Guide-Account.html"><strong>Prev</strong>Chapter 4. Accounts</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="chap-User_Guide-Language_administration.html"><strong>Next</strong>Chapter 6. Language administration</a></li></ul></body></html>
