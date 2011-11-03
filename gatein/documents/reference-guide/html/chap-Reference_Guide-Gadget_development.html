@@ -47,13 +47,44 @@
 </pre><p>
 			It is also possible to have multiple rendering servers. This helps to balance the rendering load across multiple servers.
 		</p><p>
-			When deploying on the same server ensure the gadget initiates before anything that calls it (for example; the webapp <code class="literal">GateInGadgets</code> which uses <code class="literal">org.exoplatform.application.gadget.GadgetRegister</code>).
-		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Setup_a_Gadget_Server-Configuration"/>5.2.2. Configuration</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Configuration-Security_key"/>5.2.2.1. Security key</h4></div></div></div><p>
-				A file called <span class="bold"><strong>key.txt</strong></span> has to be generated for every installation of GateIn 3.2 to be secure. This file contains a secret key used to encrypt the security token used for authenticating the user.
-			</p><p>
-				In Linux systems this file can be generated with:
-			</p><pre class="programlisting"><code class="command">dd if=/dev/random bs=32 count=1 | openssl base64 &gt; /tmp/key.txt</code>
-</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Configuration-Gadget_proxy_and_concat_configuration"/>5.2.2.2. Gadget proxy and concat configuration</h4></div></div></div><p>
+			When deploying on the same server, ensure the gadget initiates before anything that calls it (for example; the webapp <code class="literal">GateInGadgets</code> which uses <code class="literal">org.exoplatform.application.gadget.GadgetRegister</code>).
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Setup_a_Gadget_Server-Configuration"/>5.2.2. Configuration</h3></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Configuration-Security_key"/>5.2.2.1. Security key</h4></div></div></div><p>In GateIn, the gadget container is using three security files for authentication and authorization
+        gadgets:
+      </p><div class="itemizedlist"><ul><li><p>
+            <span class="emphasis"><em>key.txt</em></span>
+          </p></li><li><p>
+            <span class="emphasis"><em>oauthkey.pem</em></span>
+          </p></li><li><p>
+            <span class="emphasis"><em>oauthkey_pub.pem</em></span>
+          </p></li></ul></div><p>By default, they are located in the
+        <span class="emphasis"><em>$JBOSS_HOME/server/default/conf/gatein/gadgets</em></span> or For Tomcat: <span class="emphasis"><em>$TOMCAT_HOME/gatein/conf/gadgets</em></span>
+        folder and are configured by system variables in the 
+        <span class="emphasis"><em>$JBOSS_HOME/server/default/conf/gatein/configuration.properties</em></span> or For Tomcat: <span class="emphasis"><em>$TOMCAT_HOME/gatein/conf/configuration.properties</em></span>
+        file:
+      </p><pre class="programlisting">
+        <code class="command">gatein.gadgets.securitytokenkeyfile=${gatein.conf.dir}/gadgets/key.txt</code>
+        <code class="command">gatein.gadgets.signingkeyfile=${gatein.conf.dir}/gadgets/oauthkey.pem</code>
+      </pre><p>In case you have other files, you can change these variables to point to them.</p><p>The
+        <span class="emphasis"><em>key.txt</em></span>
+        file contains a secret key used to encrypt the security token used for the user authentication. When starting
+        GateIn, this file is read via the
+        <span class="emphasis"><em>gatein.gadgets.securitytokenkeyfile</em></span>
+        path. In case the <span class="emphasis"><em>key.txt</em></span> file is not found, GateIn automatically generates a new
+        <span class="emphasis"><em>key.txt</em></span>
+        one and save it to the
+        <span class="emphasis"><em>gatein.gadgets.securitytokenkeyfile</em></span>
+        path.
+      </p><p>
+        <span class="emphasis"><em>oauthkey.pem</em></span>
+        and
+        <span class="emphasis"><em>oauthkey_pub.pem</em></span>
+        are a key pair of RSA cryptography standard.
+        <span class="emphasis"><em>oauthkey.pem</em></span>
+        is known as a private key and
+        <span class="emphasis"><em>oauthkey_pub.pem</em></span>
+        is a public key. They are the default keys of the gadget container which OAuth gadgets will use to authorize
+        with external service providers.
+      </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Configuration-Gadget_proxy_and_concat_configuration"/>5.2.2.2. Gadget proxy and concat configuration</h4></div></div></div><p>
 				These servers have to be on the same domain as the gadget server. You can configure the container in <code class="filename">eXoGadgetServer:/WEB-INF/classes/containers/default/container.js</code>.
 			</p><pre class="programlisting">"gadgets.content-rewrite" : {
   "include-urls": ".*",
