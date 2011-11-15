@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 6. Authentication and Identity</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn Reference Guide"/><link rel="up" href="index.html" title="GateIn Reference Guide"/><link rel="prev" href="chap-Reference_Guide-Gadget_development.html" title="Chapter 5. Gadget development"/><link rel="next" href="wsrp.html" title="Chapter 7. Web Services for Remote Portlets (WSRP)"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Gadget_development.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="wsrp.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Reference_Guide-Authentication_And_Identity"/>Chapter 6. Authentication and Identity</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration">6.1. Predefined User Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Overview">6.1.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Plugin_for_adding_users_groups_and_membership_types">6.1.2. Plugin for adding users, groups and membership types</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Membership_types">6.1.3. Membership types</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Groups">6.1.4. Groups</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Users">6.1.5. Users</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Plugin_for_monitoring_user_creation">6.1.6. Plugin for monitoring user creation</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration">6.2. Authentication Token Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration-What_is_token_service">6.2.1. What is Token Service?</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration-Implement_token_services_API">6.2.2. Implementing the Token Service API</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration-Configure_token_services">6.2.3. Configuring token services</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-PicketLink_IDM_integration">6.3. PicketLink IDM integration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-PicketLink_IDM_integration-Configuration_files">6.3.1. Configuration files</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-APIs-Organization_API">6.4. Organization API</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Accessing_User_Profile">6.5. Accessing User Profile</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#chap-Reference_Guide-SSO_Single_Sign_On">6.6. Single-Sign-On (SSO)</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-Overview">6.6.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-CAS_Central_Authentication_Service">6.6.2. Central Authentication Service (CAS)</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-JOSSO">6.6.3. JOSSO</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-OpenSSO_The_Open_Web_SSO_project">6.6.4. OpenSSO - The Open Web SSO project</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#Single_Sign_On-SPNEGO">6.6.5. SPNEGO</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration"/>6.1. Predefined User Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration-Overview"/>6.1.1. Overview</h3></div></div></div><p>
-			To specify the initial Organization configuration, the content of <code class="literal">02portal.war:/WEB-INF/conf/organization/organization-configuration.xml </code> should be edited. This file uses the portal XML configuration schema. It lists several configuration plugins.
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 6. Authentication and Identity</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link rel="start" href="index.html" title="GateIn Reference Guide"/><link rel="up" href="index.html" title="GateIn Reference Guide"/><link rel="prev" href="chap-Reference_Guide-Gadget_development.html" title="Chapter 5. Gadget development"/><link rel="next" href="wsrp.html" title="Chapter 7. Web Services for Remote Portlets (WSRP)"/></head><body><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Gadget_development.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="wsrp.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Reference_Guide-Authentication_And_Identity"/>Chapter 6. Authentication and Identity</h2></div></div></div><div class="toc"><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration">6.1. Predefined User Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Overview">6.1.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Plugin_for_adding_users_groups_and_membership_types">6.1.2. Plugin for adding users, groups and membership types</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Membership_types">6.1.3. Membership types</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Groups">6.1.4. Groups</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Users">6.1.5. Users</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Predefined_User_Configuration-Plugin_for_monitoring_user_creation">6.1.6. Plugin for monitoring user creation</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration">6.2. Authentication Token Configuration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration-What_is_token_service">6.2.1. What is Token Service?</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration-Implement_token_services_API">6.2.2. Implement the Token Service API</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Authentication_Token_Configuration-Configure_token_services">6.2.3. Configure token services</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-PicketLink_IDM_integration">6.3. PicketLink IDM integration</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-PicketLink_IDM_integration-Configuration_files">6.3.1. Configuration files</a></span></dt></dl></dd><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-APIs-Organization_API">6.4. Organization API</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Accessing_User_Profile">6.5. Access User Profile</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#chap-Reference_Guide-SSO_Single_Sign_On">6.6. Single-Sign-On (SSO)</a></span></dt><dd><dl><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-Overview">6.6.1. Overview</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-CAS_Central_Authentication_Service">6.6.2. Central Authentication Service (CAS)</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-JOSSO">6.6.3. JOSSO</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#sect-Reference_Guide-Single_Sign_On-OpenSSO_The_Open_Web_SSO_project">6.6.4. OpenSSO - The Open Web SSO project</a></span></dt><dt><span class="section"><a href="chap-Reference_Guide-Authentication_And_Identity.html#Single_Sign_On-SPNEGO">6.6.5. SPNEGO</a></span></dt></dl></dd></dl></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration"/>6.1. Predefined User Configuration</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration-Overview"/>6.1.1. Overview</h3></div></div></div><p>
+			To specify the initial Organization configuration, the content of <span class="emphasis"><em>02portal.war:/WEB-INF/conf/organization/organization-configuration.xml </em></span> should be edited. This file uses the portal XML configuration schema. It lists several configuration plugins.
 		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration-Plugin_for_adding_users_groups_and_membership_types"/>6.1.2. Plugin for adding users, groups and membership types</h3></div></div></div><p>
-			The plugin of type <code class="literal">org.exoplatform.services.organization.OrganizationDatabaseInitializer</code> is used to specify the list of membership types/groups/users to be created.
+			The plugin of type <span class="emphasis"><em>org.exoplatform.services.organization.OrganizationDatabaseInitializer</em></span> is used to specify the list of membership types/groups/users to be created.
 		</p><p>
-			The <span class="bold"><strong>checkDatabaseAlgorithm</strong></span> initialization parameter determines how the database update is performed.
+			The <span class="emphasis"><em>checkDatabaseAlgorithm</em></span> initialization parameter determines how the database update is performed.
 		</p><p>
-			If its value is set to <span class="bold"><strong>entry</strong></span>, it means that each user, group and membership listed in the configuration is checked each time GateIn 3.1 is started.
-         If the entry does not exist in the database yet, it is created. If the <span class="bold"><strong>checkDatabaseAlgorithm</strong></span> parameter value is set to <span class="bold"><strong>empty</strong></span>,
+			If its value is set to <span class="emphasis"><em>entry</em></span>, it means that each user, group and membership listed in the configuration is checked each time GateIn 3.2 is started.
+         If the entry does not exist in the database yet, it is created. If the <span class="emphasis"><em>checkDatabaseAlgorithm</em></span> parameter value is set to <span class="emphasis"><em>empty</em></span>,
          the configuration data will be updated to the database only if the database is empty.
 		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration-Membership_types"/>6.1.3. Membership types</h3></div></div></div><p>
-			The predefined membership types are specified in the <span class="bold"><strong>membershipType</strong></span> field of the <span class="bold"><strong>OrganizationConfig</strong></span> plugin parameter.
+			The predefined membership types are specified in the <span class="emphasis"><em>membershipType</em></span> field of the <span class="emphasis"><em>OrganizationConfig</em></span> plugin parameter.
 		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
-            See <code class="literal">02portal.war:/WEB-INF/conf/organization/organization-configuration.xml</code> for the full content.
+            See <span class="emphasis"><em>02portal.war:/WEB-INF/conf/organization/organization-configuration.xml</em></span> for the full content.
          </p></div><pre class="programlisting">&lt;field name="membershipType"&gt;
   &lt;collection type="java.util.ArrayList"&gt;
     &lt;value&gt;
@@ -50,7 +50,7 @@
    &lt;/collection&gt;
 &lt;/field&gt;
 </pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration-Groups"/>6.1.4. Groups</h3></div></div></div><p>
-			The predefined groups are specified in the <span class="bold"><strong>group</strong></span> field of the <span class="bold"><strong>OrganizationConfig</strong></span> plugin parameter.
+			The predefined groups are specified in the <span class="emphasis"><em>group</em></span> field of the <span class="emphasis"><em>OrganizationConfig</em></span> plugin parameter.
 		</p><pre class="programlisting">&lt;field name="group"&gt;
   &lt;collection type="java.util.ArrayList"&gt;
     &lt;value&gt;
@@ -89,7 +89,7 @@
   &lt;/collection&gt;
 &lt;/field&gt;
 </pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration-Users"/>6.1.5. Users</h3></div></div></div><p>
-			The predefined users are specified in the <span class="bold"><strong>membershipType</strong></span> field of the <span class="bold"><strong>OrganizationConfig</strong></span> plugin parameter.
+			The predefined users are specified in the <span class="emphasis"><em>membershipType</em></span> field of the <span class="emphasis"><em>OrganizationConfig</em></span> plugin parameter.
 		</p><pre class="programlisting">&lt;field name="user"&gt;
   &lt;collection type="java.util.ArrayList"&gt;
     &lt;value&gt;
@@ -116,7 +116,7 @@
   &lt;/collection&gt;
 &lt;/field&gt;
 </pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Predefined_User_Configuration-Plugin_for_monitoring_user_creation"/>6.1.6. Plugin for monitoring user creation</h3></div></div></div><p>
-			The plugin of type <code class="literal">org.exoplatform.services.organization.impl.NewUserEventListener </code> specifies
+			The plugin of type <span class="emphasis"><em>org.exoplatform.services.organization.impl.NewUserEventListener </em></span> specifies
          which groups all the newly created users should become members of. It specifies the groups and the memberships to use
          (while the group is just a set of users, a membership type represents a user's role within a group).
          It also specifies a list of users that should not be processed (i.e. administrative users like 'root').
@@ -159,9 +159,9 @@
 		</p><p>
 			The token service allows administrators to create, delete, retrieve and clean tokens as required.
          The service also defines a validity period of any given token. The token becomes invalid once this period expires.
-		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Authentication_Token_Configuration-Implement_token_services_API"/>6.2.2. Implementing the Token Service API</h3></div></div></div><p>
-			All token services used in the GateIn 3.1 authentication must be implemented by subclassing an <span class="bold"><strong>AbstractTokenService</strong></span> abstract class.
-         The following <span class="bold"><strong>AbstractTokenService</strong></span> methods represent the contract between authentication runtime, and a token service implementation.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Authentication_Token_Configuration-Implement_token_services_API"/>6.2.2. Implement the Token Service API</h3></div></div></div><p>
+			All token services used in the GateIn 3.2 authentication must be implemented by subclassing an <span class="emphasis"><em>AbstractTokenService</em></span> abstract class.
+         The following <span class="emphasis"><em>AbstractTokenService</em></span> methods represent the contract between authentication runtime, and a token service implementation.
 		</p><pre class="programlisting">
 		public Token getToken(String id) throws PathNotFoundException, RepositoryException;
 		public Token deleteToken(String id) throws PathNotFoundException, RepositoryException;
@@ -170,12 +170,12 @@
 		public String createToken(Credentials credentials) throws IllegalArgumentException,NullPointerException;
 		public Credentials validateToken(String tokenKey, boolean remove) throws NullPointerException;
 </pre><p>
-		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Authentication_Token_Configuration-Configure_token_services"/>6.2.3. Configuring token services</h3></div></div></div><p>
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Authentication_Token_Configuration-Configure_token_services"/>6.2.3. Configure token services</h3></div></div></div><p>
 			The token services configuration includes specifying the token validity period. The token service is configured as a portal component (in the portal scope, as opposed to the root scope - more about that in Foundations chapter).
 		</p><p>
-			In the example below, <span class="emphasis"><em>CookieTokenService</em></span> is a subclass of <span class="bold"><strong>AbstractTokenService</strong></span>, so it has a property which specifies the validity period of the token.
+			In the example below, CookieTokenService is a subclass of AbstractTokenService, so it has a property which specifies the validity period of the token.
 		</p><p>
-			The token service will initialize this validity property by looking for an <em class="parameter"><code>init-param</code></em> named <span class="bold"><strong>service.configuration</strong></span>.
+			The token service will initialize this validity property by looking for an <em class="parameter"><code>init-param</code></em> named <span class="emphasis"><em>service.configuration</em></span>.
 		</p><p>
 			This property must have three values.
 		</p><div class="programlistingco"><pre class="programlisting">&lt;component&gt;
@@ -197,9 +197,9 @@
 					</p></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/3.png" alt="3" border="0"/></td><td valign="top" align="left"><p>
 						Unit of time
 					</p></td></tr></table></div></div><p>
-			In this case, the service name is <span class="bold"><strong>jcr-token</strong></span> and the token expiration time is one week.
+			In this case, the service name is <span class="emphasis"><em>jcr-token</em></span> and the token expiration time is one week.
 		</p><p>
-			GateIn 3.1 supports <span class="emphasis"><em>four</em></span> time units:
+			GateIn 3.2 supports <span class="emphasis"><em>four</em></span> time units:
 		</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>
 					<em class="parameter"><code>SECOND</code></em>
 				</p></li><li><p>
@@ -209,7 +209,7 @@
 				</p></li><li><p>
 					<em class="parameter"><code>DAY</code></em>
 				</p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-PicketLink_IDM_integration"/>6.3. PicketLink IDM integration</h2></div></div></div><p>
-		GateIn 3.1 uses the PicketLink IDM component to keep the necessary identity information, such as users, groups, memberships.
+		GateIn 3.2 uses the PicketLink IDM component to keep the necessary identity information, such as users, groups, memberships.
       While legacy interfaces are still used (org.exoplatform.services.organization) for identity management,
       there is a wrapper implementation that delegates to the PicketLink IDM framework.
 	</p><p>
@@ -217,14 +217,14 @@
 	</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
 			It is important to fully understand the concepts behind this framework design before changing the default configuration.
 		</p></div><p>
-		The identity model represented in '<span class="bold"><strong>org.exoplatform.services.organization</strong></span>' interfaces and the one used in <span class="bold"><strong>PicketLink IDM</strong></span> have some major differences.
+		The identity model represented in '<span class="emphasis"><em>org.exoplatform.services.organization</em></span>' interfaces and the one used in <span class="emphasis"><em>PicketLink IDM</em></span> have some major differences.
 	</p><p>The org.exoplatform.services.organization interface stores and manages information of users, groups or memberships, user profiles, relationships and retrieval. The management of org.exoplatform.services.organization interface is divided into many layers, such as model object, data access object and authentication.</p><p>
-		For example: <span class="bold"><strong>PicketLink IDM</strong></span> provides greater abstraction. It is possible for groups in <span class="bold"><strong>IDM</strong></span> framework to form memberships with many parents (which requires recursive ID translation),
+		For example: <span class="emphasis"><em>PicketLink IDM</em></span> provides greater abstraction. It is possible for groups in <span class="emphasis"><em>IDM</em></span> framework to form memberships with many parents (which requires recursive ID translation),
       while the GateIn model allows only pure tree-like membership structures.
 	</p><p>
-		Additionally, the GateIn <span class="emphasis"><em>membership</em></span> concept needs to be translated into the IDM <span class="emphasis"><em>Role</em></span> concept. Therefore, the <span class="bold"><strong>PicketLink IDM</strong></span> model is used in a limited way. All these translations are applied by the integration layer.
+		Additionally, the GateIn <span class="emphasis"><em>membership</em></span> concept needs to be translated into the IDM <span class="emphasis"><em>Role</em></span> concept. Therefore, the <span class="emphasis"><em>PicketLink IDM</em></span> model is used in a limited way. All these translations are applied by the integration layer.
 	</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-PicketLink_IDM_integration-Configuration_files"/>6.3.1. Configuration files</h3></div></div></div><p>
-			The main configuration file is <span class="bold"><strong>idm-configuration.xml</strong></span>:
+			The main configuration file is <span class="emphasis"><em>idm-configuration.xml</em></span>:
 		</p><div class="programlistingco"><pre class="programlisting">&lt;configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd http://www.exoplaform.org/xml/ns/kernel_1_0.xsd"
                xmlns="http://www.exoplaform.org/xml/ns/kernel_1_0.xsd"&gt;
@@ -306,7 +306,7 @@
  
 &lt;/configuration&gt;
 </pre><div class="calloutlist"><table border="0" summary="Callout list"><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/1.png" alt="1" border="0"/></td><td valign="top" align="left"><p>
-						The <span class="bold"><strong>org.exoplatform.services.organization.idm.PicketLinkIDMServiceImpl</strong></span> service has the following options:
+						The <span class="emphasis"><em>org.exoplatform.services.organization.idm.PicketLinkIDMServiceImpl</em></span> service has the following options:
 					</p><div class="variablelist"><dl><dt><span class="term">config</span></dt><dd><p>
 								(value-param)
 							</p><p>
@@ -328,13 +328,13 @@
 							</p><p>
 								The realm name that should be used to obtain the proper IdentitySession. The default is 'PortalRealm'.
 							</p></dd></dl></div></td></tr><tr><td width="5%" valign="top" align="left"><img src="images/gatein/docbook/callouts/2.png" alt="2" border="0"/></td><td valign="top" align="left"><p>
-						The <span class="bold"><strong>org.exoplatform.services.organization.idm.PicketLinkIDMOrganizationServiceImpl</strong></span>
-            key is a main entrypoint implementing <span class="bold"><strong>org.exoplatform.services.organization.OrganizationService</strong></span>
-            and is dependant on <span class="bold"><strong>org.exoplatform.services.organization.idm.PicketLinkIDMService</strong></span>
+						The <span class="emphasis"><em>org.exoplatform.services.organization.idm.PicketLinkIDMOrganizationServiceImpl</em></span>
+            key is a main entrypoint implementing <span class="emphasis"><em>org.exoplatform.services.organization.OrganizationService</em></span>
+            and is dependant on <span class="emphasis"><em>org.exoplatform.services.organization.idm.PicketLinkIDMService</em></span>
 					</p><p>
-						<span class="bold"><strong>org.exoplatform.services.organization.idm.PicketLinkIDMOrganizationServiceImpl</strong></span>
+						<span class="emphasis"><em>org.exoplatform.services.organization.idm.PicketLinkIDMOrganizationServiceImpl</em></span>
             service has the following options defined as fields of object-param of type
-            <span class="bold"><strong>org.exoplatform.services.organization.idm.Config</strong></span>:
+            <span class="emphasis"><em>org.exoplatform.services.organization.idm.Config</em></span>:
 					</p><div class="variablelist"><dl><dt><span class="term">defaultGroupType</span></dt><dd><p>
 								The name of the PicketLink IDM GroupType that will be used to store groups. The default is 'GTN_GROUP_TYPE'.
 							</p></dd><dt><span class="term">rootGroupName</span></dt><dd><p>
@@ -343,33 +343,33 @@
 									This parameter specifies if a password should be stored using the PicketLink IDM Credential object or as a plain attribute. The default value is set to false.
 								</p></dd><dt><span class="term">useParentIdAsGroupType</span></dt><dd><p>
 								This parameter stores the parent ID path as a group type in PicketLink IDM for any IDs not mapped with a specific type in 'groupTypeMappings'.
-                        If this option is set to false, and no mappings are provided under 'groupTypeMappings', only one group with the given name can exist in the GateIn 3.1 group tree.
+                        If this option is set to false, and no mappings are provided under 'groupTypeMappings', only one group with the given name can exist in the GateIn 3.2 group tree.
 							</p></dd><dt><span class="term">pathSeparator</span></dt><dd><p>
 									When 'userParentIdAsGroupType' is set to true, this value will be used to replace all "/" characters in IDs. The "/" character is not allowed in the group type name in PicketLink IDM.
 								</p></dd><dt><span class="term">associationMembershipType</span></dt><dd><p>
 									If this option is used, each Membership created with MembrshipType that is equal to the value specified here, will be stored in PicketLink IDM as the simple Group-User association.
 								</p></dd><dt><span class="term">groupTypeMappings</span></dt><dd><p>
-									This parameter maps groups added with GateIn 3.1 API as children of a given group ID, and stores them with a given group type name in PicketLink IDM.
+									This parameter maps groups added with GateIn 3.2 API as children of a given group ID, and stores them with a given group type name in PicketLink IDM.
 								</p><p>
 									If the parent ID ends with "/*", all child groups will have the mapped group type. Otherwises, only direct (first level) children will use this type. 
 								</p><p>
-									This can be leveraged by LDAP if the LDAP DN is configured in PicketLink IDM to only store a specific group type. This will then store the given branch in the GateIn 3.1 group tree, while all other groups will remain in the database.
+									This can be leveraged by LDAP if the LDAP DN is configured in PicketLink IDM to only store a specific group type. This will then store the given branch in the GateIn 3.2 group tree, while all other groups will remain in the database.
 								</p></dd><dt><span class="term">forceMembershipOfMappedTypes</span></dt><dd><p>
 									Groups stored in PicketLink IDM with a type mapped in 'groupTypeMappings' will automatically be members under the mapped parent. The Group relationships linked by the PicketLink IDM group association will not be necessary.
 								</p><p>
-									This parameter can be set to false if all groups are added via GateIn 3.1 APIs. This may be useful with the LDAP configuration when being set to true, it will make every entry added to LDAP appear in GateIn 3.1. This, however, is not true for entries added via GateIn 3.1 management UI.
+									This parameter can be set to false if all groups are added via GateIn 3.2 APIs. This may be useful with the LDAP configuration when being set to true, it will make every entry added to LDAP appear in GateIn 3.2. This, however, is not true for entries added via GateIn 3.2 management UI.
 								</p></dd><dt><span class="term">ignoreMappedMembershipType</span></dt><dd><p>
 									If "associationMembershipType" option is used, and this option is set to true, Membership with MembershipType configured to be stored as PicketLink IDM association will not be stored as PicketLink IDM Role.
 								</p></dd></dl></div><p>
-						Additionally, <span class="bold"><strong>JBossIDMOrganizationServiceImpl</strong></span> uses those defaults to perform identity management operations.
+						Additionally, <span class="emphasis"><em>JBossIDMOrganizationServiceImpl</em></span> uses those defaults to perform identity management operations.
 					</p><div class="itemizedlist"><ul><li><p>
-								GateIn 3.1 User interface properties fields are persisted in JBoss Identity IDM using those attributes names: firstName, lastName, email, createdDate, lastLoginTime, organizationId, password (if password is configured to be stored as attribute).
+								GateIn 3.2 User interface properties fields are persisted in JBoss Identity IDM using those attributes names: firstName, lastName, email, createdDate, lastLoginTime, organizationId, password (if password is configured to be stored as attribute).
 							</p></li><li><p>
-								GateIn 3.1 Group interface properties fields are persisted in JBoss Identity IDM using those attributes names: label, description.
+								GateIn 3.2 Group interface properties fields are persisted in JBoss Identity IDM using those attributes names: label, description.
 							</p></li><li><p>
-								GateIn 3.1 MembershipType interface properties fields are persisted in JBoss Identity IDM using those RoleType properties: description, owner, create_date, modified_date.
+								GateIn 3.2 MembershipType interface properties fields are persisted in JBoss Identity IDM using those RoleType properties: description, owner, create_date, modified_date.
 							</p></li></ul></div></td></tr></table></div></div><p>
-			A sample <span class="bold"><strong>PicketLink IDM</strong></span> configuration file is shown below. To understand all the options it contains, please refer to the PicketLink IDM Reference Guide.
+			A sample <span class="emphasis"><em>PicketLink IDM</em></span> configuration file is shown below. To understand all the options it contains, please refer to the PicketLink IDM Reference Guide.
 		</p><pre class="programlisting">&lt;jboss-identity xmlns="urn:jboss:identity:idm:config:v1_0_beta"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xsi:schemaLocation="urn:jboss:identity:idm:config:v1_0_alpha identity-config.xsd"&gt;
@@ -445,34 +445,34 @@
 &lt;/jboss-identity&gt;
 </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-APIs-Organization_API"/>6.4. Organization API</h2></div></div></div><p>
 		The
-		<code class="literal">exo.platform.services.organization</code>
+		<span class="emphasis"><em>exo.platform.services.organization</em></span>
 		package has five main components: user, user profile, group,
 		membership type and membership.
 		There is an additional component that serves as an entry point into
 		Organization API -
-		<code class="literal">OrganizationService</code>
+		<span class="emphasis"><em>OrganizationService</em></span>
 		component
 		that provides the handling functionality for the five components.
 	</p><p>
 		</p><div class="mediaobject" align="center"><img src="images/AuthenticationAndIdentity/OrganizationServiceClassDiagram.png" align="middle"/></div><p>
 	</p><p>
 		The
-		<code class="literal">User</code>
+		<span class="emphasis"><em>User</em></span>
 		component contains basic information about the user, such as
 		username, password, first name, last name, and email. The
-		<code class="literal">User Profile</code>
+		<span class="emphasis"><em>User Profile</em></span>
 		component contains extra information about a user, such as user's
 		personal information, and business information.
 		You can also add additional information about a user if your application
 		requires it.
 		The
-		<code class="literal">Group</code>
+		<span class="emphasis"><em>Group</em></span>
 		component contains a group graph. The
-		<code class="literal">Membership Type</code>
+		<span class="emphasis"><em>Membership Type</em></span>
 		component
 		contains a list of predefined membership types.
 		Finally, the
-		<code class="literal">Membership</code>
+		<span class="emphasis"><em>Membership</em></span>
 		component connects a User, a Group and a Membership Type.
 	</p><p>
 		A user can have one or more memberships within a group, for example:
@@ -480,7 +480,7 @@
 		A user belongs to a group if he has at least one membership in that
 		group.
       </p><p>
-		Exposing the Organization API to developers who have access to the handler objects provided by the OrganizationService component. These handler objects are used to manage each of the five components, including UserHandler, UserProfileHandler, GroupHandler, MembershipTypeHandler, and MembershipHandler.
+		Exposing the Organization API to developers who have access to the handler objects provided by the OrganizationService component. These handler objects are used to manage each of the five components, including <span class="emphasis"><em>UserHandler</em></span>, <span class="emphasis"><em>UserProfileHandler</em></span>, <span class="emphasis"><em>GroupHandler</em></span>, <span class="emphasis"><em>MembershipTypeHandler</em></span>, and<span class="emphasis"><em> MembershipHandler</em></span>.
       </p><p>
 		The five central API components are really designed like persistent
 		entities, and handlers are really specified like data access objects
@@ -490,7 +490,7 @@
 		implementation. The described components are interfaces,
 		allowing different concrete implementations. Practically, it means that
 		you can replace the existing implementation with a different one.
-	</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Accessing_User_Profile"/>6.5. Accessing User Profile</h2></div></div></div><p>
+	</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="sect-Reference_Guide-Accessing_User_Profile"/>6.5. Access User Profile</h2></div></div></div><p>
 		The following code retrieves the details for a logged-in user:
 	</p><pre class="programlisting">// Alternative context: WebuiRequestContext context = WebuiRequestContext.getCurrentInstance() ;
 PortalRequestContext context = PortalRequestContext.getCurrentInstance() ;
@@ -515,40 +515,41 @@ if (userId != null)
 </pre></li><li><pre class="programlisting">OrganizationService service = (OrganizationService)
    PortalContainer.getInstance().getComponentInstanceOfType(OrganizationService.class);
 </pre></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="chap-Reference_Guide-SSO_Single_Sign_On"/>6.6. Single-Sign-On (SSO)</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Single_Sign_On-Overview"/>6.6.1. Overview</h3></div></div></div><p>
-			GateIn 3.1 provides some forms of Single-Sign-On (<code class="literal">SSO</code>) as an integration and aggregation platform.
+			GateIn 3.2 provides some forms of Single-Sign-On (<span class="emphasis"><em>SSO</em></span>) as an integration and aggregation platform.
 		</p><p>
 			When logging into the portal, users gain access to many systems through portlets using a single identity. In many cases, the portal infrastructure must be integrated with other SSO enabled systems. There are many different Identity Management solutions available. In most cases, each SSO framework provides a unique way to plug into a Java EE application.
 		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-Overview_of_SSO-Prerequisite"/>6.6.1.1. Prerequisites</h4></div></div></div><p>
 				In this tutorial, the SSO server is installed in a Tomcat installation. Tomcat can be obtained from <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://tomcat.apache.org">http://tomcat.apache.org</a>.
 			</p><p>
-				All the packages required for setup can be found in a zip file located at: <a xmlns:xlink="http://www.w3.org/1999/xlink" href="https://repository.jboss.org/nexus/content/groups/public/org/gatein/sso/sso-packaging/1.0.1-GA/sso-packaging-1.0.1-GA.zip">https://repository.jboss.org/nexus/content/groups/public/org/gatein/sso/sso-packaging/1.0.1-GA/sso-packaging-1.0.1-GA.zip</a>. In this document, $GATEIN_SSO_HOME is called as the directory where the file is extracted.
+				All the packages required for setup can be found in a zip file located at <a xmlns:xlink="http://www.w3.org/1999/xlink" href="https://repository.jboss.org/nexus/content/groups/public/org/gatein/sso/sso-packaging/1.1.0-GA/sso-packaging-1.1.0-GA.zip">here</a>. In this document, $GATEIN_SSO_HOME is called as the directory where the file is extracted.
 			</p><p>
-				It is recommended that you should not run any portal extensions that could override the data when manipulating the <code class="filename">gatein.ear</code> file directly.
+				It is recommended that you should not run any portal extensions that could override the data when manipulating the <span class="emphasis"><em>gatein.ear</em></span> file directly.
 			</p><p>
-				Remove <code class="literal">$JBOSS_HOME/server/default/deploy/gatein-sample-extension.ear</code> and <code class="literal">$JBOSS_HOME/server/default/deploy/gatein-sample-portal.ear</code> which are packaged with GateIn 3.1 by default.
+				Remove <span class="emphasis"><em>$JBOSS_HOME/server/default/deploy/gatein-sample-extension.ear</em></span> and <span class="emphasis"><em>$JBOSS_HOME/server/default/deploy/gatein-sample-portal.ear</em></span> which are packaged with GateIn 3.2 by default.
 			</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Single_Sign_On-CAS_Central_Authentication_Service"/>6.6.2. Central Authentication Service (CAS)</h3></div></div></div><p>
-			This Single-Sign-On plugin enables the seamless integration between GateIn 3.1 and the CAS Single-Sign-On Framework. Details about CAS can be found <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.ja-sig.org/products/cas/">here</a>.
+			This Single-Sign-On plugin enables the seamless integration between GateIn 3.2 and the CAS Single-Sign-On Framework. Details about CAS can be found <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jasig.org/cas">here</a>.
 		</p><p>
 			The integration consists of two steps: installing/configuring a CAS server and setting up the portal to use the CAS server.
 		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-CAS_Central_Authentication_Service-CAS_server"/>6.6.2.1. CAS server</h4></div></div></div><p>
 				First, set up the server to authenticate against the portal login module. In this example, the CAS server is installed on Tomcat.
 			</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-CAS_server-Obtaining_CAS"/>6.6.2.1.1. Obtaining CAS</h5></div></div></div><p>
 					CAS can be downloaded from <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jasig.org/cas/download">http://www.jasig.org/cas/download</a>.
+               Tested version, which should work with these instructions is <span class="bold"><strong>CAS 3.3.5</strong></span>, however other versions can also work without problems.
 				</p><p>
-					Extract the downloaded file into a suitable location. This location will be referred to as <code class="literal">$CAS_HOME</code> in the following example.
+					Extract the downloaded file into a suitable location. This location will be referred to as <span class="emphasis"><em>$CAS_HOME</em></span> in the following instructions.
 				</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-CAS_server-Modifying_CAS_server"/>6.6.2.1.2. Modifying the CAS server</h5></div></div></div><p>
 					To configure the web archive as desired, the simplest way is to make the necessary changes directly in the CAS codebase.
 				</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
                   To complete these instructions, and perform the final build step, you will need the Apache Maven 2.
                   You can get it <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://maven.apache.org/download.html">here</a>.
                </p></div><p>
-					First, change the default authentication handler with the one provided by GateIn 3.1.
+					First, change the default authentication handler with the one provided by GateIn 3.2.
 				</p><p>
-					The CAS Server Plugin makes secure authentication callbacks to a RESTful service installed on the remote GateIn 3.1 server to authenticate a user.
+					The CAS Server Plugin makes secure authentication callbacks to a RESTful service installed on the remote GateIn 3.2 server to authenticate a user.
 				</p><p>
-					In order for the plugin to function correctly, it needs to be properly configured to connect to this service. This configuration is done via the <code class="filename">cas.war/WEB-INF/deployerConfigContext.xml </code> file.
+					In order for the plugin to function correctly, it needs to be properly configured to connect to this service. This configuration is done via the <span class="emphasis"><em>cas.war/WEB-INF/deployerConfigContext.xml </em></span> file.
 				</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
-							Open <code class="filename">CAS_HOME/cas-server-webapp/src/main/webapp/WEB-INF/deployerConfigContext.xml</code>
+							Open <span class="emphasis"><em>CAS_HOME/cas-server-webapp/src/main/webapp/WEB-INF/deployerConfigContext.xml</em></span>
 						</p></li><li><p>
 							Replace:
             </p><pre class="programlisting"> &lt;!--
@@ -577,7 +578,7 @@ if (userId != null)
    &lt;/list&gt;
  &lt;/property&gt;
 </pre><p>
-							With the following (Make sure to set the host, port and context with the values corresponding to your portal). Also available in <code class="filename">GATEIN_SSO_HOME/cas/plugin/WEB-INF/deployerConfigContext.xml</code>.
+							With the following (Make sure to set the host, port and context with the values corresponding to your portal). Also available in <span class="emphasis"><em>GATEIN_SSO_HOME/cas/plugin/WEB-INF/deployerConfigContext.xml</em></span>.
 						</p><pre class="programlisting">&lt;!--
  | Whereas CredentialsToPrincipalResolvers identify who it is some Credentials might authenticate, 
  | AuthenticationHandlers actually authenticate credentials.  Here we declare the AuthenticationHandlers that
@@ -612,37 +613,52 @@ if (userId != null)
    &lt;/list&gt;
  &lt;/property&gt;
 </pre></li><li><p>
-							Copy <code class="filename">GATEIN_SSO_HOME/cas/plugin/WEB-INF/lib/sso-cas-plugin-&lt;VERSION&gt;.jar</code> and <code class="filename">GATEIN_SSO_HOME/cas/plugin/WEB-INF/lib/commons-httpclient-&lt;VERSION&gt;.jar</code> into the <code class="filename">CAS_HOME/cas-server-webapp/src/main/webapp/WEB-INF/lib</code> created directory.
+							Copy <span class="emphasis"><em>GATEIN_SSO_HOME/cas/plugin/WEB-INF/lib/sso-cas-plugin-&lt;VERSION&gt;.jar</em></span> and <span class="emphasis"><em>GATEIN_SSO_HOME/cas/plugin/WEB-INF/lib/commons-httpclient-&lt;VERSION&gt;.jar</em></span> into the <span class="emphasis"><em>CAS_HOME/cas-server-webapp/src/main/webapp/WEB-INF/lib</em></span> created directory.
 						</p></li><li><p>
-							Get an installation of Tomcat and extract it into a suitable location (which will be called <code class="filename">TOMCAT_HOME</code> for these instructions). 
+							Get an installation of Tomcat and extract it into a suitable location (which will be called <span class="emphasis"><em>TOMCAT_HOME</em></span> for these instructions). 
 						</p><p>
-							Change the default port to avoid a conflict with the default GateIn 3.1 (for testing purposes). Edit <code class="filename">TOMCAT_HOME/conf/server.xml</code> and replace the 8080 port with 8888.
+							Change the default port to avoid a conflict with the default GateIn 3.2 (for testing purposes). Edit <span class="emphasis"><em>TOMCAT_HOME/conf/server.xml</em></span> and replace the 8080 port with 8888.
 							</p><div class="note"><h2>Note</h2><p>
-									If GateIn 3.1 is running on the same machine as Tomcat, other ports need to be changed in addition to 8080 to avoid port conflicts.
+									If GateIn 3.2 is running on the same machine as Tomcat, other ports need to be changed in addition to 8080 to avoid port conflicts.
                            They can be changed to any free port. For example, you can change admin port from 8005 to 8805, and AJP port from 8009 to 8809.
 								</p></div><p>
 						</p></li><li><p>
-							Go to <code class="filename">CAS_HOME/cas-server-webapp</code> and execute the command:
+							Go to <span class="emphasis"><em>CAS_HOME/cas-server-webapp</em></span> and execute the command:
 </p><pre class="programlisting">mvn install
 </pre><p>
 						</p></li><li><p>
-							Copy <code class="filename">CAS_HOME/cas-server-webapp/target/cas.war</code> into <code class="filename">TOMCAT_HOME/webapps</code>.
+							Copy <span class="emphasis"><em>CAS_HOME/cas-server-webapp/target/cas.war</em></span> into <span class="emphasis"><em>TOMCAT_HOME/webapps</em></span>.
 						</p><p>
 							Tomcat should start and be accessible at <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/cas">http://localhost:8888/cas</a>. At this stage, the login will not be available.
-						</p><div class="mediaobject"><img src="images/AuthenticationAndIdentity/SSO/cas.png"/></div></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-CAS_Central_Authentication_Service-Setup_the_CAS_client"/>6.6.2.2. Set up the CAS client</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
-						Copy all libraries from <code class="filename">GATEIN_SSO_HOME/cas/gatein.ear/lib</code> into <code class="filename">JBOSS_HOME/server/default/deploy/gatein.ear/lib</code> (Or in Tomcat, into $<code class="filename">GATEIN_HOME/lib</code>)
+						</p><div class="mediaobject"><img src="images/AuthenticationAndIdentity/SSO/cas.png"/></div></li></ol></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+                  By default on logout the CAS server will display the CAS logout page with a link to return to the portal. To make the CAS server redirect to the portal page after a logout, modify the 
+                                  <span class="emphasis"><em>cas.war/WEB-INF/cas-servlet.xml</em></span> to include the follow line :
+                </p><pre class="programlisting">
+        &lt;bean id="logoutController" class="org.jasig.cas.web.LogoutController"
+                  p:centralAuthenticationService-ref="centralAuthenticationService"
+                  p:logoutView="casLogoutView"
+                  p:warnCookieGenerator-ref="warnCookieGenerator"
+                  p:ticketGrantingTicketCookieGenerator-ref="ticketGrantingTicketCookieGenerator"
+                <span class="emphasis"><em>p:followServiceRedirects="true"/&gt;</em></span>
+                </pre></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-CAS_Central_Authentication_Service-Setup_the_CAS_client"/>6.6.2.2. Set up the CAS client</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Copy all libraries from <span class="emphasis"><em>GATEIN_SSO_HOME/cas/gatein.ear/lib</em></span> into <span class="emphasis"><em>JBOSS_HOME/server/default/deploy/gatein.ear/lib</em></span> (Or in Tomcat, into $<span class="emphasis"><em>GATEIN_HOME/lib</em></span>)
 					</p></li><li><div class="itemizedlist"><ul><li><p>
-							In JBoss AS, edit <code class="filename">gatein.ear/META-INF/gatein-jboss-beans.xml</code> and uncomment on this section:
-							</p><pre class="programlisting">&lt;authentication&gt;
+							In JBoss AS, edit <span class="emphasis"><em>gatein.ear/META-INF/gatein-jboss-beans.xml</em></span> and uncomment on this section:
+							</p><pre class="programlisting">
+
+&lt;authentication&gt;
   &lt;login-module code="org.gatein.sso.agent.login.SSOLoginModule" flag="required"&gt;
-  &lt;/login-module&gt;      
+    &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+    &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+  &lt;/login-module&gt;
   &lt;login-module code="org.exoplatform.services.security.j2ee.JbossLoginModule" flag="required"&gt;
     &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
     &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
   &lt;/login-module&gt;
 &lt;/authentication&gt;
+
 </pre></li><li><p>
-							In Tomcat, edit <code class="filename">GATEIN_HOME/conf/jaas.conf</code>, uncomment on this section and comment other parts:
+							In Tomcat, edit <span class="emphasis"><em>GATEIN_HOME/conf/jaas.conf</em></span>, uncomment on this section and comment other parts:
 							</p><pre class="programlisting">org.gatein.sso.agent.login.SSOLoginModule required;
 org.exoplatform.services.security.j2ee.TomcatLoginModule required
 portalContainerName=portal
@@ -650,14 +666,14 @@ realmName=gatein-domain;
 </pre></li></ul></div></li><li><p>
 						The installation can be tested at this point:
 					</p><div class="procedure"><ol class="1"><li><p>
-								Start (or restart) GateIn 3.1, and (assuming the CAS server on Tomcat is running) direct your browser to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/cas">http://localhost:8888/cas</a>.
+								Start (or restart) GateIn 3.2, and (assuming the CAS server on Tomcat is running) direct your browser to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/cas">http://localhost:8888/cas</a>.
 							</p></li><li><p>
-								Login with the username <code class="literal">root</code> and the password <code class="literal">gtn</code> (or any account created through the portal).
+								Login with the username <span class="emphasis"><em>root</em></span> and the password <span class="emphasis"><em>gtn</em></span> (or any account created through the portal).
 							</p></li></ol></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-CAS_Central_Authentication_Service-Redirect_to_CAS"/>6.6.2.3. Redirect to CAS</h4></div></div></div><p>
-				To utilize the Central Authentication Service, GateIn 3.1 needs to redirect all user authentication to the CAS server.
+				To utilize the Central Authentication Service, GateIn 3.2 needs to redirect all user authentication to the CAS server.
 			</p><p>
-				Information about where the CAS is hosted must be properly configured within the GateIn 3.1 instance. The required configuration is done by modifying three files:</p><div class="itemizedlist"><ul><li><p>
-						In the <code class="filename">gatein.ear/web.war/groovy/groovy/webui/component/UIBannerPortlet.gtml</code> file, modify the 'Sign In' link as follows:
+				Information about where the CAS is hosted must be properly configured within the GateIn 3.2 instance. The required configuration is done by modifying three files:</p><div class="itemizedlist"><ul><li><p>
+						In the <span class="emphasis"><em>gatein.ear/web.war/groovy/groovy/webui/component/UIBannerPortlet.gtml</em></span> file, modify the 'Sign In' link as follows:
 </p><pre class="programlisting">
 
 &lt;!--
@@ -667,7 +683,7 @@ realmName=gatein-domain;
 
 </pre><p>
 						</p></li><li><p>
-						In the <code class="filename">gatein.ear/web.war/groovy/portal/webui/component/UILogoPortlet.gtmpl</code> file, modify the 'Sign In' link as follows:
+						In the <span class="emphasis"><em>gatein.ear/web.war/groovy/portal/webui/component/UILogoPortlet.gtmpl</em></span> file, modify the 'Sign In' link as follows:
 </p><pre class="programlisting">
 
 &lt;!--
@@ -677,8 +693,8 @@ realmName=gatein-domain;
 
 </pre><p>
 						</p></li><li><p>
-							Replace the entire contents of <code class="filename">gatein.ear/02portal.war/login/jsp/login.jsp</code> with:
-						</p></li></ul></div><pre class="programlisting">&lt;html&gt;
+							Replace the entire contents of <span class="emphasis"><em>gatein.ear/02portal.war/login/jsp/login.jsp</em></span> with:
+</p><pre class="programlisting">&lt;html&gt;
   &lt;head&gt;
     &lt;script type="text/javascript"&gt;
      window.location = '/portal/sso';
@@ -687,113 +703,119 @@ realmName=gatein-domain;
   &lt;body&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</pre><div class="itemizedlist"><ul><li><p>
-							Add the following filters at the top of the filter chain in <code class="filename">gatein.ear/02portal.war/WEB-INF/web.xml</code>:
-            </p></li></ul></div><pre class="programlisting">
-
-	&lt;filter&gt;
-		&lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
-		&lt;filter-class&gt;org.gatein.sso.agent.filter.LoginRedirectFilter&lt;/filter-class&gt;
-		&lt;init-param&gt;                                 
-		  &lt;!-- This should point to your SSO authentication server --&gt;                                                                                              
-		  &lt;param-name&gt;LOGIN_URL&lt;/param-name&gt;   
-		  &lt;!--
-		      If casRenewTicket param value of InitiateLoginServlet is:  not specified or false
-		  --&gt;
-		  &lt;param-value&gt;http://localhost:8888/cas/login?service=http://localhost:8080/portal/private/classic&lt;/param-value&gt;
-		  &lt;!--
-		      If casRenewTicket param value of InitiateLoginServlet is : true
-		  --&gt;
-		  &lt;!--
-		  &lt;param-value&gt;http://localhost:8888/cas/login?service=http://localhost:8080/portal/private
-		  /classic&amp;amp;renew=true&lt;/param-value&gt;      		  
-		  --&gt;
-		&lt;/init-param&gt;
-	&lt;/filter&gt;
-	&lt;filter&gt;
-		&lt;filter-name&gt;CASLogoutFilter&lt;/filter-name&gt;                                                                                              
-		&lt;filter-class&gt;org.gatein.sso.agent.filter.CASLogoutFilter&lt;/filter-class&gt;                                                      
-		&lt;init-param&gt;                                 
-		  &lt;!-- This should point to your JOSSO authentication server --&gt;                                                                                              
-		  &lt;param-name&gt;LOGOUT_URL&lt;/param-name&gt;                                                                                                
-		  &lt;param-value&gt;http://localhost:8888/cas/logout&lt;/param-value&gt;                                                                                                         
-		&lt;/init-param&gt;                                                                                                                              
-	&lt;/filter&gt;   
-	
-	&lt;!-- Mapping the filters at the very top of the filter chain --&gt;
-	&lt;filter-mapping&gt;
-	  &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
-	  &lt;url-pattern&gt;/*&lt;/url-pattern&gt;	         
-	&lt;/filter-mapping&gt;
-	&lt;filter-mapping&gt;
-	  &lt;filter-name&gt;CASLogoutFilter&lt;/filter-name&gt;
-	  &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-	&lt;/filter-mapping&gt;
-  
-</pre><div class="itemizedlist"><ul><li><p>
-							Replace the <code class="literal">InitiateLoginServlet</code> declaration in <code class="filename">gatein.ear/02portal.war/WEB-INF/web.xml</code> with:
-            </p></li></ul></div><pre class="programlisting">&lt;servlet&gt;
-  &lt;servlet-name&gt;InitiateLoginServlet&lt;/servlet-name&gt;
-  &lt;servlet-class&gt;org.gatein.sso.agent.GenericSSOAgent&lt;/servlet-class&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;ssoServerUrl&lt;/param-name&gt;
-    &lt;param-value&gt;http://localhost:8888/cas&lt;/param-value&gt;
-  &lt;/init-param&gt;    
-  &lt;init-param&gt;
-    &lt;param-name&gt;casRenewTicket&lt;/param-name&gt;
-    &lt;param-value&gt;false&lt;/param-value&gt;
-  &lt;/init-param&gt;
-&lt;/servlet&gt;
 </pre><p>
+               </p></li></ul></div><div class="itemizedlist"><ul><li><p>
+                  Add the following filters at the top of the filter chain in <span class="emphasis"><em>gatein.ear/02portal.war/WEB-INF/web.xml</em></span>:
+</p><pre class="programlisting">&lt;filter&gt;
+   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.LoginRedirectFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;!-- This should point to your SSO authentication server --&gt;
+      &lt;param-name&gt;LOGIN_URL&lt;/param-name&gt;
+      &lt;!-- If casRenewTicket param value of InitiateLoginServlet is: not specified or false --&gt;
+      &lt;param-value&gt;http://localhost:8888/cas/login?service=http://localhost:8080/portal/initiatessologin&lt;/param-value&gt;
+      &lt;!-- If casRenewTicket param value of InitiateLoginServlet is : true --&gt;
+      &lt;!-- &lt;param-value&gt;http://localhost:8888/cas/login? service=http://localhost:8080/portal/initiatessologin&amp;amp;renew=true&lt;/param-value&gt; --&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;CASLogoutFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.CASLogoutFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;!-- This should point to your JOSSO authentication server --&gt;
+      &lt;param-name&gt;LOGOUT_URL&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/cas/logout&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;InitiateLoginFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.InitiateLoginFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;ssoServerUrl&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/cas&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;casRenewTicket&lt;/param-name&gt;
+      &lt;param-value&gt;false&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;casServiceUrl&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8080/portal/initiatessologin&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;loginUrl&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8080/portal/dologin&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+
+&lt;!-- Mapping the filters at the very top of the filter chain --&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;CASLogoutFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;InitiateLoginFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/initiatessologin&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</pre><p>
+               </p></li></ul></div><p>
 				Once these changes have been made, all links to the user authentication pages will redirect to the CAS centralized authentication form.
 			</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Single_Sign_On-JOSSO"/>6.6.3. JOSSO</h3></div></div></div><p>
-			This Single-Sign-On plugin enables the seamless integration between GateIn 3.1 and the JOSSO Single-Sign-On Framework. Details about JOSSO can be found <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.josso.org">here</a>.
+			This Single-Sign-On plugin enables the seamless integration between GateIn 3.2 and the JOSSO Single-Sign-On Framework. Details about JOSSO can be found <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.josso.org">here</a>.
 		</p><p>
 			Setting up this integration consists of two steps: installing/configuring a JOSSO server, and setting up the portal to use the JOSSO server.
 		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-JOSSO-JOSSO_server"/>6.6.3.1. JOSSO server</h4></div></div></div><p>
-				This section describes how to set up the JOSSO server to authenticate against the GateIn 3.1 login module.
+				This section describes how to set up the JOSSO server to authenticate against the GateIn 3.2 login module.
 			</p><p>
 				In this example, the JOSSO server will be installed on Tomcat.
 			</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-JOSSO_server-Obtaining_JOSSO"/>6.6.3.1.1. Obtaining JOSSO</h5></div></div></div><p>
 					JOSSO can be downloaded from <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://sourceforge.net/projects/josso/files/">http://sourceforge.net/projects/josso/files/</a>. Use the package that embeds Apache Tomcat.
 				</p><p>
-					Once downloaded, extract the package into what will be called <code class="filename">JOSSO_HOME</code> in this example.
+					Once downloaded, extract the package into what will be called <span class="emphasis"><em>JOSSO_HOME</em></span> in this example.
 				</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="warning"><h2>Warning</h2><p>The steps described later are only correct in case of JOSSO v.1.8.1.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-JOSSO_server-Modifying_JOSSO_server"/>6.6.3.1.2. Modifying the JOSSO server</h5></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
-							Copy the files from <code class="filename">GATEIN_SSO_HOME/josso/plugin</code> into the Tomcat directory (<code class="filename">JOSSO_HOME</code>).
+							Copy the files from <span class="emphasis"><em>GATEIN_SSO_HOME/josso/plugin</em></span> into the Tomcat directory (<span class="emphasis"><em>JOSSO_HOME</em></span>).
 						</p><p>
-							This action should replace or add the following files to the <code class="filename">JOSSO_HOME/webapps/josso/WEB-INF/lib</code> directory:
+							This action should replace or add the following files to the <span class="emphasis"><em>JOSSO_HOME/webapps/josso/WEB-INF/lib</em></span> directory:
 						</p><div class="itemizedlist"><ul><li><p>
-									<code class="filename">JOSSO_HOME/lib/josso-gateway-config.xml</code>
+									<span class="emphasis"><em>JOSSO_HOME/lib/josso-gateway-config.xml</em></span>
 								</p></li><li><p>
-									<code class="filename">JOSSO_HOME/lib/josso-gateway-gatein-stores.xml</code>
+									<span class="emphasis"><em>JOSSO_HOME/lib/josso-gateway-gatein-stores.xml</em></span>
 								</p></li></ul></div><p>
 							and
 						</p><div class="itemizedlist"><ul><li><p>
-									<code class="filename">JOSSO_HOME/webapps/josso/WEB-INF/classes/gatein.properties</code>
+									<span class="emphasis"><em>JOSSO_HOME/webapps/josso/WEB-INF/classes/gatein.properties</em></span>
 								</p></li></ul></div></li><li><p>
-							Edit <code class="filename">TOMCAT_HOME/conf/server.xml</code> and replace the 8080 port with 8888 to change the default Tomcat port and avoid a conflict with the default GateIn 3.1 port (for testing purposes).
+							Edit <span class="emphasis"><em>TOMCAT_HOME/conf/server.xml</em></span> and replace the 8080 port with 8888 to change the default Tomcat port and avoid a conflict with the default GateIn 3.2 port (for testing purposes).
 							</p><div class="note"><h2>Port Conflicts</h2><p>
-                           If GateIn 3.1 is running on the same machine as Tomcat, other ports need to be changed in addition to 8080 to avoid port conflicts.
+                           If GateIn 3.2 is running on the same machine as Tomcat, other ports need to be changed in addition to 8080 to avoid port conflicts.
                            They can be changed to any free port. For example, you can change the admin port from 8005 to 8805, and AJP port from 8009 to 8809.
 								</p></div><p>
 						</p></li><li><p>
 							Tomcat should now start and allow access to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/josso/signon/login.do">http://localhost:8888/josso/signon/login.do</a>; but at this stage, login will not be available.
 						</p><div class="mediaobject"><img src="images/AuthenticationAndIdentity/SSO/opensso.png"/></div></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-JOSSO-Setup_the_JOSSO_client"/>6.6.3.2. Set up the JOSSO client</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
-						Copy the library files from <code class="filename">GATEIN_SSO_HOME/josso/gatein.ear/lib</code> into <code class="filename">gatein.ear/lib</code> (or into <code class="filename">GATEIN_HOME/lib</code> if GateIn 3.1 is  running in Tomcat)
+						Copy the library files from <span class="emphasis"><em>GATEIN_SSO_HOME/josso/gatein.ear/lib</em></span> into <span class="emphasis"><em>gatein.ear/lib</em></span> (or into <span class="emphasis"><em>GATEIN_HOME/lib</em></span> if GateIn 3.2 is  running in Tomcat)
 					</p></li><li><p>
-                  Copy the file <code class="filename">GATEIN_SSO_HOME/josso/gatein.ear/portal.war/WEB-INF/classes/josso-agent-config.xml</code> into <code class="filename">gatein.ear/02portal.war/WEB-INF/classes</code> (or into <code class="filename">GATEIN_HOME/webapps/portal.war/WEB-INF/classes</code>, or <code class="filename">GATEIN_HOME/conf</code> if GateIn 3.1 is running in Tomcat)
+                  Copy the file <span class="emphasis"><em>GATEIN_SSO_HOME/josso/gatein.ear/portal.war/WEB-INF/classes/josso-agent-config.xml</em></span> into <span class="emphasis"><em>gatein.ear/02portal.war/WEB-INF/classes</em></span> (or into <span class="emphasis"><em>GATEIN_HOME/webapps/portal.war/WEB-INF/classes</em></span>, or <span class="emphasis"><em>GATEIN_HOME/conf</em></span> if GateIn 3.2 is running in Tomcat)
                </p></li><li><div class="itemizedlist"><ul><li><p>
-								In JBoss AS, edit <code class="filename">gatein.ear/META-INF/gatein-jboss-beans.xml</code> and uncomment on this section:
-							</p><pre class="programlisting">&lt;authentication&gt;
+								In JBoss AS, edit <span class="emphasis"><em>gatein.ear/META-INF/gatein-jboss-beans.xml</em></span> and uncomment on this section:
+							</p><pre class="programlisting">
+
+&lt;authentication&gt;
   &lt;login-module code="org.gatein.sso.agent.login.SSOLoginModule" flag="required"&gt;
-  &lt;/login-module&gt;      
+    &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+    &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+  &lt;/login-module&gt;
   &lt;login-module code="org.exoplatform.services.security.j2ee.JbossLoginModule" flag="required"&gt;
     &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
     &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
   &lt;/login-module&gt;
 &lt;/authentication&gt;
+
 </pre></li><li><p>
-								In Tomcat, edit <code class="filename">GATEIN_HOME/conf/jaas.conf</code>, uncomment on this section and comment other parts:
+								In Tomcat, edit <span class="emphasis"><em>GATEIN_HOME/conf/jaas.conf</em></span>, uncomment on this section and comment other parts:
 							</p><pre class="programlisting">org.gatein.sso.agent.login.SSOLoginModule required;
 org.exoplatform.services.security.j2ee.TomcatLoginModule requiredtm	
 portalContainerName=portal
@@ -801,15 +823,15 @@ realmName=gatein-domain;
 </pre></li></ul></div></li><li><p>
 						The installation can be tested at this point.
 					</p><div class="procedure"><ol class="1"><li><p>
-								Start (or restart) GateIn 3.1, and (assuming the JOSSO server on Tomcat is running) direct your browser to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/josso/signon/login.do">http://localhost:8888/josso/signon/login.do</a>.
+								Start (or restart) GateIn 3.2, and (assuming the JOSSO server on Tomcat is running) direct your browser to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/josso/signon/login.do">http://localhost:8888/josso/signon/login.do</a>.
 							</p></li><li><p>
-								Login with the username <code class="literal">root</code> and the password <code class="literal">gtn</code> or any account created through the portal.
+								Login with the username <span class="emphasis"><em>root</em></span> and the password <span class="emphasis"><em>gtn</em></span> or any account created through the portal.
 							</p></li></ol></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-JOSSO-Setup_the_portal_to_redirect_to_JOSSO"/>6.6.3.3. Set up the portal to redirect to JOSSO</h4></div></div></div><p>
 				The next part of the process redirects all user authentication to the JOSSO server.
 			</p><p>
-				Information about where the JOSSO server is hosted must be properly configured within the GateIn 3.1 instance. The required configuration is done by modifying four files:
+				Information about where the JOSSO server is hosted must be properly configured within the GateIn 3.2 instance. The required configuration is done by modifying four files:
       </p><div class="itemizedlist"><ul><li><p>
-						In the <code class="filename">gatein.ear/web.war/groovy/groovy/webui/component/UIBannerPortlet.gtml</code> file, modify the 'Sign In' link as follows:
+						In the <span class="emphasis"><em>gatein.ear/web.war/groovy/groovy/webui/component/UIBannerPortlet.gtml</em></span> file, modify the 'Sign In' link as follows:
 </p><pre class="programlisting">
 
 &lt;!--
@@ -819,7 +841,7 @@ realmName=gatein-domain;
 
 </pre><p>
 						</p></li><li><p>
-						In the <code class="filename">gatein.ear/web.war/groovy/portal/webui/component/UILogoPortlet.gtmpl</code> file, modify the 'Sign In' link as follows:
+						In the <span class="emphasis"><em>gatein.ear/web.war/groovy/portal/webui/component/UILogoPortlet.gtmpl</em></span> file, modify the 'Sign In' link as follows:
 </p><pre class="programlisting">
 
 &lt;!--
@@ -829,8 +851,8 @@ realmName=gatein-domain;
 
 </pre><p>
 						</p></li></ul></div><div class="itemizedlist"><ul><li><p>
-							Replace the entire contents of <code class="filename">gatein.ear/02portal.war/login/jsp/login.jsp</code> with:
-						</p></li></ul></div><pre class="programlisting">&lt;html&gt;
+							Replace the entire contents of <span class="emphasis"><em>gatein.ear/02portal.war/login/jsp/login.jsp</em></span> with:
+</p><pre class="programlisting">&lt;html&gt;
   &lt;head&gt;
     &lt;script type="text/javascript"&gt;
      window.location = '/portal/sso';
@@ -839,84 +861,88 @@ realmName=gatein-domain;
   &lt;body&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</pre><div class="itemizedlist"><ul><li><p>
-							Add the following filters at the top of the filter chain in <code class="filename">gatein.ear/02portal.war/WEB-INF/web.xml</code>:
-            </p></li></ul></div><pre class="programlisting">
+</pre><p>
+						</p></li></ul></div><div class="itemizedlist"><ul><li><p>
+							Add the following filters at the top of the filter chain in <span class="emphasis"><em>gatein.ear/02portal.war/WEB-INF/web.xml</em></span>:							
+</p><pre class="programlisting">&lt;filter&gt;
+   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.LoginRedirectFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;!-- This should point to your SSO authentication server --&gt;
+      &lt;param-name&gt;LOGIN_URL&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/josso/signon/login.do?josso_back_to=http://localhost:8080/portal/initiatessologin&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;JOSSOLogoutFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.JOSSOLogoutFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;!-- This should point to your JOSSO authentication server --&gt;
+      &lt;param-name&gt;LOGOUT_URL&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/josso/signon/logout.do&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;InitiateLoginFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.InitiateLoginFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;ssoServerUrl&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/josso/signon/login.do&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;loginUrl&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8080/portal/dologin&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
 
-  &lt;filter&gt;
-      &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
-      &lt;filter-class&gt;org.gatein.sso.agent.filter.LoginRedirectFilter&lt;/filter-class&gt;
-      &lt;init-param&gt;                                 
-		&lt;!-- This should point to your SSO authentication server --&gt;                                                                                              
-		&lt;param-name&gt;LOGIN_URL&lt;/param-name&gt;                                                                                                
-		&lt;param-value&gt;http://localhost:8888/josso/signon/login.do?josso_back_to=http://localhost:8080/portal
-		/private/classic&lt;/param-value&gt;                                                                                                         
-      &lt;/init-param&gt;
-  &lt;/filter&gt;
-  &lt;filter&gt;
-      &lt;filter-name&gt;JOSSOLogoutFilter&lt;/filter-name&gt;                                                                                              
-      &lt;filter-class&gt;org.gatein.sso.agent.filter.JOSSOLogoutFilter&lt;/filter-class&gt;                                                      
-      &lt;init-param&gt;                                 
-        &lt;!-- This should point to your JOSSO authentication server --&gt;                                                                                              
-        &lt;param-name&gt;LOGOUT_URL&lt;/param-name&gt;                                                                                                
-        &lt;param-value&gt;http://localhost:8888/josso/signon/logout.do&lt;/param-value&gt;                                                                                                         
-      &lt;/init-param&gt;                                                                                                                              
-  &lt;/filter&gt;   
-  
-  &lt;!-- filters should be placed at the very top of the filter chain --&gt;
-  &lt;filter-mapping&gt;
-	  &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
-	  &lt;url-pattern&gt;/*&lt;/url-pattern&gt;	         
-  &lt;/filter-mapping&gt;	
-  &lt;filter-mapping&gt;
-     &lt;filter-name&gt;JOSSOLogoutFilter&lt;/filter-name&gt;
-     &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-  &lt;/filter-mapping&gt;
- 
-</pre><div class="itemizedlist"><ul><li><p>
-						Replace the <code class="literal">InitiateLoginServlet</code> declaration in <code class="filename">gatein.ear/02portal.war/WEB-INF/web.xml</code> with:
-						</p></li></ul></div><pre class="programlisting">&lt;servlet&gt;
-  &lt;servlet-name&gt;InitiateLoginServlet&lt;/servlet-name&gt;
-  &lt;servlet-class&gt;org.gatein.sso.agent.GenericSSOAgent&lt;/servlet-class&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;ssoServerUrl&lt;/param-name&gt;
-    &lt;param-value&gt;http://localhost:8888/josso/signon/login.do&lt;/param-value&gt;
-  &lt;/init-param&gt;    
-&lt;/servlet&gt;
-</pre><div class="itemizedlist"><ul><li><p>
-							Remove the <code class="literal">PortalLoginController</code> servlet declaration and mapping in <code class="filename">gatein.ear/02portal.war/WEB-INF/web.xml</code>
+&lt;!-- Mapping the filters at the very top of the filter chain --&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;JOSSOLogoutFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;InitiateLoginFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/initiatessologin&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</pre><p>
 						</p></li></ul></div><p>
 				From now on, all links redirecting to the user authentication pages will redirect to the JOSSO centralized authentication form.
 			</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="sect-Reference_Guide-Single_Sign_On-OpenSSO_The_Open_Web_SSO_project"/>6.6.4. OpenSSO - The Open Web SSO project</h3></div></div></div><p>
-			This Single-Sign-On plugin enables the seamless integration between GateIn 3.1 and the OpenSSO Single Sign On Framework. Details about OpenSSO can be found <a xmlns:xlink="http://www.w3.org/1999/xlink" href="https://opensso.dev.java.net/">here</a>.
+			This Single-Sign-On plugin enables the seamless integration between GateIn 3.2 and the OpenSSO Single Sign On Framework. Details about OpenSSO can be found <a xmlns:xlink="http://www.w3.org/1999/xlink" href="https://opensso.dev.java.net/">here</a>.
 		</p><p>
 			Setting up this integration consists of two steps: installing/configuring an OpenSSO server, and setting up the portal to use the OpenSSO server.
 		</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-OpenSSO_The_Open_Web_SSO_project-OpenSSO_server"/>6.6.4.1. OpenSSO server</h4></div></div></div><p>
-				 This section details the setup of OpenSSO server to authenticate against the GateIn 3.1 login module.
+				 This section details the setup of OpenSSO server to authenticate against the GateIn 3.2 login module.
 			</p><p>
 				In this example, the OpenSSO server will be installed on Tomcat.
 			</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-OpenSSO_server-Obtaining_OpenSSO"/>6.6.4.1.1. Obtaining OpenSSO</h5></div></div></div><p>
 					OpenSSO can be downloaded from <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://download.oracle.com/otn/nt/middleware/11g/oracle_opensso_80U2.zip">http://download.oracle.com/otn/nt/middleware/11g/oracle_opensso_80U2.zip</a>.
 				</p><p>
-					Once downloaded, extract the package into a suitable location. This location will be referred to as <code class="filename">OPENSSO_HOME</code> in this example.
-				</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-OpenSSO_server-Modifying_OpenSSO_server"/>6.6.4.1.2. Modifying the OpenSSO server</h5></div></div></div><p>
+					Once downloaded, extract the package into a suitable location. This location will be referred to as <span class="emphasis"><em>OPENSSO_HOME</em></span> in this example.
+				</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+                  There is also possibility to use OpenAM instead of OpenSSO server. OpenAM is free and integration steps with GateIn 3.2 and OpenAM are very similar as with OpenSSO. More info is
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://community.jboss.org/wiki/GateInAndOpenAMIntegration">here</a> .
+               </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h5 class="title"><a id="sect-Reference_Guide-OpenSSO_server-Modifying_OpenSSO_server"/>6.6.4.1.2. Modifying the OpenSSO server</h5></div></div></div><p>
 					 To configure the web server as desired, it is simpler to directly modify the sources. 
 				</p><p>
-					The first step is to add the GateIn 3.1 Authentication Plugin:
+					The first step is to add the GateIn 3.2 Authentication Plugin:
 				</p><p>
-					The plugin makes secure authentication callbacks to a RESTful service installed on the remote GateIn 3.1 server to authenticate a user.
+					The plugin makes secure authentication callbacks to a RESTful service installed on the remote GateIn 3.2 server to authenticate a user.
 				</p><p>
-					In order for the plugin to function correctly, it needs to be properly configured to connect to this service. This configuration is done via the <code class="filename">opensso.war/config/auth/default/AuthenticationPlugin.xml</code> file.
+					In order for the plugin to function correctly, it needs to be properly configured to connect to this service. This configuration is done via the <span class="emphasis"><em>opensso.war/config/auth/default/AuthenticationPlugin.xml</em></span> file.
 				</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
-							Obtain a copy of Tomcat and extract it into a suitable location (this location will be referred to as <code class="filename">TOMCAT_HOME</code> in this example).
+							Obtain a copy of Tomcat and extract it into a suitable location (this location will be referred to as <span class="emphasis"><em>TOMCAT_HOME</em></span> in this example).
 						</p></li><li><p>
-							Change the default port to avoid a conflict with the default GateIn 3.1 port (for testing purposes) by editing <code class="filename">TOMCAT_HOME/conf/server.xml</code> and replacing the 8080 port with 8888.
+							Change the default port to avoid a conflict with the default GateIn 3.2 port (for testing purposes) by editing <span class="emphasis"><em>TOMCAT_HOME/conf/server.xml</em></span> and replacing the 8080 port with 8888.
 							</p><div class="note"><h2>Note</h2><p>
-                           If GateIn 3.1 is running on the same machine as Tomcat, other ports need to be changed in addition to 8080 to avoid port conflicts.
+                           If GateIn 3.2 is running on the same machine as Tomcat, other ports need to be changed in addition to 8080 to avoid port conflicts.
                            They can be changed to any free port. For example, you can change the admin port from 8005 to 8805, and AJP port from 8009 to 8809.
 								</p></div><p>
 						</p></li><li><p>
-							Ensure the <code class="filename">TOMCAT_HOME/webapps/opensso/config/auth/default/AuthenticationPlugin.xml</code> file looks like this:
+							Ensure the <span class="emphasis"><em>TOMCAT_HOME/webapps/opensso/config/auth/default/AuthenticationPlugin.xml</em></span> file looks like this:
             </p><pre class="programlisting">
 &lt;?xml version='1.0' encoding="UTF-8"?&gt;
 
@@ -939,39 +965,44 @@ realmName=gatein-domain;
   &lt;/Callbacks&gt;
 &lt;/ModuleProperties&gt;
 </pre></li><li><p>
-							Copy <code class="filename">GATEIN_SSO_HOME/opensso/plugin/WEB-INF/lib/sso-opensso-plugin-&lt;VERSION&gt;.jar</code>, <code class="filename">GATEIN_SSO_HOME/opensso/plugin/WEB-INF/lib/commons-httpclient-&lt;VERSION&gt;.jar</code>, and <code class="filename">GATEIN_SSO_HOME/opensso/plugin/WEB-INF/lib/commons-logging-&lt;VERSION&gt;.jar</code> into the Tomcat directory at <code class="filename">TOMCAT_HOME/webapps/opensso/WEB-INF/lib</code>.
+							Copy <span class="emphasis"><em>GATEIN_SSO_HOME/opensso/plugin/WEB-INF/lib/sso-opensso-plugin-&lt;VERSION&gt;.jar</em></span>, <span class="emphasis"><em>GATEIN_SSO_HOME/opensso/plugin/WEB-INF/lib/commons-httpclient-&lt;VERSION&gt;.jar</em></span>, and <span class="emphasis"><em>GATEIN_SSO_HOME/opensso/plugin/WEB-INF/lib/commons-logging-&lt;VERSION&gt;.jar</em></span> into the Tomcat directory at <span class="emphasis"><em>TOMCAT_HOME/webapps/opensso/WEB-INF/lib</em></span>.
 						</p></li><li><p>
-							Copy <code class="filename">GATEIN_SSO_HOME/opensso/plugin/WEB-INF/classes/gatein.properties</code> into <code class="filename">TOMCAT_HOME/webapps/opensso/WEB-INF/classes</code>.
+							Copy <span class="emphasis"><em>GATEIN_SSO_HOME/opensso/plugin/WEB-INF/classes/gatein.properties</em></span> into <span class="emphasis"><em>TOMCAT_HOME/webapps/opensso/WEB-INF/classes</em></span>.
 						</p></li><li><p>
 							Tomcat should start and be able to access <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/opensso/UI/Login?realm=gatein">http://localhost:8888/opensso/UI/Login?realm=gatein</a>. Login will not be available at this point.
-						</p><div class="mediaobject"><img src="images/AuthenticationAndIdentity/SSO/opensso-shot.png"/></div></li></ol></div><p>Configure the "gatein" realm:</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>Direct your browser to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/opensso">http://localhost:8888/opensso</a>.</p></li><li><p>Create the default configuration.</p></li><li><p>Login as <code class="literal">an admin</code> and then go to the "Configuration" tab -&gt; "Authentication" -&gt; "Core" link -&gt;
-                        add a new value and fill in the class name "org.gatein.sso.opensso.plugin.AuthenticationPlugin".
+						</p><div class="mediaobject"><img src="images/AuthenticationAndIdentity/SSO/opensso-shot.png"/></div></li></ol></div><p>Configure the "gatein" realm:</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>Direct your browser to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/opensso">http://localhost:8888/opensso</a>.</p></li><li><p>Create the default configuration.</p></li><li><p>Login as <span class="emphasis"><em>amadmin</em></span> and then go to the <span class="bold"><strong>Configuration</strong></span> tab -&gt; <span class="bold"><strong>Authentication</strong></span> -&gt; <span class="bold"><strong>Core</strong></span> link -&gt;
+                        add a new value and fill in the class name <span class="bold"><strong>org.gatein.sso.opensso.plugin.AuthenticationPlugin</strong></span>.
                         This step is really important. If not, AuthenticationPlugin is not available among other the OpenSSO authentication modules.
-                     </p></li><li><p>Go to the "Access control" tab and create the new realm called "gatein".</p></li><li><p>Go to the "gatein" realm and click the "Authentication" tab. At the bottom of the "Authentication chaining" section, click "ldapService".
-                     Here, change the selection from "Datastore", which is the default module in the authentication chain, to "AuthenticationPlugin".
+                     </p></li><li><p>Go to the <span class="bold"><strong>Access control</strong></span> tab and create the new realm called <span class="bold"><strong>gatein</strong></span>.</p></li><li><p>Go to the "gatein" realm and click the <span class="bold"><strong>Authentication</strong></span> tab. At the bottom of the <span class="bold"><strong>Authentication chaining</strong></span> section, click <span class="bold"><strong>ldapService</strong></span>.
+                     Here, change the selection from "Datastore", which is the default module in the authentication chain, to <span class="bold"><strong>AuthenticationPlugin</strong></span>.
                      This enables the authentication of "gatein" realm by using the GateIn REST service instead of the OpenSSO LDAP server.</p></li><li><p>
-                     Go to "Advanced properties" and change UserProfile from "Required" to "Dynamic". This step is needed
-                     because GateIn 3.1 users are not in the OpenSSO Datastore (LDAP server), so their profiles can not be obtained
+                     Go to <span class="bold"><strong>Advanced properties</strong></span> and change UserProfile from <span class="bold"><strong>Required</strong></span> to <span class="bold"><strong>Dynamic</strong></span>. This step is needed
+                     because GateIn 3.2 users are not in the OpenSSO Datastore (LDAP server), so their profiles can not be obtained
                      if "Required" is active. By using "Dynamic", all new users are automatically
                      created in the OpenSSO datastore after successful authentication.
                   </p></li><li><p>
-                     Increase the user privileges to allow the REST access. Go to "Access control" -&gt;
-                     Top level realm -&gt; "Privileges" tab -&gt; All authenticated users, and check the last two checkboxes:
+                     Increase the user privileges to allow the REST access. Go to <span class="bold"><strong>Access control</strong></span> -&gt;
+                     <span class="bold"><strong>Top level realm</strong></span> -&gt; <span class="bold"><strong>Privileges</strong></span> tab -&gt; <span class="bold"><strong>All authenticated users</strong></span>, and check the last two checkboxes:
                      </p><div class="itemizedlist"><ul><li><p>Read and write access only for policy properties.</p></li><li><p>Read and write access to all realm and policy properties.</p></li></ul></div><p>
-                  </p></li><li><p>Do the same for the "gatein" realm.</p></li></ol></div><p>Also, instead of configuring OpenSSO manually as above, you can refer to the available configuration files <a xmlns:xlink="http://www.w3.org/1999/xlink" href="https://repository.jboss.org/nexus/content/groups/public/org/gatein/sso/sso-packaging/1.0.1-GA/sso-packaging-1.0.1-GA.zip">here</a>.</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-OpenSSO_The_Open_Web_SSO_project-Setup_the_OpenSSO_client"/>6.6.4.2. Set up the OpenSSO client.</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
-						Copy all libraries from <code class="filename">GATEIN_SSO_HOME/opensso/gatein.ear/lib</code> into <code class="filename">JBOSS_HOME/server/default/deploy/gatein.ear/lib</code> (Or, in Tomcat, into <code class="filename">GATEIN_HOME/lib</code>)
+                  </p></li><li><p>Repeat previous step with increasing privileges for <span class="bold"><strong>gatein</strong></span> realm as well.</p></li></ol></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-OpenSSO_The_Open_Web_SSO_project-Setup_the_OpenSSO_client"/>6.6.4.2. Set up the OpenSSO client.</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
+						Copy all libraries from <span class="emphasis"><em>GATEIN_SSO_HOME/opensso/gatein.ear/lib</em></span> into <span class="emphasis"><em>JBOSS_HOME/server/default/deploy/gatein.ear/lib</em></span> (Or, in Tomcat, into <span class="emphasis"><em>GATEIN_HOME/lib</em></span>)
 					</p></li><li><div class="itemizedlist"><ul><li><p>
 								In JBoss AS, edit gatein.ear/META-INF/gatein-jboss-beans.xml and uncomment on this section
-							</p><pre class="programlisting">&lt;authentication&gt;
+							</p><pre class="programlisting">
+
+&lt;authentication&gt;
   &lt;login-module code="org.gatein.sso.agent.login.SSOLoginModule" flag="required"&gt;
-  &lt;/login-module&gt;      
+    &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+    &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+  &lt;/login-module&gt;
   &lt;login-module code="org.exoplatform.services.security.j2ee.JbossLoginModule" flag="required"&gt;
     &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
     &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
   &lt;/login-module&gt;
 &lt;/authentication&gt;
+
 </pre></li><li><p>
-								If you are running GateIn 3.1 in Tomcat, edit $GATEIN_HOME/conf/jaas.conf, uncomment on this section and comment other parts:
+								If you are running GateIn 3.2 in Tomcat, edit $GATEIN_HOME/conf/jaas.conf, uncomment on this section and comment other parts:
 							</p><pre class="programlisting">org.gatein.sso.agent.login.SSOLoginModule required;
 org.exoplatform.services.security.j2ee.TomcatLoginModule required
 portalContainerName=portal
@@ -979,15 +1010,15 @@ realmName=gatein-domain;
 </pre></li></ul></div><p>
 						At this point, the installation can be tested: 
 					</p><div class="procedure"><ol class="1"><li><p>
-								Access GateIn 3.1 by going to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/opensso/UI/Login?realm=gatein">http://localhost:8888/opensso/UI/Login?realm=gatein</a> (assuming that the OpenSSO server using Tomcat is still running).
+								Access GateIn 3.2 by going to <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://localhost:8888/opensso/UI/Login?realm=gatein">http://localhost:8888/opensso/UI/Login?realm=gatein</a> (assuming that the OpenSSO server using Tomcat is still running).
 							</p></li><li><p>
-								Login with the username <code class="literal">root</code> and the password <code class="literal">gtn</code> or any account created through the portal.
+								Login with the username <span class="emphasis"><em>root</em></span> and the password <span class="emphasis"><em>gtn</em></span> or any account created through the portal.
 							</p></li></ol></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="sect-Reference_Guide-OpenSSO_The_Open_Web_SSO_project-Setup_the_portal_to_redirect_to_OpenSSO"/>6.6.4.3. Set up the portal to redirect to OpenSSO</h4></div></div></div><p>
 				The next part of the process is to redirect all user authentication to the OpenSSO server.
 			</p><p>
 				Information about where the OpenSSO server is hosted must be properly configured within the Enterprise Portal Platform instance. The required configuration is done by modifying three files:
       </p><div class="itemizedlist"><ul><li><p>
-						In the <code class="filename">gatein.ear/web.war/groovy/groovy/webui/component/UIBannerPortlet.gtml</code> file, modify the 'Sign In' link as follows:
+						In the <span class="emphasis"><em>gatein.ear/web.war/groovy/groovy/webui/component/UIBannerPortlet.gtml</em></span> file, modify the 'Sign In' link as follows:
 </p><pre class="programlisting">
 
 &lt;!--
@@ -997,7 +1028,7 @@ realmName=gatein-domain;
 
 </pre><p>
 						</p></li><li><p>
-						In the <code class="filename">gatein.ear/web.war/groovy/portal/webui/component/UILogoPortlet.gtmpl</code> file, modify the 'Sign In' link as follows:
+						In the <span class="emphasis"><em>gatein.ear/web.war/groovy/portal/webui/component/UILogoPortlet.gtmpl</em></span> file, modify the 'Sign In' link as follows:
 </p><pre class="programlisting">
 
 &lt;!--
@@ -1007,8 +1038,8 @@ realmName=gatein-domain;
 
 </pre><p>
 						</p></li></ul></div><div class="itemizedlist"><ul><li><p>
-							Replace the entire contents of <code class="filename">gatein.ear/02portal.war/login/jsp/login.jsp</code> with:
-						</p></li></ul></div><pre class="programlisting">&lt;html&gt;
+							Replace the entire contents of <span class="emphasis"><em>gatein.ear/02portal.war/login/jsp/login.jsp</em></span> with:
+</p><pre class="programlisting">&lt;html&gt;
   &lt;head&gt;
     &lt;script type="text/javascript"&gt;
      window.location = '/portal/sso';
@@ -1017,72 +1048,80 @@ realmName=gatein-domain;
   &lt;body&gt;
   &lt;/body&gt;
 &lt;/html&gt;
-</pre><div class="itemizedlist"><ul><li><p>
-							Add the following filters at the top of the filter chain in <code class="filename">gatein.ear/02portal.war/WEB-INF/web.xml</code>:
-            </p></li></ul></div><pre class="programlisting">
-
-  &lt;filter&gt;
-      &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
-      &lt;filter-class&gt;org.gatein.sso.agent.filter.LoginRedirectFilter&lt;/filter-class&gt;
-      &lt;init-param&gt;                                 
-	&lt;!-- This should point to your SSO authentication server --&gt;                                                                                              
-	&lt;param-name&gt;LOGIN_URL&lt;/param-name&gt;                                                                                                
-	&lt;param-value&gt;http://localhost:8888/opensso/UI/Login?realm=gatein&amp;amp;goto=http://localhost:8080
-	/portal/private/classic&lt;/param-value&gt;                                                                                                         
-      &lt;/init-param&gt;
-  &lt;/filter&gt;
-  &lt;filter&gt;	
-      &lt;filter-name&gt;OpenSSOLogoutFilter&lt;/filter-name&gt;                                                                                              
-      &lt;filter-class&gt;org.gatein.sso.agent.filter.OpenSSOLogoutFilter&lt;/filter-class&gt;                                                      
-      &lt;init-param&gt;                                 
-        &lt;!-- This should point to your OpenSSO authentication server --&gt;                                                                                              
-        &lt;param-name&gt;LOGOUT_URL&lt;/param-name&gt;                                                                                                
-        &lt;param-value&gt;http://localhost:8888/opensso/UI/Logout&lt;/param-value&gt;                                                                                                         
-      &lt;/init-param&gt;                                                                                                                              
-  &lt;/filter&gt;   
-  
-  &lt;!-- place the filters at the top of the filter chain --&gt;
-  &lt;filter-mapping&gt;
-	  &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
-	  &lt;url-pattern&gt;/*&lt;/url-pattern&gt;	         
-  &lt;/filter-mapping&gt;
-  &lt;filter-mapping&gt;
-     &lt;filter-name&gt;OpenSSOLogoutFilter&lt;/filter-name&gt;
-     &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
-  &lt;/filter-mapping&gt;
- 
-</pre><div class="itemizedlist"><ul><li><p>
-						Replace the <code class="literal">InitiateLoginServlet</code> declaration in <code class="filename">gatein.ear/02portal.war/WEB-INF/web.xml</code> with:
-						</p></li></ul></div><pre class="programlisting">&lt;servlet&gt;
-  &lt;servlet-name&gt;InitiateLoginServlet&lt;/servlet-name&gt;
-  &lt;servlet-class&gt;org.gatein.sso.agent.GenericSSOAgent&lt;/servlet-class&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;ssoServerUrl&lt;/param-name&gt;
-    &lt;param-value&gt;http://localhost:8888/opensso&lt;/param-value&gt;
-  &lt;/init-param&gt; 
-  &lt;init-param&gt;
-    &lt;param-name&gt;ssoCookieName&lt;/param-name&gt;
-    &lt;param-value&gt;iPlanetDirectoryPro&lt;/param-value&gt;
-  &lt;/init-param&gt;   
-&lt;/servlet&gt;
 </pre><p>
+						</p></li></ul></div><div class="itemizedlist"><ul><li><p>
+                  Add the following filters at the top of the filter chain in <span class="emphasis"><em>gatein.ear/02portal.war/WEB-INF/web.xml</em></span>:
+</p><pre class="programlisting">&lt;filter&gt;
+   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.LoginRedirectFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;!-- This should point to your SSO authentication server --&gt;
+      &lt;param-name&gt;LOGIN_URL&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/opensso/UI/Login?realm=gatein&amp;amp;goto=http://localhost:8080/portal/initiatessologin&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;OpenSSOLogoutFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.OpenSSOLogoutFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;!-- This should point to your SSO authentication server --&gt;
+      &lt;param-name&gt;LOGOUT_URL&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/opensso/UI/Logout&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+&lt;filter&gt;
+   &lt;filter-name&gt;InitiateLoginFilter&lt;/filter-name&gt;
+   &lt;filter-class&gt;org.gatein.sso.agent.filter.InitiateLoginFilter&lt;/filter-class&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;ssoServerUrl&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8888/opensso&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;loginUrl&lt;/param-name&gt;
+      &lt;param-value&gt;http://localhost:8080/portal/dologin&lt;/param-value&gt;
+   &lt;/init-param&gt;
+   &lt;init-param&gt;
+      &lt;param-name&gt;ssoCookieName&lt;/param-name&gt;
+      &lt;param-value&gt;iPlanetDirectoryPro&lt;/param-value&gt;
+   &lt;/init-param&gt;
+&lt;/filter&gt;
+
+&lt;!-- Mapping the filters at the very top of the filter chain --&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;OpenSSOLogoutFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;filter-mapping&gt;
+   &lt;filter-name&gt;InitiateLoginFilter&lt;/filter-name&gt;
+   &lt;url-pattern&gt;/initiatessologin&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</pre><p>
+               </p></li></ul></div><p>
 				From now on, all links redirecting to the user authentication pages will redirect to the OpenSSO centralized authentication form.
 			</p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="Single_Sign_On-SPNEGO"/>6.6.5. SPNEGO</h3></div></div></div><p>SPNEGO (Simple and Protected GSSAPI Negotiation Mechanism) is
 			used to authenticate transparently through the web browser after the
-			user has been authenticated when logging in.</p><p>See the following typical usecase:</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>The user logs into the desktop, such as a Windows machine.</p></li><li><p>The desktop login is governed by the Active Directory domain.</p></li><li><p>Next, the user opens the browser (IE/Firefox) to access a web
+            user has been authenticated when logging-in his session.</p><p>A typical use case is the following:</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>The user logs into the desktop, such as a Windows machine.</p></li><li><p>The desktop login is governed by the Active Directory domain.</p></li><li><p>Next, the user opens the browser (IE/Firefox) to access a web
 					application (that uses JBoss Negotiation) hosted on JBoss EPP.</p></li><li><p>The Browser transfers the desktop sign-on information to the
 					web application.</p></li><li><p>JBoss EAP/AS uses the background GSS messages with the Active
-					Directory (or any Kerberos server) to validate the user.</p></li><li><p>The User has a seamless SSO into the web application.</p></li></ol></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="SPNEGO_server_configuration"/>6.6.5.1. SPNEGO Server Configuration</h4></div></div></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>Information stated here only describes basic steps for you to configure the SPNEGO server. If you are already familiar with SPNEGO, jump to the <a href="chap-Reference_Guide-Authentication_And_Identity.html#Single_Sign_On-SPNEGO-GateIn_Configuration" title="6.6.5.2. GateIn 3.1 Configuration">Section 6.6.5.2, “GateIn 3.1 Configuration”</a> to see how to integrate SPNEGO with GateIn.</p></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>Correct the setup of network on the machine. For example, if you are using the "server.local.network" domain as your machine where Kerberos and GateIn 3.1 are localed,
-          add the line containing the machine's IP address to the <span class="bold"><strong>/etc/host </strong></span> file.
+					Directory (or any Kerberos Server) to validate the Kerberos ticket from user.</p></li><li><p>The User has a seamless SSO into the web application.</p></li></ol></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="SPNEGO_server_configuration"/>6.6.5.1. SPNEGO Server Configuration</h4></div></div></div><p>
+       In this section, we will describe some necessary steps for setup Kerberos server on Linux. This server will then be used for SPNEGO authentication against GateIn 3.2
+    </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>If you don't have Linux but you are using Windows and Active Directory domain,
+         then these informations are not important for you and you may jump to the <a href="chap-Reference_Guide-Authentication_And_Identity.html#Single_Sign_On-SPNEGO-GateIn_Configuration" title="6.6.5.3. GateIn 3.2 Configuration">Section 6.6.5.3, “GateIn 3.2 Configuration”</a> to see how to integrate SPNEGO with GateIn 3.2.
+         Please note that Kerberos setup is also dependent on your Linux distribution and so steps can be slightly different in your environment.
+      </p></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>Correct the setup of network on the machine. For example, if you are using the "server.local.network" domain as your machine where Kerberos and GateIn 3.2 are located,
+          add the line containing the machine's IP address to the <span class="bold"><strong>/etc/hosts</strong></span> file.
           </p><pre class="programlisting">
 192.168.1.88  server.local.network
-          </pre><div class="note"><h2>Note</h2><p>It is not recommended you use loopback addresses.</p></div></li><li><p>Install Kerberos with these packages: krb5-admin-server, krb5-kdc, krb5-config, krb5-user, krb5-clients, and krb5-rsh-server.
-          </p></li><li><p>Edit the Kerberos configuration file at <span class="bold"><strong>/etc/krb5.config</strong></span>, including:
+          </pre><div class="note"><h2>Note</h2><p>It is not recommended to use loopback addresses.</p></div></li><li><p>Install Kerberos with these packages: krb5-admin-server, krb5-kdc, krb5-config, krb5-user, krb5-clients, and krb5-rsh-server.
+          </p></li><li><p>Edit the Kerberos configuration file at <span class="emphasis"><em>/etc/krb5.config</em></span>, including:
           </p><div class="itemizedlist"><ul><li><p>Uncomment on these lines:</p><pre class="programlisting">
 default_tgs_enctypes = des3-hmac-sha1
 default_tkt_enctypes = des3-hmac-sha1
 permitted_enctypes = des3-hmac-sha1
-</pre></li><li><p>Add <span class="bold"><strong>local.network</strong></span> as a default realm and it is also added to the list of realms and remove the remains of realms. The content looks like:
+</pre></li><li><p>Add <span class="emphasis"><em>local.network</em></span> as a default realm and it is also added to the list of realms and remove the remains of realms. The content looks like:
               </p><pre class="programlisting">
 [libdefaults]
     default_realm = LOCAL.NETWORK
@@ -1135,7 +1174,7 @@ permitted_enctypes = des3-hmac-sha1
 [login]
     krb4_convert = true
     krb4_get_tickets = false
-</pre></li></ul></div></li><li><p>Edit the KDC configuraton file at <span class="bold"><strong>/etc/krb5kdc/kdc.conf</strong></span> that looks like.
+</pre></li></ul></div></li><li><p>Edit the KDC configuraton file at <span class="emphasis"><em>/etc/krb5kdc/kdc.conf</em></span> that looks like.
           </p><pre class="programlisting">
 [kdcdefaults]
     kdc_ports = 750,88
@@ -1164,40 +1203,56 @@ sudo /etc/init.d/krb5-kdc restart
 sudo /etc/init.d/krb-admin-server restart
 </pre></li></ul></div></li><li><p>Add Principals and create Keys.</p><div class="itemizedlist"><ul><li><p>Start an interactive 'kadmin' session and create the necessary Principals.</p><pre class="programlisting">
 sudo kadmin.local
-</pre></li><li><p>Add the GateIn 3.1 machine and keytab file that need to be authenticated.</p><pre class="programlisting">
+</pre></li><li><p>Add the GateIn 3.2 machine and keytab file that need to be authenticated.</p><pre class="programlisting">
 addprinc -randkey HTTP/server.local.network@LOCAL.NETWORK
 ktadd HTTP/server.local.network@LOCAL.NETWORK
-</pre></li><li><p>Add the default GateIn 3.1 user accounts and enter the password for each created user that will be authenticated.</p><pre class="programlisting">
+</pre></li><li><p>Add the default GateIn 3.2 user accounts and enter the password for each created user that will be authenticated.</p><pre class="programlisting">
 addprinc john
 addprinc demo
 addprinc root
 </pre></li></ul></div></li><li><p>Test your changed setup by using the command.</p><pre class="programlisting">
 kinit -A demo
-</pre><div class="itemizedlist"><ul><li><p>If the setup works well, you are required to enter the password created for this user in Step 5.</p></li><li><p>If you want to login with another user, use this command.</p><pre class="programlisting">
+</pre><div class="itemizedlist"><ul><li><p>If the setup works well, you are required to enter the password created for this user in Step 5.
+                 Without the -A, the kerberos ticket validation involved reverse DNS lookups, which can get very cumbersome to debug if your network's DNS setup is not great.
+                 This is a production level security feature, which is not necessary in this development setup. In production environment, it will be better to avoid -A option.
+              </p></li><li><p>After successful login to Kerberos, you can see your Kerberos ticket when using this command.</p><pre class="programlisting">
+klist
+</pre></li><li><p>If you want to logout and destroy your ticket, use this command.</p><pre class="programlisting">
 kdestroy
-</pre></li></ul></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="Single_Sign_On-SPNEGO-GateIn_Configuration"/>6.6.5.2. GateIn 3.1 Configuration</h4></div></div></div><p>GateIn 3.1 uses JBoss Negotiation to enable SPNEGO-based desktop
+</pre></li></ul></div></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="Single_Sign_On-CAS_Central_Clients"/>6.6.5.2. Clients</h4></div></div></div><p>After performing all configurations above, you need to enable the <span class="bold"><strong>Negotiate authentication </strong></span> of Firefox in client machines so that clients could be authenticated by GateIn 3.2 as follows:
+          </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>Start Firefox, then enter the command: <span class="bold"><strong>about:config </strong></span> into the address field.</p></li><li><p>Enter <span class="bold"><strong>network.negotiate-auth</strong></span> and set the value as below:</p><pre class="programlisting">
+network.negotiate-auth.allow-proxies = true
+network.negotiate-auth.delegation-uris = .local.network
+network.negotiate-auth.gsslib (no-value)
+network.negotiate-auth.trusted-uris = .local.network
+network.negotiate-auth.using-native-gsslib = true
+</pre></li></ol></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>
+          Consult documentation of your OS or web browser if using different browser than Firefox.
+        </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="Single_Sign_On-SPNEGO-GateIn_Configuration"/>6.6.5.3. GateIn 3.2 Configuration</h4></div></div></div><p>GateIn 3.2 uses JBoss Negotiation to enable SPNEGO-based desktop
 				SSO for the portal. Here are the steps to integrate SPNEGO with
-				GateIn 3.1.
+				GateIn 3.2.
         </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>
-						Activate the Host authentication under the <span class="bold"><strong>conf/login-config.xml </strong></span> file adding the following host login module:
-          </p><pre class="programlisting">
-<span class="ERROR">&lt;application-policy&gt;
-  <span class="ERROR">&lt;authentication&gt;
-    <span class="ERROR">&lt;login-module&gt;
-      <span class="ERROR">&lt;module-option&gt;true&lt;/module-option&gt;</span>
-      <span class="ERROR">&lt;module-option&gt;true&lt;/module-option&gt;</span>
-      <span class="ERROR">&lt;module-option&gt;HTTP/server.local.network@LOCAL.NETWORK&lt;/module-option&gt;</span>
-      <span class="ERROR">&lt;module-option&gt;/etc/krb5.keytab&lt;/module-option&gt;</span>
-      <span class="ERROR">&lt;module-option&gt;true&lt;/module-option&gt;</span>
-      <span class="ERROR">&lt;module-option&gt;true&lt;/module-option&gt;</span>
-    &lt;/login-module&gt;</span>
-  &lt;/authentication&gt;</span>
- &lt;/application-policy&gt;</span>
-</pre><p>The 'keyTab' value should point to the keytab file that was
-						generated by the kadmin kerberos tool. See the <a href="chap-Reference_Guide-Authentication_And_Identity.html#SPNEGO_server_configuration" title="6.6.5.1. SPNEGO Server Configuration">Section 6.6.5.1, “SPNEGO Server Configuration”</a> section for more details.
+                        Activate the Host authentication under the <span class="bold"><strong>JBOSS_HOME/server/default/conf/login-config.xml </strong></span> file by adding the following host login module:
+          </p><pre class="programlisting">&lt;!-- SPNEGO domain --&gt;
+&lt;application-policy name="host"&gt;
+  &lt;authentication&gt;
+    &lt;login-module code="com.sun.security.auth.module.Krb5LoginModule" flag="required"&gt;
+      &lt;module-option name="storeKey"&gt;true&lt;/module-option&gt;
+      &lt;module-option name="useKeyTab"&gt;true&lt;/module-option&gt;
+      &lt;module-option name="principal"&gt;HTTP/server.local.network@LOCAL.NETWORK&lt;/module-option&gt;
+      &lt;module-option name="keyTab"&gt;/etc/krb5.keytab&lt;/module-option&gt;
+      &lt;module-option name="doNotPrompt"&gt;true&lt;/module-option&gt;
+      &lt;module-option name="debug"&gt;true&lt;/module-option&gt;
+    &lt;/login-module&gt;
+  &lt;/authentication&gt;
+ &lt;/application-policy&gt;
+</pre><p>
+               The 'keyTab' value should point to the keytab file that was
+               generated by the kadmin kerberos tool. When using Kerberos on Linux, it should be value of parameter <span class="bold"><strong>admin_keytab</strong></span> from kdc.conf file.
+               See the <a href="chap-Reference_Guide-Authentication_And_Identity.html#SPNEGO_server_configuration" title="6.6.5.1. SPNEGO Server Configuration">Section 6.6.5.1, “SPNEGO Server Configuration”</a> section for more details.
             </p></li><li><p>
 						Extend the core authentication mechanisms to support SPNEGO under
-						<span class="bold"><strong>deployers/jbossweb.deployer/META-INF/war-deployers-jboss-beans.xml</strong></span> by
+                  <span class="bold"><strong>JBOSS_HOME/server/default/deployers/jbossweb.deployer/META-INF/war-deployers-jboss-beans.xml</strong></span> by
 						adding the 'SPNEGO' authenticators property.
           </p><pre class="programlisting">
 &lt;deployment xmlns="urn:jboss:bean-deployer:2.0"&gt;
@@ -1227,42 +1282,123 @@ kdestroy
     &lt;!-- Add this entry --&gt;
     &lt;entry&gt;
       &lt;key&gt;SPNEGO&lt;/key&gt;
-      &lt;value&gt;org.jboss.security.negotiation.NegotiationAuthenticator&lt;/value&gt;
+        &lt;value&gt;org.gatein.sso.spnego.GateInNegotiationAuthenticator&lt;/value&gt;
     &lt;/entry&gt;
   &lt;/map&gt;
 &lt;/property&gt;
 
-</pre></li><li><p>Add the GateIn 3.1 SSO module binaries by copying <span class="bold"><strong>$GATEIN_SSO_HOME/spnego/gatein.ear/lib/sso-agent.jar</strong></span>, and <span class="bold"><strong>$GATEIN_SSO_HOME/spnego/gatein.ear/lib/sso-spnego.jar</strong></span> to the <span class="bold"><strong>deploy/gatein.ear/lib</strong></span> directory.
-          </p></li><li><p>
-						Modify the <span class="bold"><strong>deploy/gatein.ear/META-INF/gatein-jboss-beans.xml</strong></span> file as below, then comment on other parts.
-          </p><pre class="programlisting">
-&lt;login-module code="org.gatein.sso.spnego.SPNEGOLoginModule" flag="required"&gt;
-  &lt;module-option name="password-stacking"&gt;useFirstPass&lt;/module-option&gt;
-  &lt;module-option name="serverSecurityDomain"&gt;host&lt;/module-option&gt;
-&lt;/login-module&gt;
-&lt;login-module code="org.gatein.sso.agent.login.SPNEGORolesModule" flag="required"&gt;
-  &lt;module-option name="password-stacking"&gt;useFirstPass&lt;/module-option&gt;
-  &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
-  &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
-&lt;/login-module&gt;
 </pre></li><li><p>
-						Modify <span class="bold"><strong>gatein.ear/02portal.war/WEB-INF/web.xml</strong></span> as below.</p><pre class="programlisting">
-&lt;!--
-&lt;login-config&gt;
-  &lt;auth-method&gt;FORM&lt;/auth-method&gt;
-  &lt;realm-name&gt;gatein-domain&lt;/realm-name&gt;
-  &lt;form-login-config&gt;
-    &lt;form-login-page&gt;/initiatelogin&lt;/form-login-page&gt;
-    &lt;form-error-page&gt;/errorlogin&lt;/form-error-page&gt;
-  &lt;/form-login-config&gt;
-&lt;/login-config&gt;
+                     Add the GateIn SSO module binaries by copying <span class="bold"><strong>GATEIN_SSO_HOME/spnego/gatein.ear/lib/sso-agent-VERSION.jar</strong></span> to the <span class="bold"><strong>JBOSS_HOME/server/default/deploy/gatein.ear/lib</strong></span> directory.
+                     File <span class="bold"><strong>GATEIN_SSO_HOME/spnego/gatein.ear/lib/spnego-VERSION.jar</strong></span> needs to be copied to the <span class="bold"><strong>JBOSS_HOME/server/default/lib</strong></span> directory.
+          </p></li><li><p>
+                      Download library <code class="filename">jboss-negotiation-2.0.4.GA</code> from location
+                      <a xmlns:xlink="http://www.w3.org/1999/xlink" href="https://repository.jboss.org/nexus/content/groups/public/org/jboss/security/jboss-negotiation/2.0.4.GA/jboss-negotiation-2.0.4.GA.jar">https://repository.jboss.org/nexus/content/groups/public/org/jboss/security/jboss-negotiation/2.0.4.GA/jboss-negotiation-2.0.4.GA.jar</a>
+                      and copy this file to <code class="filename">JBOSS_HOME/server/default/lib</code> directory as well.
+                   </p></li><li><p>
+                     Modify the <span class="bold"><strong>JBOSS_HOME/server/defaut/deploy/gatein.ear/META-INF/gatein-jboss-beans.xml</strong></span> file as below:
+                  </p><pre class="programlisting">
+&lt;deployment xmlns="urn:jboss:bean-deployer:2.0"&gt;
+
+  &lt;application-policy xmlns="urn:jboss:security-beans:1.0" name="gatein-form-auth-domain"&gt;
+    &lt;authentication&gt;
+      &lt;login-module code="org.gatein.wci.security.WCILoginModule" flag="optional"&gt;
+        &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+        &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+      &lt;/login-module&gt;
+      &lt;login-module code="org.exoplatform.services.security.jaas.SharedStateLoginModule" flag="required"&gt;
+        &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+        &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+      &lt;/login-module&gt;
+
+      &lt;!-- Uncomment this part to check on each login if user is member of "/platform/users" group and if not
+           create such membership --&gt;
+      &lt;!--
+      &lt;login-module code="org.exoplatform.services.organization.idm.CustomMembershipLoginModule" flag="required"&gt;
+        &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+        &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+        &lt;module-option name="membershipType"&gt;member&lt;/module-option&gt;
+        &lt;module-option name="groupId"&gt;/platform/users&lt;/module-option&gt;
+      &lt;/login-module&gt;
+      --&gt;
+
+      &lt;login-module code="org.exoplatform.services.security.j2ee.JbossLoginModule" flag="required"&gt;
+        &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+&lt;!-- logout needs to be performed from 'gatein-domain' as it is used for JaasSecurityManager. --&gt;
+        &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+      &lt;/login-module&gt;
+    &lt;/authentication&gt;
+  &lt;/application-policy&gt;
+
+
+  &lt;application-policy xmlns="urn:jboss:security-beans:1.0" name="gatein-domain"&gt;
+    &lt;authentication&gt;
+     &lt;login-module
+         code="org.gatein.sso.spnego.SPNEGOLoginModule"
+         flag="requisite"&gt;
+         &lt;module-option name="password-stacking"&gt;useFirstPass&lt;/module-option&gt;
+         &lt;module-option name="serverSecurityDomain"&gt;host&lt;/module-option&gt;
+	 &lt;module-option name="removeRealmFromPrincipal"&gt;true&lt;/module-option&gt;
+	 &lt;module-option name="usernamePasswordDomain"&gt;gatein-form-auth-domain&lt;/module-option&gt;
+      &lt;/login-module&gt;
+      &lt;login-module
+         code="org.gatein.sso.agent.login.SPNEGORolesModule"
+         flag="required"&gt;
+      &lt;module-option name="password-stacking"&gt;useFirstPass&lt;/module-option&gt;
+      &lt;module-option name="portalContainerName"&gt;portal&lt;/module-option&gt;
+      &lt;module-option name="realmName"&gt;gatein-domain&lt;/module-option&gt;
+      &lt;/login-module&gt;
+   &lt;/authentication&gt;
+  &lt;/application-policy&gt;
+
+&lt;/deployment&gt;
+
+</pre><p>
+                      This activates SPNEGO LoginModules with fallback to FORM authentication. When SPNEGO is not available and it needs to fallback to FORM, it will use <span class="bold"><strong>gatein-form-auth-domain</strong></span> security domain.
+                      More details below.
+                   </p></li><li><p>
+                  Modify <span class="bold"><strong>JBOSS_HOME/server/default/deploy/gatein.ear/02portal.war/WEB-INF/web.xml</strong></span> as below.</p><pre class="programlisting">
+&lt;!--	&lt;login-config&gt;
+	  &lt;auth-method&gt;FORM&lt;/auth-method&gt;
+	  &lt;realm-name&gt;gatein-domain&lt;/realm-name&gt;
+		&lt;form-login-config&gt;
+		  &lt;form-login-page&gt;/initiatelogin&lt;/form-login-page&gt;
+			&lt;form-error-page&gt;/errorlogin&lt;/form-error-page&gt;
+	  &lt;/form-login-config&gt;
+	&lt;/login-config&gt;
 --&gt;
- 
-&lt;login-config&gt;
-  &lt;auth-method&gt;SPNEGO&lt;/auth-method&gt;
-  &lt;realm-name&gt;SPNEGO&lt;/realm-name&gt;
-&lt;/login-config&gt;
-</pre><p>This integrates SPNEGO support into the Portal web archive by switching the authentication mechanism from the default "FORM"-based to "SPNEGO"-based authentication.</p></li><li><p>Integrate the request pre-processing needed for SPNEGO via filters by adding the following filters to the <span class="bold"><strong>web.xml </strong></span> at the top of the Filter chain.</p><pre class="programlisting">
+    &lt;login-config&gt;
+      &lt;auth-method&gt;SPNEGO&lt;/auth-method&gt;
+      &lt;realm-name&gt;SPNEGO&lt;/realm-name&gt;
+      &lt;form-login-config&gt;
+	     &lt;form-login-page&gt;/initiatelogin&lt;/form-login-page&gt;
+	     &lt;form-error-page&gt;/errorlogin&lt;/form-error-page&gt;
+     &lt;/form-login-config&gt;
+    &lt;/login-config&gt;
+
+</pre><p>
+             This integrates SPNEGO support into the Portal web archive by switching the authentication mechanism from the default "FORM"-based to "SPNEGO"-based authentication.
+             You can notice that SPNEGO part also contains element <span class="bold"><strong>form-login-config</strong></span>, which is needed if you want to enable fallback to FORM based authentication.
+             In this case, portal will try to authenticate user with his Kerberos ticket through SPNEGO. If user don't have Kerberos ticket, he will be redirected to FORM (GateIn 3.2 login screen).
+             So first attempt is for login with SPNEGO and next attempt is for login with FORM, which is used only if login through SPNEGO is not successful (For example user don't have
+             valid Kerberos ticket or his browser doesn't support SPNEGO with our Kerberos server).
+          </p><p>
+             If you don't want fallback to FORM, you can disable form-login-config part and have only:
+                        </p><pre class="programlisting">
+    &lt;login-config&gt;
+      &lt;auth-method&gt;SPNEGO&lt;/auth-method&gt;
+      &lt;realm-name&gt;SPNEGO&lt;/realm-name&gt;
+&lt;!--      &lt;form-login-config&gt;
+	     &lt;form-login-page&gt;/initiatelogin&lt;/form-login-page&gt;
+	     &lt;form-error-page&gt;/errorlogin&lt;/form-error-page&gt;
+     &lt;/form-login-config&gt;
+--&gt;
+    &lt;/login-config&gt;
+
+</pre><p>
+          In this case user needs to authenticate through SPNEGO and if that fails, FORM is not shown but user has authentication error with HTTP code 401.
+          </p></li><li><p>Integrate the request pre-processing needed for SPNEGO via filters by adding the following filters to the
+                 <span class="bold"><strong>JBOSS_HOME/server/default/deploy/gatein.ear/02portal.war/WEB-INF/web.xml</strong></span> at the top of the Filter chain.
+              </p><pre class="programlisting">
 &lt;filter&gt;
   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
   &lt;filter-class&gt;org.gatein.sso.agent.filter.LoginRedirectFilter&lt;/filter-class&gt;
@@ -1272,26 +1408,37 @@ kdestroy
     &lt;param-value&gt;/portal/private/classic&lt;/param-value&gt;
   &lt;/init-param&gt;
 &lt;/filter&gt;
+
 &lt;filter&gt;
-  &lt;filter-name&gt;SPNEGOFilter&lt;/filter-name&gt;
-  &lt;filter-class&gt;org.gatein.sso.agent.filter.SPNEGOFilter&lt;/filter-class&gt;
+ &lt;filter-name&gt;SPNEGOFilter&lt;/filter-name&gt;
+ &lt;filter-class&gt;org.gatein.sso.agent.filter.SPNEGOFilter&lt;/filter-class&gt;
 &lt;/filter&gt;
+
 &lt;filter-mapping&gt;
   &lt;filter-name&gt;LoginRedirectFilter&lt;/filter-name&gt;
   &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
 &lt;/filter-mapping&gt;
+
 &lt;filter-mapping&gt;
   &lt;filter-name&gt;SPNEGOFilter&lt;/filter-name&gt;
-  &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;url-pattern&gt;/login&lt;/url-pattern&gt;
 &lt;/filter-mapping&gt;
+
 </pre></li><li><p>
-						Start the GateIn 3.1 portal using the command below.</p><pre class="programlisting">sudo ./run.sh -Djava.security.krb5.realm=LOCAL.NETWORK -Djava.security.krb5.kdc=server.local.network -c PROFILE -b server.local.network</pre><p>The PROFILE parameter in the above command should be replaced with the server profile modified in the above configuration. For example, if you are configuring the default profile, your command will be.</p><pre class="programlisting">sudo ./run.sh -Djava.security.krb5.realm=LOCAL.NETWORK -Djava.security.krb5.kdc=server.local.network -c default -b server.local.network</pre></li><li><p>Login to Kerberos with the command.</p><pre class="programlisting">kinit -A demo</pre><p>You should be able to click the 'Sign In' link on the GateIn 3.1 portal
-						and the 'demo' user from the GateIn 3.1 portal should be automatically
-						logged in.</p></li></ol></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="Single_Sign_On-CAS_Central_Clients"/>6.6.5.3. Clients</h4></div></div></div><p>After performing all configurations above, you need to enable the <span class="bold"><strong>Negotiate authentication </strong></span> of Firefox in clients so that clients could be authenticated by GateIn 3.1 as follows:
-          </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="procedure"><ol class="1"><li><p>Start Firefox, then enter the command: <span class="bold"><strong>about:config </strong></span> into the address field.</p></li><li><p>Enter <span class="bold"><strong>network.negotiate-auth</strong></span> and set the value as below:</p><pre class="programlisting">
-network.negotiate-auth.allow-proxies = true
-network.negotiate-auth.delegation-uris = .local.network
-network.negotiate-auth.gsslib (no-value)
-network.negotiate-auth.trusted-uris = .local.network
-network.negotiate-auth.using-native-gsslib = true
-</pre></li></ol></div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Gadget_development.html"><strong>Prev</strong>Chapter 5. Gadget development</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="wsrp.html"><strong>Next</strong>Chapter 7. Web Services for Remote Portlets (WSRP)</a></li></ul></body></html>
+          In <code class="filename">JBOSS_HOME/server/default/deploy/gatein.ear/web.war/groovy/groovy/webui/component/UIBannerPortlet.gtml</code> file modify the 'Sign In' link as follows:
+</p><pre class="programlisting">
+
+&lt;!--
+&lt;a class="Login" onclick="$signInAction"&gt;&lt;%=_ctx.appRes("UILoginForm.label.Signin")%&gt;&lt;/a&gt;
+--&gt;
+&lt;a class="Login" href="/portal/sso"&gt;&lt;%=_ctx.appRes("UILoginForm.label.Signin")%&gt;&lt;/a&gt;
+
+</pre><p>
+          </p></li><li><p>
+                        Start the GateIn 3.2 portal using the command below.
+                    </p><pre class="programlisting">sudo ./run.sh -Djava.security.krb5.realm=LOCAL.NETWORK -Djava.security.krb5.kdc=server.local.network -c default -b server.local.network</pre></li><li><p>Login to Kerberos with the command.</p><pre class="programlisting">kinit -A demo</pre><p>You should be able to click the 'Sign In' link on the GateIn 3.2 portal
+                        and the 'demo' user from the GateIn 3.2 portal should be automatically
+                        logged in.
+                    </p></li><li><p>
+                      Let's try to destroy kerberos ticket with command </p><pre class="programlisting">kdestroy</pre><p> Then try to login again. You will now be placed to login screen of GateIn 3.2 because you don't have active Kerberos ticket. You can login with predefined account and password "demo"/"gtn" .
+                   </p></li></ol></div></div></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-Reference_Guide-Gadget_development.html"><strong>Prev</strong>Chapter 5. Gadget development</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="wsrp.html"><strong>Next</strong>Chapter 7. Web Services for Remote Portlets (WSRP)</a></li></ul></body></html>
