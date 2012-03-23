@@ -63,7 +63,7 @@
 											def arrInfor = infor.split(",");
 											if(arrInfor.length > 0) {
 											println "<div class=\"ClearFix\">";
-											println "<div style=\"overflow:hidden;\" class=\"FL">";
+											println "<div class=\"FL\" style=\"overflow:hidden;\" >";
 												for(i in 0..arrInfor.length -1) {
 													if(arrInfor[i].length() > 0) { 
 														if(!isView) { 
@@ -103,7 +103,7 @@
 											def arrInfor = infor.split(",");
 											if(arrInfor.length > 0) {
 												println "<div class=\"ClearFix\">";
-												println "<div class=\"FL" style=\"overflow:hidden;\">";
+												println "<div class=\"FL\" style=\"overflow:hidden;\">";
 													for(i in 0..arrInfor.length -1) { 
 														if(arrInfor[i].length() > 0) { %>
 															<div class="ClearFix">
