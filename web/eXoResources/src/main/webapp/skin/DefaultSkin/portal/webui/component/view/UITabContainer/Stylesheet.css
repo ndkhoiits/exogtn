@@ -65,7 +65,7 @@
 }
 
 .UITabContainer .SelectedTab .EditIcon {
-	width: 16px; height: 24px;
+	width: 16px; height: 23px;
 	background: url('/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/SelectedEditTab.gif') no-repeat center; /* orientation=lt */
 	background: url('/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/SelectedEditTab-rt.gif') no-repeat center; /* orientation=rt */
 }
